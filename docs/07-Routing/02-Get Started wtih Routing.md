@@ -171,11 +171,13 @@ if (terrainProfile != null) {
 
 ![Route profile chart
 ](image.png)
+
 Route profile chart
 
 
 ![Route profile sections
 ](image-1.png)
+
 Route profile sections
 
 ## Retrieve Route Instructions
@@ -210,6 +212,7 @@ Key `RouteInstruction` properties:
 
 ![Turn-by-turn route instructions
 ](image-2.png)
+
 Turn-by-turn route instructions
 
 Access instruction data using these `RouteInstruction` methods:

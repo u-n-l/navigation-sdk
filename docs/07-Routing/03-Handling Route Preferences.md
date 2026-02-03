@@ -29,10 +29,10 @@ Set route options using `RoutePreferences` to customize route calculations.
 > 💡 **Tip:** Compute the `timestamp` in the required format using this approach:
 > 
 > ```
->final departureLandmark = Landmark.withLatLng(latitude: 45.65, longitude: 25.60);
->final destinationLandmark = Landmark.withLatLng(latitude: 46.76, longitude: 23.58);
+> final departureLandmark = Landmark.withLatLng(latitude: 45.65, longitude: 25.60);
+> final destinationLandmark = Landmark.withLatLng(latitude: 46.76, longitude: 23.58);
 >
->TimezoneService.getTimezoneInfoFromCoordinates(
+> TimezoneService.getTimezoneInfoFromCoordinates(
 >  coords: departureLandmark.coordinates,
 >  time: DateTime.now().add(Duration(hours: 1)), // Compute time for one hour later
 >  onComplete: (error, result) {
@@ -44,9 +44,8 @@ Set route options using `RoutePreferences` to customize route calculations.
 >      // Pass the timestamp to RoutePreferences
 >    }
 >  },
->);
-> 
->```
+> );
+> ```
 >
 > See the [Timezone Service guide](../14-Timezone%20Service.md#timezone-service) for detailed information.
 >

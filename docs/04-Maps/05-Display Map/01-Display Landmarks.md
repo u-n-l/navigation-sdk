@@ -47,6 +47,7 @@ for (final lmk in landmarksToAdd) {
 mapController.preferences.lmks.add(landmarkStore);
 ```
 ![Landmarks displayed](image.png)
+
 Landmarks displayed
 
 ### LandmarkStoreCollection methods

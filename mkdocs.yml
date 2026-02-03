@@ -1,0 +1,40 @@
+site_name: Navigation SDK Documentation
+site_url: https://u-n-l.github.io/navigation-sdk/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Overview: 01-Overview/index.md
+  - Get Started: 02-Get Started/index.md
+  - Core: 03-Core/index.md
+  - Maps: 04-Maps/index.md
+  - Positioning & Sensors: 05-Positioning & Sensors/index.md
+  - Search: 06-Search/index.md
+  - Routing: 07-Routing/index.md
+  - Navigation: 08-Navigation/index.md
+  - Offline: 09-Offline/index.md
+  - Alarms: 10-Alarms/-index.md
+  - Driver Behaviour: 11-Driver Behaviour.md
+  - Location Wikipedia: 12-Location Wikipedia.md
+  - Settings Service: 13-Settings Service.md
+  - Timezone Service: 14-Timezone Service.md
+  - Changelog: 15-Changelog/01-index.md
+

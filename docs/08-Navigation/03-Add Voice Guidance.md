@@ -65,7 +65,7 @@ The Voice class contains:
 >
 > **Relevance:**
 > 
-> - `Language` — relevant for built-in TTS and custom solutions using `onTextToSpeechInstruction`. See the [internationalization guide](/02-Get%20Started/04-Internationalization.md).
+> - `Language` — relevant for built-in TTS and custom solutions using `onTextToSpeechInstruction`. See the [internationalization guide](../02-Get%20Started/04-Internationalization.md).
 > - `Voice` — relevant only for built-in voice-guidance (human and computer voices).
 
 >  🚨 **Alert**: **Two language settings**
@@ -104,7 +104,7 @@ for (final contentStoreItem in items) {
   final String? nativeLanguage = voiceContentParameters.nativeLanguage;
 }
 ```
-> 💡 **Tip:** See the [Manage Content Guide](/09-Offline/03-Manage%20Content.md) for downloading, deleting, and managing voices, plus details about `ContentStore` and `ContentStoreItem`.
+> 💡 **Tip:** See the [Manage Content Guide](../09-Offline/03-Manage%20Content.md) for downloading, deleting, and managing voices, plus details about `ContentStore` and `ContentStoreItem`.
 
 ### Apply a voice by path
 Provide the absolute path (from `ContentStoreItem.fileName`) to `setVoiceByPath`:

@@ -8,12 +8,12 @@ dependencies:
   flutter:
     sdk: flutter
   unl_navigation_flutter:
-  ```
+```
 
-  Then install:
-  ```
+Then install:
+```
   flutter pub get
- ```
+```
     
 
 ## Step 2: Configure Your Platform

@@ -105,12 +105,15 @@ The `previewDataParameterList` contains all the fields in a generic list format,
 ### Safety Overlay
 Safety overlays represent speed limit cameras, red light controls, and similar items.
 
+
 ![Speed limit overlay item
 ](image-4.png)
+
 Speed limit overlay item
 
 ![Red light control overlay item
 ](image-5.png)
+
 Red light control overlay item
 
 Speed limit `previewData` includes:

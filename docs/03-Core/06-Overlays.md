@@ -328,7 +328,7 @@ if (overlayItem.overlayUid == CommonOverlayId.socialReports.id) {
 Retrieve the image associated with an overlay item using the `img` property.
 
 ### Proximity Alarms
-Configure alarms to notify users when approaching specific overlay items. See [Landmarks and overlay alarms](../010-Alarms/04-Landmark%20and%20Overlay%20Alarms.md#landmark-and-overlay-alarms) for implementation details.
+Configure alarms to notify users when approaching specific overlay items. See [Landmarks and overlay alarms](../10-Alarms/04-Landmark%20and%20Overlay%20Alarms.md#landmark-and-overlay-alarms) for implementation details.
 
 ### Highlight Overlay Items
 Highlight overlay items using the `activateHighlightOverlayItems` method from the `GemMapController` class.

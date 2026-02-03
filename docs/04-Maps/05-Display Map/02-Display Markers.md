@@ -6,11 +6,13 @@ The `Marker` class is the base for all marker types. It encapsulates coordinates
 
 ![Displaying a marker with coordinates separated into different parts
 ](image-1.png)
+
 Displaying a marker with coordinates separated into different parts
 
 
 ![Displaying a marker with coordinates added to same part
 ](image-2.png)
+
 Displaying a marker with coordinates added to same part
 
 
@@ -58,6 +60,7 @@ controller.centerOnArea(markerCollection.area);
 ```
 ![Displaying point-type markers on map
 ](image-3.png)
+
 Displaying point-type markers on map
 
 > 📝 **Note:** By default, point markers appear as blue circles. Beyond specific zoom levels, they automatically cluster into orange circles, then red circles at higher clustering levels. See [Marker clustering](#marker-clustering) for details.
@@ -70,6 +73,7 @@ Polygon markers display closed shapes composed of straight-line segments. The `M
 
 ![Polygon drawn between three coordinates
 ](image-4.png)
+
 Polygon drawn between three coordinates
 
 > ⚠️ **Attention:** At least three coordinates must be added to the same part to create a polygon. Otherwise, the result is an open polyline.
@@ -103,11 +107,13 @@ mapController.preferences.markers.add(markerCollection, settings: renderSettings
 
 ![Displaying a marker with text above icon
 ](image-5.png)
+
 Displaying a marker with text above icon
 
 
 ![Displaying a marker with text centered on icon
 ](image-6.png)
+
 Displaying a marker with text centered on icon
 
 > 📝 **Note:** Assign a name to a marker using the `name` setter of the `Marker` class.
@@ -125,6 +131,7 @@ final renderSettings = MarkerCollectionRenderSettings(image: GemImage(image: png
 ```
 ![Displaying point-type markers with render settings
 ](image-7.png)
+
 Displaying point-type markers with render settings
 
 ### Marker sketches
@@ -149,6 +156,7 @@ sketches.addMarker(marker1,
 ```
 ![Displaying a marker using MarkerSketches
 ](image-8.png)
+
 Displaying a marker using MarkerSketches
 
 Change a marker's appearance after adding it using the `setRenderSettings` method:
@@ -184,6 +192,7 @@ mapController.centerOnCoordinates(Coordinates(latitude: 52.14611, longitude: 1.0
 
 ![Markers not clustering
 ](image-9.png)
+
 Markers not clustering
 
 ```
@@ -196,6 +205,7 @@ mapController.centerOnCoordinates(Coordinates(latitude: 52.14611, longitude: 1.0
 ```
 ![Clustered markers
 ](image-10.png)
+
 Clustered markers
 
 > ⚠️ **Attention:** You can disable clustering by setting `pointGroupingZoomLevel` to 0. However, this may significantly impact performance for large numbers of markers, as rendering each individual marker increases GPU resource usage.

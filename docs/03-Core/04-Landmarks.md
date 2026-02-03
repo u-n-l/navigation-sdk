@@ -22,7 +22,7 @@ Available operations:
 - `trackData` (setter) - Replaces the landmark's track with a provided `Path`
 - `reverseTrackData()` - Reverses the waypoint sequence
 
-Waypoint track data is used for path-based routes. See [Compute path based route](/07-Routing/04-Advanced%20Features.md) for details.
+Waypoint track data is used for path-based routes. See [Compute path based route](../07-Routing/04-Advanced%20Features.md) for details.
 
 ### Descriptive Information
 Landmarks include `name`, `description`, and `author` attributes. Names adapt to SDK language settings for localization.
@@ -77,7 +77,7 @@ Search landmarks by name, location, route proximity, address, and more. Filter s
 Landmarks are the primary entities for route calculations. See [Get started with Routing](../07-Routing/02-Get%20Started%20wtih%20Routing.md#get-started-with-routing) for details.
 
 ### Proximity Alarms
-Configure alarms to notify users when approaching specific landmarks. See [Landmarks and overlay alarms](../010-Alarms/04-Landmark%20and%20Overlay%20Alarms.md#landmark-and-overlay-alarms) for implementation details.
+Configure alarms to notify users when approaching specific landmarks. See [Landmarks and overlay alarms](../10-Alarms/04-Landmark%20and%20Overlay%20Alarms.md#landmark-and-overlay-alarms) for implementation details.
 
 ### Common Uses
 - Map POIs (settlements, roads, addresses, businesses) are landmarks

@@ -15,7 +15,7 @@ The SDK is designed for performance and flexibility, giving developers control o
 - [Alarms](./10-Alarms/index.md)
 - [Driver Behaviour](./11-Driver%20Behaviour.md)
 - [Location Wikipedia](./12-Location%20Wikipedia.md)
-- [Settings Service](./13-%20Settings%20Service.md)
+- [Settings Service](./13-Settings%20Service.md)
 - [Timezone Service](./14-Timezone%20Service.md)
  - [Social Reports](./15-Social%20Reports.md)
  

@@ -84,7 +84,7 @@ if (hasNextTurnInfo) {
     int roundaboutExitNumber = turnDetails.roundaboutExitNumber;
 }
 ```
-See the [TurnDetails](08-Routes/#turn-details.md) guide for more details.
+See the [TurnDetails](../08-Routes/#turn-details.md) guide for more details.
 
 ### Get next-next turn details
 Access details about the turn following the next one to provide a preview of upcoming maneuvers:
@@ -184,5 +184,5 @@ final Uint8List? laneImageData = laneImage.getRenderableImageBytes(size: Size(50
 ](image-3.png)
 
 ## Change instruction language
-Navigation instruction texts follow the language set in the SDK. See the [Internationalization Guide](/02-Get%20Started/04-Internationalization.md) for more details.
+Navigation instruction texts follow the language set in the SDK. See the [Internationalization Guide](../02-Get%20Started/04-Internationalization.md) for more details.
 

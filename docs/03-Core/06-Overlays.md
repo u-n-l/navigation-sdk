@@ -140,9 +140,12 @@ Speed limit `previewData` includes:
 ## Public Transport Overlay
 This overlay displays public transport stations.
 
+
 ![Map displaying three bus stations
 ](image-6.png)
+
 Map displaying three bus stations
+
 
 Bus station `previewData` includes:
 | Field | Type | Description |
@@ -160,13 +163,18 @@ Bus station `previewData` includes:
 
 ### Social Reports Overlay
 This overlay displays fixed cameras, construction sites, and user-reported events.
+
 ![Construction overlay item
 ](image-7.png)
+
 Construction overlay item
+
 
 ![Fixed camera overlay item
 ](image-8.png)
+
 Fixed camera overlay item
+
 
 Construction report `previewData` includes:
 | Field | Type | Description |

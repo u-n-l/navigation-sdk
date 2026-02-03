@@ -27,6 +27,7 @@ Set route options using `RoutePreferences` to customize route calculations.
 
 
 > 💡 **Tip:** Compute the `timestamp` in the required format using this approach:
+> 
 > ```
 > final departureLandmark = Landmark.withLatLng(latitude: 45.65, longitude: 25.60);
 >final destinationLandmark = Landmark.withLatLng(latitude: 46.76, longitude: 23.58);

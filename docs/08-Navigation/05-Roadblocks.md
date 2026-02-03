@@ -9,7 +9,7 @@ Roadblocks can be:
 - temporary (short-lived) or 
 - persistent (remain after SDK uninitialization), depending on their intended duration.
 
-The `TrafficEvent` class represents roadblocks. Check the [Traffic Events guide](/03-Core/10-Traffic%20Events.md) for more details. Roadblocks are managed through the `TrafficService` class.
+The `TrafficEvent` class represents roadblocks. Check the [Traffic Events guide](../03-Core/10-Traffic%20Events.md) for more details. Roadblocks are managed through the `TrafficService` class.
 
 While some roadblocks are provided in real time by available online data sources, you can also define your own user roadblocks to customize routing behavior.
 

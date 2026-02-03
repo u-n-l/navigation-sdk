@@ -139,7 +139,7 @@ Retrieve Wikipedia content for search results to provide additional context abou
 
 Perform a standard search, then call ExternalInfoService.requestWikiInfo to get Wikipedia descriptions for identified landmarks.
 
-See the [Location Wikipedia](../012-Location%20Wikipedia.md#location-wikipedia.md) guide for detailed information.
+See the [Location Wikipedia](../12-Location%20Wikipedia.md#location-wikipedia.md) guide for detailed information.
 
 
 ## Implement Auto-Suggestions

@@ -85,7 +85,7 @@ final taskHandler = RoutingService.calculateRoute(
         }
 });
 ```
-> 💡 **Tip:** Modify the `Path` object using the `trackData` setter on the `Landmark` object. See the [Landmarks guide](/03-Core/04-Landmarks.md) for details.
+> 💡 **Tip:** Modify the `Path` object using the `trackData` setter on the `Landmark` object. See the [Landmarks guide](../03-Core/04-Landmarks.md) for details.
 
 >  🚨 **Alert**: When computing a route with both path-backed and non-path-backed landmarks, set `accurateTrackMatch` to true in `RoutePreferences`. Otherwise, routing computation fails with `GemError.unsupported`.
 

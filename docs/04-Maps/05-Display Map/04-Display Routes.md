@@ -8,8 +8,7 @@ Display routes on the map using `MapViewPreferences`.`routes.add(route, isMainRo
 mapController.preferences.routes.add(route, true);
 mapController.centerOnRoute(route);
 ```
-![Route displayed
-](image-11.png)
+![Route displayed](image-11.png)
 Route displayed
 
 > 💡 **Tip:** To center on a route with padding, refer to the [Adjust Map View](../03-Adjust%20Map%20View.md#center-on-an-area-with-padding) guide. Utilize the screenRect parameter in the centerOnRoute method to define the specific region of the viewport that should be centered.
@@ -20,8 +19,7 @@ mapController.preferences.routes.add(route2, false);
 mapController.preferences.routes.add(route3, false);
 mapController.centerOnMapRoutes();
 ```
-![Three routes displayed, one in the middle is main
-](image-12.png)
+![Three routes displayed, one in the middle is main](image-12.png)
 Three routes displayed, one in the middle is main
 
 ## Customize Route Appearance
@@ -37,8 +35,7 @@ mapViewRoute?.renderSettings = RouteRenderSettings(innerColor: Color.fromARGB(25
 ```
 All dimensional sizes within the `RouteRenderSettings` are measured in millimeters.
 
-![Route displayed with custom render settings
-](image-13.png)
+![Route displayed with custom render settings](image-13.png)
 Route displayed with custom render settings
 
 ## Remove Routes
@@ -47,8 +44,7 @@ Remove all displayed routes using `MapViewRoutesCollection.clear()`. To remove o
 ## Add Route Labels
 Routes can include labels that display information such as ETA, distance, toll prices, and more. Attach a `label` to a route using the label optional parameter of the `MapViewRoutesCollection.add` method:
 
-![Route with label
-](image-14.png)
+![Route with label](image-14.png)
 Route with label
 
 ### Add icons to labels
@@ -62,8 +58,7 @@ Enhance labels by adding up to two icons using the optional `labelIcons` paramet
     SdkSettings.getImgById(GemIcon.waypointFinish.id)!,
 ]);
 ```
-![Label with custom icons
- text](image-15.png)
+![Label with custom icons text](image-15.png)
 Label with custom icons
 
 ### Auto-generate labels
@@ -71,8 +66,7 @@ Auto-generate labels using the `autoGenerateLabel` parameter:
 ```
 mapController.preferences.routes.add(route, true, autoGenerateLabel: true);
 ```
-![Route with generated label
-](image-16.png)
+![Route with generated label](image-16.png)
 Route with generated label
 
 >  🚨 **Alert**: Enabling `autoGenerateLabel` will override any customizations made with the label and `labelIcons` parameters.

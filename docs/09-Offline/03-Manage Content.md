@@ -185,7 +185,7 @@ While the download is in progress, retrieve details about the `downloaded` conte
 | `language` | The full language details for the product. |
 
 
-> 💡 **Tip:** Use the ISOCodeConversions class for conversions between different types of codes. See the [internationalization documentation](/02-Get%20Started/04-Internationalization.md) for more details.
+> 💡 **Tip:** Use the ISOCodeConversions class for conversions between different types of codes. See the [internationalization documentation](../02-Get%20Started/04-Internationalization.md) for more details.
 
 ## Download Content Store Item
 Download a content store item using the `asyncDownload` method:
@@ -269,6 +269,7 @@ After downloading, overlay items are available in offline mode within the downlo
 
 ![Offline speed camera overlay item visible
 ](image.png)
+
 
 Offline speed camera overlay item visible
 

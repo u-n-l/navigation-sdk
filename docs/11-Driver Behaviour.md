@@ -129,7 +129,7 @@ Erase older sessions to save space or comply with privacy policies:
 ```
 driverBehaviour.eraseAnalysesOlderThan(DateTime.now().subtract(Duration(days: 30)));
 ```
-> 📝 **Note:** Driver behaviour analysis requires a properly configured `DataSource`. See the [Positioning guide](../05-Positioning%20&%20Sensors/03-Get%20Started%20wtih%20Positioning.md) to set up your data pipeline. Start and stop the analysis appropriately and avoid frequent interruptions or overlapping sessions.
+> 📝 **Note:** Driver behaviour analysis requires a properly configured `DataSource`. See the [Positioning guide](./05-Positioning%20&%20Sensors/03-Get%20Started%20wtih%20Positioning.md) to set up your data pipeline. Start and stop the analysis appropriately and avoid frequent interruptions or overlapping sessions.
 
 ## Enable Background Location
 To use driver behaviour features while the app is in the background, configure both iOS and Android platforms.

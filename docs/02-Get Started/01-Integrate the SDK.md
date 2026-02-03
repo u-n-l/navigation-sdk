@@ -13,7 +13,7 @@ dependencies:
   Then install:
   ```
   flutter pub get
-  ```
+ ```
     
 
 ## Step 2: Configure Your Platform

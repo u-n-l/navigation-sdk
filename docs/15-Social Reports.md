@@ -64,7 +64,7 @@ for (final OverlayCategory category in categories){
     }
 }
 ```
-More details about the OverlayCategory class structure can be found in the [Overlay documentation](/03-Core/06-Overlays.md).
+More details about the OverlayCategory class structure can be found in the [Overlay documentation](./03-Core/06-Overlays.md).
 
 ## Step 1: Prepare and Upload a Report
 Before uploading a social report, prepare it first. The `SocialOverlay` class provides methods like `prepareReporting` and `prepareReportingCoords` to handle the report preparation phase.

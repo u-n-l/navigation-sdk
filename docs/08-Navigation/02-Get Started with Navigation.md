@@ -29,7 +29,7 @@ The SDK offers two navigation methods:
 Navigation mode uses `PositionService` with:
 
 - **Real GPS Data** - Call `PositionService.setLiveDataSource` to use real-time GPS. Requires location permissions on Android and iOS
-- **Custom Position Data** - Configure a custom data source for position updates. No permissions required. See [Custom positioning](/05-Positioning%20&%20Sensors/05-Custom%20Positioning.md)
+- **Custom Position Data** - Configure a custom data source for position updates. No permissions required. See [Custom positioning](../05-Positioning%20&%20Sensors/05-Custom%20Positioning.md)
 
 > ⚠️ **Attention:** Only one navigation or simulation can be active at a time, regardless of map count.
 
@@ -98,15 +98,17 @@ Navigation stops when you reach the destination or cancel it manually.
 ![Navigating on route
 ](image.png)
 
+
 Navigating on route
 
-> 💡 **Tip:** Before starting navigation, instruct the `mapController` to follow the user's position. See [Show your location on the map](/05-Positioning%20&%20Sensors/04-Show%20Location%20on%20Map.md) for customization options.
+> 💡 **Tip:** Before starting navigation, instruct the `mapController` to follow the user's position. See [Show your location on the map](../05-Positioning%20&%20Sensors/04-Show%20Location%20on%20Map.md) for customization options.
 
-Display the route on the map for better navigation clarity. Turn-by-turn navigation arrows disappear once passed. Learn more in [Display routes](/04-Maps/05-Display%20Map/04-Display%20Routes.md).
+Display the route on the map for better navigation clarity. Turn-by-turn navigation arrows disappear once passed. Learn more in [Display routes](../04-Maps/05-Display%20Map/04-Display%20Routes.md).
 
 
 ![Parsed route is displayed with a gray color (default)
 ](image-1.png)
+
 
 Parsed route is displayed with a gray color (default)
 
@@ -235,7 +237,7 @@ Navigation typically uses GPS position, but you can also use custom-defined posi
 
 Create a custom data source, set the position service to it, start the data source, and begin navigation as you would with live data.
 
-See the [Custom positioning guide](/05-Positioning%20&%20Sensors/05-Custom%20Positioning.md) for details.
+See the [Custom positioning guide](../05-Positioning%20&%20Sensors/05-Custom%20Positioning.md) for details.
 
 ## Stop Navigation or Simulation
 Use the `cancelNavigation` method from `NavigationService` to stop navigation or simulation. Pass the `TaskHandler` returned by `startSimulation` or `startNavigation`. Pausing simulation is not currently supported.
@@ -254,5 +256,5 @@ final Uint8List bytes = instruction.exportAs(fileFormat: PathFileFormat.packedGe
 ## Run Navigation In Background
 To use navigation while your app is in the background, additional setup is required for iOS and Android.
 
-See the [Background location guide](/05-Positioning%20&%20Sensors/08-Background%20Location.md) for configuration instructions.
+See the [Background location guide](../05-Positioning%20&%20Sensors/08-Background%20Location.md) for configuration instructions.
 

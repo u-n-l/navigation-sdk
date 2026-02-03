@@ -90,6 +90,7 @@ Set route options using `RoutePreferences` to customize route calculations.
 | `emergencyVehicleMode` | Enables emergency vehicle mode. | `false` |
 
 ### Public transport options:
+
 | Preference | Explanation | Default Value |
 |------------|-------------|---------------|
 | `algorithmType` | Algorithm type used for routing. | `PTAlgorithmType.departure` |
@@ -138,6 +139,7 @@ All fields except `fuel` default to 0, meaning they are not considered in routin
 Define truck-specific routing preferences using the **TruckProfile** class.
 
 Available options:
+
 | Member | Type | Default | Description |
 |--------|------|---------|-------------|
 | `axleLoad` | `int` | `0 - not considered in routing` | Truck axle load in kg. |
@@ -288,8 +290,8 @@ final routingHandler = RoutingService.calculateRoute([departureLandmark], routeP
     // Handle routing results
 });
 ```
-![Round trip presented
-](image-3.png)
+
+![Round trip presented](image-3.png)
 
 Round trip presented
 

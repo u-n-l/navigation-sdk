@@ -209,6 +209,6 @@ When cost data is unavailable, `cost` is 0 and `currency` is an empty string.
 > 💡 **Tip:** Get WGS coordinates of toll section start and end using `Route.getCoordinateOnRoute` with `startDistanceM` and `endDistanceM` values.
 
 ## Change Instruction Language
-Route instruction texts follow the SDK language settings. See [Internationalization](/02-Get%20Started/04-Internationalization.md) for details.
+Route instruction texts follow the SDK language settings. See [Internationalization](../02-Get%20Started/04-Internationalization.md) for details.
 
 

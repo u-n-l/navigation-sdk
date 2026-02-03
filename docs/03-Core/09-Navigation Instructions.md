@@ -84,7 +84,7 @@ if (hasNextTurnInfo) {
     int roundaboutExitNumber = turnDetails.roundaboutExitNumber;
 }
 ```
-See the [TurnDetails](../08-Routes/#turn-details.md) guide for more details.
+See the [TurnDetails](../03-Core/08-Routes.md#turn-details) guide for more details.
 
 ### Get next-next turn details
 Access details about the turn following the next one to provide a preview of upcoming maneuvers:

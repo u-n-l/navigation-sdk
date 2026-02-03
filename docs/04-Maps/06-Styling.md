@@ -183,10 +183,12 @@ Enable smooth transition by passing `true` to the `smoothTransition` parameter.
 
 ![Default map style
 ](image-11.png)
+
 Default map style
 
 ![Custom added map style
 ](image-12.png)
+
 Custom added map style
 
 ### Set initial map style

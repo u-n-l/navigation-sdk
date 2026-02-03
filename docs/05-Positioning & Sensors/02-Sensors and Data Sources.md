@@ -3,6 +3,7 @@
 
  ## Sensor Types
 The SDK supports the following sensor data types:
+
 | Type | Description |
 |------|-------------|
 | `Acceleration` | Measures linear movement of the device in three-dimensional space. Useful for detecting motion, steps, or sudden changes in speed. |

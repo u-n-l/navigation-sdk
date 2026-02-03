@@ -87,7 +87,7 @@ Most members returning a `DateTime` value use the UTC time zone.
 > 
 > These exceptions are documented in the API reference and user guide.
 
-> 📝 **Note:** Use the `TimezoneService` class to convert between UTC and local time zones. See the [TimezoneService guide](../014-Timezone%20Service.md#timezone-service) for more details.
+> 📝 **Note:** Use the `TimezoneService` class to convert between UTC and local time zones. See the [TimezoneService guide](../14-Timezone%20Service.md#timezone-service) for more details.
 
 ## Configure Number Separators
 Format numbers using custom characters for decimal and digit group separators. Configure these settings via the `SdkSettings` class.

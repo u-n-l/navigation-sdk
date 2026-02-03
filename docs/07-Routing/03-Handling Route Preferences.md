@@ -46,7 +46,7 @@ Set route options using `RoutePreferences` to customize route calculations.
 >);
 >```
 >
-> See the [Timezone Service guide](../014-Timezone%20Service.md#timezone-service) for detailed information.
+> See the [Timezone Service guide](../14-Timezone%20Service.md#timezone-service) for detailed information.
 >
 
 ### Complex structure creation options:
@@ -290,6 +290,7 @@ final routingHandler = RoutingService.calculateRoute([departureLandmark], routeP
 ```
 ![Round trip presented
 ](image-3.png)
+
 Round trip presented
 
 >  🚨 **Alert**: If more than one waypoint is provided in a round trip calculation, only the first is considered; others are ignored.

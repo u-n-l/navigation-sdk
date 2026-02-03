@@ -78,7 +78,7 @@ When the live data source is set and permissions are granted, the position curso
 ## Receive Location Updates
 Register a callback function using the `addImprovedPositionListener` and `addPositionListener` methods to receive position updates. The listener is called continuously as new position data becomes available.
 
-> 💡 **Tip:** Consult the [Positions guide](/03-Core/03-Positions.md) for more information about the `GemPosition` class and the differences between raw positions and map-matched positions.
+> 💡 **Tip:** Consult the [Positions guide](../03-Core/03-Positions.md) for more information about the `GemPosition` class and the differences between raw positions and map-matched positions.
 
 ### Raw positions
 Use the `addPositionListener` method to listen for raw position updates as they're pushed to the data source or received via sensors:

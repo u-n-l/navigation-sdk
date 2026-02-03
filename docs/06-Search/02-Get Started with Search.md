@@ -176,7 +176,7 @@ SearchService.search(
 > 💡 **Tip:** Set `searchAddresses` and `searchMapPOIs` to false to filter non-relevant results.
 
 ### Search on Overlays
-Perform searches on overlays by specifying the overlay ID. Consult the [Overlay documentation](/03-Core/06-Overlays.md) for more details about proper usage.
+Perform searches on overlays by specifying the overlay ID. Consult the [Overlay documentation](../03-Core/06-Overlays.md) for more details about proper usage.
 
 The example below demonstrates how to search within items from the safety overlay. Custom overlays can also be used if they are activated in the applied map style:
 

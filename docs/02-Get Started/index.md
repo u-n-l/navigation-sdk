@@ -3,6 +3,6 @@ This documentation includes step-by-step guides for API key creation, SDK integr
 
 - **[Integrate the SDK](../02-Get%20Started/01-Integrate%20the%20SDK.md)**    
 - **[Create Your Firsts Application](../02-Get%20Started/02-Create%20Your%20Firsts%20Application.md)**
-- **[Usage Guidelines](../03-Usage%20Guidelines.md)**
-- **[Internationalization](../04-Internationalization.md)**
-- **[Optimization Best Pracices](../05-Optimization%20Best%20Pracices.md)**
+- **[Usage Guidelines](../02-Get%20Started/03-Usage%20Guidelines.md)**
+- **[Internationalization](../02-Get%20Started/04-Internationalization.md)**
+- **[Optimization Best Pracices](../02-Get%20Started/05-Optimization%20Best%20Pracices.md)**

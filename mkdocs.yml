@@ -3,12 +3,20 @@ site_url: https://u-n-l.github.io/navigation-sdk/
 
 theme:
   name: material
+  logo: assets/UNL logo.svg
+  favicon: assets/favicon.png
+  font:
+    text: Poppins
+    code: JetBrains Mono
   features:
     - navigation.sections
     - navigation.expand
     - navigation.top
     - search.suggest
     - search.highlight
+
+extra_css:
+  - styles/extra.css
 
 plugins:
   - search

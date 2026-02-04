@@ -5,7 +5,7 @@
 /* Light mode */
 :root {
   --md-primary-fg-color: #000000;
-  --md-primary-fg-color--light: #ff0176;
+  --md-primary-fg-color--light: #000000;
   --md-primary-fg-color--dark: #6e0234;
 
   --md-accent-fg-color: #ff0176;
@@ -23,8 +23,8 @@
 
 /* Base body text */
 .md-typeset {
-  font-size: 0.93rem;       /* 15px */
-  line-height: 1.65;
+  font-size: 0.9rem;       /* 15px */
+  line-height: 1.55;
 }
 
 /* Paragraphs & lists */
@@ -35,7 +35,7 @@
 
 /* H1 – page title */
 .md-typeset h1 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0.8em;
@@ -43,7 +43,7 @@
 
 /* H2 – major sections */
 .md-typeset h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: -0.015em;
   margin-top: 2.2em;
@@ -52,7 +52,7 @@
 
 /* H3 – subsections */
 .md-typeset h3 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-top: 1.8em;
@@ -61,9 +61,9 @@
 
 /* Optional H4 (rarely needed) */
 .md-typeset h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin-top: 1.4em;
+  margin-top: 1.3em;
 }
 
 /* =========================
@@ -78,6 +78,15 @@
 /* Softer code blocks */
 .md-typeset pre > code {
   border-radius: 12px;
+}
+
+
+.md-typeset {
+  color: rgba(0, 0, 0, 0.78);
+}
+
+[data-md-color-scheme="slate"] .md-typeset {
+  color: rgba(255, 255, 255, 0.88);
 }
 
 /* =========================

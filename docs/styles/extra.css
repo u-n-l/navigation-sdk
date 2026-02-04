@@ -4,12 +4,26 @@
 
 /* Light mode */
 :root {
-  --md-primary-fg-color: #000000;
-  --md-primary-fg-color--light: #000000;
-  --md-primary-fg-color--dark: #000000;
+  --md-primary-fg-color: #ff0176;
+  --md-primary-fg-color--light: #f83d94;
+  --md-primary-fg-color--dark: #6e0234;
 
   --md-accent-fg-color: #ff0176;
 }
+
+/* Force readable body text */
+.md-typeset,
+.md-typeset p,
+.md-typeset li {
+  color: #1f2937; /* dark gray */
+}
+
+[data-md-color-scheme="slate"] .md-typeset,
+[data-md-color-scheme="slate"] .md-typeset p,
+[data-md-color-scheme="slate"] .md-typeset li {
+  color: #e5e7eb;
+}
+
 
 /* Dark mode */
 [data-md-color-scheme="slate"] {

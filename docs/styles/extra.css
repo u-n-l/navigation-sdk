@@ -15,7 +15,7 @@
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color: #000000;
   --md-accent-fg-color: #ff0176;
-
+}
 
 /* =========================
    Typography (smaller)
@@ -37,6 +37,7 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0.8em;
+  color: var(--md-primary-fg-color); /* Option 2: only H1 in brand color */
 }
 
 /* H2 */

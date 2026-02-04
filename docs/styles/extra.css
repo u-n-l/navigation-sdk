@@ -18,16 +18,14 @@
 }
 
 /* =========================
-   Typography
+   Typography (smaller)
    ========================= */
 
-/* Base body text */
 .md-typeset {
-  font-size: 0.9rem;       /* 15px */
-  line-height: 1.55;
+  font-size: 0.88rem;   /* ~14px */
+  line-height: 1.65;
 }
 
-/* Paragraphs & lists */
 .md-typeset p,
 .md-typeset li {
   line-height: 1.7;
@@ -35,36 +33,42 @@
 
 /* H1 – page title */
 .md-typeset h1 {
-  font-size: 1.9rem;
+  font-size: 1.55rem;   /* was ~2.2rem */
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0.8em;
 }
 
-/* H2 – major sections */
+/* H2 */
 .md-typeset h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.015em;
-  margin-top: 2.2em;
+  margin-top: 2em;
   margin-bottom: 0.6em;
 }
 
-/* H3 – subsections */
+/* H3 */
 .md-typeset h3 {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  margin-top: 1.8em;
+  margin-top: 1.6em;
   margin-bottom: 0.4em;
 }
 
-/* Optional H4 (rarely needed) */
-.md-typeset h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-top: 1.3em;
+/* =========================
+   Sidebar / nav sizing
+   ========================= */
+
+.md-nav__link {
+  font-size: 0.86rem;
 }
+
+.md-nav__title {
+  font-size: 0.9rem;
+}
+
 
 /* =========================
    Layout & components
@@ -82,11 +86,11 @@
 
 
 .md-typeset {
-  color: rgba(0, 0, 0, 0.78);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 [data-md-color-scheme="slate"] .md-typeset {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.58);
 }
 
 /* =========================

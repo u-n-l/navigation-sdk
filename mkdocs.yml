@@ -3,8 +3,8 @@ site_url: https://u-n-l.github.io/navigation-sdk/
 
 theme:
   name: material
-  logo: assets/UNL logo.svg
-  favicon: assets/favicon.png
+  logo: assets/UNL logo_white.svg
+  favicon: assets/Flavicon.png
   font:
     text: Poppins
     code: JetBrains Mono

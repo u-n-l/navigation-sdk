@@ -28,17 +28,43 @@
 }
 
 
-/* Force readable body text */
+/* =========================
+   FORCE readable text (fix invisible body + tables)
+   Put this at the VERY END of the file.
+   ========================= */
+
+/* Light mode text */
 .md-typeset,
 .md-typeset p,
-.md-typeset li {
-  color: #1f2937; /* dark gray */
+.md-typeset li,
+.md-typeset span,
+.md-typeset td,
+.md-typeset th,
+.md-typeset caption {
+  color: #111827 !important;  /* near-black */
 }
 
+/* Light mode table borders/background (optional but helps) */
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  border-color: rgba(17, 24, 39, 0.12) !important;
+}
+
+/* Dark mode text */
 [data-md-color-scheme="slate"] .md-typeset,
 [data-md-color-scheme="slate"] .md-typeset p,
-[data-md-color-scheme="slate"] .md-typeset li {
-  color: #e5e7eb;
+[data-md-color-scheme="slate"] .md-typeset li,
+[data-md-color-scheme="slate"] .md-typeset span,
+[data-md-color-scheme="slate"] .md-typeset td,
+[data-md-color-scheme="slate"] .md-typeset th,
+[data-md-color-scheme="slate"] .md-typeset caption {
+  color: #e5e7eb !important;
+}
+
+/* Dark mode table borders (optional) */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td,
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  border-color: rgba(229, 231, 235, 0.18) !important;
 }
 
 

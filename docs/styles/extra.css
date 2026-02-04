@@ -17,6 +17,11 @@
   --md-accent-fg-color: #ff0176;
 }
 
+/* Brand-colored page titles only */
+.md-typeset h1 {
+  color: var(--md-primary-fg-color);
+}
+
 /* =========================
    Typography (smaller)
    ========================= */

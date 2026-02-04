@@ -27,10 +27,6 @@
   color: rgba(0, 0, 0, 0.78);
 }
 
-[data-md-color-scheme="slate"] .md-typeset {
-  color: rgba(255, 255, 255, 0.88);
-}
-
 .md-typeset p,
 .md-typeset li {
   line-height: 1.7;

@@ -6,7 +6,7 @@
 :root {
   --md-primary-fg-color: #000000;
   --md-primary-fg-color--light: #000000;
-  --md-primary-fg-color--dark: #6e0234;
+  --md-primary-fg-color--dark: #ff0176;
 
   --md-accent-fg-color: #ff0176;
 }
@@ -15,12 +15,7 @@
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color: #000000;
   --md-accent-fg-color: #ff0176;
-}
 
-/* Brand-colored page titles only */
-.md-typeset h1 {
-  color: var(--md-primary-fg-color);
-}
 
 /* =========================
    Typography (smaller)

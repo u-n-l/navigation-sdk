@@ -2,7 +2,7 @@ site_name: Navigation SDK Documentation
 site_url: https://u-n-l.github.io/navigation-sdk/
 
 theme:
-  name: mkdocs
+  name: material
   logo: assets/UNL logo_white.svg
   favicon: assets/Flavicon.png
   font:

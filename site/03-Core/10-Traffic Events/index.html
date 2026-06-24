@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/03-Core/10-Traffic%20Events/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Traffic Events - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#traffic-events" class="nav-link">Traffic Events</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#trafficevent-structure" class="nav-link">TrafficEvent structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#understand-routetrafficevent-structure" class="nav-link">Understand RouteTrafficEvent structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#use-traffic-events" class="nav-link">Use traffic events</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="traffic-events">Traffic Events<a class="headerlink" href="#traffic-events" title="Permanent link">&para;</a></h1>
+<p>The Navigation SDK for Flutter provides real-time information about traffic events such as delays, roadworks, and accidents.</p>
+<p>When enabled and supported by your map style, traffic events appear as red overlays on affected road segments.</p>
+<p><strong>Event sources:</strong>
+-  <strong>UNL</strong> - Provide up-to-date traffic data when online
+-  <strong>GrabMaps Traffic Data</strong> -  Provide up-to-date traffic data for Southeast Asia when online
+-  <strong>User-defined roadblocks</strong> - Blacklist specific road segments or areas</p>
+<p><strong>Impact zones:</strong></p>
+<ul>
+<li><strong>Path-based</strong> - Follows the shape of a road</li>
+<li><strong>Area-based</strong> - Covers a larger geographic area  </li>
+</ul>
+<p>The central class for handling traffic events and roadblocks is <code>TrafficEvent</code>. You can obtain instances through user interaction with the map or as part of roadblock operations. For route-specific traffic data, use the <code>RouteTrafficEvent</code> class, which extends <code>TrafficEvent</code> with detailed route information.</p>
+<p>Traffic events, including delays and user-defined roadblocks, are fully integrated into the routing and navigation logic. This ensures that calculated routes dynamically account for traffic conditions and any restricted segments.</p>
+<h2 id="trafficevent-structure">TrafficEvent structure<a class="headerlink" href="#trafficevent-structure" title="Permanent link">&para;</a></h2>
+<p>The <code>TrafficEvent</code> class contains the following members:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isRoadblock</code></td>
+<td><code>bool</code></td>
+<td>Returns <code>true</code> if the event represents a roadblock.</td>
+</tr>
+<tr>
+<td><code>delay</code></td>
+<td><code>int</code></td>
+<td>Estimated delay in seconds. Returns <code>-1</code> if unknown.</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td><code>int</code></td>
+<td>Length in meters of the affected road segment. Returns <code>-1</code> if unknown, such as for area-based roadblocks.</td>
+</tr>
+<tr>
+<td><code>impactZone</code></td>
+<td><code>TrafficEventImpactZone</code></td>
+<td>Indicates whether the event affects a point or an area.</td>
+</tr>
+<tr>
+<td><code>referencePoint</code></td>
+<td><code>Coordinates</code></td>
+<td>Central coordinate of the event. Returns <code>(0, 0)</code> for area-based events.</td>
+</tr>
+<tr>
+<td><code>boundingBox</code></td>
+<td><code>RectangleGeographicArea</code></td>
+<td>Geographical bounding box surrounding the event.</td>
+</tr>
+<tr>
+<td><code>area</code></td>
+<td><code>GeographicArea</code></td>
+<td>Geographic area associated with the event (see <code>TrafficService.addPersistentRoadblockByArea</code>). If no area is provided, this is the same as <code>boundingBox</code>.</td>
+</tr>
+<tr>
+<td><code>isAntiArea</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the impact zone is the anti-area of the event area. Valid only for area impact zones.</td>
+</tr>
+<tr>
+<td><code>isActive</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the traffic event is active (i.e. has started).</td>
+</tr>
+<tr>
+<td><code>isExpired</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the traffic event is expired (i.e. has ended).</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>String</code></td>
+<td>Human-readable description of the traffic event. For user-defined roadblocks, this includes the ID.</td>
+</tr>
+<tr>
+<td><code>eventClass</code></td>
+<td><code>TrafficEventClass</code></td>
+<td>Classification of the traffic event.</td>
+</tr>
+<tr>
+<td><code>eventSeverity</code></td>
+<td><code>TrafficEventSeverity</code></td>
+<td>Severity level of the traffic event.</td>
+</tr>
+<tr>
+<td><code>getImage({size, format})</code></td>
+<td><code>Uint8List?</code></td>
+<td>Returns an image representing the traffic event.</td>
+</tr>
+<tr>
+<td><code>img</code></td>
+<td><code>Img</code></td>
+<td>Returns the traffic event image in internal format.</td>
+</tr>
+<tr>
+<td><code>previewUrl</code></td>
+<td><code>String</code></td>
+<td>Returns a URL to preview the traffic event. Returns an empty string if unavailable (e.g. for user-defined roadblocks).</td>
+</tr>
+<tr>
+<td><code>isUserRoadblock</code></td>
+<td><code>bool</code></td>
+<td>Returns <code>true</code> if the event is a user-defined roadblock.</td>
+</tr>
+<tr>
+<td><code>affectedTransportModes</code></td>
+<td><code>Set&lt;TrafficTransportMode&gt;</code></td>
+<td>Returns all transport modes affected by the event.</td>
+</tr>
+<tr>
+<td><code>startTime</code></td>
+<td><code>DateTime?</code></td>
+<td>UTC start time of the traffic event, if available.</td>
+</tr>
+<tr>
+<td><code>endTime</code></td>
+<td><code>DateTime?</code></td>
+<td>UTC end time of the traffic event, if available.</td>
+</tr>
+<tr>
+<td><code>hasOppositeSibling</code></td>
+<td><code>bool</code></td>
+<td>Returns <code>true</code> if a sibling event exists in the opposite direction. Relevant for path-based events.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="understand-routetrafficevent-structure">Understand RouteTrafficEvent structure<a class="headerlink" href="#understand-routetrafficevent-structure" title="Permanent link">&para;</a></h2>
+<p>The <code>RouteTrafficEvent</code> class extends <code>TrafficEvent</code> with route-specific information:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>distanceToDestination</code></td>
+<td><code>int</code></td>
+<td>Returns the distance in meters from the event’s position on the route to the destination. Returns <code>0</code> if unavailable.</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td><code>Coordinates</code></td>
+<td>Starting point of the traffic event on the route.</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><code>Coordinates</code></td>
+<td>End point of the traffic event on the route.</td>
+</tr>
+<tr>
+<td><code>fromLandmark</code></td>
+<td><code>(Landmark, bool)</code></td>
+<td>Returns the starting point as a landmark and a flag indicating whether the data is cached locally.</td>
+</tr>
+<tr>
+<td><code>toLandmark</code></td>
+<td><code>(Landmark, bool)</code></td>
+<td>Returns the end point as a landmark and a flag indicating whether the data is cached locally.</td>
+</tr>
+<tr>
+<td><code>asyncUpdateToFromData()</code></td>
+<td><code>void Function(GemError)</code></td>
+<td>Asynchronously updates the address and description information of the <code>from</code> and <code>to</code> landmarks from the server.</td>
+</tr>
+<tr>
+<td><code>cancelUpdate()</code></td>
+<td><code>void</code></td>
+<td>Cancels any pending asynchronous update request for landmark data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="use-traffic-events">Use traffic events<a class="headerlink" href="#use-traffic-events" title="Permanent link">&para;</a></h2>
+<p>Traffic events provide insights into road conditions, delays, and closures:</p>
+<ul>
+<li><strong>Route traffic information</strong> - See the <a href="../../07-Routing/02-Get%20Started%20wtih%20Routing/#retrieve-time-and-distance-information">Get ETA and Traffic information guide</a></li>
+<li><strong>User-defined roadblocks</strong> - See the <a href="../../08-Navigation/05-Roadblocks/#remove-roadblocks">Roadblocks guide</a></li>
+</ul>
+<h3 id="event-classifications">Event classifications<a class="headerlink" href="#event-classifications" title="Permanent link">&para;</a></h3>
+<p>The <code>TrafficEventClass</code> provides the following event types:</p>
+<ul>
+<li><code>trafficRestrictions</code></li>
+<li><code>roadworks</code></li>
+<li><code>parking</code></li>
+<li><code>delays</code></li>
+<li><code>accidents</code></li>
+<li><code>roadConditions</code></li>
+</ul>
+<h3 id="severity-levels">Severity levels<a class="headerlink" href="#severity-levels" title="Permanent link">&para;</a></h3>
+<p>The <code>TrafficEventSeverity</code> enum includes:</p>
+<ul>
+<li><code>stationary</code></li>
+<li><code>queuing</code></li>
+<li><code>slowTraffic</code></li>
+<li><code>possibleDelay</code></li>
+<li><code>unknown</code></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

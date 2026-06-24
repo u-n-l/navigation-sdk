@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/05-Positioning%20%26%20Sensors/05-Custom%20Positioning/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Custom Positioning - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#custom-positioning" class="nav-link">Custom Positioning</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#create-custom-data-source" class="nav-link">Create Custom Data Source</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#improve-custom-data-source-positions" class="nav-link">Improve Custom Data Source Positions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#remove-the-custom-data-source" class="nav-link">Remove The Custom Data Source</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#create-simulation-data-source" class="nav-link">Create Simulation Data Source</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#remove-the-simulation-data-source" class="nav-link">Remove the Simulation Data Source</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#create-log-data-source" class="nav-link">Create Log Data Source</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#remove-the-log-data-source" class="nav-link">Remove The Log Data Source</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="custom-positioning">Custom Positioning<a class="headerlink" href="#custom-positioning" title="Permanent link">&para;</a></h1>
+<p>Set a custom data source with the PositionService to dynamically manage and simulate location data. Use external or simulated positioning data instead of traditional GPS signals — ideal for testing or custom tracking solutions.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Using a custom data source eliminates the need for location permission management.</p>
+</blockquote>
+<h2 id="create-custom-data-source">Create Custom Data Source<a class="headerlink" href="#create-custom-data-source" title="Permanent link">&para;</a></h2>
+<p>Integrate a custom data source with the PositionService to manage and simulate location data. The custom data source allows external or simulated position data instead of real GPS signals:
+<pre class="highlight"><code>// Create a custom data source.
+final dataSource = DataSource.createExternalDataSource([DataType.position]);
+
+if (dataSource == null){
+  showSnackbar("The datasource could not be created");
+  return;
+}
+
+// Positions will be provided from the data source.
+PositionService.setExternalDataSource(dataSource);
+
+// Start the data source.
+dataSource.start();
+
+// Push the first position in the data source
+dataSource.pushData(
+  SenseDataFactory.producePosition(
+    acquisitionTime: DateTime.now(),
+    latitude: 48.85682,
+    longitude: 2.34375,
+    altitude: 0,
+    course: 0,
+    speed: 0,
+  ),
+);
+
+// Optional, usually done if we want the map to take into
+// account the current position.
+controller.startFollowingPosition();
+
+while (true) {
+  await Future&lt;void&gt;.delayed(Duration(milliseconds: 50));
+
+  // Provide latitude, longitude, heading, speed.
+  double lat = 45;
+  double lon = 10;
+  double head = 0;
+  double speed = 0;
+
+  // Add each position to data source.
+  dataSource.pushData(
+    SenseDataFactory.producePosition(
+      acquisitionTime: DateTime.now(),
+      latitude: lat,
+      longitude: lon,
+      altitude: 0,
+      course: head,
+      speed: speed,
+    )
+  );
+}</code></pre></p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><strong>Create and register a custom data source</strong> - Create a custom DataSource object configured to handle position data. Register it with the PositionService, overriding the default GPS-based data provider</li>
+<li><strong>Start the data source</strong> - Activate the custom data source by calling the <code>start()</code> method. Once started, it's ready to accept and process location data</li>
+<li><strong>Push initial position data</strong> - Send an initial position to the data source using the <code>pushData</code> method. This includes latitude, longitude, altitude, heading, speed, and timestamp</li>
+<li><strong>Enable map follow mode</strong> - The <code>startFollowingPosition</code> method ensures the map camera follows the position tracker. The map view adjusts automatically as new position updates arrive</li>
+<li><strong>Update location data in real-time</strong> - A loop continuously generates and pushes simulated position updates at regular intervals (every 50 milliseconds). This allows the application to simulate movement or integrate location data from custom sources</li>
+</ul>
+<h2 id="improve-custom-data-source-positions">Improve Custom Data Source Positions<a class="headerlink" href="#improve-custom-data-source-positions" title="Permanent link">&para;</a></h2>
+<p>While latitude, longitude, and timestamp may suffice for some use cases, this data may not offer sufficient accuracy during navigation. The system might occasionally register incorrect turns or unexpected deviations. To improve precision, use the <code>heading</code> field of <code>ExternalPositionData</code> to indicate the direction of movement, which is factored into positioning calculations.</p>
+<h3 id="calculate-heading">Calculate heading<a class="headerlink" href="#calculate-heading" title="Permanent link">&para;</a></h3>
+<p>Calculate the heading using the current coordinate and the next coordinate:
+<pre class="highlight"><code>double _getHeading(Coordinates from, Coordinates to) {
+  final dx = to.longitude - from.longitude;
+  final dy = to.latitude - from.latitude;
+
+  const radianToDegree = 57.2957795;
+
+  final val = atan2(dx, dy) * radianToDegree;
+  if (val &lt; 0) val + 360;
+
+  return val;
+}</code></pre></p>
+<h3 id="calculate-speed">Calculate speed<a class="headerlink" href="#calculate-speed" title="Permanent link">&para;</a></h3>
+<p>Compute the <code>speed</code> field from the <code>ExternalPositionData</code> by dividing the distance between two coordinates by the duration of movement between them. Calculate the distance using the <code>distance</code> method from the <code>Coordinate</code> class:
+<pre class="highlight"><code>double _getSpeed(Coordinates from, Coordinates to, DateTime timestampAtFrom, DateTime timestampAtTo) {
+  final timeDiff = timestampAtTo.difference(timestampAtFrom).inSeconds;
+  final distance = from.distance(to);
+
+  if (timeDiff == 0) {
+    return 0;
+  }
+
+  return distance / timeDiff;
+}</code></pre>
+If the coordinates to be pushed in the custom data source are not known, extrapolate them based on previous values.</p>
+<h2 id="remove-the-custom-data-source">Remove The Custom Data Source<a class="headerlink" href="#remove-the-custom-data-source" title="Permanent link">&para;</a></h2>
+<p>Remove the data source when no longer needed:
+<pre class="highlight"><code>DataSource dataSource = DataSource.createExternalDataSource([DataType.position]);
+
+if (dataSource == null){
+  showSnackbar("The datasource could not be created");
+  return;
+}
+
+PositionService.setExternalDataSource(dataSource);
+dataSource.start();
+
+// Do something with the data source...
+
+// Stop the data source.
+dataSource.stop();
+
+// Remove the data source from the position service.
+PositionService.removeDataSource();</code></pre></p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Stop the data source and remove it from the position service when finished. Otherwise, unexpected problems can occur when trying to use other data sources (live or custom).</p>
+</blockquote>
+<h2 id="create-simulation-data-source">Create Simulation Data Source<a class="headerlink" href="#create-simulation-data-source" title="Permanent link">&para;</a></h2>
+<p>Integrate a simulation data source with the PositionService to simulate location data by following a given route. This data source behaves as a route simulation:</p>
+<pre class="highlight"><code>// Create a simulation data source.
+final dataSource = DataSource.createSimulationDataSource(route);
+
+// Positions will be provided from the data source.
+PositionService.setExternalDataSource(dataSource);
+
+// Start the data source.
+dataSource.start();
+</code></pre>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><strong>Create and register a simulation data source</strong> - Create a DataSource object configured to handle position data. Register it with the PositionService, overriding the default GPS-based data provider</li>
+<li><strong>Start the data source</strong> - Activate the data source by calling the <code>start()</code> method. Once started, it begins simulating the given route</li>
+</ul>
+<h2 id="remove-the-simulation-data-source">Remove the Simulation Data Source<a class="headerlink" href="#remove-the-simulation-data-source" title="Permanent link">&para;</a></h2>
+<p>Remove the data source when no longer needed:
+<pre class="highlight"><code>DataSource dataSource = DataSource.createSimulationDataSource(route);
+PositionService.setExternalDataSource(dataSource);
+dataSource.start();
+
+// Do something with the data source...
+
+// Stop the data source.
+dataSource.stop();
+
+// Remove the data source from the position service.
+PositionService.removeDataSource();</code></pre></p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Stop the data source and remove it from the position service when finished. Otherwise, unexpected problems can occur when trying to use other data sources (live or custom).</p>
+</blockquote>
+<h2 id="create-log-data-source">Create Log Data Source<a class="headerlink" href="#create-log-data-source" title="Permanent link">&para;</a></h2>
+<p>Integrate a log data source with the PositionService to replay location data from a predefined log file. This enables the application to replay location data, ensuring uniformity across different runs:</p>
+<pre class="highlight"><code>// Create a simulation data source.
+final dataSource = DataSource.createLogDataSource(logFile);
+
+// Positions will be provided from the data source.
+PositionService.setExternalDataSource(dataSource);</code></pre>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> The log data source starts automatically when created. No need to call the <code>start()</code> method.</p>
+</blockquote>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><strong>Create and register a log data source</strong> - Create a DataSource object configured to handle position data. Register it with the PositionService, overriding the default GPS-based data provider</li>
+<li><strong>Start the data source</strong> - The data source activates automatically and begins replaying the recorded data</li>
+</ul>
+<h2 id="remove-the-log-data-source">Remove The Log Data Source<a class="headerlink" href="#remove-the-log-data-source" title="Permanent link">&para;</a></h2>
+<p>Remove the data source when no longer needed:</p>
+<pre class="highlight"><code>DataSource dataSource = DataSource.createLogDataSource(logFile);
+PositionService.setExternalDataSource(dataSource);
+
+// Do something with the data source...
+
+// Stop the data source.
+dataSource.stop();
+
+// Remove the data source from the position service.
+PositionService.removeDataSource();</code></pre>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> The log data source cannot be of type <code>.gm</code>. This file type is not supported in the public SDK. Use another format, such as <code>gpx</code>, <code>nmea</code>, or <code>kml</code>, that can be exported from the <code>.gm</code> file.</p>
+<p>⚠️ <strong>Attention:</strong> Stop the data source and remove it from the position service when finished. Otherwise, unexpected problems can occur when trying to use other data sources (live or custom).</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

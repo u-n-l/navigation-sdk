@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/05-Positioning%20%26%20Sensors/02-Sensors%20and%20Data%20Sources/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Sensors and Data Sources - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#sensors-and-data-sources" class="nav-link">Sensors and Data Sources</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#sensor-types" class="nav-link">Sensor Types​</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#working-with-data-sources" class="nav-link">Working With Data Sources​</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#use-the-playback-interface" class="nav-link">Use the Playback Interface​</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#track-positions" class="nav-link">Track positions​</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="sensors-and-data-sources">Sensors and Data Sources<a class="headerlink" href="#sensors-and-data-sources" title="Permanent link">&para;</a></h1>
+<p>The Navivation SDK integrates with device sensors and external data sources to enhance map functionality. Use GPS, compass, accelerometer, and custom telemetry to build navigation apps, augmented reality layers, and location-aware services.</p>
+<h2 id="sensor-types">Sensor Types<a href="#sensor-types" title="Direct link to Sensor types">​</a><a class="headerlink" href="#sensor-types" title="Permanent link">&para;</a></h2>
+<p>The SDK supports the following sensor data types: <br/></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acceleration</strong></td>
+<td>Measures linear movement of the device in three-dimensional space. Useful for detecting motion, steps, or sudden changes in speed.</td>
+</tr>
+<tr>
+<td><strong>Activity</strong></td>
+<td>Represents user activity such as walking, running, or being stationary, typically inferred from motion data. Only available on Android devices.</td>
+</tr>
+<tr>
+<td><strong>Attitude</strong></td>
+<td>Describes the orientation of the device in 3D space, often expressed as Euler angles or quaternions.</td>
+</tr>
+<tr>
+<td><strong>Battery</strong></td>
+<td>Provides battery status information such as charge level and power state.</td>
+</tr>
+<tr>
+<td><strong>Camera</strong></td>
+<td>Indicates data coming from or triggered by the device's camera, such as frames or detection events.</td>
+</tr>
+<tr>
+<td><strong>Compass</strong></td>
+<td>Gives directional heading relative to magnetic or true north using magnetometer data.</td>
+</tr>
+<tr>
+<td><strong>Magnetic Field</strong></td>
+<td>Reports raw magnetic field strength, useful for environmental sensing or heading correction.</td>
+</tr>
+<tr>
+<td><strong>Orientation</strong></td>
+<td>Combines multiple sensors (like accelerometer and magnetometer) to calculate absolute device orientation.</td>
+</tr>
+<tr>
+<td><strong>Position</strong></td>
+<td>Basic geographic position data, including latitude, longitude, and optionally altitude.</td>
+</tr>
+<tr>
+<td><strong>Improved Position</strong></td>
+<td>Enhanced position data that has been refined using filtering, correction services, or sensor fusion.</td>
+</tr>
+<tr>
+<td><strong>Gyroscope</strong></td>
+<td>Measures the rate of rotation around the device’s axes, used to detect turns and angular movement.</td>
+</tr>
+<tr>
+<td><strong>Temperature</strong></td>
+<td>Provides temperature readings, either ambient or internal device temperature.</td>
+</tr>
+<tr>
+<td><strong>Notification</strong></td>
+<td>Represents external or system-level events that are not tied to physical sensors.</td>
+</tr>
+<tr>
+<td><strong>Mount Information</strong></td>
+<td>Describes how the device is physically mounted or oriented within a fixed system, such as in a vehicle.</td>
+</tr>
+<tr>
+<td><strong>Heart Rate</strong></td>
+<td>Biometric data representing beats per minute, typically from a fitness or health sensor.</td>
+</tr>
+<tr>
+<td><strong>NMEA Chunk</strong></td>
+<td>Raw navigation data in NMEA sentence format, typically from GNSS receivers for high-precision tracking. Only available on Android devices.</td>
+</tr>
+<tr>
+<td><strong>Unknown</strong></td>
+<td>A fallback type used when the source of the data cannot be determined.</td>
+</tr>
+</tbody>
+</table>
+<p>More details about the <code>Position</code> and <code>ImprovedPosition</code> classes are available <a href="../../03-Core/03-Positions/">here</a>.</p>
+<blockquote>
+<p>⚠️ <strong>WARNING:</strong> </p>
+<p>Ensure that the specific <code>DataType</code> values are supported on the target platform. Attempting to create data sources or recordings with unsupported types may result in failures.</p>
+</blockquote>
+<h2 id="working-with-data-sources">Working With Data Sources<a href="#working-with-data-sources" title="Direct link to Working with data sources">​</a><a class="headerlink" href="#working-with-data-sources" title="Permanent link">&para;</a></h2>
+<p>The main classes for working with data sources:</p>
+<p><img alt="alt text" src="../image.png" /></p>
+<p>The <code>DataType</code> enum represents multiple data types. Each sensor value is stored in a class derived from <code>SenseData</code>, such as <code>GemPosition</code> and <code>Acceleration</code>.</p>
+<p>Use the <code>SenseDataFactory</code> helper class to create objects of these types. This class provides static methods like <code>producePosition</code> and <code>produceAcceleration</code> to create custom sensor data. You'll need this only when creating a custom data source with custom data.</p>
+<h3 id="create-a-data-source">Create a data source<a href="#create-a-data-source" title="Direct link to Create a data source">​</a><a class="headerlink" href="#create-a-data-source" title="Permanent link">&para;</a></h3>
+<p>Create a <code>DataSource</code> using one of these static methods:</p>
+<ul>
+<li><code>createLiveDataSource</code> - Collects data from the device's built-in sensors in real time. Most common for applications relying on actual sensor input</li>
+<li><code>createExternalDataSource</code> - Accepts user-supplied data. Feed data into this source via the <code>pushData</code> method. Note that <code>pushData</code> returns <code>false</code> if used with a non-external source</li>
+<li><code>createLogDataSource</code> - Replays data from a previously recorded session (log file: gpx, nmea). Useful for debugging, training, or offline data processing. See the <a href="../06-Recorder/">Recorder docs</a> for recording data</li>
+<li><code>createSimulationDataSource</code> - Simulates movement along a specified route. Use for UI prototyping, testing, or feature validation without real-world movement</li>
+</ul>
+<p>The first two types (live and external) are categorized under <code>DataSourceType.live</code>. The latter two (log and simulation) fall under <code>DataSourceType.playback</code>.</p>
+<blockquote>
+<p>📝 <strong>INFO</strong> </p>
+<p>By default, a data source starts automatically upon creation. However, it may not be fully initialized when you obtain the data source object.</p>
+<p>If you add a <code>DataSourceListener</code> immediately after acquiring the data source, you may miss the initial "playing status changed" notification—the data source may already be in the started state when the listener is attached.</p>
+</blockquote>
+<h3 id="configure-and-control-a-data-source">Configure and control a data source<a href="#configure-and-control-a-data-source" title="Direct link to Configure and control a data source">​</a><a class="headerlink" href="#configure-and-control-a-data-source" title="Permanent link">&para;</a></h3>
+<p>Stop or start a data source using the control methods:</p>
+<pre class="highlight"><code class="language-dart">dataSource.stop();
+// ...
+dataSource.start();</code></pre>
+<p>Configure a data source's behavior using these methods:</p>
+<ul>
+<li><code>setConfiguration</code> - Set the sampling rate or data filtering behavior</li>
+<li><code>setMockPosition</code> - Simulate location updates</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>WARNING</strong></p>
+<p>The <code>setMockPosition</code> method is only available for live data sources and supports only the <code>DataType.position</code> type. To mock other data types, use an external <code>DataSource</code>.</p>
+</blockquote>
+<h3 id="use-datasourcelistener">Use DataSourceListener<a href="#use-datasourcelistener" title="Direct link to Use DataSourceListener">​</a><a class="headerlink" href="#use-datasourcelistener" title="Permanent link">&para;</a></h3>
+<p>Register a <code>DataSourceListener</code> to receive updates from a data source. React to various events:</p>
+<ul>
+<li>Changes in the playing status</li>
+<li>Interruptions in data flow (e.g., sensor stopped, app went to background)</li>
+<li>New sensor data becoming available</li>
+<li>Progress updates during playback</li>
+</ul>
+<p>Create a listener using the factory constructor and pass the appropriate callbacks:</p>
+<pre class="highlight"><code class="language-dart">final listener = DataSourceListener(
+  onPlayingStatusChanged: (dataType, status) {
+    print('Status for $dataType changed to $status');
+  },
+  onDataInterruptionEvent: (dataType, reason, ended) {
+    print('Data interruption on $dataType: $reason. Ended: $ended');
+  },
+  onNewData: (data) {
+    print('New data received: $data');
+  },
+  onProgressChanged: (progress) {
+    print('Playback progress: $progress%');
+  },
+);</code></pre>
+<p>Register this listener with a <code>DataSource</code> for a specific <code>DataType</code> (in this case the position):</p>
+<pre class="highlight"><code class="language-dart">myDataSource.addListener(DataType.position, listener);</code></pre>
+<p>Remove the listener when no longer needed:</p>
+<pre class="highlight"><code class="language-dart">myDataSource.removeListener(DataType.position, listener);</code></pre>
+<h2 id="use-the-playback-interface">Use the Playback Interface<a href="#use-the-playback-interface" title="Direct link to Use the Playback interface">​</a><a class="headerlink" href="#use-the-playback-interface" title="Permanent link">&para;</a></h2>
+<p>The <code>Playback</code> interface controls data sources that support playback functionality—specifically those of type <code>DataSourceType.playback</code>, such as log files or simulated route replays. <strong>It is not compatible with live or custom data sources.</strong></p>
+<p>Access a <code>Playback</code> instance by checking the data source type:</p>
+<pre class="highlight"><code class="language-dart">if(myDataSource.dataSourceType == DataSourceType.playback) {
+  final playback = myDataSource.playback!;
+
+  playback.pause();
+  // ...
+  playback.resume();
+}</code></pre>
+<p>Playback-enabled data sources can be paused and resumed. Adjust the playback speed by setting a <code>speedMultiplier</code>, which must fall within the range defined by <code>Playback.minSpeedMultiplier</code> and <code>Playback.maxSpeedMultiplier</code>.</p>
+<p>Control playback position using <code>Playback.currentPosition</code>, which represents the elapsed time in milliseconds from the beginning of the log or simulation. This allows you to skip to any point in the playback.</p>
+<p>Access supplementary metadata:</p>
+<ul>
+<li><code>Playback.logPath</code> - Path to the log file being executed</li>
+<li><code>Playback.route</code> - Route being simulated (if applicable)</li>
+</ul>
+<h2 id="track-positions">Track positions<a href="#track-positions" title="Direct link to Track positions">​</a><a class="headerlink" href="#track-positions" title="Permanent link">&para;</a></h2>
+<p>Track positions from a <code>DataSource</code> on a map by rendering a marker polyline between relevant map link points. Use the <code>MapViewExtensions</code> class member of <code>GemMapController</code>.</p>
+<p><img alt="Tracked path" src="../image-1.png" /></p>
+<p><strong>Tracked path</strong></p>
+<pre class="highlight"><code class="language-dart">final mapViewExtensions = controller.extensions;
+
+final err = mapViewExtensions.startTrackPositions(
+    updatePositionMs: 500,
+    settings: MarkerCollectionRenderSettings(
+    polylineInnerColor: Colors.red,
+    polylineOuterColor: Colors.yellow,
+    polylineInnerSize: 3.0,
+    polylineOuterSize: 2.0),
+dataSource: dataSource);
+
+// other code ...
+
+mapViewExtensions.stopTrackPositions();</code></pre>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Return type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>startTrackPositions</strong></td>
+<td>- <code>updatePositionMs</code> - Tracked position collection update frequency. High frequency may decrease rendering performance on low-end devices<br>- <code>MarkerCollectionRenderSettings</code> - Markers collection rendering settings in the map view<br>- <code>DataSource?</code> - DataSource object which positions are tracked</td>
+<td><code>GemError</code></td>
+</tr>
+<tr>
+<td><strong>stopTrackPositions</strong></td>
+<td></td>
+<td>- <code>GemError.success</code> on success<br>- <code>GemError.notFound</code> if tracking is not started</td>
+</tr>
+<tr>
+<td><strong>isTrackedPositions</strong></td>
+<td></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td><strong>trackedPositions</strong></td>
+<td></td>
+<td><code>List&lt;Coordinates&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📝 <strong>INFO</strong> </p>
+<p>If the <code>dataSource</code> parameter is left null, tracking uses the current <code>DataSource</code> set in <code>PositionService</code>. If no <code>DataSource</code> is set in <code>PositionService</code>, <code>GemError.notFound</code> is returned.</p>
+</blockquote>
+<h3 id="get-tracked-positions">Get tracked positions<a href="#get-tracked-positions" title="Direct link to Get tracked positions">​</a><a class="headerlink" href="#get-tracked-positions" title="Permanent link">&para;</a></h3>
+<p>Retrieve tracked positions using the <code>trackedPositions</code> getter after calling <code>MapViewExtensions.startTrackPositions</code>. This returns a list of <code>Coordinates</code> used to render the path polyline on <code>GemMap</code>.</p>
+<pre class="highlight"><code class="language-dart">final mapViewExtensions = controller.extensions;
+
+mapViewExtensions.trackedPositions;
+
+// other code ...
+
+mapViewExtensions.stopTrackPositions();</code></pre>
+<blockquote>
+<p>⚠️ <strong>WARNING</strong> </p>
+<p>Calling the <code>trackedPositions</code> getter <strong>after</strong> <code>stopTrackPositions</code> returns an empty list.</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

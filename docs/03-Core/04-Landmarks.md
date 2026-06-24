@@ -10,7 +10,7 @@ Calculate the distance between two landmarks using the `distance` method:
 ```
 final double distanceInMeters = landmark1.coordinates.distance(landmark2.coordinates);
 ```
-See the [Coordinates](02-Base%20Entities.md) guide for more details.
+See the [Coordinates](02-Base Entities.md) guide for more details.
 
 ### Waypoint Track Data
 Some landmarks include a `trackData` attribute representing a sequence of waypoints that outline a path.
@@ -22,7 +22,7 @@ Available operations:
 - `trackData` (setter) - Replaces the landmark's track with a provided `Path`
 - `reverseTrackData()` - Reverses the waypoint sequence
 
-Waypoint track data is used for path-based routes. See [Compute path based route](../07-Routing/04-Advanced%20Features.md) for details.
+Waypoint track data is used for path-based routes. See [Compute path based route](../07-Routing/04-Advanced Features.md) for details.
 
 ### Descriptive Information
 Landmarks include `name`, `description`, and `author` attributes. Names adapt to SDK language settings for localization.
@@ -61,23 +61,23 @@ Create landmarks using one of these methods:
 - **With coordinates**: `Landmark.withLatLng(latitude, longitude)` - Creates a landmark at specific coordinates
 - **With Coordinates object**: L`andmark.withCoordinates(Coordinates coordinates)` - Uses a predefined Coordinates object
 
-> 🚨 **Alert:** Creating a landmark does not automatically display it on the map. See [Display landmarks](../04-Maps/05-Display%20Map/01-Display%20Landmarks.md#display-landmarks) for instructions.
+> 🚨 **Alert:** Creating a landmark does not automatically display it on the map. See [Display landmarks](../04-Maps/05-Display Map/01-Display Landmarks.md#display-landmarks) for instructions.
 
 ## Interaction with Landmarks
 ### Select Landmarks
-Landmarks are selectable by default. User interactions like taps identify landmarks programmatically using `cursorSelectionLandmarks()`. See [Landmark selection](../04-Maps/04-Interact%20with%20the%20Map.md#select-landmarks) for details.
+Landmarks are selectable by default. User interactions like taps identify landmarks programmatically using `cursorSelectionLandmarks()`. See [Landmark selection](../04-Maps/04-Interact with the Map.md#select-landmarks) for details.
 
 ### Highlight Landmarks
-Highlight landmarks to customize their visual appearance. Provide an identifier to activate, deactivate, or update highlights. Updating overrides the previous highlight. See [Highlight landmarks](../04-Maps/05-Display%20Map/01-Display%20Landmarks.md#highlight-landmarks) for details.
+Highlight landmarks to customize their visual appearance. Provide an identifier to activate, deactivate, or update highlights. Updating overrides the previous highlight. See [Highlight landmarks](../04-Maps/05-Display Map/01-Display Landmarks.md#highlight-landmarks) for details.
 
 ### Search Landmarks
-Search landmarks by name, location, route proximity, address, and more. Filter searches by landmark categories. See [Get started with Search](../06-Search/02-Get%20Started%20with%20Search.md#getting-started-with-search) for details.
+Search landmarks by name, location, route proximity, address, and more. Filter searches by landmark categories. See [Get started with Search](../06-Search/02-Get Started with Search.md#getting-started-with-search) for details.
 
 ### Calculate Routes
-Landmarks are the primary entities for route calculations. See [Get started with Routing](../07-Routing/02-Get%20Started%20wtih%20Routing.md#get-started-with-routing) for details.
+Landmarks are the primary entities for route calculations. See [Get started with Routing](../07-Routing/02-Get Started wtih Routing.md#get-started-with-routing) for details.
 
 ### Proximity Alarms
-Configure alarms to notify users when approaching specific landmarks. See [Landmarks and overlay alarms](../10-Alarms/04-Landmark%20and%20Overlay%20Alarms.md#landmark-and-overlay-alarms) for implementation details.
+Configure alarms to notify users when approaching specific landmarks. See [Landmarks and overlay alarms](../10-Alarms/04-Landmark and Overlay Alarms.md#landmark-and-overlay-alarms) for implementation details.
 
 ### Common Uses
 - Map POIs (settlements, roads, addresses, businesses) are landmarks

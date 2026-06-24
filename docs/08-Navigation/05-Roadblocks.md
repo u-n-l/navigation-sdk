@@ -9,13 +9,13 @@ Roadblocks can be:
 - temporary (short-lived) or 
 - persistent (remain after SDK uninitialization), depending on their intended duration.
 
-The `TrafficEvent` class represents roadblocks. Check the [Traffic Events guide](../03-Core/10-Traffic%20Events.md) for more details. Roadblocks are managed through the `TrafficService` class.
+The `TrafficEvent` class represents roadblocks. Check the [Traffic Events guide](../03-Core/10-Traffic Events.md) for more details. Roadblocks are managed through the `TrafficService` class.
 
 While some roadblocks are provided in real time by available online data sources, you can also define your own user roadblocks to customize routing behavior.
 
 If the applied style includes traffic data and traffic display is enabled (`MapViewPreferences.setTrafficVisibility` is set to true), a visual indication of the blocked portion will appear on the map, highlighted in red.
 
-> 💡 **Tip:** Adding or removing user roadblocks affects only the current user and does not impact other users' routes. To create reports that are visible to all users, refer to the [Social Reports guide](/015-Social%20Reports.md).
+> 💡 **Tip:** Adding or removing user roadblocks affects only the current user and does not impact other users' routes. To create reports that are visible to all users, refer to the [Social Reports guide](/015-Social Reports.md).
 
 ## Configure Traffic Service
 Traffic behavior can be customized through the `TrafficPreferences` instance, accessible via the `TrafficService` class. The `useTraffic` property defines how traffic data should be applied during routing and navigation.

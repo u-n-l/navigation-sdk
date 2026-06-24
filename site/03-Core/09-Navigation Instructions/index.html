@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/03-Core/09-Navigation%20Instructions/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Navigation Instructions - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#navigation-instructions" class="nav-link">Navigation Instructions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#get-navigation-instructions" class="nav-link">Get navigation instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#understand-the-structure" class="nav-link">Understand the structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#access-turn-details" class="nav-link">Access turn details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-street-information" class="nav-link">Get street information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-speed-limit-information" class="nav-link">Get speed limit information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#display-lane-guidance" class="nav-link">Display Lane Guidance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#change-instruction-language" class="nav-link">Change instruction language</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="navigation-instructions">Navigation Instructions<a class="headerlink" href="#navigation-instructions" title="Permanent link">&para;</a></h1>
+<p>The Navigation SDK for Flutter provides real-time navigation guidance with detailed route information, including road details, street names, speed limits, and turn directions. You receive essential data such as remaining travel time, distance to destination, and upcoming maneuvers.</p>
+<p>The main class responsible for turn-by-turn navigation guidance is the <code>NavigationInstruction</code> class.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> Distinguish between <code>NavigationInstruction</code> and <code>RouteInstruction</code>. <code>NavigationInstruction</code> offers real-time, turn-by-turn guidance based on your current position and is relevant only during active navigation or simulation. In contrast, <code>RouteInstruction</code> provides an overview of the entire route available immediately after calculation, with instructions that remain static throughout navigation.</p>
+</blockquote>
+<h2 id="get-navigation-instructions">Get navigation instructions<a class="headerlink" href="#get-navigation-instructions" title="Permanent link">&para;</a></h2>
+<p>You cannot directly instantiate navigation instructions. The SDK provides them during active navigation. For detailed guidance, see the <a href="../../08-Navigation/02-Get%20Started%20with%20Navigation/#get-started-with-navigation">Getting Started with Navigation Guide</a>.</p>
+<p>There are two ways to get navigation instructions:</p>
+<ul>
+<li><strong>Via callback</strong> - NavigationInstruction instances are provided through callbacks in the <code>startNavigation</code> and <code>startSimulation</code> methods</li>
+<li><strong>Via service</strong> - The <code>NavigationService</code> class provides a <code>getNavigationInstruction</code> method that returns the current navigation instruction</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Ensure navigation or simulation is active before calling <code>getNavigationInstruction</code>.</p>
+</blockquote>
+<h2 id="understand-the-structure">Understand the structure<a class="headerlink" href="#understand-the-structure" title="Permanent link">&para;</a></h2>
+<p>The <code>NavigationInstruction</code> class contains the following members:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>currentCountryCodeISO</code></td>
+<td><code>String</code></td>
+<td>Returns the ISO 3166-1 alpha-3 country code for the current navigation instruction. An empty string indicates no country.</td>
+</tr>
+<tr>
+<td><code>currentStreetName</code></td>
+<td><code>String</code></td>
+<td>Returns the current street name.</td>
+</tr>
+<tr>
+<td><code>currentStreetSpeedLimit</code></td>
+<td><code>double</code></td>
+<td>Returns the maximum speed limit on the current street in meters per second. Returns <code>0</code> if unavailable.</td>
+</tr>
+<tr>
+<td><code>driveSide</code></td>
+<td><code>DriveSide</code></td>
+<td>Returns the drive side flag of the currently traveled road.</td>
+</tr>
+<tr>
+<td><code>hasNextNextTurnInfo</code></td>
+<td><code>bool</code></td>
+<td>Returns <code>true</code> if next-next turn information is available.</td>
+</tr>
+<tr>
+<td><code>hasNextTurnInfo</code></td>
+<td><code>bool</code></td>
+<td>Returns <code>true</code> if next turn information is available.</td>
+</tr>
+<tr>
+<td><code>instructionIndex</code></td>
+<td><code>int</code></td>
+<td>Returns the index of the current route instruction within the current route segment.</td>
+</tr>
+<tr>
+<td><code>laneImg</code></td>
+<td><code>LaneImg</code></td>
+<td>Returns a customizable image of the current lane configuration. The user is responsible for validating the image.</td>
+</tr>
+<tr>
+<td><code>navigationStatus</code></td>
+<td><code>NavigationStatus</code></td>
+<td>Returns the current navigation or simulation status.</td>
+</tr>
+<tr>
+<td><code>nextCountryCodeISO</code></td>
+<td><code>String</code></td>
+<td>Returns the ISO 3166-1 alpha-3 country code for the next navigation instruction.</td>
+</tr>
+<tr>
+<td><code>nextNextStreetName</code></td>
+<td><code>String</code></td>
+<td>Returns the next-next street name.</td>
+</tr>
+<tr>
+<td><code>nextNextTurnDetails</code></td>
+<td><code>TurnDetails</code></td>
+<td>Returns full details for the next-next turn. Used for customizing turn display in the UI.</td>
+</tr>
+<tr>
+<td><code>nextNextTurnImg</code></td>
+<td><code>Img</code></td>
+<td>Returns a simplified schematic image of the next-next turn. The user is responsible for validating the image.</td>
+</tr>
+<tr>
+<td><code>nextNextTurnInstruction</code></td>
+<td><code>String</code></td>
+<td>Returns the textual description for the next-next turn.</td>
+</tr>
+<tr>
+<td><code>getNextSpeedLimitVariation</code></td>
+<td><code>NextSpeedLimit</code></td>
+<td>Returns the next speed limit variation within the specified check distance.</td>
+</tr>
+<tr>
+<td><code>nextStreetName</code></td>
+<td><code>String</code></td>
+<td>Returns the next street name.</td>
+</tr>
+<tr>
+<td><code>nextTurnDetails</code></td>
+<td><code>TurnDetails</code></td>
+<td>Returns full details for the next turn. Used for customizing turn display in the UI.</td>
+</tr>
+<tr>
+<td><code>nextTurnImg</code></td>
+<td><code>Img</code></td>
+<td>Returns a simplified schematic image of the next turn. The user is responsible for validating the image.</td>
+</tr>
+<tr>
+<td><code>nextTurnInstruction</code></td>
+<td><code>String</code></td>
+<td>Returns the textual description for the next turn.</td>
+</tr>
+<tr>
+<td><code>remainingTravelTimeDistance</code></td>
+<td><code>TimeDistance</code></td>
+<td>Returns the remaining travel time in seconds and distance in meters.</td>
+</tr>
+<tr>
+<td><code>remainingTravelTimeDistanceToNextWaypoint</code></td>
+<td><code>TimeDistance</code></td>
+<td>Returns the remaining travel time in seconds and distance in meters to the next waypoint.</td>
+</tr>
+<tr>
+<td><code>currentRoadInformation</code></td>
+<td><code>List&lt;RoadInfo&gt;</code></td>
+<td>Returns the current road information list.</td>
+</tr>
+<tr>
+<td><code>nextRoadInformation</code></td>
+<td><code>List&lt;RoadInfo&gt;</code></td>
+<td>Returns the next road information list.</td>
+</tr>
+<tr>
+<td><code>nextNextRoadInformation</code></td>
+<td><code>List&lt;RoadInfo&gt;</code></td>
+<td>Returns the next-next road information list.</td>
+</tr>
+<tr>
+<td><code>segmentIndex</code></td>
+<td><code>int</code></td>
+<td>Returns the index of the current route segment.</td>
+</tr>
+<tr>
+<td><code>signpostDetails</code></td>
+<td><code>SignpostDetails</code></td>
+<td>Returns extended signpost details.</td>
+</tr>
+<tr>
+<td><code>signpostInstruction</code></td>
+<td><code>String</code></td>
+<td>Returns the textual description for signpost information.</td>
+</tr>
+<tr>
+<td><code>timeDistanceToNextNextTurn</code></td>
+<td><code>TimeDistance</code></td>
+<td>Returns the time (seconds) and distance (meters) to the next-next turn. If unavailable, values for the next turn are returned.</td>
+</tr>
+<tr>
+<td><code>timeDistanceToNextTurn</code></td>
+<td><code>TimeDistance</code></td>
+<td>Returns the time (seconds) and distance (meters) to the next turn.</td>
+</tr>
+<tr>
+<td><code>traveledTimeDistance</code></td>
+<td><code>TimeDistance</code></td>
+<td>Returns the traveled time in seconds and distance in meters.</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>nextTurnInstruction</code> field provides text suitable for UI display. Use the <code>onTextToSpeechInstruction</code> callback for text-to-speech output.</p>
+<h2 id="access-turn-details">Access turn details<a class="headerlink" href="#access-turn-details" title="Permanent link">&para;</a></h2>
+<h3 id="get-next-turn-details">Get next turn details<a class="headerlink" href="#get-next-turn-details" title="Permanent link">&para;</a></h3>
+<p>Extract detailed instructions for the next turn along the route. Use this information in your navigation UI to display upcoming maneuvers with images or detailed text:</p>
+<p><pre class="highlight"><code>// If hasNextTurnInfo is false some details are not available
+bool hasNextTurnInfo = navigationInstruction.hasNextTurnInfo;
+
+if (hasNextTurnInfo) {
+    // The next turn instruction
+    String nextTurnInstruction = navigationInstruction.nextTurnInstruction;
+
+    // The next turn details
+    TurnDetails turnDetails = navigationInstruction.nextTurnDetails;
+
+    // Turn event type (continue straight, turn right, turn left, etc.)
+    TurnEvent event = turnDetails.event;
+
+    // The image representation of the abstract geometry
+    Uint8List? abstractGeometryImage = turnDetails.getAbstractGeometryImage(
+        size: Size(300, 300),
+    );
+
+    // The image representation of the next turn
+    Uint8List? turnImage = navigationInstruction.getNextTurnImage(size: Size(300, 300));
+
+    // Roundabout exit number (-1 if not a roundabout)
+    int roundaboutExitNumber = turnDetails.roundaboutExitNumber;
+}</code></pre>
+See the <a href="../08-Routes/#turn-details">TurnDetails</a> guide for more details.</p>
+<h3 id="get-next-next-turn-details">Get next-next turn details<a class="headerlink" href="#get-next-next-turn-details" title="Permanent link">&para;</a></h3>
+<p>Access details about the turn following the next one to provide a preview of upcoming maneuvers:
+<pre class="highlight"><code>// If hasNextNextTurnInfo is false some details are not available
+bool hasNextNextTurnInfo = navigationInstruction.hasNextNextTurnInfo;
+
+if (hasNextNextTurnInfo) {
+    String nextNextTurnInstruction = navigationInstruction.nextNextTurnInstruction;
+
+    TurnDetails nextNextTurnDetails = navigationInstruction.nextNextTurnDetails;
+
+    Uint8List? nextNextTurnImage = navigationInstruction.getNextNextTurnImage(size: Size(300, 300));
+}</code></pre></p>
+<blockquote>
+<p>📝 <strong>Note:</strong> The <code>hasNextNextTurnInfo</code> returns false if the next instruction is the destination.</p>
+</blockquote>
+<p>You can apply the same operations from next turn details to next-next turn details.</p>
+<h2 id="get-street-information">Get street information<a class="headerlink" href="#get-street-information" title="Permanent link">&para;</a></h2>
+<h3 id="access-current-street-details">Access current street details<a class="headerlink" href="#access-current-street-details" title="Permanent link">&para;</a></h3>
+<p>Retrieve information about the current road:</p>
+<pre class="highlight"><code>// Current street name
+String currentStreetName = navigationInstruction.currentStreetName;
+
+// Road info related to the current road
+List&lt;RoadInfo&gt; currentRoadInfo = navigationInstruction.currentRoadInformation;
+
+// Country ISO code
+String countryCode = navigationInstruction.currentCountryCodeISO;
+
+// The drive direction (left or right)
+DriveSide driveDirection = navigationInstruction.driveSide;</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> Some streets may not have an assigned name. In such cases, <code>currentStreetName</code> returns an empty string.</p>
+</blockquote>
+<p>The <code>RoadInfo</code> class provides additional details, including the road name and shield type, which correspond to official road codes.</p>
+<p>For example, <code>currentStreetName</code> might return "Bloomsbury Street," while the <code>roadname</code> field in the associated <code>RoadInfo</code> instance provides the official designation, such as "A400."</p>
+<h3 id="access-next-next-next-street-details">Access next &amp; next-next street details<a class="headerlink" href="#access-next-next-next-street-details" title="Permanent link">&para;</a></h3>
+<p>Retrieve information about the next street and the street following it:
+<pre class="highlight"><code>// Street name
+String nextStreetName = navigationInstruction.nextStreetName;
+String nextNextStreetName = navigationInstruction.nextNextStreetName;
+
+// Road info
+List&lt;RoadInfo&gt; nextRoadInformation = navigationInstruction.nextRoadInformation;
+List&lt;RoadInfo&gt; nextNextRoadInformation = navigationInstruction.nextNextRoadInformation;
+
+// Next country iso code
+String nextCountryCodeISO = navigationInstruction.nextCountryCodeISO;</code></pre>
+These fields have the same meanings as the current street fields.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Ensure <code>hasNextTurnInfo</code> and <code>hasNextNextTurnInfo</code> are true before accessing the respective fields. This prevents errors and ensures data availability.</p>
+</blockquote>
+<h2 id="get-speed-limit-information">Get speed limit information<a class="headerlink" href="#get-speed-limit-information" title="Permanent link">&para;</a></h2>
+<p>The <code>NavigationInstruction</code> class provides information about the current road's speed limit and upcoming speed limits within a specified distance.</p>
+<p>Retrieve speed limit details and handle various scenarios:
+<pre class="highlight"><code>// The current street speed limit in m/s (0 if not available)
+double currentStreetSpeedLimit = navigationInstruction.currentStreetSpeedLimit;
+
+// Get next speed limit in 500 meters
+NextSpeedLimit nextSpeedLimit = navigationInstruction.getNextSpeedLimitVariation(checkDistance: 500);
+// Coordinates where next speed limit changes
+Coordinates coordinatesWhereSpeedLimitChanges = nextSpeedLimit.coords;
+// Distance to where the next speed limit changes
+int distanceToNextSpeedLimitChange = nextSpeedLimit.distance;
+// Value of the next speed limit (m/s)
+double nextSpeedLimitValue = nextSpeedLimit.speed;
+
+if (distanceToNextSpeedLimitChange == 0 &amp;&amp; nextSpeedLimitValue == 0) {
+    showSnackbar("The speed limit does not change within the specified interval");
+} else if (nextSpeedLimitValue == 0) {
+    showSnackbar(
+        "The speed limit changes in the specified interval but the value is not available");
+} else {
+    showSnackbar(
+        "The next speed limit changes to $nextSpeedLimitValue m/s in $distanceToNextSpeedLimitChange meters");
+}</code></pre></p>
+<h2 id="display-lane-guidance">Display Lane Guidance<a class="headerlink" href="#display-lane-guidance" title="Permanent link">&para;</a></h2>
+<p>Use the lane image to illustrate the correct lane for upcoming turns:</p>
+<p><pre class="highlight"><code>final LaneImg laneImage = navigationInstruction.laneImage;
+final Uint8List? laneImageData = laneImage.getRenderableImageBytes(size: Size(500, 300), format: ImageFileFormat.png);</code></pre>
+<img alt="Lane image containing three lanes
+" src="../image-3.png" /></p>
+<h2 id="change-instruction-language">Change instruction language<a class="headerlink" href="#change-instruction-language" title="Permanent link">&para;</a></h2>
+<p>Navigation instruction texts follow the language set in the SDK. See the <a href="../../02-Get%20Started/04-Internationalization/">Internationalization Guide</a> for more details.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

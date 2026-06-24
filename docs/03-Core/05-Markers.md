@@ -13,7 +13,7 @@ Create markers using one of these methods:
 - **Rectangle area**: `Marker.fromRectangle(Coordinates topLeft, Coordinates bottomRight)` - Creates a rectangular marker
 - **Geographic area**: `Marker.fromArea(GeographicArea area)` - Creates a marker from a geographic area
 
->  🚨 **Alert**: Creating a marker does not automatically display it on the map. Set its coordinates and attach it to the map. See [Display markers](../04-Maps/05-Display%20Map/02-Display%20Markers.md#display-markers) for instructions.
+>  🚨 **Alert**: Creating a marker does not automatically display it on the map. Set its coordinates and attach it to the map. See [Display markers](../04-Maps/05-Display Map/02-Display Markers.md#display-markers) for instructions.
 
 ## Marker Structure
 Markers contain multiple coordinates organized into parts. Without a specified part, coordinates are added to the default part (index 0). Each part renders differently based on marker type.
@@ -52,7 +52,7 @@ Markers offer extensive customization options:
 ### Select Markers
 Markers are selectable by default. User interactions like taps identify markers programmatically using the `cursorSelectionMarkers` method of `GemView`.
 
-> 💡 **Tip:** When hovering over a grouped marker cluster, `cursorSelectionMarkers` returns the `MarkerMatch` of the group head marker. See [Marker Clustering](../04-Maps/05-Display%20Map/02-Display%20Markers.md#marker-clustering) for details.
+> 💡 **Tip:** When hovering over a grouped marker cluster, `cursorSelectionMarkers` returns the `MarkerMatch` of the group head marker. See [Marker Clustering](../04-Maps/05-Display Map/02-Display Markers.md#marker-clustering) for details.
 
 The result is a list of matches containing:
 

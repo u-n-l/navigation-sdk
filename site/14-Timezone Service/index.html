@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/14-Timezone%20Service/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Timezone Service - Navigation SDK Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../13-Settings%20Service/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../15-Social%20Reports/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#timezone-service" class="nav-link">Timezone Service</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#available-methods" class="nav-link">Available Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#understand-the-timezoneresult-structure" class="nav-link">Understand the TimezoneResult Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#retrieve-timezone-by-coordinates" class="nav-link">Retrieve Timezone by Coordinates</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#retrieve-timezone-by-timezone-id" class="nav-link">Retrieve Timezone by Timezone ID</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="timezone-service">Timezone Service<a class="headerlink" href="#timezone-service" title="Permanent link">&para;</a></h1>
+<p>The <code>TimezoneService</code> provides functionality for managing and retrieving time zone information based on coordinates or timezone identifiers.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong>  The service offers both online and offline methods. Online methods are more accurate and reflect recent timezone changes, while offline methods are faster and work without network access but may contain outdated data.</p>
+</blockquote>
+<h2 id="available-methods">Available Methods<a class="headerlink" href="#available-methods" title="Permanent link">&para;</a></h2>
+<p>The <code>TimezoneService</code> class provides four main methods:</p>
+<ul>
+<li><code>getTimezoneInfoFromCoordinates</code> - retrieves timezone information from coordinates using an online service</li>
+<li><code>getTimezoneInfoFromTimezoneId</code> - retrieves timezone information from a timezone ID using an online service</li>
+<li><code>getTimezoneInfoFromCoordinatesSync</code> - retrieves timezone information from coordinates using built-in data (offline)</li>
+<li><code>getTimezoneInfoFromTimezoneIdSync</code> - retrieves timezone information from a timezone ID using built-in data (offline)</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Offline methods use built-in timezone data that may become outdated. Update the SDK regularly to refresh timezone data.</p>
+</blockquote>
+<h2 id="understand-the-timezoneresult-structure">Understand the TimezoneResult Structure<a class="headerlink" href="#understand-the-timezoneresult-structure" title="Permanent link">&para;</a></h2>
+<p>The <code>TimezoneResult</code> class represents the result of a timezone lookup operation and contains the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dstOffset</code></td>
+<td><code>Duration</code></td>
+<td>Daylight Saving Time (DST) offset</td>
+</tr>
+<tr>
+<td><code>utcOffset</code></td>
+<td><code>Duration</code></td>
+<td>Raw UTC offset, excluding DST - can be negative</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>Duration</code></td>
+<td>Total offset relative to UTC (<code>dstOffset</code> + <code>utcOffset</code>) - can be negative</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>TimeZoneStatus</code></td>
+<td>Status of the response - see values below</td>
+</tr>
+<tr>
+<td><code>timezoneId</code></td>
+<td><code>String</code></td>
+<td>Timezone identifier in format <code>Continent/City_Name</code> (e.g., <code>Europe/Paris</code>, <code>America/New_York</code>)</td>
+</tr>
+<tr>
+<td><code>localTime</code></td>
+<td><code>DateTime</code></td>
+<td>Local time as a <code>UTC DateTime</code> object representing the local time of the requested timezone</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The <code>localTime</code> property has <code>isUtc</code> set to <code>true</code> but represents local time in the specified timezone. This is a <code>DateTime</code> class limitation that only allows UTC or local time representation.</p>
+</blockquote>
+<h3 id="timezonestatus-values">TimeZoneStatus values<a class="headerlink" href="#timezonestatus-values" title="Permanent link">&para;</a></h3>
+<p>The <code>TimeZoneStatus</code> enum indicates the result of a timezone lookup operation:</p>
+<ul>
+<li><code>success</code> - request completed successfully</li>
+<li><code>invalidCoordinate</code> - provided coordinates were invalid or out of range</li>
+<li><code>wrongTimezoneId</code> - provided timezone identifier was malformed or not recognized</li>
+<li><code>wrongTimestamp</code> - provided timestamp was invalid or could not be parsed</li>
+<li><code>timezoneNotFound</code> - no timezone found for the given input</li>
+<li><code>successUsingObsoleteData</code> - request succeeded using outdated timezone data (update the SDK)</li>
+</ul>
+<h2 id="retrieve-timezone-by-coordinates">Retrieve Timezone by Coordinates<a class="headerlink" href="#retrieve-timezone-by-coordinates" title="Permanent link">&para;</a></h2>
+<h3 id="online-lookup">Online lookup<a class="headerlink" href="#online-lookup" title="Permanent link">&para;</a></h3>
+<p>Use <code>getTimezoneInfoFromCoordinates</code> to retrieve timezone information based on geographic coordinates and a <code>UTC DateTime</code>:
+<pre class="highlight"><code>TimezoneService.getTimezoneInfoFromCoordinates(
+    coords: Coordinates(latitude: 55.626, longitude: 37.457),
+    time: DateTime.utc(2025, 7, 1, 6, 0),   // &lt;-- This is always the Datetime in UTC
+    onComplete: (GemError error, TimezoneResult? result) {
+        if (error != GemError.success) {
+            // The request failed, handle the error    
+        } else {
+            // Do something with the result
+        }
+    }
+);</code></pre></p>
+<h3 id="offline-lookup">Offline lookup<a class="headerlink" href="#offline-lookup" title="Permanent link">&para;</a></h3>
+<p>Use <code>getTimezoneInfoFromCoordinatesSync</code> to retrieve timezone information from built-in data without network access:
+<pre class="highlight"><code>TimezoneResult? result = TimezoneService.getTimezoneInfoFromCoordinatesSync(
+    coords: Coordinates(latitude: 55.626, longitude: 37.457),
+    time: DateTime.utc(2025, 7, 1, 6, 0), // &lt;-- Always in UTC
+);</code></pre></p>
+<h2 id="retrieve-timezone-by-timezone-id">Retrieve Timezone by Timezone ID<a class="headerlink" href="#retrieve-timezone-by-timezone-id" title="Permanent link">&para;</a></h2>
+<h3 id="online-lookup_1">Online lookup<a class="headerlink" href="#online-lookup_1" title="Permanent link">&para;</a></h3>
+<p>Use <code>getTimezoneInfoFromTimezoneId</code> to retrieve timezone information based on a timezone identifier and a <code>UTC DateTime</code>:
+<pre class="highlight"><code>TimezoneService.getTimezoneInfoFromTimezoneId(
+    timezoneId: 'Europe/Moscow',
+    time: DateTime.utc(2025, 7, 1, 6, 0), // &lt;-- Always in UTC
+    onComplete: (GemError error, TimezoneResult? result) {
+        if (error != GemError.success) {
+            // The request failed, handle the error
+        } else {
+            // Do something with the result
+        }
+    },
+);</code></pre></p>
+<h3 id="offline-lookup_1">Offline lookup<a class="headerlink" href="#offline-lookup_1" title="Permanent link">&para;</a></h3>
+<p>Use <code>getTimezoneInfoFromTimezoneIdSync</code> to retrieve timezone information from built-in data without network access:
+<pre class="highlight"><code>TimezoneResult? result = TimezoneService.getTimezoneInfoFromTimezoneIdSync(
+    timezoneId: 'Europe/Moscow',
+    time: DateTime.utc(2025, 7, 1, 6, 0), // &lt;-- Always in UTC
+);</code></pre></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

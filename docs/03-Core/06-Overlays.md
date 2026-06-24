@@ -3,7 +3,7 @@ An Overlay is an additional map layer in your Virtual Private Map (VPM) accessib
 
 Overlay data can be POI data, categories, and binary information added via GeoJSON format, using the UNL Studio. Overlays can have multiple categories and subcategories. A single item from an overlay is an overlay item.
 
->  🚨 **Alert**: Overlays require downloading to work offline. See [Downloading overlays](../09-Offline/03-Manage%20Content.md#download-overlays) for details. Most overlay features require a GemMap widget with a style containing the overlay.
+>  🚨 **Alert**: Overlays require downloading to work offline. See [Downloading overlays](../09-Offline/03-Manage Content.md#download-overlays) for details. Most overlay features require a GemMap widget with a style containing the overlay.
 
 ## OverlayInfo
 The `OverlayInfo` class contains information about an overlay.
@@ -250,10 +250,10 @@ final bool isEnabled = OverlayService.isOverlayEnabled(overlayUid);
 The `enableOverlay`, `disableOverlay`, and `isOverlayEnabled` methods can also take an optional `categUid` parameter to enable, disable, or check the status of a specific category within an overlay. By default, if no category ID is provided, the entire overlay is affected.
 
 ### Select overlay items
-Overlay items are selectable. Identify specific items programmatically when users tap or click using `cursorSelectionOverlayItems()`. See [Map Selection Functionality](../04-Maps/04-Interact%20with%20the%20Map.md#select-map-elements) for details.
+Overlay items are selectable. Identify specific items programmatically when users tap or click using `cursorSelectionOverlayItems()`. See [Map Selection Functionality](../04-Maps/04-Interact with the Map.md#select-map-elements) for details.
 
 ### Search Overlay Items
-Overlays are searchable. Set the right properties in search preferences when performing a search. See [Get started with Search](../06-Search/02-Get%20Started%20with%20Search.md#getting-started-with-search) for details.
+Overlays are searchable. Set the right properties in search preferences when performing a search. See [Get started with Search](../06-Search/02-Get Started with Search.md#getting-started-with-search) for details.
 
 Calculate Routes
 Overlay items are not designed for **route calculation**.
@@ -328,7 +328,7 @@ if (overlayItem.overlayUid == CommonOverlayId.socialReports.id) {
 Retrieve the image associated with an overlay item using the `img` property.
 
 ### Proximity Alarms
-Configure alarms to notify users when approaching specific overlay items. See [Landmarks and overlay alarms](../10-Alarms/04-Landmark%20and%20Overlay%20Alarms.md#landmark-and-overlay-alarms) for implementation details.
+Configure alarms to notify users when approaching specific overlay items. See [Landmarks and overlay alarms](../10-Alarms/04-Landmark and Overlay Alarms.md#landmark-and-overlay-alarms) for implementation details.
 
 ### Highlight Overlay Items
 Highlight overlay items using the `activateHighlightOverlayItems` method from the `GemMapController` class.

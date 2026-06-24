@@ -113,7 +113,7 @@ The report result is provided via the `onComplete` callback with the following `
 The method returns an `EventHandler` instance, which can be used to cancel the operation by calling the static cancel method from the `SocialOverlay` class (applicable for other operations such as upvote, downvote, update, etc.).
 If the operation could not be started, the method returns `null`.
 
->  🚨 **Alert**: Most report categories require the `prepareReporting` method to ensure higher report accuracy by confirming the user's proximity to the reported location. See the [Get started with Positioning guide](05-Positioning%20&%20Sensors/03-Get%20Started%20wtih%20Positioning.md#get-started-with-positioning) for more information about configuring the data source.
+>  🚨 **Alert**: Most report categories require the `prepareReporting` method to ensure higher report accuracy by confirming the user's proximity to the reported location. See the [Get started with Positioning guide](05-Positioning & Sensors/03-Get Started wtih Positioning.md#get-started-with-positioning) for more information about configuring the data source.
 
 The `prepareReportingCoords` method works only for `Weather Hazard` categories and subcategories contained within.
 

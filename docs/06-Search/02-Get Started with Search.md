@@ -266,9 +266,9 @@ SearchService.search('N',
 
 
 ## Show Results On the Map
-In most use cases, the landmarks found by search are already present on the map. If the search was made on custom landmark stores, see the [add map landmarks](../04-Maps/05-Display%20Map/01-Display%20Landmarks.md#add-custom-landmarks) section for adding landmarks to the map.
+In most use cases, the landmarks found by search are already present on the map. If the search was made on custom landmark stores, see the [add map landmarks](../04-Maps/05-Display Map/01-Display Landmarks.md#add-custom-landmarks) section for adding landmarks to the map.
 
-To zoom to a landmark found via search, use `GemMapController.centerOnCoordinates` on the coordinates of the landmark found (`Landmark.coordinates`). See the documentation for [map centering](../04-Maps/03-Adjust%20Map%20View.md#adjust-the-map-view) for more information.
+To zoom to a landmark found via search, use `GemMapController.centerOnCoordinates` on the coordinates of the landmark found (`Landmark.coordinates`). See the documentation for [map centering](../04-Maps/03-Adjust Map View.md#adjust-the-map-view) for more information.
 
 
 

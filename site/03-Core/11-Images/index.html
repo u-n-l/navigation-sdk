@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/03-Core/11-Images/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Images - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#images" class="nav-link">Images</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#work-with-plain-images" class="nav-link">Work with plain images</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#work-with-vector-images" class="nav-link">Work with vector images</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#render-images" class="nav-link">Render images</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="images">Images<a class="headerlink" href="#images" title="Permanent link">&para;</a></h1>
+<p>Images are represented in an abstract form that requires conversion before displaying on the UI. The Navigation SDK provides the following image classes: <code>Img</code>, <code>AbstractGeometryImg</code>, <code>LaneImg</code>, <code>SignpostImg</code>, and <code>RoadInfoImg</code>.</p>
+<p>All image classes provide these methods and properties:</p>
+<ul>
+<li><code>uid</code> - Gets the unique ID of the image. Identical images share the same UID, allowing you to optimize UI redraws by triggering updates only when the image changes</li>
+<li><code>isValid</code> - Verifies if the image data is valid. Invalid images return <code>null</code> from rendering methods</li>
+<li><code>getRenderableImageBytes</code> - Returns a <code>Uint8List</code> that can be displayed using the <code>Image.memory</code> constructor. Returns <code>null</code> if invalid</li>
+<li><code>getRenderableImage</code> - Returns a <code>RenderableImg</code> containing the image size and <code>Uint8List</code> for UI rendering. Returns <code>null</code> if invalid</li>
+</ul>
+<h2 id="work-with-plain-images">Work with plain images<a class="headerlink" href="#work-with-plain-images" title="Permanent link">&para;</a></h2>
+<p>The <code>Img</code> class represents plain (usually non-vector) images. These images have a recommended size and aspect ratio but can be resized to any dimension (with possible quality loss).</p>
+<p>You can instantiate an <code>Img</code> class using:</p>
+<ul>
+<li><strong>Constructor</strong> - Pass <code>Uint8List</code> image data and format</li>
+<li><strong><code>fromAsset</code> method</strong> - Pass the asset key (and optionally a custom bundle)</li>
+</ul>
+<h2 id="work-with-vector-images">Work with vector images<a class="headerlink" href="#work-with-vector-images" title="Permanent link">&para;</a></h2>
+<p>The <code>AbstractGeometryImg</code>, <code>LaneImg</code>, <code>SignpostImg</code>, and <code>RoadInfoImg</code> classes represent vector images generated by the SDK. They provide customizable rendering options and do not have a default size or aspect ratio.</p>
+<p>The <code>LaneImg</code>, <code>SignpostImg</code>, and <code>RoadInfoImg</code> classes render best at specific aspect ratios depending on content. To render images at a suitable size chosen by the SDK, set the <code>allowResize</code> parameter to true in the <code>getRenderableImage</code> or <code>getRenderableImageBytes</code> methods. When set to false, rendering uses your exact specified size (which may cause distortion).</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Use <code>getRenderableImage</code> instead of <code>getRenderableImageBytes</code> when setting <code>allowResize</code> to <code>true</code>. This provides the actual rendered image size within the <code>RenderableImg</code> class.</p>
+</blockquote>
+<h3 id="image-type-comparison">Image type comparison<a class="headerlink" href="#image-type-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Size and aspect ratio</th>
+<th>Customizable render options</th>
+<th>Rendered image size behavior</th>
+<th>Instantiable by the user</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Img</code></td>
+<td>Usually fixed and retrievable via the <code>size</code> and <code>aspectRatio</code> getters.</td>
+<td>Not available</td>
+<td>Always renders at the size specified by the user, if provided; otherwise at the recommended size for the image.</td>
+<td>Yes. Via the constructor or the <code>fromAsset</code> static method. Can also be provided by the SDK.</td>
+</tr>
+<tr>
+<td><code>AbstractGeometryImg</code></td>
+<td>Generated by the SDK. Size and aspect ratio are not retrievable.</td>
+<td>Yes, via <code>AbstractGeometryImageRenderSettings</code></td>
+<td>Renders at the size specified by the user, if provided; otherwise at the SDK default image size.</td>
+<td>No. Provided only by the SDK.</td>
+</tr>
+<tr>
+<td><code>LaneImg</code></td>
+<td>Generated by the SDK. Size and aspect ratio are not retrievable.</td>
+<td>Yes, via <code>LaneImageRenderSettings</code></td>
+<td>If <code>allowResize</code> is <code>false</code>, renders at the specified size. If <code>allowResize</code> is <code>true</code>, the SDK adjusts the aspect ratio based on the provided size.</td>
+<td>No. Provided only by the SDK.</td>
+</tr>
+<tr>
+<td><code>SignpostImg</code></td>
+<td>Generated by the SDK. Size and aspect ratio are not retrievable.</td>
+<td>Yes, via <code>SignpostImageRenderSettings</code></td>
+<td>If <code>allowResize</code> is <code>false</code>, renders at the specified size. If <code>allowResize</code> is <code>true</code>, the SDK adjusts the aspect ratio based on the provided size.</td>
+<td>No. Provided only by the SDK.</td>
+</tr>
+<tr>
+<td><code>RoadInfoImg</code></td>
+<td>Generated by the SDK. Size and aspect ratio are not retrievable.</td>
+<td>Background color customizable via <code>Color</code></td>
+<td>If <code>allowResize</code> is <code>false</code>, renders at the specified size. If <code>allowResize</code> is <code>true</code>, the SDK adjusts the aspect ratio based on the provided size.</td>
+<td>No. Provided only by the SDK.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Tip:</strong> For debugging, encode <code>Uint8List</code> images as Base64 strings using <code>base64Encode</code> and view them on a Base64 <a href="/link:https://base64.guru/converter/decode/image">image decoding website</a>.</p>
+</blockquote>
+<h2 id="render-images">Render images<a class="headerlink" href="#render-images" title="Permanent link">&para;</a></h2>
+<p>The following approaches show how to get images in <code>Uint8List</code> format from the SDK, illustrated using the lane image from <code>NavigationInstruction</code>. The same principles apply to all image types.</p>
+<h3 id="use-the-direct-method">Use the direct method<a class="headerlink" href="#use-the-direct-method" title="Permanent link">&para;</a></h3>
+<p><pre class="highlight"><code>Uint8List? imageData = instruction.getLaneImage(
+    size: const Size(200, 100),
+    format: ImageFileFormat.png,
+);</code></pre>
+This approach is simple with minimal code. However, it has limitations:</p>
+<ul>
+<li>Images always render at your explicitly requested size (automatic resizing not available)</li>
+<li>Recommended image size based on content is not retrievable</li>
+<li>Image UID is not accessible</li>
+</ul>
+<p>The <code>getLaneImage</code> method returns <code>null</code> if the image is invalid.</p>
+<h3 id="use-getrenderableimagebytes">Use getRenderableImageBytes<a class="headerlink" href="#use-getrenderableimagebytes" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code>LaneImg laneImage = instruction.laneImg;
+Uint8List? imageData = laneImage.getRenderableImageBytes(
+    size: const Size(200, 100), 
+    format: ImageFileFormat.png, 
+    allowResize: true
+);
+
+// Access the image UID
+int uid = laneImage.uid;</code></pre>
+<p>This approach allows you to configure the <code>allowResize</code> parameter but does not provide metadata about the <code>Uint8List</code> image:</p>
+<ul>
+<li><strong>When <code>allowResize</code> is true</strong> - The image may be resized to a more suitable size that differs from your requested dimensions. However, the actual size is not exposed</li>
+<li><strong>When <code>allowResize</code> is false</strong> - The image renders at your exact requested size, though it may have an improper aspect ratio</li>
+</ul>
+<p>You can use the image UID to optimize redraws efficiently.</p>
+<p>The <code>getRenderableImageBytes</code> method returns <code>null</code> if the image is invalid.</p>
+<h3 id="use-getrenderableimage">Use getRenderableImage<a class="headerlink" href="#use-getrenderableimage" title="Permanent link">&para;</a></h3>
+<p><pre class="highlight"><code>LaneImg laneImage = instruction.laneImg;
+RenderableImg? renderableImage = laneImage.getRenderableImage(
+    size: const Size(200, 100), 
+    format: ImageFileFormat.png, 
+    allowResize: true
+);
+Uint8List? imageData = renderableImage?.bytes;
+
+// Access the image UID
+int uid = laneImage.uid;
+
+// Get the actual rendered size
+int? width = renderableImage?.width;
+int? height = renderableImage?.height;</code></pre>
+This approach provides the most flexibility by allowing you to configure the <code>allowResize</code> parameter and access metadata about the <code>Uint8List</code> image:</p>
+<ul>
+<li><strong>When <code>allowResize</code> is true</strong> - The image may be resized to a more suitable size that differs from your original request. Access the actual dimensions via the <code>RenderableImg</code> object</li>
+<li><strong>When <code>allowResize</code> is false</strong> - The image renders at your exact requested size, though it may have an unsuitable aspect ratio</li>
+</ul>
+<p>You can leverage the image UID to optimize redraw operations efficiently.</p>
+<p>The <code>getRenderableImage</code> method returns <code>null</code> if the image is invalid.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

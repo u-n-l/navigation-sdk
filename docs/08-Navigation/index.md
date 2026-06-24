@@ -8,7 +8,7 @@ The Navigation SDK offers developers a comprehensive solution for building turn-
 The SDK also supports a location simulator for testing navigation functionalities during app development.
   
 
-- [Get Started with Navigation](../08-Navigation/02-Get%20Started%20with%20Navigation.md)
-- [Add Voice Guidance](../08-Navigation/03-Add%20Voice%20Guidance.md)
-- [Better Route Detection](../08-Navigation/04-Better%20Route%20Detection.md)
+- [Get Started with Navigation](../08-Navigation/02-Get Started with Navigation.md)
+- [Add Voice Guidance](../08-Navigation/03-Add Voice Guidance.md)
+- [Better Route Detection](../08-Navigation/04-Better Route Detection.md)
 - [Roadblocks](../08-Navigation/05-Roadblocks.md)

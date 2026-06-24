@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/08-Navigation/02-Get%20Started%20with%20Navigation/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Get Started with Navigation - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#get-started-with-navigation" class="nav-link">Get Started with Navigation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#how-navigation-works" class="nav-link">How Navigation Works</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#start-navigation" class="nav-link">Start Navigation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#start-simulation" class="nav-link">Start Simulation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#listen-for-navigation-events" class="nav-link">Listen for Navigation Events</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#use-custom-data-sources" class="nav-link">Use Custom Data Sources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#stop-navigation-or-simulation" class="nav-link">Stop Navigation or Simulation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#export-navigation-instructions" class="nav-link">Export Navigation Instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#run-navigation-in-background" class="nav-link">Run Navigation In Background</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="get-started-with-navigation">Get Started with Navigation<a class="headerlink" href="#get-started-with-navigation" title="Permanent link">&para;</a></h1>
+<p>This guide shows you how to implement turn-by-turn navigation in your Flutter app.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> <strong>What you need:</strong></p>
+<ul>
+<li>A computed route (non-navigable routes like range routes are not supported)</li>
+<li>Proper location permissions for real GPS navigation</li>
+<li>Map data downloaded for offline functionality</li>
+</ul>
+</blockquote>
+<p><strong>Key features:</strong></p>
+<ul>
+<li><strong>Turn-by-Turn Directions</strong> - Detailed route instructions based on current location</li>
+<li><strong>Live Guidance</strong> - Text and voice instructions via Text-to-Speech integration</li>
+<li><strong>Warning Alerts</strong> - Speed limits, traffic reports, and route events</li>
+<li><strong>Offline Support</strong> - Works offline with pre-downloaded map data</li>
+</ul>
+<p>The navigation system tracks your device location, speed, and heading, matching them against the route to generate accurate guidance. Instructions update dynamically as you progress.</p>
+<p>When you deviate from the route, the system notifies you and offers recalculation options. It can also adjust routes based on real-time traffic for faster alternatives.</p>
+<p>You can test navigation features using the built-in location simulator during development.</p>
+<h2 id="how-navigation-works">How Navigation Works<a class="headerlink" href="#how-navigation-works" title="Permanent link">&para;</a></h2>
+<p>The SDK offers two navigation methods:</p>
+<ul>
+<li><strong>Navigation</strong> - Uses position data from <code>PositionService</code> to guide users along the route</li>
+<li><strong>Simulation</strong> - Simulates navigation instructions without real position data for testing</li>
+</ul>
+<p>Navigation mode uses <code>PositionService</code> with:</p>
+<ul>
+<li><strong>Real GPS Data</strong> - Call <code>PositionService.setLiveDataSource</code> to use real-time GPS. Requires location permissions on Android and iOS</li>
+<li><strong>Custom Position Data</strong> - Configure a custom data source for position updates. No permissions required. See <a href="../../05-Positioning%20%26%20Sensors/05-Custom%20Positioning/">Custom positioning</a></li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Only one navigation or simulation can be active at a time, regardless of map count.</p>
+</blockquote>
+<h2 id="start-navigation">Start Navigation<a class="headerlink" href="#start-navigation" title="Permanent link">&para;</a></h2>
+<p>Once you have a computed route, start navigation with this code:
+<pre class="highlight"><code>void navigationInstructionUpdated(NavigationInstruction instruction,
+    Set&lt;NavigationInstructionUpdateEvents&gt; events) {
+  for (final event in events) {
+    switch (event) {
+      case NavigationInstructionUpdateEvents.nextTurnUpdated:
+        showSnackbar("Turn updated");
+        break;
+      case NavigationInstructionUpdateEvents.nextTurnImageUpdated:
+        showSnackbar("Turn image updated");
+        break;
+      case NavigationInstructionUpdateEvents.laneInfoUpdated:
+        showSnackbar("Lane info updated");
+        break;
+    }
+  }
+  final instructionText = instruction.nextTurnInstruction;
+  // handle instruction
+}
+
+void onDestinationReached(Landmark destination) {
+  // handle destination reached
+}
+
+void onError(GemError err) {
+  // handle error
+}
+TaskHandler? handler = NavigationService.startNavigation(route,
+    onNavigationInstruction: navigationInstructionUpdated,
+    onDestinationReached: onDestinationReached,
+    onError: onError);
+// [Optional] Set the camera to follow position.
+// Usually we want this when in navigation mode
+mapController.startFollowingPosition();
+// At any moment, we can cancel the navigation
+// NavigationService.cancelNavigation(taskHandler);</code></pre></p>
+<p>The code declares functions that handle main navigation events:</p>
+<ul>
+<li>Navigation errors (see table below)</li>
+<li>Destination reached</li>
+<li>New instructions available</li>
+</ul>
+<p>The <code>err</code> provided by the callback function can have the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GemError.success</code></td>
+<td>Successfully completed</td>
+</tr>
+<tr>
+<td><code>GemError.cancel</code></td>
+<td>Cancelled by the user</td>
+</tr>
+<tr>
+<td><code>GemError.waypointAccess</code></td>
+<td>Couldn't be found with the current preferences</td>
+</tr>
+<tr>
+<td><code>GemError.connectionRequired</code></td>
+<td>If <code>allowOnlineCalculation</code> = <code>false</code> in the routing preferences and the calculation can't be done on the client side due to missing data</td>
+</tr>
+<tr>
+<td><code>GemError.expired</code></td>
+<td>Calculation can't be done on client side due to missing necessary data and the client world map data version is no longer supported by the online routing service</td>
+</tr>
+<tr>
+<td><code>GemError.routeTooLong</code></td>
+<td>Routing was executed on the online service and the operation took too much time to complete (usually more than 1 min, depending on the server overload state)</td>
+</tr>
+<tr>
+<td><code>GemError.invalidated</code></td>
+<td>The offline map data changed ( offline map downloaded, erased, updated ) during the calculation</td>
+</tr>
+<tr>
+<td><code>GemError.noMemory</code></td>
+<td>Routing engine couldn't allocate the necessary memory for the calculation</td>
+</tr>
+</tbody>
+</table>
+<p>Navigation stops when you reach the destination or cancel it manually.</p>
+<p><img alt="Navigating on route
+" src="../image.png" /></p>
+<p>Navigating on route</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Before starting navigation, instruct the <code>mapController</code> to follow the user's position. See <a href="../../05-Positioning%20%26%20Sensors/04-Show%20Location%20on%20Map/">Show your location on the map</a> for customization options.</p>
+</blockquote>
+<p>Display the route on the map for better navigation clarity. Turn-by-turn navigation arrows disappear once passed. Learn more in <a href="../../04-Maps/05-Display%20Map/04-Display%20Routes/">Display routes</a>.</p>
+<p><img alt="Parsed route is displayed with a gray color (default)
+" src="../image-1.png" /></p>
+<p>Parsed route is displayed with a gray color (default)</p>
+<p>The traveled portion of the route changes color using the traveledInnerColor parameter of <code>RouteRenderSettings</code>.</p>
+<h2 id="start-simulation">Start Simulation<a class="headerlink" href="#start-simulation" title="Permanent link">&para;</a></h2>
+<p>Start a simulation with this code:</p>
+<p><pre class="highlight"><code>void simulationInstructionUpdated(NavigationInstruction instruction,
+    Set&lt;NavigationInstructionUpdateEvents&gt; events) {
+  for (final event in events) {
+    switch (event) {
+      case NavigationInstructionUpdateEvents.nextTurnUpdated:
+        showSnackbar("Turn updated");
+        break;
+      case NavigationInstructionUpdateEvents.nextTurnImageUpdated:
+        showSnackbar("Turn image updated");
+        break;
+      case NavigationInstructionUpdateEvents.laneInfoUpdated:
+        showSnackbar("Lane info updated");
+        break;
+    }
+  }
+  final instructionText = instruction.nextTurnInstruction;
+  // handle instruction
+}
+
+mapController.preferences.routes.add(route, true);
+
+TaskHandler? taskHandler = NavigationService.startSimulation(
+  route,
+  onNavigationInstruction: simulationInstructionUpdated,
+  speedMultiplier: 2,
+);
+// [Optional] Set the camera to follow position.
+// Usually we want this when in navigation mode
+mapController.startFollowingPosition();
+// At any moment, we can cancel the navigation
+// NavigationService.cancelNavigation(taskHandler);</code></pre>
+The <code>speedMultiplier</code> sets simulation speed (default is 1.0, matching the maximum speed limit for each road segment). Check <code>simulationMinSpeedMultiplier</code> and <code>simulationMaxSpeedMultiplier</code> for allowed values.</p>
+<h2 id="listen-for-navigation-events">Listen for Navigation Events<a class="headerlink" href="#listen-for-navigation-events" title="Permanent link">&para;</a></h2>
+<p>You can monitor various navigation events. The previous examples showed handling the <code>onNavigationInstructionUpdated</code> event.</p>
+<p>Here are additional events you can handle:
+<pre class="highlight"><code>void onNavigationInstruction(NavigationInstruction navigationInstruction,
+    Set&lt;NavigationInstructionUpdateEvents&gt; events) {}
+
+void onNavigationStarted() {}
+
+void onTextToSpeechInstruction(String text) {}
+
+void onWaypointReached(Landmark landmark) {}
+
+void onDestinationReached(Landmark landmark) {}
+
+void onRouteUpdated(Route route) {}
+
+void onBetterRouteDetected(
+    Route route, int travelTime, int delay, int timeGain) {}
+
+void onBetterRouteRejected(GemError error) {}
+
+void onBetterRouteInvalidated() {}
+
+void onSkipNextIntermediateDestinationDetected() {}
+
+void onTurnAround() {}
+
+void onRouteCalculationStarted() {}
+
+void onRouteCalculationCompleted(GemError error) {}
+
+TaskHandler? taskHandler = NavigationService.startNavigation(
+  route,
+  onNavigationInstruction: onNavigationInstruction,
+  onNavigationStarted: onNavigationStarted,
+  onTextToSpeechInstruction: onTextToSpeechInstruction,
+  onWaypointReached: onWaypointReached,
+  onDestinationReached: onDestinationReached,
+  onRouteUpdated: onRouteUpdated,
+  onBetterRouteDetected: onBetterRouteDetected,
+  onBetterRouteRejected: onBetterRouteRejected,
+  onBetterRouteInvalidated: onBetterRouteInvalidated,
+  onSkipNextIntermediateDestinationDetected: onSkipNextIntermediateDestinationDetected,
+  onTurnAround: onTurnAround,
+  onRouteCalculationStarted: onRouteCalculationStarted,
+  onRouteCalculationCompleted: onRouteCalculationCompleted,
+);</code></pre></p>
+<p>These events are described in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onNavigationInstruction(NavigationInstruction navigationInstruction, Set&lt;NavigationInstructionUpdateEvents&gt; events)</code></td>
+<td>Triggered when a new navigation instruction is available, providing details about the instruction and offers additional information regarding the reason the event was triggered (valuable for optimizing UI redraws), information accessible in the <code>NavigationInstructionUpdateEvents</code> enum.</td>
+</tr>
+<tr>
+<td><code>onNavigationStarted()</code></td>
+<td>Called when navigation begins, signaling the start of the route guidance.</td>
+</tr>
+<tr>
+<td><code>onTextToSpeechInstruction(String text)</code></td>
+<td>Provides a text string for a maneuver that can be passed to an external text-to-speech engine for audio guidance.</td>
+</tr>
+<tr>
+<td><code>onWaypointReached(Landmark landmark)</code></td>
+<td>Invoked when a waypoint in the route is reached, including details of the waypoint.</td>
+</tr>
+<tr>
+<td><code>onDestinationReached(Landmark landmark)</code></td>
+<td>Called upon reaching the final destination, with information about the destination landmark.</td>
+</tr>
+<tr>
+<td><code>onRouteUpdated(Route route)</code></td>
+<td>Fired when the current route is updated, providing the new route details.</td>
+</tr>
+<tr>
+<td><code>onBetterRouteDetected(Route route, int travelTime, int delay, int timeGain)</code></td>
+<td>Triggered when a better alternative route is detected, including the new route and details such as travel time, delays caused by traffic and time gains. See the <a href="../04-Better%20Route%20Detection/">Better route detection guide</a> for more details.</td>
+</tr>
+<tr>
+<td><code>onBetterRouteRejected(GemError error)</code></td>
+<td>Called when a check for better routes fails, with details of the rejection error. Used especially for debugging.</td>
+</tr>
+<tr>
+<td><code>onBetterRouteInvalidated()</code></td>
+<td>Indicates that a previously suggested better route is no longer valid.</td>
+</tr>
+<tr>
+<td><code>onSkipNextIntermediateDestinationDetected()</code></td>
+<td>Indicates we are getting away from the first intermediary waypoint. If this is received, it could be a good moment to call <code>NavigationService.skipNextIntermediateDestination()</code>.</td>
+</tr>
+<tr>
+<td><code>onTurnAround()</code></td>
+<td>Called when user travel direction violates a link one way restriction or after a navigation route recalculation, if the new route is heading on the opposite user travel direction.</td>
+</tr>
+<tr>
+<td><code>onRouteCalculationStarted()</code></td>
+<td>Called when a route recalculation is initiated. Also gets called at the start of the navigation process.</td>
+</tr>
+<tr>
+<td><code>onRouteCalculationCompleted(GemError error)</code></td>
+<td>Called when a route recalculation is completed, providing details about any errors that occurred related to route calculation. Also gets called at the start of the navigation process. See the <a href="../../07-Routing/02-Get%20Started%20wtih%20Routing/#calculate-routes">calculate routes guide</a> for information about the possible error values. The route is passed via the <code>onRouteUpdated</code> callback</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📝 <strong>Note:</strong> Most callbacks work for both simulation and navigation. The <code>onSkipNextIntermediateDestinationDetected</code> and <code>onTurnAround</code> methods are not called during simulation.</p>
+<p>💡 <strong>Tip:</strong> When you receive <code>onSkipNextIntermediateDestinationDetected()</code>, drop the first waypoint:
+<code>NavigationService.skipNextIntermediateDestination();</code>
+</p>
+</blockquote>
+<h2 id="use-custom-data-sources">Use Custom Data Sources<a class="headerlink" href="#use-custom-data-sources" title="Permanent link">&para;</a></h2>
+<p>Navigation typically uses GPS position, but you can also use custom-defined positions.</p>
+<p>Create a custom data source, set the position service to it, start the data source, and begin navigation as you would with live data.</p>
+<p>See the <a href="../../05-Positioning%20%26%20Sensors/05-Custom%20Positioning/">Custom positioning guide</a> for details.</p>
+<h2 id="stop-navigation-or-simulation">Stop Navigation or Simulation<a class="headerlink" href="#stop-navigation-or-simulation" title="Permanent link">&para;</a></h2>
+<p>Use the <code>cancelNavigation</code> method from <code>NavigationService</code> to stop navigation or simulation. Pass the <code>TaskHandler</code> returned by <code>startSimulation</code> or <code>startNavigation</code>. Pausing simulation is not currently supported.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> After stopping simulation, the position service reverts to the previous data source if one exists.</p>
+</blockquote>
+<h2 id="export-navigation-instructions">Export Navigation Instructions<a class="headerlink" href="#export-navigation-instructions" title="Permanent link">&para;</a></h2>
+<p>The <code>exportAs</code> method serializes the current navigation instruction into a <code>Uint8List</code> data buffer. Currently, only <code>PathFileFormat.packedGeometry</code> is supported.</p>
+<pre class="highlight"><code>final Uint8List bytes = instruction.exportAs(fileFormat: PathFileFormat.packedGeometry);</code></pre>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: <code>exportAs</code> only works with <code>PathFileFormat.packedGeometry</code>. Other values return an empty <code>Uint8List</code>.</p>
+</blockquote>
+<h2 id="run-navigation-in-background">Run Navigation In Background<a class="headerlink" href="#run-navigation-in-background" title="Permanent link">&para;</a></h2>
+<p>To use navigation while your app is in the background, additional setup is required for iOS and Android.</p>
+<p>See the <a href="../../05-Positioning%20%26%20Sensors/08-Background%20Location/">Background location guide</a> for configuration instructions.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

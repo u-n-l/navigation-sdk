@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/04-Maps/05-Display%20Map/02-Display%20Markers/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Display Markers - Navigation SDK Documentation</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#display-markers" class="nav-link">Display Markers</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#add-markers-to-the-map" class="nav-link">Add Markers To The Map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#marker-types" class="nav-link">Marker Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#customize-markers" class="nav-link">Customize Markers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#marker-clustering" class="nav-link">Marker Clustering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#add-multiple-markers-efficiently" class="nav-link">Add Multiple Markers Efficiently</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="display-markers">Display Markers<a class="headerlink" href="#display-markers" title="Permanent link">&para;</a></h1>
+<p>Learn how to add and customize markers on your map, including point, polyline, and polygon types.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The <code>Marker</code> class is the base for all marker types. It encapsulates coordinates assigned to specific parts. You can add multiple coordinates to the same marker and separate them into different parts. If no part is specified, coordinates are added to the default part (indexed as 0). Coordinates are stored in a list-like structure where you can specify their index explicitly. By default, the index is -1, meaning the coordinate appends to the end of the list.</p>
+<p><img alt="Displaying a marker with coordinates separated into different parts
+" src="../image-1.png" /></p>
+<p>Displaying a marker with coordinates separated into different parts</p>
+<p><img alt="Displaying a marker with coordinates added to same part
+" src="../image-2.png" /></p>
+<p>Displaying a marker with coordinates added to same part</p>
+<pre class="highlight"><code>// code used for displaying a marker with coordinates separated into different parts
+final marker1 = Marker()
+  ..add(Coordinates(latitude: 52.1459, longitude: 1.0613), part: 0)
+  ..add(Coordinates(latitude: 52.14569, longitude: 1.0615), part: 0)
+  ..add(Coordinates(latitude: 52.14585, longitude: 1.06186), part: 1)
+  ..add(Coordinates(latitude: 52.14611, longitude: 1.06215), part: 1);</code></pre>
+<pre class="highlight"><code>// code used for displaying a marker with coordinates added to the same part
+final marker1 = Marker()
+  ..add(Coordinates(latitude: 52.1459, longitude: 1.0613), part: 0)
+  ..add(Coordinates(latitude: 52.14569, longitude: 1.0615), part: 0)
+  ..add(Coordinates(latitude: 52.14585, longitude: 1.06186), part: 0)
+  ..add(Coordinates(latitude: 52.14611, longitude: 1.06215), part: 0);</code></pre>
+<h2 id="add-markers-to-the-map">Add Markers To The Map<a class="headerlink" href="#add-markers-to-the-map" title="Permanent link">&para;</a></h2>
+<p>To display markers on your map, add them to a <code>MarkerCollection</code>. When creating a collection, provide a name and specify the <code>MarkerType</code> enum (<code>MarkerType.point</code>, <code>MarkerType.polyline</code>, or <code>MarkerType.polygon</code>).</p>
+<p>Once populated, add the <code>MarkerCollection</code> to <code>MapViewMarkerCollections</code> through the <code>GemMapController</code>:
+<pre class="highlight"><code>mapController.preferences.markers.add(markerCollection);</code></pre></p>
+<h2 id="marker-types">Marker Types<a class="headerlink" href="#marker-types" title="Permanent link">&para;</a></h2>
+<h3 id="point-markers">Point markers<a class="headerlink" href="#point-markers" title="Permanent link">&para;</a></h3>
+<p>Point markers display as icons to highlight specific locations dynamically. The <code>MarkerCollection</code> must use <code>MarkerType.point</code>.
+<pre class="highlight"><code>final marker = Marker()
+  ..add(Coordinates(latitude: 52.1459, longitude: 1.0613), part: 0)
+  ..add(Coordinates(latitude: 52.14569, longitude: 1.0615), part: 0)
+  ..add(Coordinates(latitude: 52.14585, longitude: 1.06186), part: 1)
+  ..add(Coordinates(latitude: 52.14611, longitude: 1.06215), part: 1);
+
+final markerCollection = MarkerCollection(markerType: MarkerType.point, name: "myCollection");
+
+markerCollection.add(marker);
+
+mapController.preferences.markers.add(markerCollection);
+controller.centerOnArea(markerCollection.area);</code></pre>
+<img alt="Displaying point-type markers on map
+" src="../image-3.png" /></p>
+<p>Displaying point-type markers on map</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> By default, point markers appear as blue circles. Beyond specific zoom levels, they automatically cluster into orange circles, then red circles at higher clustering levels. See <a href="#marker-clustering">Marker clustering</a> for details.</p>
+</blockquote>
+<h3 id="polyline-markers">Polyline markers<a class="headerlink" href="#polyline-markers" title="Permanent link">&para;</a></h3>
+<p>Polyline markers display continuous lines with one or more connected segments. The <code>MarkerCollection</code> specifies <code>markerType</code> as <code>MarkerType.polyline</code>. Markers can include multiple coordinates that may belong to different parts. Coordinates within the same part connect via a polyline (red by default), while coordinates in different parts remain unconnected.</p>
+<h3 id="polygon-markers">Polygon markers<a class="headerlink" href="#polygon-markers" title="Permanent link">&para;</a></h3>
+<p>Polygon markers display closed shapes composed of straight-line segments. The <code>MarkerCollection</code> must use <code>MarkerType.polygon</code>.</p>
+<p><img alt="Polygon drawn between three coordinates
+" src="../image-4.png" /></p>
+<p>Polygon drawn between three coordinates</p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> At least three coordinates must be added to the same part to create a polygon. Otherwise, the result is an open polyline.</p>
+</blockquote>
+<p>Customize polygons using properties like <code>polygonFillColor</code> and <code>polygonTexture</code>. Since polygon edges are polylines, you can refine their appearance with <code>polylineInnerColor</code>, <code>polylineOuterColor</code>, <code>polylineTexture</code>, and more.</p>
+<h2 id="customize-markers">Customize Markers<a class="headerlink" href="#customize-markers" title="Permanent link">&para;</a></h2>
+<p>Use the <code>MarkerCollectionRenderSettings</code> class to customize marker appearance. This class provides customizable fields for all marker types:</p>
+<ul>
+<li><strong>Polyline markers</strong> - <code>polylineInnerColor</code>, <code>polylineOuterColor</code>, <code>polylineInnerSize</code>, <code>polylineOuterSize</code></li>
+<li><strong>Polygon markers</strong> - <code>polygonFillColor</code>, <code>polygonTexture</code></li>
+<li><strong>Point markers</strong> - <code>labelTextColor</code>, <code>labelTextSize</code>, <code>image</code>, <code>imageSize</code></li>
+</ul>
+<p>All dimensional sizes (<code>imageSize</code>, <code>textSize</code>) are measured in millimeters.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> Customizations unrelated to a marker's type are ignored. For example, applying <code>polylineInnerColor</code> to <code>MarkerType.point</code> has no effect.</p>
+</blockquote>
+<h3 id="configure-labeling">Configure labeling<a class="headerlink" href="#configure-labeling" title="Permanent link">&para;</a></h3>
+<p>For <code>MarkerType.point</code>, use the <code>labelingMode</code> field to control label positioning. This field is a set of <code>MarkerLabelingMode</code> enum values. Add values to enable features like positioning text above the icon or placing the icon above coordinates:</p>
+<pre class="highlight"><code>final renderSettings = MarkerCollectionRenderSettings(labelingMode: {
+      MarkerLabelingMode.itemLabelVisible,
+      MarkerLabelingMode.textAbove,
+      MarkerLabelingMode.iconBottomCenter
+    });
+
+mapController.preferences.markers.add(markerCollection, settings: renderSettings);</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> To hide marker or group names, create a <code>MarkerCollectionRenderSettings</code> with a <code>labelingMode</code> that excludes <code>MarkerLabelingMode.itemLabelVisible</code> and <code>MarkerLabelingMode.groupLabelVisible</code>. Both are enabled by default.</p>
+</blockquote>
+<p><img alt="Displaying a marker with text above icon
+" src="../image-5.png" /></p>
+<p>Displaying a marker with text above icon</p>
+<p><img alt="Displaying a marker with text centered on icon
+" src="../image-6.png" /></p>
+<p>Displaying a marker with text centered on icon</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> Assign a name to a marker using the <code>name</code> setter of the <code>Marker</code> class.</p>
+</blockquote>
+<h3 id="customize-icons">Customize icons<a class="headerlink" href="#customize-icons" title="Permanent link">&para;</a></h3>
+<p>To customize marker icons, add the collection to <code>MapViewMarkerCollections</code> and configure a <code>MarkerCollectionRenderSettings</code> with the <code>image</code> field. This controls the appearance of the entire collection.</p>
+<p><pre class="highlight"><code>import 'package:flutter/services.dart' show rootBundle;
+
+final ByteData imageData = await rootBundle.load('assets/poi83.png');
+final Uint8List pngImage = imageData.buffer.asUint8List();
+
+final renderSettings = MarkerCollectionRenderSettings(image: GemImage(image: pngImage, format: ImageFileFormat.png));</code></pre>
+<img alt="Displaying point-type markers with render settings
+" src="../image-7.png" /></p>
+<p>Displaying point-type markers with render settings</p>
+<h3 id="marker-sketches">Marker sketches<a class="headerlink" href="#marker-sketches" title="Permanent link">&para;</a></h3>
+<p>To customize each marker individually, use the <code>MarkerSketches</code> class, which extends <code>MarkerCollection</code>. This lets you define unique styles and properties for every marker. Obtain a <code>MarkerSketches</code> object using the <code>MapViewMarkerCollections.getSketches()</code> method:
+<pre class="highlight"><code>final sketches = ctrl.preferences.markers.getSketches(MarkerType.point);</code></pre></p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> There are only three <code>MarkerSketches</code> collections—one for each marker type: <code>MarkerType.point</code>, <code>MarkerType.polyline</code>, and <code>MarkerType.polygon</code>. Each collection is a singleton.</p>
+</blockquote>
+<p>Adding markers to <code>MarkerSketches</code> is similar to adding them to <code>MarkerCollection</code>, but you can specify individual <code>MarkerRenderSettings</code> and index for each marker:
+<pre class="highlight"><code>final marker1 = Marker()..add(Coordinates(latitude: 39.76741, longitude: -46.8962));
+marker1.name = "HelloMarker";
+
+sketches.addMarker(marker1,
+    settings: MarkerRenderSettings(
+    labelTextColor: Colors.red,
+    labelTextSize: 3.0,
+    image: GemImage(imageId: GemIcon.toll.id)),
+      index: 0);</code></pre>
+<img alt="Displaying a marker using MarkerSketches
+" src="../image-8.png" /></p>
+<p>Displaying a marker using MarkerSketches</p>
+<p>Change a marker's appearance after adding it using the <code>setRenderSettings</code> method:</p>
+<p><pre class="highlight"><code>sketches.setRenderSettings(
+    0, // marker index
+    MarkerRenderSettings(
+      labelTextColor: Colors.red,
+      labelTextSize: 3.0,
+      image: GemImage(imageId: GemIcon.toll.id))
+);</code></pre>
+Obtain the current render settings using <code>getRenderSettings</code> with the marker index:
+<pre class="highlight"><code>final returnedSettings = sketches.getRenderSettings(0);</code></pre></p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Calling <code>getRenderSettings</code> with an invalid index returns a <code>MarkerRenderSettings</code> object with default values.</p>
+</blockquote>
+<p>The <code>MarkerSketches</code> collection doesn't need to be added to <code>MapViewMarkerCollections</code> — it's already part of it. Changes to <code>MarkerSketches</code> automatically reflect on the map.</p>
+<h2 id="marker-clustering">Marker Clustering<a class="headerlink" href="#marker-clustering" title="Permanent link">&para;</a></h2>
+<p>Clustering is enabled by default. Beyond a certain zoom level, markers automatically cluster into groups. Customize group images with <code>lowDensityPointsGroupImage</code>, <code>mediumDensityPointsGroupImage</code>, and <code>highDensityPointsGroupImage</code> fields in <code>MarkerCollectionRenderSettings</code>. Set the number of markers per group using <code>lowDensityPointsGroupMaxCount</code> and <code>mediumDensityPointsGroupMaxCount</code>.</p>
+<pre class="highlight"><code>// code for markers not grouping at zoom level 70
+final renderSettings = MarkerCollectionRenderSettings();
+
+mapController.preferences.markers.add(markerCollection, settings: renderSettings);
+
+mapController.centerOnCoordinates(Coordinates(latitude: 52.14611, longitude: 1.06215), zoomLevel: 70);</code></pre>
+<p><img alt="Markers not clustering
+" src="../image-9.png" /></p>
+<p>Markers not clustering</p>
+<p><pre class="highlight"><code>// code for markers grouping at zoom level 70
+final renderSettings = MarkerCollectionRenderSettings(labelTextSize: 3.0, labelingMode: labelingMode, pointsGroupingZoomLevel: 70);
+
+mapController.preferences.markers.add(markerCollection, settings: renderSettings);
+
+mapController.centerOnCoordinates(Coordinates(latitude: 52.14611, longitude: 1.06215), zoomLevel: 70);</code></pre>
+<img alt="Clustered markers
+" src="../image-10.png" /></p>
+<p>Clustered markers</p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> You can disable clustering by setting <code>pointGroupingZoomLevel</code> to 0. However, this may significantly impact performance for large numbers of markers, as rendering each individual marker increases GPU resource usage.</p>
+</blockquote>
+<h3 id="group-head-markers">Group head markers<a class="headerlink" href="#group-head-markers" title="Permanent link">&para;</a></h3>
+<p>Marker clusters are represented by the first marker in the collection as the <strong>group head</strong>. Retrieve the group head using the <code>getPointsGroupHead</code> method:</p>
+<pre class="highlight"><code>final markerCollection = MarkerCollection(
+    markerType: MarkerType.point, name: "Collection1");
+
+final marker1 = Marker()
+  ..add(Coordinates(latitude: 39.76717, longitude: -46.89583));
+marker1.name = "NiceName";
+final marker2 = Marker()
+  ..add(Coordinates(latitude: 39.767138, longitude: -46.895640));
+marker2.name = "NiceName2";
+final marker3 = Marker()
+  ..add(Coordinates(latitude: 39.767145, longitude: -46.895690));
+marker3.name = "NiceName3";
+
+markerCollection.add(marker1);
+markerCollection.add(marker2);
+markerCollection.add(marker3);
+
+ctrl.preferences.markers.add(markerCollection,
+    settings:
+        MarkerCollectionRenderSettings(buildPointsGroupConfig: true));
+
+// This centering triggers marker grouping
+ctrl.centerOnCoordinates(
+    Coordinates(latitude: 39.76717, longitude: -46.89583),
+    zoomLevel: 50);
+
+// Wait for the center process to finish
+await Future.delayed(Duration(milliseconds: 250));
+
+final marker = markerCollection.getPointsGroupHead(marker2.id); // Returns marker1</code></pre>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Marker grouping depends on tile loading at the zoom level. Wait for tiles to load; otherwise, <code>getPointsGroupHead</code> returns a reference to the queried marker (not yet grouped), and <code>getPointsGroupComponents</code> returns an empty list.</p>
+<p>🚨 <strong>Alert</strong>: This behavior occurs only when <code>MarkerCollection</code> is added to <code>MapViewMarkerCollections</code> using <code>MarkerCollectionRenderSettings(buildPointsGroupConfig: true)</code> and markers are <code>grouped</code> at the zoom level. Otherwise, the method returns a direct reference to the queried marker.</p>
+</blockquote>
+<p>Retrieve all markers in a group using <code>getPointsGroupComponents</code> with the group head marker ID (the <code>groupId</code>). This returns all markers except the group head:
+<pre class="highlight"><code>final marker = markerCollection.getPointsGroupHead(marker2.id);
+
+final groupMarkers =
+  markerCollection.getPointsGroupComponents(marker.id);</code></pre></p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Invoking <code>getPointsGroupComponents</code> without the group head marker ID returns an empty list.</p>
+</blockquote>
+<h2 id="add-multiple-markers-efficiently">Add Multiple Markers Efficiently<a class="headerlink" href="#add-multiple-markers-efficiently" title="Permanent link">&para;</a></h2>
+<p>For adding many markers simultaneously, use the addList method of <code>MapViewMarkerCollection</code>. This method accepts a list of <code>MarkerWithRenderSettings</code> objects (combining <code>MarkerJson</code> and <code>MarkerRenderSettings</code>):</p>
+<pre class="highlight"><code>List&lt;MarkerWithRenderSettings&gt; markers = [];
+
+for (int i = 0; i &lt; 8000; ++i) {
+  // Generate random coordinates to display some markers.
+  double randomLat = minLat + random.nextDouble() * (maxLat - minLat);
+  double randomLon = minLon + random.nextDouble() * (maxLon - minLon);
+
+  final marker = MarkerJson(
+    coords: [Coordinates(latitude: randomLat, longitude: randomLon)],
+    name: "POI $i",
+  );
+
+  // Choose a random POI icon for the marker and set the label size.
+  final renderSettings = MarkerRenderSettings(
+      image: GemImage(
+          image: listPngs[random.nextInt(listPngs.length)],
+          format: ImageFileFormat.png),
+      labelTextSize: 2.0);
+
+  // Create a MarkerWithRenderSettings object.
+  final markerWithRenderSettings =
+      MarkerWithRenderSettings(marker, renderSettings);
+
+  // Add the marker to the list of markers.
+  markers.add(markerWithRenderSettings);
+}
+
+// Create the settings for the collections.
+final settings = MarkerCollectionRenderSettings();
+
+// Set the label size.
+settings.labelGroupTextSize = 2;
+
+// The zoom level at which the markers will be grouped together.
+settings.pointsGroupingZoomLevel = 35;
+
+// Set the image of the collection.
+settings.image = GemImage(image: imageBytes, format: ImageFileFormat.png);
+// To delete the list you can use this method: mapController.preferences.markers.clear();
+
+// Add the markers and the settings on the map.
+mapController.preferences.markers.addList(list: markers, settings: settings, name: "Markers");</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

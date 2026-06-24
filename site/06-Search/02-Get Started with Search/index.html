@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/06-Search/02-Get%20Started%20with%20Search/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Getting Started with Search - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#getting-started-with-search" class="nav-link">Getting Started with Search</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#text-search" class="nav-link">Text Search</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#specify-preferences" class="nav-link">Specify Preferences</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#search-for-location" class="nav-link">Search for Location</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#show-results-on-the-map" class="nav-link">Show Results On the Map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="getting-started-with-search">Getting Started with Search<a class="headerlink" href="#getting-started-with-search" title="Permanent link">&para;</a></h1>
+<p>The Navigation SKD provides flexible search functionality for finding locations using text queries and coordinates:</p>
+<ul>
+<li><strong>Text Search</strong> — perform searches using a text query and geographic coordinates to prioritize results within a specific area</li>
+<li><strong>Search Preferences</strong> — customize search behavior using options such as fuzzy results, distance limits, or re**sult count</li>
+<li>Category-Based Search** — filter search results by predefined categories, such as gas stations or parking areas</li>
+<li><strong>Proximity Search</strong> — retrieve all nearby landmarks without specifying a text query</li>
+</ul>
+<h2 id="text-search">Text Search<a class="headerlink" href="#text-search" title="Permanent link">&para;</a></h2>
+<p>Search by providing text and coordinates. The coordinates serve as a hint, prioritizing points of interest (POIs) within the indicated area.</p>
+<pre class="highlight"><code>const text = "Paris";
+final coords = Coordinates(latitude: 45, longitude: 10);
+final preferences = SearchPreferences(
+  maxMatches: 40,
+  allowFuzzyResults: true,
+);
+
+TaskHandler? taskHandler = SearchService.search(
+  text,
+  coords,
+  preferences: preferences,
+  (err, results) async {
+    // If there is an error or there aren't any results, the method will return an empty list.
+    if (err == GemError.success) {
+      if (results.isEmpty) {
+        showSnackbar("No results");
+      } else {
+        showSnackbar("Number of results: ${results.length}");
+      }
+    } else {
+      showSnackbar("Error: $err");
+    }
+  },
+);</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> The <code>SearchService.search</code> method returns <code>null</code> only when the geographic search fails to initialize. In such cases, calling <code>SearchService.cancelSearch(taskHandler)</code> is not possible. Error details are delivered through the <code>onComplete</code> function of the <code>SearchService.search</code> method.</p>
+</blockquote>
+<p>The <code>err</code> provided by the callback function can have the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GemError.success</code></td>
+<td>Successfully completed</td>
+</tr>
+<tr>
+<td><code>GemError.cancel</code></td>
+<td>Cancelled by the user</td>
+</tr>
+<tr>
+<td><code>GemError.noMemory</code></td>
+<td>Search engine couldn't allocate the necessary memory for the operation</td>
+</tr>
+<tr>
+<td><code>GemError.operationTimeout</code></td>
+<td>Search was executed on the online service and the operation took too much time to complete (usually more than 1 min, depending on the server overload state)</td>
+</tr>
+<tr>
+<td><code>GemError.networkTimeout</code></td>
+<td>Can't establish the connection or the server didn't respond on time</td>
+</tr>
+<tr>
+<td><code>GemError.networkFailed</code></td>
+<td>Search was executed on the online service and the operation failed due to bad network connection</td>
+</tr>
+</tbody>
+</table>
+<h2 id="specify-preferences">Specify Preferences<a class="headerlink" href="#specify-preferences" title="Permanent link">&para;</a></h2>
+<p>Before searching, specify <code>SearchPreferences</code> to customize search behavior:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>allowFuzzyResults</td>
+<td>bool</td>
+<td>true</td>
+<td>Allows fuzzy search results, enabling approximate matches for queries.</td>
+</tr>
+<tr>
+<td>estimateMissingHouseNumbers</td>
+<td>bool</td>
+<td>true</td>
+<td>Enables estimation of missing house numbers in address searches.</td>
+</tr>
+<tr>
+<td>exactMatch</td>
+<td>bool</td>
+<td>false</td>
+<td>Restricts results to only those that exactly match the query.</td>
+</tr>
+<tr>
+<td>maxMatches</td>
+<td>int</td>
+<td>40</td>
+<td>Specifies the maximum number of search results to return.</td>
+</tr>
+<tr>
+<td>searchAddresses</td>
+<td>bool</td>
+<td>true</td>
+<td>Includes addresses in the search results. This option also includes roads.</td>
+</tr>
+<tr>
+<td>searchMapPOIs</td>
+<td>bool</td>
+<td>true</td>
+<td>Includes points of interest (POIs) on the map in the search results.</td>
+</tr>
+<tr>
+<td>searchOnlyOnboard</td>
+<td>bool</td>
+<td>false</td>
+<td>Limits the search to onboard (offline) data only.</td>
+</tr>
+<tr>
+<td>thresholdDistance</td>
+<td>int</td>
+<td>2147483647</td>
+<td>Defines the maximum distance (in meters) for search results from the query location.</td>
+</tr>
+<tr>
+<td>easyAccessOnlyResults</td>
+<td>bool</td>
+<td>false</td>
+<td>Restricts results to locations that are easily accessible.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="search-by-category">Search by Category<a class="headerlink" href="#search-by-category" title="Permanent link">&para;</a></h3>
+<p>Filter search results based on categories.</p>
+<p>Use the <code>GenericCategories.getCategory</code> static method to get a specific category by its identifier. The predefined category IDs are available in the <code>GenericCategoriesId</code> enum.</p>
+<p>The following example performs a search, limiting the results to the "Food &amp; Drink" and "Entertainment" categories.</p>
+<pre class="highlight"><code>final coords = Coordinates(latitude: 45, longitude: 10);
+final preferences = SearchPreferences(
+  maxMatches: 40,
+  allowFuzzyResults: true,
+  // Without the following line, other unrelated results that represent addresses may also be returned
+  searchAddresses: false,
+  // Without the following line, other unrelated results that represent POIs may also be returned
+  searchMapPOIs: false,
+);
+
+final LandmarkCategory foodAndDrinkCategory = GenericCategories.getCategory(GenericCategoriesId.foodAndDrink.id)!;
+final LandmarkCategory entertainmentCategory = GenericCategories.getCategory(GenericCategoriesId.entertainment.id)!;
+
+final GemError error1 =
+    preferences.landmarks.addStoreCategoryId(
+  foodAndDrinkCategory.landmarkStoreId,
+  foodAndDrinkCategory.id,
+);
+final GemError error2 =
+    preferences.landmarks.addStoreCategoryId(
+  entertainmentCategory.landmarkStoreId,
+  entertainmentCategory.id,
+);
+
+TaskHandler? taskHandler = SearchService.searchAroundPosition(
+  coords,
+  preferences: preferences,
+  (err, results) async {
+    if (err == GemError.success) {
+      if (results.isEmpty) {
+        showSnackbar("No results");
+      } else {
+        showSnackbar("Number of results: ${results.length}");
+      }
+    } else {
+      showSnackbar("Error: $err");
+    }
+  },
+);</code></pre>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Set <code>searchAddresses</code> and <code>searchMapPOIs</code> to false to filter non-relevant results.</p>
+</blockquote>
+<p>The complete list of predefined categories is available via the static <code>GenericCategories.categories</code> getter, which returns a <code>List&lt;LandmarkCategory&gt;</code> collection.</p>
+<p>The <code>addStoreCategoryId</code> method returns a <code>GemError</code> value:</p>
+<ul>
+<li><code>GemError.success</code> — the category was added successfully</li>
+<li><code>GemError.notFound</code> — the specified category or landmark store does not exist</li>
+</ul>
+<p>Use the modified <code>SearchPreferences</code> with custom categories in all search methods.</p>
+<h3 id="search-on-custom-landmarks">Search on Custom Landmarks<a class="headerlink" href="#search-on-custom-landmarks" title="Permanent link">&para;</a></h3>
+<p>By default, all search methods operate on the landmarks provided on the map. Enable search functionality for custom landmarks by creating a landmark store containing the desired landmarks and adding it to the search preferences.</p>
+<pre class="highlight"><code>// Create the landmarks to be added
+Landmark landmark1 = Landmark()
+  ..coordinates = Coordinates(latitude: 25, longitude: 30)
+  ..name = "My Custom Landmark1";
+
+Landmark landmark2 = Landmark()
+  ..coordinates = Coordinates(latitude: 25.005, longitude: 30.005)
+  ..name = "My Custom Landmark2";
+
+// Create a store and add the landmarks
+LandmarkStore store = LandmarkStoreService.createLandmarkStore('LandmarksToBeSearched');
+store.addLandmark(landmark1);
+store.addLandmark(landmark2);
+
+// Add the store to the search preferences
+SearchPreferences preferences = SearchPreferences();
+preferences.landmarks.add(store);
+
+// If no results from the map POIs should be returned then searchMapPOIs should be set to false
+preferences.searchMapPOIs = false;
+
+// If no results from the addresses should be returned then searchAddresses should be set to false
+preferences.searchAddresses = false;
+
+// Search for landmarks
+SearchService.search(
+  "My Custom Landmark",
+  Coordinates(latitude: 25.003, longitude: 30.003),
+  preferences: preferences,
+  (err, results) {
+    if (err == GemError.success) {
+      if (results.isEmpty) {
+        showSnackbar("No results");
+      } else {
+        showSnackbar("Number of results: ${results.length}");
+      }
+    } else {
+      showSnackbar("Error: $err");
+    }
+  },
+);</code></pre>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The landmark store retains the landmarks added to it across sessions until the app is uninstalled. A previously created landmark store with the same name might already exist in persistent storage and may contain pre-existing landmarks. For more details, refer to the <a href="../../03-Core/04-Landmarks/#landmark-stores">documentation on LandmarkStore</a>.</p>
+<p>💡 <strong>Tip:</strong> Set <code>searchAddresses</code> and <code>searchMapPOIs</code> to false to filter non-relevant results.</p>
+</blockquote>
+<h3 id="search-on-overlays">Search on Overlays<a class="headerlink" href="#search-on-overlays" title="Permanent link">&para;</a></h3>
+<p>Perform searches on overlays by specifying the overlay ID. Consult the <a href="../../03-Core/06-Overlays/">Overlay documentation</a> for more details about proper usage.</p>
+<p>The example below demonstrates how to search within items from the safety overlay. Custom overlays can also be used if they are activated in the applied map style:</p>
+<p><pre class="highlight"><code>// Get the overlay id of safety
+int overlayId = CommonOverlayId.safety.id;
+
+// Add the overlay to the search preferences
+SearchPreferences preferences = SearchPreferences();
+preferences.overlays.add(overlayId);
+
+// We can set searchMapPOIs and searchAddresses to false if no results from the map POIs and addresses should be returned
+preferences.searchMapPOIs = false;
+preferences.searchAddresses = false;
+
+TaskHandler? taskHandler = SearchService.search(
+  "Speed",
+  Coordinates(latitude: 48.76930, longitude:  2.34483),
+  preferences: preferences,
+  (err, results) {
+    if (err == GemError.success) {
+      if (results.isEmpty) {
+        showSnackbar("No results");
+      } else {
+        mapController.centerOnCoordinates(results.first.coordinates);
+        showSnackbar("Number of results: ${results.length}");
+      }
+    } else {
+      showSnackbar("Error: $err");
+    }
+  },
+);</code></pre>
+To convert the returned <code>Landmark</code> to an <code>OverlayItem</code>, use the <code>overlayItem</code> getter of the <code>Landmark</code> class. This method returns the associated <code>OverlayItem</code> if available; otherwise, it returns <code>null</code>.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Set <code>searchAddresses</code> and <code>searchMapPOIs</code> to <code>false</code> to filter non-relevant results.</p>
+<p>🚨 <strong>Alert</strong>: Overlay search requires a <code>GemMap</code> with a style that includes the overlay being searched. If the map is not initialized or the overlay is not part of the current map style, the <code>preferences.overlays.add</code> operation will fail with a <code>GemError.notFound</code> error, and the search will return <code>GemError.invalidInput</code> with no results. The default map style includes all common overlays.</p>
+</blockquote>
+<h2 id="search-for-location">Search for Location<a class="headerlink" href="#search-for-location" title="Permanent link">&para;</a></h2>
+<p>Without specifying text, all landmarks in the closest proximity are returned, limited to <code>maxMatches</code>.</p>
+<p><pre class="highlight"><code>final coords = Coordinates(latitude: 45, longitude: 10);
+final preferences = SearchPreferences(
+  maxMatches: 40,
+  allowFuzzyResults: true,
+);
+
+TaskHandler? taskHandler = SearchService.searchAroundPosition(
+  coords,
+  preferences: preferences,
+  (err, results) async {
+    // If there is an error or there aren't any results, the method will return an empty list.
+    if (err == GemError.success) {
+      if (results.isEmpty) {
+        showSnackbar("No results");
+      } else {
+        showSnackbar("Number of results: ${results.length}");
+      }
+    } else {
+      showSnackbar("Error: $err");
+    }
+  },
+);</code></pre>
+To limit the search to a specific area, provide a <code>GeographicArea</code> such as a <code>RectangleGeographicArea</code> instance to the optional <code>locationHint</code> parameter.</p>
+<pre class="highlight"><code>final coords = Coordinates(latitude: 41.68905, longitude: -72.64296);
+
+final searchArea = RectangleGeographicArea(
+    topLeft: Coordinates(latitude: 41.98846, longitude: -73.12412),
+    bottomRight: Coordinates(latitude: 41.37716, longitude: -72.02342));
+
+SearchService.search('N',
+  coords,
+  (err, result) {
+    successfulSearchCompleter.complete((err, result));
+  },
+  preferences: SearchPreferences(maxMatches: 400),
+  locationHint: searchArea,
+);</code></pre>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The reference coordinates used for search must be located within the <code>GeographicArea</code> provided to the <code>locationHint</code> parameter. Otherwise, the search will return an empty list.</p>
+</blockquote>
+<h2 id="show-results-on-the-map">Show Results On the Map<a class="headerlink" href="#show-results-on-the-map" title="Permanent link">&para;</a></h2>
+<p>In most use cases, the landmarks found by search are already present on the map. If the search was made on custom landmark stores, see the <a href="../../04-Maps/05-Display%20Map/01-Display%20Landmarks/#add-custom-landmarks">add map landmarks</a> section for adding landmarks to the map.</p>
+<p>To zoom to a landmark found via search, use <code>GemMapController.centerOnCoordinates</code> on the coordinates of the landmark found (<code>Landmark.coordinates</code>). See the documentation for <a href="../../04-Maps/03-Adjust%20Map%20View/#adjust-the-map-view">map centering</a> for more information.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

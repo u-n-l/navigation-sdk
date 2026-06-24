@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/03-Core/02-Base%20Entities/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Base Entities - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#base-entities" class="nav-link">Base Entities</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#coordinates" class="nav-link">Coordinates</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#path" class="nav-link">Path</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="base-entities">Base Entities<a class="headerlink" href="#base-entities" title="Permanent link">&para;</a></h1>
+<p>This page covers the fundamental building blocks of the SDK: coordinates, paths, and geographic areas.</p>
+<h2 id="coordinates">Coordinates<a class="headerlink" href="#coordinates" title="Permanent link">&para;</a></h2>
+<p>The <code>Coordinates</code> class represents geographic positions with an optional altitude. The SDK uses the <a href="link://https://en.wikipedia.org/wiki/World_Geodetic_System">WGS</a> coordinates standard.</p>
+<p><strong>Key components:</strong></p>
+<ul>
+<li><strong>Latitude</strong> - North-south position. Range: -90.0 to +90.0</li>
+<li><strong>Longitude</strong> - East-west position. Range: -180.0 to +180.0</li>
+<li><strong>Altitude</strong> - Height in meters (optional). Can be positive or negative</li>
+</ul>
+<h3 id="create-coordinates">Create coordinates<a class="headerlink" href="#create-coordinates" title="Permanent link">&para;</a></h3>
+<p>Create a <code>Coordinates</code> instance using latitude and longitude:</p>
+<pre class="highlight"><code>final coordinates = Coordinates(latitude: 48.858844, longitude: 2.294351); // Eiffel Tower</code></pre>
+<p>Alternatively, use the <code>fromLatLong</code> constructor:
+<pre class="highlight"><code>final coordinates = Coordinates.fromLatLong(48.858844, 2.294351);</code></pre></p>
+<h3 id="calculate-distance">Calculate distance<a class="headerlink" href="#calculate-distance" title="Permanent link">&para;</a></h3>
+<p>The <code>distance</code> method calculates the distance between two coordinates in meters. It accounts for altitude if both coordinates have this value.</p>
+<p>This method computes the Haversine distance (the shortest path over the Earth's surface).</p>
+<p><pre class="highlight"><code>final coordinates1 = Coordinates(latitude: 48.858844, longitude: 2.294351);
+final coordinates2 = Coordinates(latitude: 48.854520, longitude: 2.299751);
+
+double distance = coordinates1.distance(coordinates2);</code></pre>
+The result represents the great-circle distance between the two geographic points and is different from the route distance that would be traveled along roads.</p>
+<h3 id="apply-offset">Apply offset<a class="headerlink" href="#apply-offset" title="Permanent link">&para;</a></h3>
+<p>Create new coordinates from existing ones by applying a meter offset. In this example, <code>coordinates2</code> is shifted 5 meters north and 3 meters east from the original:</p>
+<pre class="highlight"><code>final coordinates1 = Coordinates(latitude: 48.858844, longitude: 2.294351);
+final coordinates2 = coordinates1.copyWithMetersOffset(metersLatitude: 5, metersLongitude: 3);</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> The <code>copyWithMetersOffset</code> and <code>distance</code> methods may exhibit slight inaccuracies.</p>
+<p>🚨 <strong>Alert</strong>: Coordinates should not be compared using direct equality checks, as minor variations in floating-point precision can lead to inconsistent results.</p>
+<p>For example, (48.858395, 2.294469) may differ slightly from a stored value like (48.858394583109785, 2.294469162581987) due to rounding or internal representation differences. These discrepancies are inherent to floating-point arithmetic and do not indicate a meaningful positional difference.</p>
+<p>Use a small numerical tolerance (epsilon) for reliable comparisons rather than strict equality.
+</p>
+</blockquote>
+<h2 id="path">Path<a class="headerlink" href="#path" title="Permanent link">&para;</a></h2>
+<p>A <code>Path</code> represents a sequence of connected coordinates.</p>
+<p>The <code>Path</code> class is a core component for representing and managing paths on a map. It offers functionality for path creation, manipulation, and data export, allowing users to define paths and perform various operations programmatically.</p>
+<p>Key Features</p>
+<ul>
+<li><strong>Path Creation &amp; Management</strong></li>
+<li>Paths can be created from data buffers in multiple formats (e.g., GPX, KML, GeoJSON).</li>
+<li>Supports cloning paths in reverse order or between specific coordinates.</li>
+<li><strong>Coordinates Handling</strong></li>
+<li>Provides read-only access to internal coordinates lists.</li>
+<li>Retrieves a coordinates based on a percentage along the path.</li>
+<li><strong>Path Properties</strong></li>
+<li>name: Manage the name of the path.</li>
+<li>area: Retrieve the bounding rectangle of the path.</li>
+<li>wayPoints: Access waypoints along the path.</li>
+<li><strong>Export Functionality</strong></li>
+<li>Export path data in various formats such as GPX, KML, and GeoJSON.</li>
+</ul>
+<p>To create a Path using coordinates:
+<pre class="highlight"><code>final coords = [
+    Coordinates(latitude: 40.786, longitude: -74.202),
+    Coordinates(latitude: 40.690, longitude: -74.209),
+    Coordinates(latitude: 40.695, longitude: -73.814),
+    Coordinates(latitude: 40.782, longitude: -73.710),
+];
+
+Path gemPath = Path.fromCoordinates(coords);</code></pre></p>
+<h3 id="create-from-data">Create from data<a class="headerlink" href="#create-from-data" title="Permanent link">&para;</a></h3>
+<p>Create a <code>Path</code> from GPX data:
+<pre class="highlight"><code>Uint8List data = ...; // Path data in GPX format
+Path path = Path.create(data: data, format: PathFileFormat.gpx);</code></pre></p>
+<h3 id="export-path-data">Export path data<a class="headerlink" href="#export-path-data" title="Permanent link">&para;</a></h3>
+<p>Export a <code>Path</code> to a specific format (like GeoJSON):
+<pre class="highlight"><code>Uint8List exportedData = path.exportAs(PathFileFormat.geoJson);</code></pre>
+The <code>exportAs</code> method returns a <code>String</code> containing the full path data in the requested format. This makes it easy to store the path as a file or share it with other applications that support GPX, KML, NMEA, or GeoJSON.
+<pre class="highlight"><code>final dataGpx = path.exportAs(PathFileFormat.gpx);
+// You now have the full GPX as a string</code></pre></p>
+<h3 id="geographic-areas">Geographic areas<a class="headerlink" href="#geographic-areas" title="Permanent link">&para;</a></h3>
+<p>Geographic areas represent specific regions for centering, search restrictions, geofencing, and more. Multiple entities can return a bounding box as a geographic area.</p>
+<p><strong>Available types:</strong></p>
+<ul>
+<li><strong>Rectangle Geographic Area</strong> - Rectangular area with sides parallel to longitude and latitude lines</li>
+<li><strong>Circle Geographic Area</strong> - Area around a center point with a specified radius</li>
+<li><strong>Polygon Geographic Area</strong> - Complex area with high precision for detailed boundaries
+At the foundation of the geographic area hierarchy is the abstract <code>GeographicArea</code> class, which defines the following operations:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method / Field</th>
+<th>Description</th>
+<th>Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>boundingBox</code></td>
+<td>Returns the bounding box of the geographic area (the smallest rectangle that encloses the area).</td>
+<td><code>RectangleGeographicArea</code></td>
+</tr>
+<tr>
+<td><code>convert</code></td>
+<td>Converts the geographic area to another type, if possible.</td>
+<td><code>GeographicArea?</code></td>
+</tr>
+<tr>
+<td><code>centerPoint</code></td>
+<td>Returns the geographic center of the area.</td>
+<td><code>Coordinates</code></td>
+</tr>
+<tr>
+<td><code>containsCoordinates</code></td>
+<td>Checks whether the specified point is contained within the geographic area.</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td><code>isDefault</code></td>
+<td>Checks whether the geographic area has default values.</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Returns the specific type of the geographic area.</td>
+<td><code>GeographicAreaType</code></td>
+</tr>
+<tr>
+<td><code>reset</code></td>
+<td>Resets the geographic area to its default state.</td>
+<td><code>void</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="rectangle-geographic-area">Rectangle geographic area<a class="headerlink" href="#rectangle-geographic-area" title="Permanent link">&para;</a></h3>
+<p>The <code>RectangleGeographicArea</code> class represents a rectangular area defined by top-left and bottom-right corners. It supports operations for intersections, containment, and unions.</p>
+<p>Create a <code>RectangleGeographicArea</code> by providing the corner coordinates:</p>
+<pre class="highlight"><code>final topLeftCoords = Coordinates(latitude: 44.93343, longitude: 25.09946);
+final bottomRightCoords = Coordinates(latitude: 44.93324, longitude: 25.09987);
+final area = RectangleGeographicArea(topLeft: topLeftCoords, bottomRight: bottomRightCoords);</code></pre>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: A valid <code>RectangleGeographicArea</code> requires the latitude of <code>topLeft</code> to be greater than <code>bottomRight</code>, and the longitude of <code>topLeft</code> to be smaller than <code>bottomRight</code>.</p>
+</blockquote>
+<h3 id="circle-geographic-area">Circle geographic area<a class="headerlink" href="#circle-geographic-area" title="Permanent link">&para;</a></h3>
+<p>The <code>CircleGeographicArea</code> class represents a circular area defined by a center point and radius. It supports containment checks and bounding box calculations.</p>
+<p>Create a <code>CircleGeographicArea</code> by providing the center point and radius in meters:
+<pre class="highlight"><code>final center = Coordinates(latitude: 40.748817, longitude: -73.985428);
+
+final circle = CircleGeographicArea(
+  radius: 500, 
+  centerCoordinates: center,
+);</code></pre></p>
+<h3 id="polygon-geographic-area">Polygon geographic area<a class="headerlink" href="#polygon-geographic-area" title="Permanent link">&para;</a></h3>
+<p>The <code>PolygonGeographicArea</code> class represents complex custom areas with high precision.</p>
+<p>Create a polygon by providing a list of coordinates:
+<pre class="highlight"><code>List&lt;Coordinates&gt; coordinates = [
+    Coordinates(latitude: 10, longitude: 0),
+    Coordinates(latitude: 10, longitude: 10),
+    Coordinates(latitude: 0, longitude: 10),
+    Coordinates(latitude: 0, longitude: 0),
+];
+
+PolygonGeographicArea polygonGeographicArea = PolygonGeographicArea(coordinates: coordinates);</code></pre></p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: A valid <code>PolygonGeographicArea</code> requires at least 3 coordinates. Avoid overlapping and intersecting edges.</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

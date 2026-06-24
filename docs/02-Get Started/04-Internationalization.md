@@ -28,7 +28,7 @@ The TTS (text-to-speech) instruction language is managed separately from the SDK
 
 > 🚨 **Alert**: The SDK language and TTS language are not automatically synchronized. Keep these settings in sync based on your use case.
 
-See the [voice guidance guide](../08-Navigation/03-Add%20Voice%20Guidance.md#add-voice-guidance) for more details.
+See the [voice guidance guide](../08-Navigation/03-Add Voice Guidance.md#add-voice-guidance) for more details.
 
 ## Configure Map Language
 Set the map language to display location names consistently worldwide or in their native language.
@@ -87,7 +87,7 @@ Most members returning a `DateTime` value use the UTC time zone.
 > 
 > These exceptions are documented in the API reference and user guide.
 
-> 📝 **Note:** Use the `TimezoneService` class to convert between UTC and local time zones. See the [TimezoneService guide](../14-Timezone%20Service.md#timezone-service) for more details.
+> 📝 **Note:** Use the `TimezoneService` class to convert between UTC and local time zones. See the [TimezoneService guide](../14-Timezone Service.md#timezone-service) for more details.
 
 ## Configure Number Separators
 Format numbers using custom characters for decimal and digit group separators. Configure these settings via the `SdkSettings` class.

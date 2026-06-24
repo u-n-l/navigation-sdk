@@ -69,7 +69,7 @@ The fields defined in `FollowPositionPreferences` take effect only when the came
 | isTrackObjectFollowingMapRotation | bool | Specifies if the track object should follow the map rotation |
 
 
-Refer to the [adjust map guide](/04-Maps/03-Adjust%20Map%20View.md) for more information about the `viewAngle`, `zoomLevel`, and `cameraFocus` fields.
+Refer to the [adjust map guide](/04-Maps/03-Adjust Map View.md) for more information about the `viewAngle`, `zoomLevel`, and `cameraFocus` fields.
 
 If no zoom level is set, a default value is used.
 

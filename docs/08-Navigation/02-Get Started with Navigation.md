@@ -29,7 +29,7 @@ The SDK offers two navigation methods:
 Navigation mode uses `PositionService` with:
 
 - **Real GPS Data** - Call `PositionService.setLiveDataSource` to use real-time GPS. Requires location permissions on Android and iOS
-- **Custom Position Data** - Configure a custom data source for position updates. No permissions required. See [Custom positioning](../05-Positioning%20&%20Sensors/05-Custom%20Positioning.md)
+- **Custom Position Data** - Configure a custom data source for position updates. No permissions required. See [Custom positioning](../05-Positioning & Sensors/05-Custom Positioning.md)
 
 > ⚠️ **Attention:** Only one navigation or simulation can be active at a time, regardless of map count.
 
@@ -101,9 +101,9 @@ Navigation stops when you reach the destination or cancel it manually.
 
 Navigating on route
 
-> 💡 **Tip:** Before starting navigation, instruct the `mapController` to follow the user's position. See [Show your location on the map](../05-Positioning%20&%20Sensors/04-Show%20Location%20on%20Map.md) for customization options.
+> 💡 **Tip:** Before starting navigation, instruct the `mapController` to follow the user's position. See [Show your location on the map](../05-Positioning & Sensors/04-Show Location on Map.md) for customization options.
 
-Display the route on the map for better navigation clarity. Turn-by-turn navigation arrows disappear once passed. Learn more in [Display routes](../04-Maps/05-Display%20Map/04-Display%20Routes.md).
+Display the route on the map for better navigation clarity. Turn-by-turn navigation arrows disappear once passed. Learn more in [Display routes](../04-Maps/05-Display Map/04-Display Routes.md).
 
 
 ![Parsed route is displayed with a gray color (default)
@@ -215,13 +215,13 @@ These events are described in the following table:
 | `onWaypointReached(Landmark landmark)` | Invoked when a waypoint in the route is reached, including details of the waypoint. |
 | `onDestinationReached(Landmark landmark)` | Called upon reaching the final destination, with information about the destination landmark. |
 | `onRouteUpdated(Route route)` | Fired when the current route is updated, providing the new route details. |
-| `onBetterRouteDetected(Route route, int travelTime, int delay, int timeGain)` | Triggered when a better alternative route is detected, including the new route and details such as travel time, delays caused by traffic and time gains. See the [Better route detection guide](04-Better%20Route%20Detection.md) for more details. |
+| `onBetterRouteDetected(Route route, int travelTime, int delay, int timeGain)` | Triggered when a better alternative route is detected, including the new route and details such as travel time, delays caused by traffic and time gains. See the [Better route detection guide](04-Better Route Detection.md) for more details. |
 | `onBetterRouteRejected(GemError error)` | Called when a check for better routes fails, with details of the rejection error. Used especially for debugging. |
 | `onBetterRouteInvalidated()` | Indicates that a previously suggested better route is no longer valid. |
 | `onSkipNextIntermediateDestinationDetected()` | Indicates we are getting away from the first intermediary waypoint. If this is received, it could be a good moment to call `NavigationService.skipNextIntermediateDestination()`. |
 | `onTurnAround()` | Called when user travel direction violates a link one way restriction or after a navigation route recalculation, if the new route is heading on the opposite user travel direction. |
 | `onRouteCalculationStarted()` | Called when a route recalculation is initiated. Also gets called at the start of the navigation process. |
-| `onRouteCalculationCompleted(GemError error)` | Called when a route recalculation is completed, providing details about any errors that occurred related to route calculation. Also gets called at the start of the navigation process. See the [calculate routes guide](../07-Routing/02-Get%20Started%20wtih%20Routing.md#calculate-routes) for information about the possible error values. The route is passed via the `onRouteUpdated` callback |
+| `onRouteCalculationCompleted(GemError error)` | Called when a route recalculation is completed, providing details about any errors that occurred related to route calculation. Also gets called at the start of the navigation process. See the [calculate routes guide](../07-Routing/02-Get Started wtih Routing.md#calculate-routes) for information about the possible error values. The route is passed via the `onRouteUpdated` callback |
 
 > 📝 **Note:** Most callbacks work for both simulation and navigation. The `onSkipNextIntermediateDestinationDetected` and `onTurnAround` methods are not called during simulation.
 
@@ -237,7 +237,7 @@ Navigation typically uses GPS position, but you can also use custom-defined posi
 
 Create a custom data source, set the position service to it, start the data source, and begin navigation as you would with live data.
 
-See the [Custom positioning guide](../05-Positioning%20&%20Sensors/05-Custom%20Positioning.md) for details.
+See the [Custom positioning guide](../05-Positioning & Sensors/05-Custom Positioning.md) for details.
 
 ## Stop Navigation or Simulation
 Use the `cancelNavigation` method from `NavigationService` to stop navigation or simulation. Pass the `TaskHandler` returned by `startSimulation` or `startNavigation`. Pausing simulation is not currently supported.
@@ -256,5 +256,5 @@ final Uint8List bytes = instruction.exportAs(fileFormat: PathFileFormat.packedGe
 ## Run Navigation In Background
 To use navigation while your app is in the background, additional setup is required for iOS and Android.
 
-See the [Background location guide](../05-Positioning%20&%20Sensors/08-Background%20Location.md) for configuration instructions.
+See the [Background location guide](../05-Positioning & Sensors/08-Background Location.md) for configuration instructions.
 

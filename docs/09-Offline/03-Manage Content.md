@@ -185,7 +185,7 @@ While the download is in progress, retrieve details about the `downloaded` conte
 | `language` | The full language details for the product. |
 
 
-> 💡 **Tip:** Use the ISOCodeConversions class for conversions between different types of codes. See the [internationalization documentation](../02-Get%20Started/04-Internationalization.md) for more details.
+> 💡 **Tip:** Use the ISOCodeConversions class for conversions between different types of codes. See the [internationalization documentation](../02-Get Started/04-Internationalization.md) for more details.
 
 ## Download Content Store Item
 Download a content store item using the `asyncDownload` method:
@@ -235,7 +235,7 @@ if (contentStoreItem.canDeleteContent){
 >- `ContentStore API` - Downloads full offline content, including data for free-text search, routing, and turn-by-turn navigation
 >- `MapDownloaderService` - Caches map tiles for visual display purposes. Tiles downloaded via `MapDownloaderService` do not support most search operations, routing, or navigation while offline
 >
->See the [download individual map tiles documentation](../04-Maps/03-Adjust%20Map%20View.md#download-map-tiles) for more details.
+>See the [download individual map tiles documentation](../04-Maps/03-Adjust Map View.md#download-map-tiles) for more details.
 >
 >Do not confuse `LandmarkStore` with `ContentStore`. `LandmarkStore` manages landmark data, while `ContentStore` manages offline map content.
 

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/05-Positioning%20%26%20Sensors/06-Recorder/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Recorder - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#recorder" class="nav-link">Recorder</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#initialize-the-recorder" class="nav-link">Initialize the Recorder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#use-the-recorder" class="nav-link">Use the Recorder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#recorder-permissions" class="nav-link">Recorder Permissions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#record-metrics" class="nav-link">Record Metrics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#record-audio" class="nav-link">Record audio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#record-video" class="nav-link">Record video</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#record-multimedia" class="nav-link">Record Multimedia</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#background-location-recording" class="nav-link">Background Location Recording</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#recorder-bookmarks-and-metadata" class="nav-link">Recorder bookmarks and metadata</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#record-while-app-is-in-background" class="nav-link">Record While App Is in Background</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#activityrecord" class="nav-link">ActivityRecord</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#logmetrics" class="nav-link">LogMetrics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="recorder">Recorder<a class="headerlink" href="#recorder" title="Permanent link">&para;</a></h1>
+<p>The Recorder module manages sensor data recording with configurable parameters through <code>RecorderConfiguration</code>:</p>
+<ul>
+<li><strong>Customizable storage options</strong> - Define log directories, manage disk space, and specify recording duration</li>
+<li><strong>Data type selection</strong> - Specify which data types (video, audio, or sensor data) to record</li>
+<li><strong>Video and audio options</strong> - Set video resolution, enable/disable audio recording, and manage chunk durations. Record sensor data only, sensor data + video, sensor data + audio, or all three</li>
+</ul>
+<p>Control the recording lifecycle:</p>
+<ul>
+<li>Start, stop, pause, and resume recordings</li>
+<li>Automatic restarts for continuous recording with chunked durations</li>
+</ul>
+<p>The Recorder supports various transportation modes (car, pedestrian, bike), enabling detailed analysis and classification based on context. Set disk space limits to prevent overwhelming device storage—logs are automatically managed based on retention thresholds.</p>
+<p>The main classes used by the Recorder:
+<img alt="alt text" src="../image-5.png" /></p>
+<h2 id="initialize-the-recorder">Initialize the Recorder<a class="headerlink" href="#initialize-the-recorder" title="Permanent link">&para;</a></h2>
+<p>Use the <code>create</code> method to obtain a configured Recorder instance:</p>
+<pre class="highlight"><code>RecorderConfiguration recorderConfiguration = RecorderConfiguration(
+   dataSource: dataSource,
+   logsDir: tracksPath,
+   recordedTypes: [DataType.position],
+);
+
+Recorder recorder = Recorder.create(recorderConfiguration);</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> If the <code>dataSource</code>, <code>logsDir</code>, and <code>recordedTypes</code> parameters are not populated with valid data, the <code>startRecording</code> method returns <code>GemError.invalidInput</code> and no data is recorded.</p>
+</blockquote>
+<h3 id="configure-the-recorderconfiguration">Configure the RecorderConfiguration<a class="headerlink" href="#configure-the-recorderconfiguration" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Recorder configuration attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dataSource</td>
+<td>The source providing the data to be recorded.</td>
+</tr>
+<tr>
+<td>logsDir</td>
+<td>The directory used to keep the logs</td>
+</tr>
+<tr>
+<td>deviceModel</td>
+<td>The device model. Deprecated, use hardwareSpecifications instead.</td>
+</tr>
+<tr>
+<td>hardwareSpecifications</td>
+<td>Extensive details about the device as a hashmap.</td>
+</tr>
+<tr>
+<td>recordedTypes</td>
+<td>The data types that are recorded</td>
+</tr>
+<tr>
+<td>minDurationSeconds</td>
+<td>The minimum duration for the recording to be saved</td>
+</tr>
+<tr>
+<td>videoQuality</td>
+<td>The video quality</td>
+</tr>
+<tr>
+<td>chunkDurationSeconds</td>
+<td>The chunk duration time in seconds</td>
+</tr>
+<tr>
+<td>continuousRecording</td>
+<td>Whether the recording should continue automatically when chunk time achieved</td>
+</tr>
+<tr>
+<td>enableAudio</td>
+<td>This flag will be used to determine if audio is needed to be recorded or not</td>
+</tr>
+<tr>
+<td>maxDiskSpaceUsed</td>
+<td>When reached, it will stop the recording</td>
+</tr>
+<tr>
+<td>keepMinSeconds</td>
+<td>Will not delete any record if this threshold is not reached</td>
+</tr>
+<tr>
+<td>deleteOlderThanKeepMin</td>
+<td>Older logs that exceeds minimum kept seconds threshold should be deleted</td>
+</tr>
+<tr>
+<td>transportMode</td>
+<td>The transport mode</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> If the log duration is shorter than <code>minDurationSeconds</code>, the <code>stopRecording</code> method does not save the recording and returns <code>GemError.recordedLogTooShort</code>.</p>
+<p>The <code>GemError.recordedLogTooShort</code> error may also occur if an insufficient number of positions were emitted, even when the duration between <code>startRecording</code> and <code>stopRecording</code> exceeds <code>minDurationSeconds</code>. To test recording functionality, create a custom external <code>DataSource</code> and push custom positions. Refer to the <a href="../05-Custom%20Positioning/">custom positioning guide</a> for details. The external <code>DataSource</code> must be provided to the <code>RecorderConfiguration</code> object.</p>
+<p>The <code>GemError.general</code> result might be returned if the application has been sent to background without the required configuration. See the <a href="#record-while-app-is-in-background">record while app is in background</a> section below.</p>
+<p>If <code>minChunkDuration</code> is set too high, it may cause G<code>emError.noDiskSpace</code> since the SDK determines how much space is required for the entire chunk.</p>
+<p>Ensure that the <code>DataType</code> values passed to the <code>recordedTypes</code> parameter are supported by the target platform. For example, specifying <code>DataType.nmeaChunk</code> on iOS causes the startRecording method to return <code>GemError.invalidInput</code>. See more details about sensor types <a href="../02-Sensors%20and%20Data%20Sources/">here</a>.</p>
+<p>💡 <strong>Tip:</strong> Use the <a href="/link:https://pub.dev/packages/path_provider">path_provider</a> package to obtain a valid path to save recordings. The following snippet shows how to obtain a valid folder path in a platform-independent way:
+<code>Future&lt;String&gt; getTracksPath() async {
+  // Requires the path_provider package
+  final rootDir = await path_provider.getApplicationDocumentsDirectory();
+  final tracksPath = path.joinAll([rootDir.path, "Data", "Tracks"]);
+  return tracksPath;
+}</code></p>
+</blockquote>
+<p>The <code>videoQuality</code> parameter is based on the <code>Resolution</code> enum. Each value represents a standard video resolution that affects recording quality and storage requirements.</p>
+<h3 id="camera-resolutions">Camera Resolutions<a class="headerlink" href="#camera-resolutions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resolution Enum Value</th>
+<th>Description</th>
+<th>Dimensions (pixels)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Resolution.unknown</code></td>
+<td>No resolution set.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>Resolution.sd480p</code></td>
+<td>Standard Definition</td>
+<td>640 × 480</td>
+</tr>
+<tr>
+<td><code>Resolution.hd720p</code></td>
+<td>High Definition</td>
+<td>1280 × 720</td>
+</tr>
+<tr>
+<td><code>Resolution.fullHD1080p</code></td>
+<td>Full HD</td>
+<td>1920 × 1080</td>
+</tr>
+<tr>
+<td><code>Resolution.wqhd1440p</code></td>
+<td>Wide Quad HD</td>
+<td>2560 × 1440</td>
+</tr>
+<tr>
+<td><code>Resolution.uhd4K2160p</code></td>
+<td>Ultra HD (4K)</td>
+<td>3840 × 2160</td>
+</tr>
+<tr>
+<td><code>Resolution.uhd8K4320p</code></td>
+<td>Ultra HD (8K)</td>
+<td>7680 × 4320</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Tip:</strong> The actual disk usage depends on platform and encoding settings. Here are rough size estimates used internally by the SDK for calculating space requirements:</p>
+<table>
+<thead>
+<tr>
+<th>Resolution</th>
+<th>Approx. Bytes/sec</th>
+<th>Approx. MB/min</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sd480p</td>
+<td>210,000</td>
+<td>~12 MB/min</td>
+</tr>
+<tr>
+<td>hd720p (iOS)</td>
+<td>1,048,576</td>
+<td>~60 MB/min</td>
+</tr>
+<tr>
+<td>hd720p (Android)</td>
+<td>629,760</td>
+<td>~37 MB/min</td>
+</tr>
+<tr>
+<td>fullHD1080p</td>
+<td>3,774,874</td>
+<td>~130 MB/min</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: 1 MB = 1,048,576 bytes (binary MB). These are estimates and may vary slightly by platform and encoding settings.</p>
+<p>Note: These values are used to pre-check disk availability when <code>chunkDurationSeconds</code> is set.
+</p>
+</blockquote>
+</blockquote>
+<h3 id="recording-lifecycle">Recording lifecycle<a class="headerlink" href="#recording-lifecycle" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Start the Recorder</strong> - Call the <code>startRecording</code> method to initiate recording. The recorder transitions to the recording state</p>
+</li>
+<li>
+<p><strong>Pause and resume</strong> - Use <code>pauseRecording</code> and <code>resumeRecording</code> to manage interruptions</p>
+</li>
+<li>
+<p><strong>Chunked recordings</strong> - If a chunk duration is set in the configuration, the recording automatically stops when the duration is reached. A new recording begins seamlessly if continuous recording is enabled, ensuring uninterrupted data capture</p>
+</li>
+<li>
+<p><strong>Stop the Recorder</strong> - The <code>stopRecording</code> method halts recording, and the system ensures logs meet the configured minimum duration before saving them as <code>.gm</code> files inside <code>logsDir</code></p>
+</li>
+</ol>
+<h2 id="use-the-recorder">Use the Recorder<a class="headerlink" href="#use-the-recorder" title="Permanent link">&para;</a></h2>
+<p>The following sections present use cases for the recorder:
+<pre class="highlight"><code>String tracksPath = await _getTracksPath();
+DataSource? dataSource = DataSource.createLiveDataSource();
+
+if (dataSource == null){
+   showSnackbar("The datasource could not be created");
+   return;
+}
+
+RecorderConfiguration recorderConfiguration = RecorderConfiguration(
+   dataSource: dataSource,
+   logsDir: tracksPath,
+   recordedTypes: [DataType.position],
+);
+
+// Create recorder based on configuration
+final recorder = Recorder.create(recorderConfiguration);
+
+GemError errorStart = await recorder.startRecording();
+if (errorStart != GemError.success) {
+   showSnackbar("Error starting recording: $errorStart");
+}
+
+// Other code
+
+GemError errorStop = await recorder.stopRecording();
+if (errorStop != GemError.success) {
+   showSnackbar("Error stopping recording: $errorStop");
+}</code></pre></p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> The <code>Recorder</code> only saves data explicitly defined in the <code>recordedTypes</code> list. Any other data is ignored.</p>
+<p>⚠️ <strong>Attention:</strong> The <code>startRecording</code> and <code>stopRecording</code> methods must be awaited to ensure proper execution. Otherwise, unexpected behavior may occur.</p>
+<p>💡 <strong>Tip:</strong> Request permission for location usage before starting a recorder.</p>
+</blockquote>
+<h2 id="recorder-permissions">Recorder Permissions<a class="headerlink" href="#recorder-permissions" title="Permanent link">&para;</a></h2>
+<p><strong>Android</strong></p>
+<p>To use the recorder with <strong>camera</strong>, <strong>microphone</strong>, and optionally <strong>location or external media access</strong>, you need to declare the appropriate permissions in your <code>AndroidManifest.xml</code>.</p>
+<p>By default, recordings can be saved in your app's internal storage. This requires only camera, audio, and location permissions.</p>
+<p>However, if you want to save recordings to the <strong>device's gallery</strong>, <strong>Downloads folder</strong>, or any <strong>public/external storage</strong>, you’ll also need additional media permissions.</p>
+<p><pre class="highlight"><code>&lt;!-- Required for camera recording --&gt;
+&lt;uses-permission android:name="android.permission.CAMERA" /&gt;
+
+&lt;!-- Required for audio recording --&gt;
+&lt;uses-permission android:name="android.permission.RECORD_AUDIO" /&gt;
+
+&lt;!-- Required if your recording setup uses location data --&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /&gt;
+
+&lt;!-- Required if saving to public folders or accessing gallery content --&gt;
+&lt;uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /&gt; &lt;!-- Android 13+ --&gt;
+&lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /&gt;</code></pre>
+    These permissions should be placed inside the <code>&lt;manifest&gt;</code> block of your <code>android/app/src/main/AndroidManifest.xml</code>.</p>
+<pre class="highlight"><code>Runtime permission requests are also required on Android 6.0+ (API 23+). Use a library like `permission_handler` to manage them.</code></pre>
+<p>More info: <a href="/link:https://developer.android.com/reference/android/Manifest.permission">Android Manifest permissions</a></p>
+<p><strong>iOS</strong></p>
+<p>On iOS, you need to declare your app’s intent to use the camera, microphone, and optionally, the user’s location, in the <code>ios/Runner/Info.plist</code> file.</p>
+<p>Add the following entries inside the <code>&lt;dict&gt;</code> block:
+<pre class="highlight"><code>&lt;!-- Required for camera recording --&gt;
+&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;
+&lt;string&gt;This app requires camera access to record video.&lt;/string&gt;
+
+&lt;!-- Required for audio recording --&gt;
+&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;
+&lt;string&gt;This app requires microphone access to record audio.&lt;/string&gt;
+
+&lt;!-- Required if using location data during recording --&gt;
+&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt;
+&lt;string&gt;Location is needed for recording location-tagged videos.&lt;/string&gt;</code></pre>
+    iOS will automatically prompt the user for these permissions the first time they are accessed. Be sure your app handles denial gracefully.</p>
+<p>More info: <a href="/link:https://developer.apple.com/documentation/bundleresources/information-property-list">Apple App Privacy &amp; Permissions</a></p>
+<h2 id="record-metrics">Record Metrics<a class="headerlink" href="#record-metrics" title="Permanent link">&para;</a></h2>
+<p>The <code>RecordMetrics</code> object provides performance metrics for a recorded activity.</p>
+<p>Available only when the recorder is in <code>RecorderStatus.recording</code> status.</p>
+<p>Access these metrics:</p>
+<ul>
+<li><code>distanceMeters</code> - Total distance traveled in meters</li>
+<li><code>elevationGainMeters</code> - Total elevation gain in meters</li>
+<li><code>avgSpeedMps</code> - Average speed in meters per second</li>
+</ul>
+<p>Use these values to analyze ride or workout performance, monitor progress, and build custom dashboards or statistics.</p>
+<pre class="highlight"><code>GemError errorStart = await recorder.startRecording();
+if (errorStart != GemError.success) {
+   showSnackbar("Error starting recording: $errorStart");
+}
+
+// Get the recorder metrics at any time while recording
+final metrics = recorder.metrics;
+
+print("Average speed: ${metrics.avgSpeedMps}");
+print("Distance in meters: ${metrics.distanceMeters}");
+print("Elevation gain: ${metrics.elevationGainMeters}");</code></pre>
+<blockquote>
+<p>💡 <strong>Tip:</strong> The metrics reset at the start of each recording. Once the recording stops, the collected data is available in LogMetadata</p>
+</blockquote>
+<h2 id="record-audio">Record audio<a class="headerlink" href="#record-audio" title="Permanent link">&para;</a></h2>
+<p>Enable audio recording by setting the <code>enableAudio</code> parameter in the <code>RecorderConfiguration</code> to true. Call the <code>startAudioRecording</code> method from the <code>Recorder</code> class to start, and use <code>stopAudioRecording</code> to stop:
+<pre class="highlight"><code>RecorderConfiguration recorderConfiguration = RecorderConfiguration(
+   dataSource: dataSource,
+   logsDir: tracksPath,
+   recordedTypes: [DataType.position],
+   enableAudio: true
+);
+
+// Create recorder based on configuration
+Recorder recorder = Recorder.create(recorderConfiguration);
+
+GemError errorStart = await recorder.startRecording();
+if (errorStart != GemError.success) {
+   showSnackbar("Error starting recording: $errorStart");
+}
+
+// At any moment enable audio recording
+recorder.startAudioRecording();
+
+// Other code
+
+// At any moment stop audio recording
+recorder.stopAudioRecording();
+
+GemError errorStop = await recorder.stopRecording();
+if (errorStop != GemError.success) {
+   showSnackbar("Error stopping recording: $errorStop");
+}</code></pre></p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Audio recording results in a log file of type <code>.mp4</code>. This file also contains the binary data of a <code>.gm</code> file and is accessible by system players.</p>
+<p>⚠️ <strong>Attention:</strong> Request permission for microphone usage when setting the <code>enableAudio</code> parameter to <code>true</code>.</p>
+</blockquote>
+<h2 id="record-video">Record video<a class="headerlink" href="#record-video" title="Permanent link">&para;</a></h2>
+<p>Enable video recording by adding <code>DataType.camera</code> to the <code>recordedTypes</code> and setting the <code>videoQuality</code> parameter in the <code>RecorderConfiguration</code> to your desired resolution (we recommend <code>Resolution.hd720p</code>). Video recording starts when calling <code>startRecording</code> and stops at <code>stopRecording</code>:</p>
+<pre class="highlight"><code>RecorderConfiguration recorderConfiguration = RecorderConfiguration(
+   dataSource: dataSource,
+   logsDir: tracksPath,
+   videoQuality: Resolution.hd720p,
+   recordedTypes: [DataType.position, DataType.camera],
+);
+
+// Create recorder based on configuration
+Recorder recorder = Recorder.create(recorderConfiguration);
+
+GemError errorStart = await recorder.startRecording();
+if (errorStart != GemError.success) {
+   showSnackbar("Error starting recording: $errorStart");
+}
+
+// Other code
+
+GemError errorStop = await recorder.stopRecording();
+if (errorStop != GemError.success) {
+   showSnackbar("Error stopping recording: $errorStop");
+}</code></pre>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Camera recording results in a log file of type <code>.mp4</code>. This file also contains the binary data of a <code>.gm</code> file and is accessible by system players.</p>
+<p>⚠️ <strong>Attention:</strong> Request permission for camera usage when adding the <code>DataType.camera</code> parameter to <code>recordedTypes</code>.</p>
+<p>⚠️ <strong>Attention:</strong> When <code>chunkDuration</code> is set, the SDK checks available disk space before starting the recording.</p>
+<p>If there isn't enough space to store an entire chunk (based on the selected resolution), the recorder does not start and returns <code>GemError.noDiskSpace</code>.</p>
+<p>Estimate required storage ahead of time. See <a href="#camera-resolutions">Camera Resolutions</a> for expected sizes.</p>
+</blockquote>
+<h2 id="record-multimedia">Record Multimedia<a class="headerlink" href="#record-multimedia" title="Permanent link">&para;</a></h2>
+<p>Record a combination of audio, video, and sensors by setting up the <code>RecorderConfiguration</code> with all desired functionalities:
+<pre class="highlight"><code>RecorderConfiguration recorderConfiguration = RecorderConfiguration(
+   dataSource: dataSource,
+   logsDir: tracksPath,
+   videoQuality: Resolution.hd720p,
+   recordedTypes: [DataType.position, DataType.camera],
+   enableAudio: true
+);
+
+// Create recorder based on configuration
+Recorder recorder = Recorder.create(recorderConfiguration);
+
+GemError errorStart = await recorder.startRecording();
+if (errorStart != GemError.success) {
+   showSnackbar("Error starting recording: $errorStart");
+}
+
+// At any moment enable audio recording
+recorder.startAudioRecording();
+
+// Other code
+
+// At any moment stop audio recording
+recorder.stopAudioRecording();
+
+GemError errorStop = await recorder.stopRecording();
+if (errorStop != GemError.success) {
+   showSnackbar("Error stopping recording: $errorStop");
+}</code></pre></p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Audio recording results in a log file of type <code>.mp4</code>. This file also contains the binary data of a <code>.gm</code> file and is accessible by system players.</p>
+<p>⚠️ <strong>Attention:</strong> Request permission for camera and microphone usage when setting the <code>enableAudio</code> parameter to <code>true</code> and adding the <code>DataType.camera</code> parameter to <code>recordedTypes</code>.</p>
+</blockquote>
+<h2 id="background-location-recording">Background Location Recording<a class="headerlink" href="#background-location-recording" title="Permanent link">&para;</a></h2>
+<p>Enable location recording while the app is in background by enabling the <code>allowsBackgroundLocationUpdates</code> flag on the <code>PositionSensorConfiguration</code> of the data source. Update the Android and iOS platform-specific configuration files.</p>
+<h3 id="dart-example">Dart Example<a class="headerlink" href="#dart-example" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code>final logsDir = await _getLogsDir();
+
+// Create the live data source
+final dataSource = DataSource.createLiveDataSource()!;
+
+// Enable background location updates
+final config = dataSource.getConfiguration(DataType.position);
+config.allowsBackgroundLocationUpdates = true;
+dataSource.setConfiguration(type: DataType.position, config: config);
+
+// Create the recorder with config
+final recorder = Recorder.create(
+  RecorderConfiguration(
+    dataSource: dataSource,
+    logsDir: logsDir,
+    recordedTypes: [DataType.position],
+  ),
+);
+
+// Start recording
+final errorStart = await recorder.startRecording();
+if (errorStart != GemError.success) {
+  showSnackbar("Error starting recording: $errorStart");
+}</code></pre>
+<p><strong>Android</strong></p>
+<h3 id="android-manifest">Android manifest<a class="headerlink" href="#android-manifest" title="Permanent link">&para;</a></h3>
+<p>Add the following permissions to <code>android/app/src/main/AndroidManifest.xml</code>:</p>
+<pre class="highlight"><code>&lt;!-- Foreground location --&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /&gt;
+
+&lt;!-- Background location (required for Android 10+) --&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /&gt;</code></pre>
+<blockquote>
+<p>💡 <strong>Tip:</strong> To record while the app is in background, ensure the device/battery settings allow background activity.</p>
+</blockquote>
+<h3 id="runtime-permission">Runtime permission<a class="headerlink" href="#runtime-permission" title="Permanent link">&para;</a></h3>
+<p>On Android 6.0+ (API 23+), background location requires runtime permissions. Use <code>permission_handler</code>:</p>
+<p><pre class="highlight"><code>await Permission.locationAlways.request();</code></pre>
+<strong>iOS</strong></p>
+<h3 id="infoplist">Info.plist<a class="headerlink" href="#infoplist" title="Permanent link">&para;</a></h3>
+<p>Add the following entries to your <code>ios/Runner/Info.plist</code> inside the <code>&lt;dict&gt;</code> block:
+<pre class="highlight"><code>&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt;
+&lt;string&gt;Location is needed for map localization and navigation.&lt;/string&gt;
+
+&lt;key&gt;NSLocationAlwaysAndWhenInUseUsageDescription&lt;/key&gt;
+&lt;string&gt;Location access is required in background to continue recording.&lt;/string&gt;
+
+&lt;key&gt;UIBackgroundModes&lt;/key&gt;
+&lt;array&gt;
+  &lt;string&gt;location&lt;/string&gt;
+&lt;/array&gt;</code></pre></p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> If the <code>allowsBackgroundLocationUpdates</code> flag is not enabled and the app is backgrounded during recording, calling <code>stopRecording</code> may result in Gem<code>Error.general</code>.</p>
+</blockquote>
+<h2 id="recorder-bookmarks-and-metadata">Recorder bookmarks and metadata<a class="headerlink" href="#recorder-bookmarks-and-metadata" title="Permanent link">&para;</a></h2>
+<p>The SDK uses the proprietary <code>.gm</code> file format for recordings, offering advantages over standard file types:</p>
+<ul>
+<li>Supports multiple data types, including acceleration, rotation, and more</li>
+<li>Allows embedding custom user data in binary format</li>
+<li>Enables automatic storage management by the SDK to optimize space usage</li>
+</ul>
+<p>Recordings are saved as <code>.gm</code> or <code>.mp4</code> files by the Recorder. The <code>RecorderBookmarks</code> class manages recordings, including exporting <code>.gm</code> or <code>.mp4</code> files to other formats such as <code>.gpx</code>, importing external formats, and converting them to <code>.gm</code> for seamless SDK integration.</p>
+<p>The <code>LogMetadata</code> class provides an object-oriented representation of a <code>.gm</code> or <code>.mp4</code> file, offering features such as retrieving start and end timestamps, coordinates, and path details at varying levels of precision.</p>
+<p>Use the <code>RecorderBookmarks</code> class for enhanced log management:</p>
+<ul>
+<li><strong>Export and import logs</strong> - Convert logs to/from different formats such as GPX, NMEA, and KML</li>
+<li><strong>Log metadata</strong> - Retrieve details like start and end timestamps, transport mode, and size</li>
+</ul>
+<p>The main classes used by the RecorderBookmarks:</p>
+<p><img alt="alt text" src="../image-6.png" /></p>
+<h3 id="export-logs">Export logs<a class="headerlink" href="#export-logs" title="Permanent link">&para;</a></h3>
+<p><pre class="highlight"><code>// Create recorderBookmarks
+// It loads all .gm and .mp4 files at logsDir
+RecorderBookmarks? bookmarks = RecorderBookmarks.create(tracksPath);
+
+if(bookmarks == null) return;
+
+// Get list of logs
+List&lt;String&gt; logList = bookmarks.getLogsList();
+
+// Export last recording as a GPX file with a given name
+// Assumes the logList is not empty
+GemError exportLogError = bookmarks.exportLog(
+   logList.last,
+   FileType.gpx,
+   exportedFileName: "My_File_Name",
+);
+if (exportLogError != GemError.success) {
+   showSnackbar("Error exporting log: $exportLogError");
+}</code></pre>
+The resulting file is <code>My_File_Name.gpx</code>. If the name of the exported file is not specified, the log name is used.</p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Exporting a <code>.gm</code> file to other formats may result in data loss, depending on the data types supported by each format.</p>
+<p>💡 <strong>Tip:</strong> The exported file is saved in the same directory as the original log file.</p>
+</blockquote>
+<h3 id="import-logs">Import logs<a class="headerlink" href="#import-logs" title="Permanent link">&para;</a></h3>
+<p>Import logs by loading a standard file format (such as <code>gpx</code>, <code>nmea</code>, or <code>kml</code>) into a <code>.gm</code> file for further processing:</p>
+<pre class="highlight"><code>GemError importError = bookmarks.importLog("path/to/file", importedFileName: "My_File_Name");
+if (importError != GemError.success) {
+   showSnackbar("Error importing log: $importError");
+}</code></pre>
+<h3 id="access-metadata">Access metadata<a class="headerlink" href="#access-metadata" title="Permanent link">&para;</a></h3>
+<p>Access metadata for each log through the <code>LogMetadata</code> class:
+<pre class="highlight"><code>RecorderBookmarks? bookmarks = RecorderBookmarks.create(logsDir);
+if(bookmarks != null) {
+   LogMetadata? logMetadata = bookmarks.getLogMetadata(logList.last);
+}</code></pre></p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> The <code>getLogMetadata</code> method returns <code>null</code> if the log file does not exist inside the <code>logsDir</code> directory or if the log file is not a valid <code>.gm</code>file.</p>
+</blockquote>
+<p>The metadata within a <code>LogMetadata</code> object contains:</p>
+<ul>
+<li><strong>startPosition / endPosition</strong> - Geographic coordinates for the log's beginning and end</li>
+<li><strong>getUserMetadata / addUserMetadata</strong> - Store and retrieve additional data using a key-value approach</li>
+<li><strong>preciseRoute</strong> - Comprehensive list of all recorded coordinates, capturing the highest level of detail possible</li>
+<li><strong>route</strong> - List of route coordinates spaced at least 20 meters apart, with a three-second recording delay between each coordinate</li>
+<li><strong>transportMode</strong> - <code>RecordingTransportMode</code> of recording</li>
+<li><strong>startTimestampInMillis / endTimestampInMillis</strong> - Timestamp of the first/last sensor data</li>
+<li><strong>durationMillis</strong> - Log duration</li>
+<li><strong>isProtected</strong> - Check if a log file is protected. Protected logs are not automatically deleted after <code>keepMinSeconds</code> specified in <code>RecorderConfiguration</code></li>
+<li><strong>logSize</strong> - Log size in bytes</li>
+<li><strong>isDataTypeAvailable</strong> - Verify if a data type is produced by the log file</li>
+<li><strong>soundMarks</strong> - List of recorded soundmarks</li>
+<li><strong>activityRecord</strong> - Recorded activity details</li>
+<li><strong>logMetrics</strong> - Basic metrics about the recorded log</li>
+</ul>
+<p>To visualize the recorded route, construct a <code>Path</code> object using the route coordinates from the <code>LogMetadata</code>. Display this path on a map. For more details, refer to the documentation on the <a href="../../03-Core/02-Base%20Entities/#path">path entity</a> and <a href="../../04-Maps/05-Display%20Map/06-Display%20Paths/#display-paths">display paths</a>.</p>
+<h3 id="custom-user-metadata">Custom user metadata<a class="headerlink" href="#custom-user-metadata" title="Permanent link">&para;</a></h3>
+<p>Add custom metadata to a log during recording or after completion using the <code>addUserMetadata</code> method, available in both the <code>Recorder</code> and <code>LogMetadata</code> classes. The method requires a <code>String</code> key and the associated data as a <code>Uint8List</code>.</p>
+<p>Retrieve previously added metadata using the <code>getUserMetadata</code> method of the <code>LogMetadata</code> class:</p>
+<pre class="highlight"><code>LogMetadata? logMetadata = recorderBookmarks!.getLogMetadata(logPath);
+
+// Save image encoded in Uint8List
+Uint8List imageSample = ...;
+logMetadata?.addUserMetadata("ImgData", imageSample);
+
+// Save text by encoding to Uint8List
+String text = 'Hello world!';
+final encodedText = utf8.encode(text);
+
+// Get image
+Uint8List? imageData = logMetadata?.getUserMetadata("ImgData");
+
+// Get text
+Uint8List? encodedTextGot = logMetadata?.getUserMetadata("textData");
+String? textData = encodedTextGot != null ? utf8.decode(encodedTextGot) : null;</code></pre>
+<h2 id="record-while-app-is-in-background">Record While App Is in Background<a class="headerlink" href="#record-while-app-is-in-background" title="Permanent link">&para;</a></h2>
+<p>Recording might fail with error code <code>GemError.general</code> when calling <code>stopRecording</code> if the app is sent to background during recording. Set <code>positionActivity</code> to true on the <code>PositionActivity</code> associated with the data source before instantiating the <code>Recorder</code>:</p>
+<pre class="highlight"><code>DataSource dataSource = DataSource.createLiveDataSource()!;
+
+PositionSensorConfiguration sensorConfiguration = dataSource.getConfiguration(DataType.position);
+sensorConfiguration.allowsBackgroundLocationUpdates = true;
+dataSource.setConfiguration(type: DataType.position, config: sensorConfiguration);
+
+RecorderConfiguration recorderConfiguration = RecorderConfiguration(
+   recordedTypes: [DataType.position],
+   logsDir: logsDir,
+   hardwareSpecifications: {},
+   minDurationSeconds: 5,
+   dataSource: dataSource,
+);
+
+Recorder _recorder = Recorder.create(
+   recorderConfiguration
+);</code></pre>
+<h3 id="ios-configuration">iOS configuration<a class="headerlink" href="#ios-configuration" title="Permanent link">&para;</a></h3>
+<p>Add the <code>NSLocationAlwaysUsageDescription</code> and <code>UIBackgroundModes</code> keys to the <code>Info.plist</code> file, within the <code>&lt;dict&gt;</code> block:</p>
+<p><pre class="highlight"><code>&lt;key&gt;NSLocationAlwaysAndWhenInUseUsageDescription&lt;/key&gt;
+&lt;string&gt;Location is needed for map localization and navigation.&lt;/string&gt;</code></pre>
+and
+<pre class="highlight"><code>&lt;key&gt;UIBackgroundModes&lt;/key&gt;
+&lt;array&gt;
+&lt;string&gt;fetch&lt;/string&gt;
+&lt;string&gt;location&lt;/string&gt;
+&lt;/array&gt;</code></pre></p>
+<h3 id="android-configuration">Android configuration<a class="headerlink" href="#android-configuration" title="Permanent link">&para;</a></h3>
+<p>Add the <code>ACCESS_BACKGROUND_LOCATION</code> permission to the app's manifest file.</p>
+<h2 id="activityrecord">ActivityRecord<a class="headerlink" href="#activityrecord" title="Permanent link">&para;</a></h2>
+<p>The <code>ActivityRecord</code> class captures details about a recorded activity, including descriptions, sport type, effort level, and visibility settings.</p>
+<h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shortDescription</td>
+<td>A brief summary of the activity.</td>
+</tr>
+<tr>
+<td>longDescription</td>
+<td>A detailed explanation of the activity.</td>
+</tr>
+<tr>
+<td>sportType</td>
+<td>The type of sport involved in the activity.</td>
+</tr>
+<tr>
+<td>effortType</td>
+<td>The intensity of effort (e.g., easy, moderate, hard).</td>
+</tr>
+<tr>
+<td>bikeProfile</td>
+<td>Bike profile details (if applicable).</td>
+</tr>
+<tr>
+<td>visibility</td>
+<td>Defines who can view the activity.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="logmetrics">LogMetrics<a class="headerlink" href="#logmetrics" title="Permanent link">&para;</a></h2>
+<p>The <code>LogMetrics</code> object provides essential statistics about a recorded log. These metrics are useful for analyzing movement, elevation, and speed data.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>distanceMeters</td>
+<td>Total distance covered during the log, measured in meters.</td>
+</tr>
+<tr>
+<td>elevationGainMeters</td>
+<td>Total elevation gained over the course of the log, measured in meters.</td>
+</tr>
+<tr>
+<td>avgSpeedMps</td>
+<td>Average speed throughout the log, measured in meters per second.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-the-activity-record">Setting the activity record<a class="headerlink" href="#setting-the-activity-record" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code>GemError errorStart = await recorder.startRecording();
+if (errorStart != GemError.success) {
+   showSnackbar("Error starting recording: $errorStart");
+}
+
+// Other code
+recorder.activityRecord = ActivityRecord(
+  shortDescription: "Morning Run",
+  longDescription: "A 5km run through the park.",
+  sportType: SportType.run,
+  effortType: EffortType.moderate,
+  visibility: ActivityVisibility.everyone,
+);
+
+// Other code
+
+GemError errorStop = await recorder.stopRecording();
+if (errorStop != GemError.success) {
+   showSnackbar("Error stopping recording: $errorStop");
+}</code></pre>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Call this method while recording. Calling it after stopping does not affect existing recordings.</p>
+</blockquote>
+<h3 id="get-the-activity-record">Get the activity record<a class="headerlink" href="#get-the-activity-record" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code>final bookmarks = RecorderBookmarks.create(tracksPath);
+if (bookmarks == null){
+   showSnackbar("Bookmarks could not be created");
+   return;
+}
+
+final logList = bookmarks.getLogsList();
+
+LogMetadata? metadata = bookmarks.getLogMetadata(logList.last);
+
+if (metadata == null) {
+   showSnackbar("Log metadata could not be retrieved");
+   return;
+}
+
+ActivityRecord activityRecord = metadata.activityRecord;</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

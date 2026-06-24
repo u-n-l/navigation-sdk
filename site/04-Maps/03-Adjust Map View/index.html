@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/04-Maps/03-Adjust%20Map%20View/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Adjust the Map View - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#adjust-the-map-view" class="nav-link">Adjust the Map View</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#get-the-map-viewport" class="nav-link">Get the Map Viewport</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#center-the-map" class="nav-link">Center the Map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#adjust-the-zoom-level" class="nav-link">Adjust the zoom level</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#adjust-the-view-angle" class="nav-link">Adjust the view angle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#set-the-map-perspective" class="nav-link">Set the map perspective</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#control-building-visibility" class="nav-link">Control Building Visibility</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#store-and-restore-a-view" class="nav-link">Store And Restore A View</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#download-map-tiles" class="nav-link">Download Map Tiles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#change-settings-while-following-position" class="nav-link">Change Settings While Following Position</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="adjust-the-map-view">Adjust the Map View<a class="headerlink" href="#adjust-the-map-view" title="Permanent link">&para;</a></h1>
+<p>The Navigation SDK provides multiple ways to modify the map view, center on coordinates or areas, and explore different perspectives. Control map features like zoom, tilt, rotation, and centering through the <code>GemMapController</code> provided by <code>GemMap</code>.</p>
+<h2 id="get-the-map-viewport">Get the Map Viewport<a class="headerlink" href="#get-the-map-viewport" title="Permanent link">&para;</a></h2>
+<p>The map viewport is the visible area displayed by the <code>GemMap</code> widget. The <code>viewport</code> getter returns a <code>Rectangle</code> object containing xy coordinates (left and top) and dimensions (width and height).</p>
+<p>The top-left coordinate is [0, 0] and bottom-right is [<code>viewport.width</code>, <code>viewport.height</code>].</p>
+<pre class="highlight"><code>final currentViewport = mapController.viewport</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> The width and height are measured in physical pixels. To convert them to Flutter logical pixels, use the <code>GemMapController.devicePixelSize</code>getter. See <a href="/link:https://api.flutter.dev/flutter/dart-ui/FlutterView/devicePixelRatio.html">Flutter documentation</a> for more details.</p>
+</blockquote>
+<p>Convert physical pixels to logical pixels:</p>
+<pre class="highlight"><code>final currentViewport = mapController.viewport;
+final flutterHeightPixels = currentViewport.height / mapController.devicePixelSize;
+final flutterWidthPixels = currentViewport.width / mapController.devicePixelSize;</code></pre>
+<h2 id="center-the-map">Center the Map<a class="headerlink" href="#center-the-map" title="Permanent link">&para;</a></h2>
+<p>Center the map using methods like <code>centerOnCoordinates</code>, <code>centerOnArea</code>, <code>centerOnAreaRect</code>, <code>centerOnRoute</code>, <code>centerOnRoutePart</code>, <code>centerOnRouteInstruction</code>, and <code>centerOnRouteTrafficEvent</code>.</p>
+<h3 id="center-on-coordinates">Center on coordinates<a class="headerlink" href="#center-on-coordinates" title="Permanent link">&para;</a></h3>
+<p>Center <a href="/link:https://en.wikipedia.org/wiki/World_Geodetic_System">WGS</a> coordinates on the viewport using the <code>centerOnCoordinates</code> method:</p>
+<p><pre class="highlight"><code>mapController.centerOnCoordinates(Coordinates(latitude: 45, longitude: 25));</code></pre>
+Add a linear animation while centering:</p>
+<pre class="highlight"><code>controller.centerOnCoordinates(
+    Coordinates(latitude: 52.14569, longitude: 1.0615),
+    animation: GemAnimation(type: AnimationType.linear, duration: 2000));</code></pre>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Call <code>skipAnimation()</code> to bypass the animation. Use <code>isAnimationInProgress</code> to check if an animation is running, or <code>isCameraMoving</code> to check if the camera is moving.</p>
+<p>🚨 <strong>Alert</strong>: Do not confuse <code>zoomLevel</code> with <code>slippyZoomLevel</code>. The <code>slippyZoomLevel</code> is linked to the tile system.</p>
+</blockquote>
+<h3 id="convert-between-screen-and-wgs-coordinates">Convert between screen and WGS coordinates<a class="headerlink" href="#convert-between-screen-and-wgs-coordinates" title="Permanent link">&para;</a></h3>
+<p>Convert a screen position to WGS coordinates using <code>transformScreenToWgs()</code>:
+<pre class="highlight"><code>Coordinates coordsToCenter = mapController.transformScreenToWgs(Point(pos.x, pos.y));
+
+mapController.centerOnCoordinates(coordsToCenter, zoomLevel: 70);</code></pre></p>
+<blockquote>
+<p>📝 <strong>Note:</strong> If the applied style includes elevation and terrain data is loaded, <code>transformScreenToWgs</code> returns <code>Coordinates</code> objects with altitude. Check for terrain support using the <code>hasTerrainTopography</code> getter.</p>
+</blockquote>
+<p>Convert WGS coordinates to screen coordinates using <code>transformWgsToScreen()</code>:
+<pre class="highlight"><code>Coordinates wgsCoordinates = Coordinates(latitude: 8, longitude: 25);
+
+Point&lt;int&gt; screenPosition = mapController.transformWgsToScreen(wgsCoordinates);</code></pre></p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Use <code>transformWgsListToScreen</code> to convert multiple WGS coordinates to screen coordinates. Use <code>transformScreenToWgsRect</code> to convert a <code>Rectangle&lt;int&gt;</code> to a <code>RectangleGeographicArea</code>.</p>
+</blockquote>
+<h3 id="center-on-coordinates-at-a-screen-position">Center on coordinates at a screen position<a class="headerlink" href="#center-on-coordinates-at-a-screen-position" title="Permanent link">&para;</a></h3>
+<p>Center on a different viewport area by providing a <code>screenPosition</code> parameter as a <code>Point&lt;int&gt;</code>. The <code>x</code> coordinate should be in [0, <code>viewport.width</code>] and <code>y</code> in [0, <code>viewport.height</code>].</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The <code>screenPosition</code> parameter uses physical pixels, not logical pixels.</p>
+</blockquote>
+<p>Center the map at one-third of its height:</p>
+<pre class="highlight"><code>final physicalHeightPixels = mapController.viewport.height;
+final physicalWidthPixels = mapController.viewport.width;
+
+mapController.centerOnCoordinates(
+    Coordinates(latitude: 52.48209, longitude: -2.48888),
+    zoomLevel: 40,
+    screenPosition: Point(physicalWidthPixels ~/ 2, physicalHeightPixels ~/ 3),
+);</code></pre>
+<p><img alt="Centered at one-third of map height" src="../image-1.png" /></p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Pass additional parameters like <code>animation</code>, <code>mapAngle</code>, <code>viewAngle</code>, and <code>zoomLevel</code> for more control.</p>
+</blockquote>
+<h3 id="center-on-an-area">Center on an area<a class="headerlink" href="#center-on-an-area" title="Permanent link">&para;</a></h3>
+<p>Center on a specific <code>GeographicArea</code> such as a <code>RectangleGeographicArea</code> defined by top-left and bottom-right coordinates:
+<pre class="highlight"><code>final topLeftCoords = Coordinates(latitude: 44.93343, longitude: 25.09946);
+final bottomRightCoords = Coordinates(latitude: 44.93324, longitude: 25.09987);
+final area = RectangleGeographicArea(topLeft: topLeftCoords, bottomRight: bottomRightCoords);
+
+mapController.centerOnArea(area);</code></pre>
+This centers the view on the geographic area, ensuring the <code>GeographicArea</code> covers most of the viewport. To center the area at a specific viewport coordinate, provide a <code>screenPosition</code> parameter as a <code>Point&lt;int&gt;</code>.</p>
+<p>Alternatively, use <code>centerOnAreaRect</code> to center on a specific viewport region. Pass a <code>viewRc</code> parameter as a <code>Rectangle&lt;int&gt;</code> to define the target screen region. The <code>Rectangle</code> determines the positioning relative to the top-left coordinates, with the top-right corner at <code>left</code> + <code>Rectangle</code>'s width.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> As the <code>Rectangle</code> width and height decrease, the view becomes more zoomed out. For a zoomed-in view, use larger values within [1, viewport.width - x] and [1, viewport.height - y].</p>
+<p>💡 <strong>Tip:</strong> Use <code>getOptimalRoutesCenterViewport</code> and <code>getOptimalHighlightCenterViewport</code> to compute the optimal viewport region for routes and highlights.</p>
+</blockquote>
+<h3 id="center-on-an-area-with-padding">Center on an area with padding<a class="headerlink" href="#center-on-an-area-with-padding" title="Permanent link">&para;</a></h3>
+<p>Center on an area with padding by adjusting screen coordinates (in physical pixels) with the padding value. Create a new <code>RectangleGeographicArea</code> using the padded screen coordinates transformed to WGS coordinates via <code>transformScreenToWgs(point)</code>.</p>
+<p><pre class="highlight"><code>// Getting the RectangleGeographicArea in which the route belongs
+final routeArea = route.geographicArea;
+const paddingPixels = 200;
+
+// Getting the top left point screen coordinates in physical pixels
+final routeAreaTopLeftPoint = mapController.transformWgsToScreen(routeArea.topLeft);
+
+// Adding padding by shifting point in the top left
+final topLeftPadded = Point&lt;int&gt;(
+    routeAreaTopLeftPoint.x - paddingPixels,
+    routeAreaTopLeftPoint.y - paddingPixels,
+);
+
+final routeAreaBottomRightPoint = mapController.transformWgsToScreen(routeArea.bottomRight);
+
+// Adding padding by shifting point downwards three times the padding
+final bottomRightPadded = Point&lt;int&gt;(
+    routeAreaBottomRightPoint.x + paddingPixels,
+    routeAreaBottomRightPoint.y + 3 * paddingPixels,
+);
+
+// Converting points with padding to wgs coordinates
+final paddedTopLeftCoordinate = mapController.transformScreenToWgs(topLeftPadded);
+final paddedBottomRightCoordinate = mapController.transformScreenToWgs(bottomRightPadded);
+
+mapController.centerOnArea(RectangleGeographicArea(
+    topLeft: paddedTopLeftCoordinate,
+    bottomRight: paddedBottomRightCoordinate,
+));</code></pre>
+<img alt="Route without padding" src="../image-2.png" />
+Route without padding</p>
+<p><img alt="Route with center padding" src="../image-3.png" />
+Route with center padding</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: When applying padding using Flutter panel heights, note that heights are measured in logical pixels, not physical pixels. A conversion is required, as detailed in <a href="#get-the-map-viewport">Get the map viewport</a>.</p>
+</blockquote>
+<h2 id="adjust-the-zoom-level">Adjust the zoom level<a class="headerlink" href="#adjust-the-zoom-level" title="Permanent link">&para;</a></h2>
+<p>Get the current zoom level using the <code>zoomLevel</code> getter. Higher values bring the camera closer to the terrain. Change the zoom level using <code>setZoomLevel</code>:</p>
+<p><pre class="highlight"><code>final int zoomLevel = mapController.zoomLevel;
+mapController.setZoomLevel(50);</code></pre>
+The value must be between 0 and 360. By default, the camera has a rotation angle of 0 degrees (north-up alignment). The rotation axis is always perpendicular to the ground and passes through the camera.</p>
+<p>You can also use the <code>mapAngle</code> setter from the <code>GemMapController</code> class.</p>
+<h2 id="adjust-the-view-angle">Adjust the view angle<a class="headerlink" href="#adjust-the-view-angle" title="Permanent link">&para;</a></h2>
+<p>The camera can transform the flat 2D map into a 3D perspective, allowing you to view features like distant roads appearing on the horizon. By default, the camera has a top-down perspective (viewAngle = 90°).</p>
+<p>In addition to adjusting the camera's view angle, you can modify its tilt angle. The <code>tiltAngle</code> is defined as the complement of the <code>viewAngle</code>, calculated as <code>tiltAngle = 90-viewAngle</code></p>
+<p>In order to change the view angle of camera you need to access the <code>preferences</code> field of <code>GemMapController</code> like so:</p>
+<p><pre class="highlight"><code>final double viewAngle = mapController.preferences.viewAngle;
+mapController.preferences.setViewAngle(45);</code></pre>
+<img alt="Map with a view angle of 60 degrees" src="../image-4.png" />
+Map with a view angle of 60 degrees</p>
+<p><img alt="Map with a view angle of 0 degrees" src="../image-5.png" />
+Map with a view angle of 0 degrees</p>
+<p>To adjust the camera's perspective dynamically, you can utilize both the <code>tiltAngle</code> and <code>viewAngle</code> properties.</p>
+<p>This operation can also be done using the viewAngle setter available in the GemMapController class.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> Adjusting the rotation value produces different outcomes depending on the camera's tilt. When tilted, changing rotation shifts the target location. With no tilt, the target location remains fixed.</p>
+</blockquote>
+<h2 id="set-the-map-perspective">Set the map perspective<a class="headerlink" href="#set-the-map-perspective" title="Permanent link">&para;</a></h2>
+<p>Set the map perspective to two-dimensional or three-dimensional using <code>setMapViewPerspective</code>:
+<pre class="highlight"><code>final MapViewPerspective perspective = mapController.preferences.mapViewPerspective;
+mapController.preferences.setMapViewPerspective(MapViewPerspective.threeDimensional);</code></pre>
+The default perspective is three-dimensional.</p>
+<p><img alt="Map with a two-dimensional perspective" src="../image-6.png" />
+Map with a two-dimensional perspective</p>
+<p><img alt="Map with a three-dimensional perspective" src="../image-7.png" />
+Map with a three-dimensional perspective</p>
+<p>A three-dimensional perspective gives buildings a realistic 3D appearance, while a two-dimensional perspective displays them as flat shapes.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> For three-dimensional buildings to be visible, the camera angle must not be perpendicular to the map. The view angle must be less than 90 degrees.</p>
+</blockquote>
+<p>You can achieve the same effect more precisely using the <code>tiltAngle</code> or <code>viewAngle</code> fields.</p>
+<h2 id="control-building-visibility">Control Building Visibility<a class="headerlink" href="#control-building-visibility" title="Permanent link">&para;</a></h2>
+<p>Control building visibility using the <code>buildingsVisibility</code> getter/setter from <code>MapViewPreferences</code>:</p>
+<ul>
+<li><code>defaultVisibility</code> - Uses the default visibility from the map style</li>
+<li><code>hide</code> - Hides all buildings</li>
+<li><code>twoDimensional</code> - Displays buildings as flat 2D polygons without height</li>
+<li><code>threeDimensional</code> - Displays buildings as 3D polygons with height</li>
+</ul>
+<p><pre class="highlight"><code>final BuildingsVisibility visibility = mapController.preferences.buildingsVisibility;
+mapController.preferences.buildingsVisibility = BuildingsVisibility.twoDimensional;</code></pre>
+Buildings become visible when the camera is zoomed in close to the ground. The 3D effect is most noticeable from a tilted angle. Note that 3D buildings do not reflect realistic or accurate heights.</p>
+<h2 id="store-and-restore-a-view">Store And Restore A View<a class="headerlink" href="#store-and-restore-a-view" title="Permanent link">&para;</a></h2>
+<p>The map camera object provides getters and setters for position and orientation, giving you full control over the map view.</p>
+<p>Store a view using the <code>cameraState</code> getter. This returns a <code>Uint8List</code> object that can be stored in a variable or serialized to a file:
+<pre class="highlight"><code>final state = mapController.camera.cameraState;</code></pre>
+Restore a saved view using the <code>cameraState</code> setter:
+<pre class="highlight"><code>mapController.camera.cameraState = state;</code></pre>
+Alternatively, store and restore <code>position</code> and <code>orientation</code> separately using the provided getters and setters.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> The <code>cameraState</code> does not contain information about the current style.</p>
+</blockquote>
+<h2 id="download-map-tiles">Download Map Tiles<a class="headerlink" href="#download-map-tiles" title="Permanent link">&para;</a></h2>
+<p>A map tile is a small, rectangular image or data chunk that represents a specific geographic area at a particular zoom level on a <code>GemMap</code> widget. Tiles are usually downloaded when panning or zooming in on a map, and they are used to render the map's visual content. However, you can also download tiles that are not currently visible on the screen, using the <code>MapDownloaderService</code> class.</p>
+<h3 id="configuring-the-mapdownloaderservice">Configuring the MapDownloaderService<a class="headerlink" href="#configuring-the-mapdownloaderservice" title="Permanent link">&para;</a></h3>
+<p>The service can be configured by setting specific maximum area size in square kilometers to download by using the <code>setMaxSquareKm</code> setter:</p>
+<p><pre class="highlight"><code>final service = MapDownloaderService();
+
+// Set a new value
+service.maxSquareKm = 100;
+
+// Verify the new value
+final int updatedMaxSquareKm = service.maxSquareKm;</code></pre>
+The larger the area, the more tiles can be downloaded, which can lead to increased memory usage. The default value is 1000 square kilometers.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: If the <code>RectangleGeographicArea</code> surface exceeds <code>MaxSquareKm</code>, <code>MapDownloaderService</code> returns <code>GemError.outOfRange</code>.</p>
+</blockquote>
+<p>Download tiles by calling the <code>startDownload</code> method:
+<pre class="highlight"><code>final service = MapDownloaderService();
+final completer = Completer&lt;GemError&gt;();
+
+service.maxSquareKm = 300;
+
+service.startDownload([
+  // Area in which the tiles will be downloaded that is under 300 square kilometers
+  RectangleGeographicArea(
+      topLeft: Coordinates(latitude: 67.69866, longitude: 24.81115),
+      bottomRight: Coordinates(latitude: 67.58326, longitude: 25.36093))
+  ], (err) {
+      completer.complete(err);
+});
+
+final res = await completer.future;</code></pre>
+When tiles are downloaded, the <code>onComplete</code> callback is invoked with a <code>GemError</code> parameter indicating the success or failure of the operation. If the download is successful, the error will be <code>GemError.success</code>. Downloaded tiles are stored in the cache and can be used later for features such as viewing map content, <code>searchAlongRoute</code>, <code>searchAroundPosition</code>, <code>searchInArea</code> without requiring an internet connection.</p>
+<p><img alt="Downloaded tiles centered in the middle, top and bottom tiles are not available" src="../image-8.png" />
+Downloaded tiles centered in the middle, top and bottom tiles are not available.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> The <code>SearchService.search</code>method returns <code>GemError.invalidInput</code> when searching in downloaded tile areas, as it requires indexing, which is not available for downloaded tiles.</p>
+</blockquote>
+<p>Cancel downloads by calling <code>cancelDownload</code>. The <code>onComplete</code> callback will be invoked with <code>GemError.cancelled</code>.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Downloading previously downloaded tiles will not return <code>GemError.upToDate</code>. Downloaded tiles are stored in the <code>Data/Temporary/Tiles</code> folder as <code>.dat1</code> files.</p>
+</blockquote>
+<p>Access detailed download statistics using the <code>transferStatistics</code> getter.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Downloaded map tiles via <code>MapDownloaderService</code> do not support free-text search, routing, or turn-by-turn navigation offline. They are intended for caching map data for visual display only.</p>
+</blockquote>
+<p>For full offline functionality, including search and navigation, see the Manage <a href="../../09-Offline/03-Manage%20Content/#manage-content">Offline Content Guide</a> to download roadmap data for offline use.</p>
+<h2 id="change-settings-while-following-position">Change Settings While Following Position<a class="headerlink" href="#change-settings-while-following-position" title="Permanent link">&para;</a></h2>
+<p>The <code>FollowPositionPreferences</code> class provides customization while the camera is in follow position mode
+<pre class="highlight"><code>FollowPositionPreferences preferences = mapController.preferences.followPositionPreferences;</code></pre>
+See <a href="/05-Positioning%20&amp;%20Sensors/">customize follow position</a> settings for more details.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Do not call methods on disposed <code>GemMapController</code> instances, as this may cause exceptions. If the <code>GemMap</code> widget is removed from the widget tree, avoid invoking methods on its associated <code>GemMapController</code> or related entities:
+- <code>MapViewPreferences</code>
+- <code>MapViewRoutesCollection</code>
+- <code>MapViewPathCollection</code>
+- <code>LandmarkStoreCollection</code>
+- <code>FollowPositionPreferences</code>
+- <code>MapViewExtensions</code>
+- <code>MapViewMarkerCollections</code></p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

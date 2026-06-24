@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/04-Maps/04-Interact%20with%20the%20Map/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Interact With The Map - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#interact-with-the-map" class="nav-link">Interact With The Map</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#understanding-gestures" class="nav-link">Understanding gestures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#enable-and-disable-gestures" class="nav-link">Enable and Disable Gestures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#register-gesture-listeners" class="nav-link">Register Gesture Listeners</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#register-map-render-listeners" class="nav-link">Register Map Render Listeners</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#select-map-elements" class="nav-link">Select Map Elements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#capture-the-map-view-as-an-image" class="nav-link">Capture the Map View As An Image</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="interact-with-the-map">Interact With The Map<a class="headerlink" href="#interact-with-the-map" title="Permanent link">&para;</a></h1>
+<p>The Navigation SDK supports common touch gestures like pinch, double-tap, and pan. Use gesture listeners to detect user interactions and respond with custom actions like selecting landmarks or displaying information.</p>
+<h2 id="understanding-gestures">Understanding gestures<a class="headerlink" href="#understanding-gestures" title="Permanent link">&para;</a></h2>
+<p>The map view natively supports common gestures. The table below outlines the available gestures and their default behaviors:</p>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tap</td>
+<td><strong>Tap the screen with one finger.</strong> This gesture does not have a predefined map action.</td>
+</tr>
+<tr>
+<td>Double Tap</td>
+<td><strong>To zoom the map in by a fixed amount</strong>, tap the screen twice with one finger.</td>
+</tr>
+<tr>
+<td>Long Press</td>
+<td><strong>Press and hold one finger to the screen</strong>. This gesture does not have a predefined map action.</td>
+</tr>
+<tr>
+<td>Pan</td>
+<td><strong>To move the map</strong>, press and hold one finger to the screen, and move it in any direction. The map will keep moving with a little momentum after the finger was lifted.</td>
+</tr>
+<tr>
+<td>2 Finger Pan / Shove</td>
+<td><strong>To tilt the map</strong>, press and hold two fingers to the screen, and move them vertically. No behavior is predefined for other directions.</td>
+</tr>
+<tr>
+<td>2 Finger Tap</td>
+<td><strong>To align map towards north</strong>, tap the screen with two fingers.</td>
+</tr>
+<tr>
+<td>Pinch</td>
+<td><strong>To zoom in or out continuously</strong>, press and hold two fingers to the screen, and increase or decrease the distance between them. <strong>To rotate the map continuously</strong>, press and hold two fingers to the screen, and change the angle between them either by rotating them both or by moving one of them.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gesture-listeners">Gesture listeners<a class="headerlink" href="#gesture-listeners" title="Permanent link">&para;</a></h3>
+<p>The <code>GemMapController</code> provides listeners to detect user gestures. Add custom behaviors like selecting landmarks or displaying information after a gesture is detected.</p>
+<p><strong>Basic gestures:</strong></p>
+<ul>
+<li>Tap - <code>registerOnTouch</code></li>
+<li>Double Tap - <code>registerOnDoubleTouch</code></li>
+<li>Two Taps - <code>registerOnTwoTouches</code></li>
+<li>Long Press - <code>registerOnLongPress</code></li>
+<li>Pan - <code>registerOnMove</code> (provides start and end points)</li>
+<li>Shove - <code>registerOnShove</code> (provides angle and gesture points)</li>
+<li>Rotate - <code>registerOnMapAngleUpdate</code></li>
+<li>Fling - <code>registerOnSwipe</code></li>
+<li>Pinch - <code>registerOnPinch</code></li>
+</ul>
+<p><strong>Composite gestures:</strong></p>
+<ul>
+<li>Tap followed by pan - <code>registerOnTouchMove</code></li>
+<li>Pinch followed by swipe - <code>registerOnPinchSwipe</code></li>
+<li>Tap followed by pinch - <code>registerOnTouchPinch</code></li>
+<li>Two double touches - <code>registerOnTwoDoubleTouches</code></li>
+</ul>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Only one listener can be active at a time for a specific gesture. If multiple listeners are registered, only the most recently set listener will be invoked.</p>
+</blockquote>
+<p>Use <code>registerOnMapViewMoveStateChanged</code> to retrieve the <code>RectangleGeographicArea</code> currently visible whenever the map starts or stops moving:
+<pre class="highlight"><code>mapController.registerOnMapViewMoveStateChanged((hasStarted, rect) {
+  if (hasStarted) {
+    print('Gesture started at: ${rect.topLeft.toString()} , ${rect.bottomRight.toString()}');
+  } else {
+    print('Gesture ended at: ${rect.topLeft.toString()} , ${rect.bottomRight.toString()}');
+  }
+});</code></pre></p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: This callback is triggered when the camera is moved programmatically using methods like <code>centerOnRoutes</code>, <code>followPosition</code>, or <code>centerOnArea</code>, but not when the user performs a panning gesture. For detecting user behavior, use <code>registerOnMove</code>.</p>
+<p>📝 <strong>Note:</strong> The callback function is defined as void <code>Function(bool isCameraMoving, RectangleGeographicArea area)</code>, where <code>isCameraMoving</code> is true when the camera is moving and false when stationary.</p>
+</blockquote>
+<h2 id="enable-and-disable-gestures">Enable and Disable Gestures<a class="headerlink" href="#enable-and-disable-gestures" title="Permanent link">&para;</a></h2>
+<p>Disable or enable touch gestures using the <code>enableTouchGestures</code> method:
+<pre class="highlight"><code>mapController.preferences.enableTouchGestures([TouchGestures.onTouch, TouchGestures.onMove], false);</code></pre></p>
+<blockquote>
+<p>📝 <strong>Note:</strong> Set the <code>enabled</code> parameter to <code>true</code> or <code>false</code> to enable or disable the specified gestures from the <code>TouchGestures</code> enum. By default, all gestures are enabled.</p>
+</blockquote>
+<p>The <code>TouchGestures</code> enum supports the following gesture types:</p>
+<ul>
+<li><strong>Basic Touch</strong> - onTouch, onLongDown, onDoubleTouch, onTwoPointersTouch, onTwoPointersDoubleTouch</li>
+<li><strong>Movement</strong> - onMove, onTouchMove, onSwipe</li>
+<li><strong>Pinch and Rotation</strong> - onPinchSwipe, onPinch, onRotate, onShove</li>
+<li><strong>Combined Gestures</strong> - onTouchPinch, onTouchRotate, onTouchShove, onRotatingSwipe</li>
+<li><strong>Other</strong> - internalProcessing</li>
+</ul>
+<p>Check if a gesture is enabled using the <code>isTouchGestureEnabled</code> method:</p>
+<pre class="highlight"><code>bool isTouchEnabled = mapController.preferences.isTouchGestureEnabled(TouchGestures.onTouch);</code></pre>
+<h2 id="register-gesture-listeners">Register Gesture Listeners<a class="headerlink" href="#register-gesture-listeners" title="Permanent link">&para;</a></h2>
+<p>Register gesture listeners using the <code>GemMapController</code>. Once registered, the listener receives all related events via the dedicated callback:</p>
+<pre class="highlight"><code>// previous code
+
+// attach the _onMapCreated callback to GemMap
+GemMap(
+  onMapCreated: _onMapCreated,
+  appAuthorization: projectApiToken,
+),
+
+void _onMapCreated(GemMapController mapController) async {
+  mapController = mapController;
+
+  controller.registerOnMapAngleUpdate((angle) {
+    print("Gesture: onMapAngleUpdate $angle");
+  });
+
+  controller.registerOnTouch((point) {
+    print("Gesture: onTouch $point");
+  });
+
+  controller.registerOnMove((point1, point2) {
+    print(
+        'Gesture: onMove from (${point1.x} ${point1.y}) to (${point2.x} ${point2.y})');
+  });
+
+  controller.registerOnLongPress((point) {
+    print('Gesture: onLongPress $point');
+  });
+
+  controller.registerOnMapViewMoveStateChanged((hasStarted, rect) {
+    if (hasStarted) {
+      print(
+          'Gesture started at: ${rect.topLeft.toString()} , ${rect.bottomRight.toString()}');
+    } else {
+      print(
+          'Gesture ended at: ${rect.topLeft.toString()} , ${rect.bottomRight.toString()}');
+    }
+  });
+}</code></pre>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Executing resource-intensive tasks within map-related callbacks can degrade performance.</p>
+</blockquote>
+<h2 id="register-map-render-listeners">Register Map Render Listeners<a class="headerlink" href="#register-map-render-listeners" title="Permanent link">&para;</a></h2>
+<p>Monitor viewport dimension changes using <code>registerOnViewportResized</code>. This occurs when the user resizes the application window or changes device orientation. The callback receives a <code>Rectangle&lt;int&gt;</code> object representing the new viewport size:
+<pre class="highlight"><code>mapController.registerOnViewportResized((Rectangle&lt;int&gt; rect) {
+  print("Viewport resized to: ${rect.width}x${rect.height}");
+});</code></pre>
+<strong>Use cases:</strong></p>
+<ul>
+<li>Adjust overlays or UI elements to fit the new viewport size</li>
+<li>Trigger animations or updates based on map dimensions</li>
+</ul>
+<p>The <code>registerOnViewRendered</code> method is triggered after the map completes a rendering cycle. This listener provides a <code>MapViewRenderInfo</code> object with rendering details:
+<pre class="highlight"><code>mapController.registerOnViewRendered((MapViewRenderInfo renderInfo) {
+  print("View rendered: ${renderInfo.status}");
+});</code></pre></p>
+<h2 id="select-map-elements">Select Map Elements<a class="headerlink" href="#select-map-elements" title="Permanent link">&para;</a></h2>
+<p>After detecting a gesture like a tap, perform specific actions such as selecting landmarks or routes. Selection uses a map cursor, which is invisible by default. Make the cursor visible using <code>MapViewPreferences</code>:</p>
+<p><pre class="highlight"><code>void _onMapCreated(GemMapController mapController) {
+    // Save mapController for further usage.
+    mapController = mapController;
+
+    // Enable cursor (default is true)
+    mapController.preferences.enableCursor = true;
+    // Enable cursor to render on screen
+    mapController.preferences.enableCursorRender = true;
+}</code></pre>
+This displays a crosshair icon in the center of the screen.</p>
+<p><img alt="Displaying a cursor" src="../image-9.png" />
+Displaying a cursor</p>
+<h3 id="select-landmarks">Select landmarks<a class="headerlink" href="#select-landmarks" title="Permanent link">&para;</a></h3>
+<p>Get selected landmarks using the following code (place in the <code>onMapCreated</code> callback):
+<pre class="highlight"><code>mapController.registerOnTouch((pos) async {
+  // Set the cursor position.
+  await mapController.setCursorScreenPosition(pos);
+
+  // Get the landmarks at the cursor position.
+  final landmarks = mapController.cursorSelectionLandmarks();
+
+  for(final landmark in landmarks) {
+    // handle landmark
+  }
+});</code></pre></p>
+<blockquote>
+<p>📝 <strong>Note:</strong> At higher zoom levels, landmarks from <code>cursorSelectionLandmarks</code> may lack some details for optimization. Use <code>SearchService.searchLandmarkDetails</code> to retrieve full landmark details.</p>
+</blockquote>
+<p>Unregister the callback:</p>
+<pre class="highlight"><code>mapController.registerOnTouch(null);</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> The SDK only detects landmarks positioned directly under the cursor. Call <code>cursorSelectionLandmarks</code> after updating the cursor's position.</p>
+<p>🚨 <strong>Alert</strong>: The cursor screen position determines the default screen position for centering (unless other values are specified). Modifying the screen position might change centering behavior unexpectedly. Reset the cursor position using <code>resetMapSelection</code> (needs to be awaited).</p>
+</blockquote>
+<h3 id="select-streets">Select streets<a class="headerlink" href="#select-streets" title="Permanent link">&para;</a></h3>
+<p>Return selected streets under the cursor using the following code in the <code>_onMapCreated</code> callback:</p>
+<pre class="highlight"><code>// Register touch callback to set cursor to tapped position
+mapController.registerOnTouch((point) async {
+  await mapController.setCursorScreenPosition(point);
+  final streets = mapController.cursorSelectionStreets();
+
+  String currentStreetName = streets.isEmpty ? "Unnamed street" : streets.first.name;
+});</code></pre>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Setting the cursor screen position is asynchronous and must be awaited. Otherwise, the result list may be empty.</p>
+</blockquote>
+<p>Display the street name on screen:</p>
+<p><img alt="Displaying a cursor selected street name
+" src="../image-10.png" />
+Displaying a cursor selected street name</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> The cursor visibility has no impact on selection logic.</p>
+</blockquote>
+<p>Get the current cursor screen position using the <code>cursorScreenPosition</code> getter. Reset the cursor position to the center using <code>resetMapSelection</code> (needs to be awaited).</p>
+<h3 id="selection-methods">Selection methods<a class="headerlink" href="#selection-methods" title="Permanent link">&para;</a></h3>
+<p>The SDK provides multiple methods to select different element types on the map:</p>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Select method</th>
+<th>Result type</th>
+<th>Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Landmark</td>
+<td><code>cursorSelectionLandmarks</code></td>
+<td><code>List&lt;Landmark&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Marker</td>
+<td><code>cursorSelectionMarkers</code></td>
+<td><code>List&lt;MarkerMatch&gt;</code></td>
+<td>Returns <code>MarkerMatch</code>, not a <code>Marker</code></td>
+</tr>
+<tr>
+<td>OverlayItem</td>
+<td><code>cursorSelectionOverlayItems</code></td>
+<td><code>List&lt;OverlayItem&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Street</td>
+<td><code>cursorSelectionStreets</code></td>
+<td><code>List&lt;Landmark&gt;</code></td>
+<td>Streets are handled as landmarks</td>
+</tr>
+<tr>
+<td>Route</td>
+<td><code>cursorSelectionRoutes</code></td>
+<td><code>List&lt;Route&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><code>cursorSelectionPath</code></td>
+<td><code>Path?</code></td>
+<td>Null is returned if no path is found</td>
+</tr>
+<tr>
+<td>MapSceneObject</td>
+<td><code>cursorSelectionMapSceneObject</code></td>
+<td><code>MapSceneObject?</code></td>
+<td>Null is returned if no map scene object is found</td>
+</tr>
+<tr>
+<td>TrafficEvent</td>
+<td><code>cursorSelectionTrafficEvents</code></td>
+<td><code>List&lt;TrafficEvent&gt;</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>When selecting markers, a list of <code>MarkerMatch</code> elements is returned. Each match contains information about the marker collection, the marker's index in the collection, the matched part index, and the matched point index in the part.</p>
+<h3 id="register-selection-callbacks">Register selection callbacks<a class="headerlink" href="#register-selection-callbacks" title="Permanent link">&para;</a></h3>
+<p>Register callbacks that are triggered when the cursor is placed over elements:</p>
+<ul>
+<li><code>registerOnCursorSelectionUpdatedLandmarks</code> - Landmarks</li>
+<li><code>registerOnCursorSelectionUpdatedMarkers</code> - Markers</li>
+<li><code>registerOnCursorSelectionUpdatedOverlayItems</code> - Overlay items</li>
+<li><code>registerOnCursorSelectionUpdatedRoutes</code> - Routes</li>
+<li><code>registerOnCursorSelectionUpdatedPath</code> - Paths</li>
+<li><code>registerOnCursorSelectionUpdatedTrafficEvents</code> - Traffic events</li>
+<li><code>registerOnCursorSelectionUpdatedMapSceneObject</code> - Map scene objects</li>
+</ul>
+<p>These callbacks are triggered when the selection changes, when new elements are selected, when the selection switches to different elements, or when the selection is cleared (callback invoked with null or an empty list).</p>
+<p>Unregister a callback by calling the corresponding method with null as the argument.</p>
+<h2 id="capture-the-map-view-as-an-image">Capture the Map View As An Image<a class="headerlink" href="#capture-the-map-view-as-an-image" title="Permanent link">&para;</a></h2>
+<p>Save the map as an image to generate previews that are too expensive to redraw in real time. The <code>captureImage</code> method returns a <code>Future&lt;Uint8List?&gt;</code>representing the image as a JPEG:</p>
+<pre class="highlight"><code>final Uint8List? image = await mapController.captureImage();
+
+if (image == null){
+  print("Could not capture image");
+}</code></pre>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Platform differences:
+- <strong>iOS</strong> - The captured image excludes on-screen elements like the cursor
+- <strong>Android</strong> - The captured image includes all on-screen elements, including the cursor</p>
+<p>🚨 <strong>Alert</strong>: Capturing the map view may not work correctly when map rendering is disabled.</p>
+<p>📝 <strong>Note:</strong> Ensure map animations and loading have completed before capturing. Wait for <code>registerOnViewRendered</code> to be triggered with <code>dataTransitionStatus</code> set to <code>ViewDataTransitionStatus.complete</code>. Implement a timeout, as <code>registerOnViewRendered</code> is only triggered when the map is rendering and will not be called if everything is already loaded.</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

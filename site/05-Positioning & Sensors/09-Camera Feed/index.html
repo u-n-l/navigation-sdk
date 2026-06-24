@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/05-Positioning%20%26%20Sensors/09-Camera%20Feed/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Camera Feed - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#camera-feed" class="nav-link">Camera Feed</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#camera-player-widget" class="nav-link">Camera Player Widget</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#camera-player-controller" class="nav-link">Camera Player Controller</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="camera-feed">Camera Feed<a class="headerlink" href="#camera-feed" title="Permanent link">&para;</a></h1>
+<p>The Navigation SDK <code>DataSource</code> provides access to recorded and live frames from the device camera for both live camera feeds and recorded logs.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong>  Recorded logs with camera data are MP4 files that can be played back using standard video players. Using external players such as <a href="/link:https://pub.dev/packages/video_player">video_player</a> is the preferred approach for most log-playback scenarios, as they provide better performance.</p>
+</blockquote>
+<h2 id="camera-player-widget">Camera Player Widget<a class="headerlink" href="#camera-player-widget" title="Permanent link">&para;</a></h2>
+<p>The <code>GemCameraPlayer</code> widget displays the camera feed on screen. Wrap the widget in a SizedBox or similar to control its size.</p>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>controller</code> — the <code>GemCameraPlayerController</code> that drives playback and provides camera frames (required). Connects the widget to the source of frames, exposes playback status (loading, playing, error, ended), and is used internally to start/stop rendering and request frame updates</li>
+<li><code>fallbackWidget</code> — widget shown when a frame cannot be decoded or an error state is reported by the controller</li>
+<li><code>loadingWidget</code> — widget shown while the player is waiting for the first frame or is in a loading state</li>
+<li><code>endWidget</code> — widget shown once the camera feed or recording has finished and the controller reports an ended state</li>
+<li><code>fit</code> — <code>BoxFit</code> describing how the decoded image should be sized into the available space. Defaults to cover-like behavior. See the <a href="/link:https://api.flutter.dev/flutter/painting/BoxFit.html">BoxFit API reference</a> for more information</li>
+</ul>
+<h2 id="camera-player-controller">Camera Player Controller<a class="headerlink" href="#camera-player-controller" title="Permanent link">&para;</a></h2>
+<p>The <code>GemCameraPlayerController</code> is the main interface for controlling camera feed playback and accessing frames. Create it via the constructor with a <code>DataSource</code> as the required parameter. Optionally, provide a <code>CameraConfiguration</code> to the <code>configurationOverride</code> parameter to customize the frame size.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The <code>DataSource</code> provided to the <code>GemCameraPlayerController</code> must have the <code>DataType.camera</code> data type enabled. Providing a <code>DataSource</code> without camera data will result in an error state in the controller and cause the <code>fallbackWidget</code> to be shown in the <code>GemCameraPlayer</code>.</p>
+<p>🚨 <strong>Alert</strong>: When presenting the live camera feed, a video recording session must be active on the <code>DataSource</code>. See the <a href="../06-Recorder/#record-video">Video Recording guide</a> for more information on starting a video recording session.</p>
+</blockquote>
+<h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>datasource</code> — the <code>DataSource</code> provided during construction. Use it to query additional information about the source of camera frames and to control the playback session</li>
+<li><code>size</code> — the size of the camera frames being provided by the controller, taking into account any configuration overrides</li>
+<li><code>status</code> — the current playback status of the controller:</li>
+<li><code>loading</code> — the controller is waiting for the first frame to be available</li>
+<li><code>error</code> — an error occurred while trying to provide frames (for example, the data source does not provide camera data or the raw camera frame data is in an unsupported format)</li>
+<li><code>playing</code> — the controller is actively providing frames</li>
+<li><code>paused</code> — the controller has paused frame delivery</li>
+<li><code>ended</code> — the camera feed or recording has finished</li>
+<li><code>camera</code> — the <code>Camera</code> instance providing camera parameters such as intrinsics and extrinsics. Returns <code>null</code> if no camera data is available from the <code>DataSource</code></li>
+</ul>
+<h3 id="pause-and-resume">Pause and Resume<a class="headerlink" href="#pause-and-resume" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>pause()</code> — pauses the camera feed. The controller's status changes to <code>paused</code></li>
+<li><code>resume()</code> — resumes the camera feed if it was paused. The controller's status changes back to <code>playing</code>.</li>
+</ul>
+<p>Pausing and resuming the camera feed does not affect the underlying <code>DataSource</code> playback or recording session. It only controls the delivery of camera frames to the controller. Use the <code>Playback API</code> available on the <code>DataSource</code> to control overall playback or recording for log data sources.</p>
+<h3 id="listen-to-changes">Listen to Changes<a class="headerlink" href="#listen-to-changes" title="Permanent link">&para;</a></h3>
+<p>The <code>GemCameraPlayerController</code> extends <code>ValueNotifier</code>, so you can listen to it for changes in playback status and update your UI accordingly. The <code>GemCameraPlayerValue</code> provides access to the data source, the current playback status, the current <code>Camera</code> (if available), and the data source listener used internally to receive camera frames.</p>
+<h3 id="lifecycle-mmnagement">Lifecycle mMnagement<a class="headerlink" href="#lifecycle-mmnagement" title="Permanent link">&para;</a></h3>
+<p>Dispose of the <code>GemCameraPlayerController</code> when it is no longer needed to free up resources. Disposing the controller stops the internal data source listener and releases any associated resources. The <code>GemCameraPlayer</code> widget does not automatically dispose of the controller, so manage its lifecycle appropriately in your application. Dispose of both the controller and the player widget when appropriate, as they can consume significant resources.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

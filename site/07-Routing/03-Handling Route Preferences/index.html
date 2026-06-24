@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/07-Routing/03-Handling%20Route%20Preferences/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Handling Route Preferences - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#handling-route-preferences" class="nav-link">Handling Route Preferences</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#configure-route-preferences" class="nav-link">Configure Route Preferences</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configure-vehicle-profiles" class="nav-link">Configure Vehicle Profiles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#calculate-truck-routes" class="nav-link">Calculate Truck Routes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#calculate-caravan-routes" class="nav-link">Calculate Caravan Routes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#calculate-round-trips" class="nav-link">Calculate Round Trips</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="handling-route-preferences">Handling Route Preferences<a class="headerlink" href="#handling-route-preferences" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to customize routes using preferences, configure vehicle profiles, and apply routing constraints for different transport modes.</p>
+<h2 id="configure-route-preferences">Configure Route Preferences<a class="headerlink" href="#configure-route-preferences" title="Permanent link">&para;</a></h2>
+<p>Set route options using <code>RoutePreferences</code> to customize route calculations.</p>
+<h3 id="generic-route-options">Generic route options:<a class="headerlink" href="#generic-route-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Preference</th>
+<th>Explanation</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accurateTrackMatch</code></td>
+<td>Enables accurate track matching for routes.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>allowOnlineCalculation</code></td>
+<td>Allows online calculations.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>alternativeRoutesBalancedSorting</code></td>
+<td>Balances sorting of alternative routes.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>alternativesSchema</code></td>
+<td>Defines the schema for alternative routes.</td>
+<td><code>RouteAlternativesSchema.defaultSchema</code></td>
+</tr>
+<tr>
+<td><code>automaticTimestamp</code></td>
+<td>Automatically includes a timestamp.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>departureHeading</code></td>
+<td>Sets departure heading and accuracy.</td>
+<td><code>DepartureHeading(heading: -1, accuracy: 0)</code></td>
+</tr>
+<tr>
+<td><code>ignoreRestrictionsOverTrack</code></td>
+<td>Ignores restrictions over the track.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>maximumDistanceConstraint</code></td>
+<td>Enables maximum distance constraints.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>pathAlgorithm</code></td>
+<td>Algorithm used for path calculation.</td>
+<td><code>RoutePathAlgorithm.ml</code></td>
+</tr>
+<tr>
+<td><code>pathAlgorithmFlavor</code></td>
+<td>Flavor for the path algorithm.</td>
+<td><code>RoutePathAlgorithmFlavor.magicLane</code></td>
+</tr>
+<tr>
+<td><code>resultDetails</code></td>
+<td>Level of details in the route result.</td>
+<td><code>RouteResultDetails.full</code></td>
+</tr>
+<tr>
+<td><code>routeRanges</code></td>
+<td>Ranges for the routes.</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>routeRangesQuality</code></td>
+<td>Quality level for route ranges.</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>routeType</code></td>
+<td>Preferred route type.</td>
+<td><code>RouteType.fastest</code></td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>Custom timestamp for the route. Used with PT Routes to specify the desired arrival/departure time. It represents the local time of the route start/end, but with the <code>isUtc</code> flag set to <code>true</code></td>
+<td><code>null</code> (current time will be used)</td>
+</tr>
+<tr>
+<td><code>transportMode</code></td>
+<td>Transport mode for the route.</td>
+<td><code>RouteTransportMode.car</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Compute the <code>timestamp</code> in the required format using this approach:</p>
+<pre class="highlight"><code>final departureLandmark = Landmark.withLatLng(latitude: 45.65, longitude: 25.60);
+final destinationLandmark = Landmark.withLatLng(latitude: 46.76, longitude: 23.58);
+
+TimezoneService.getTimezoneInfoFromCoordinates(
+ coords: departureLandmark.coordinates,
+ time: DateTime.now().add(Duration(hours: 1)), // Compute time for one hour later
+ onComplete: (error, result) {
+   if (error != GemError.success) {
+     // Handle error
+     return;
+   } else {
+     final timestamp = result!.localTime;
+     // Pass the timestamp to RoutePreferences
+   }
+ },
+);</code></pre>
+<p>See the <a href="../../14-Timezone%20Service/#timezone-service">Timezone Service guide</a> for detailed information.
+</p>
+</blockquote>
+<h3 id="complex-structure-creation-options">Complex structure creation options:<a class="headerlink" href="#complex-structure-creation-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Preference</th>
+<th>Explanation</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>buildConnections</code></td>
+<td>Enables building of route connections.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>buildTerrainProfile</code></td>
+<td>Enables building of terrain profile.</td>
+<td><code>BuildTerrainProfile(enable: false)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="vehicle-profile-options">Vehicle profile options:<a class="headerlink" href="#vehicle-profile-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Preference</th>
+<th>Explanation</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bikeProfile</code></td>
+<td>Profile configuration for bikes.</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>carProfile</code></td>
+<td>Profile configuration for cars.</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>evProfile</code></td>
+<td>Profile configuration for electric vehicles.</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>pedestrianProfile</code></td>
+<td>Profile configuration for pedestrians.</td>
+<td><code>PedestrianProfile.walk</code></td>
+</tr>
+<tr>
+<td><code>truckProfile</code></td>
+<td>Profile configuration for trucks.</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="route-avoidance-options">Route avoidance options:<a class="headerlink" href="#route-avoidance-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Preference</th>
+<th>Explanation</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>avoidBikingHillFactor</code></td>
+<td>Factor to avoid biking hills.</td>
+<td><code>0.5</code></td>
+</tr>
+<tr>
+<td><code>avoidCarpoolLanes</code></td>
+<td>Avoids carpool lanes.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>avoidFerries</code></td>
+<td>Avoids ferries in the route.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>avoidMotorways</code></td>
+<td>Avoids motorways in the route.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>avoidTollRoads</code></td>
+<td>Avoids toll roads in the route.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>avoidTraffic</code></td>
+<td>Strategy for avoiding traffic.</td>
+<td><code>TrafficAvoidance.none</code></td>
+</tr>
+<tr>
+<td><code>avoidTurnAroundInstruction</code></td>
+<td>Avoids turn-around instructions.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>avoidUnpavedRoads</code></td>
+<td>Avoids unpaved roads in the route.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="emergency-vehicle-options">Emergency vehicle options:<a class="headerlink" href="#emergency-vehicle-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Preference</th>
+<th>Explanation</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>emergencyVehicleExtraFreedomLevels</code></td>
+<td>Extra freedom levels for emergency vehicles.</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>emergencyVehicleMode</code></td>
+<td>Enables emergency vehicle mode.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="public-transport-options">Public transport options:<a class="headerlink" href="#public-transport-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Preference</th>
+<th>Explanation</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>algorithmType</code></td>
+<td>Algorithm type used for routing.</td>
+<td><code>PTAlgorithmType.departure</code></td>
+</tr>
+<tr>
+<td><code>minimumTransferTimeInMinutes</code></td>
+<td>Minimum transfer time in minutes.</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>maximumTransferTimeInMinutes</code></td>
+<td>Sets maximum transfer time in minutes.</td>
+<td><code>300</code></td>
+</tr>
+<tr>
+<td><code>maximumWalkDistance</code></td>
+<td>Maximum walking distance in meters.</td>
+<td><code>5000</code></td>
+</tr>
+<tr>
+<td><code>sortingStrategy</code></td>
+<td>Strategy for sorting routes.</td>
+<td><code>PTSortingStrategy.bestTime</code></td>
+</tr>
+<tr>
+<td><code>routeTypePreferences</code></td>
+<td>Preferences for route types.</td>
+<td><code>RouteTypePreferences.none</code></td>
+</tr>
+<tr>
+<td><code>useBikes</code></td>
+<td>Enables use of bikes in the route.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>useWheelchair</code></td>
+<td>Enables wheelchair-friendly routes.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>routeGroupIdsEarlierLater</code></td>
+<td>IDs for earlier/later route groups.</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>Example calculating the fastest car route with terrain profile:</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><pre class="highlight"><code>final routePreferences = RoutePreferences(
+    transportMode: RouteTransportMode.car,
+    routeType: RouteType.fastest,
+    buildTerrainProfile: BuildTerrainProfile(enable: true));</code></pre>
+Read-only properties that indicate how the route was computed:</p>
+<table>
+<thead>
+<tr>
+<th>Preference</th>
+<th>Explanation</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>routeResultType</code></td>
+<td>Type of route result.</td>
+<td><code>RouteResultType.path</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configure-vehicle-profiles">Configure Vehicle Profiles<a class="headerlink" href="#configure-vehicle-profiles" title="Permanent link">&para;</a></h2>
+<p>Customize routing behavior for different vehicle types using profile configurations.</p>
+<h3 id="car-profile">Car profile<a class="headerlink" href="#car-profile" title="Permanent link">&para;</a></h3>
+<p>Define car-specific routing preferences using the CarProfile class.</p>
+<p>Available options:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fuel</code></td>
+<td><code>FuelType</code></td>
+<td><code>petrol</code></td>
+<td>Engine fuel type</td>
+</tr>
+<tr>
+<td><code>mass</code></td>
+<td><code>int</code></td>
+<td><code>0 - not considered in routing.</code></td>
+<td>Vehicle mass in kg.</td>
+</tr>
+<tr>
+<td><code>maxSpeed</code></td>
+<td><code>double</code></td>
+<td><code>0 - not considered in routing.</code></td>
+<td>Vehicle max speed in m/s. Not considered in routing.</td>
+</tr>
+<tr>
+<td><code>plateNumber</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>Vehicle plate number.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FuelType</strong> values: <code>petrol</code>, <code>diesel</code>, <code>lpg</code> (liquid petroleum gas), <code>electric</code>.</p>
+<p>All fields except <code>fuel</code> default to 0, meaning they are not considered in routing. The <code>fuel</code> field defaults to <code>FuelType.diesel</code>.</p>
+<h3 id="truck-profile">Truck profile<a class="headerlink" href="#truck-profile" title="Permanent link">&para;</a></h3>
+<p>Define truck-specific routing preferences using the <strong>TruckProfile</strong> class.</p>
+<p>Available options:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>axleLoad</code></td>
+<td><code>int</code></td>
+<td><code>0 - not considered in routing</code></td>
+<td>Truck axle load in kg.</td>
+</tr>
+<tr>
+<td><code>fuel</code></td>
+<td><code>FuelType</code></td>
+<td><code>petrol</code></td>
+<td>Engine fuel type.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><code>int</code></td>
+<td><code>0 - not considered in routing</code></td>
+<td>Truck height in cm.</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td><code>int</code></td>
+<td><code>0 - not considered in routing</code></td>
+<td>Truck length in cm.</td>
+</tr>
+<tr>
+<td><code>mass</code></td>
+<td><code>int</code></td>
+<td><code>0 - not considered in routing</code></td>
+<td>Vehicle mass in kg.</td>
+</tr>
+<tr>
+<td><code>maxSpeed</code></td>
+<td><code>double</code></td>
+<td><code>0 - not considered in routing</code></td>
+<td>Vehicle max speed in m/s.</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td><code>int</code></td>
+<td><code>0 - not considered in routing</code></td>
+<td>Truck width in cm.</td>
+</tr>
+<tr>
+<td><code>plateNumber</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>Vehicle plate number.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="electric-bike-profile">Electric bike profile<a class="headerlink" href="#electric-bike-profile" title="Permanent link">&para;</a></h3>
+<p>Define electric bike-specific routing preferences using the ElectricBikeProfile class.</p>
+<p>Available options:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auxConsumptionDay</code></td>
+<td><code>double</code></td>
+<td><code>0 - default value is used</code></td>
+<td>Bike auxiliary power consumption during day in Watts.</td>
+</tr>
+<tr>
+<td><code>auxConsumptionNight</code></td>
+<td><code>double</code></td>
+<td><code>0 - default value is used</code></td>
+<td>Bike auxiliary power consumption during night in Watts.</td>
+</tr>
+<tr>
+<td><code>bikeMass</code></td>
+<td><code>double</code></td>
+<td><code>0 - default value is used</code></td>
+<td>Bike mass in kg.</td>
+</tr>
+<tr>
+<td><code>bikerMass</code></td>
+<td><code>double</code></td>
+<td><code>0 - default value is used</code></td>
+<td>Biker mass in kg.</td>
+</tr>
+<tr>
+<td><code>ignoreLegalRestrictions</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td>Ignore country-based legal restrictions related to e-bikes.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>ElectricBikeType</code></td>
+<td><code>ElectricBikeType.none</code></td>
+<td>E-bike type.</td>
+</tr>
+<tr>
+<td><code>plateNumber</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>Vehicle plate number.</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>ElectricBikeProfile</strong> class is encapsulated within the <code>BikeProfileElectricBikeProfile</code> class, together with the <code>BikeProfile</code> enum.</p>
+<h2 id="calculate-truck-routes">Calculate Truck Routes<a class="headerlink" href="#calculate-truck-routes" title="Permanent link">&para;</a></h2>
+<p>Compute routes optimized for trucks by configuring truck-specific preferences and constraints.</p>
+<p>Set the <code>truckProfile</code> field in <code>RoutePreferences</code>:
+<pre class="highlight"><code>// Define the departure.
+final departureLandmark =
+    Landmark.withLatLng(latitude: 48.87126, longitude: 2.33787);
+
+// Define the destination.
+final destinationLandmark =
+    Landmark.withLatLng(latitude: 51.4739, longitude: -0.0302);
+
+final truckProfile = TruckProfile(
+  height: 180, // cm
+  length: 500, // cm
+  width: 200, // cm
+  axleLoad: 1500, // kg
+  maxSpeed: 60, // km/h
+  mass: 3000, // kg
+  fuel: FuelType.diesel
+);
+
+// Define the route preferences with current truck profile and lorry transport mode.
+final routePreferences = RoutePreferences(
+  truckProfile: truckProfile,
+  transportMode: RouteTransportMode.lorry, // &lt;- This field is crucial
+);
+
+TaskHandler? taskHandler = RoutingService.calculateRoute(
+  [departureLandmark, destinationLandmark], routePreferences,
+    (err, routes) {
+      // handle results
+});</code></pre></p>
+<h2 id="calculate-caravan-routes">Calculate Caravan Routes<a class="headerlink" href="#calculate-caravan-routes" title="Permanent link">&para;</a></h2>
+<p>Compute routes for caravans and trailers with size and weight restrictions.</p>
+<p>Caravans or trailers may be restricted on some roads due to size or weight, yet still permitted on roads where trucks are prohibited.</p>
+<p>Use the <code>truckProfile</code> field in <code>RoutePreferences</code> with appropriate dimensions and weight:</p>
+<p><pre class="highlight"><code>// Define the departure.
+final departureLandmark =
+    Landmark.withLatLng(latitude: 48.87126, longitude: 2.33787);
+
+// Define the destination.
+final destinationLandmark =
+    Landmark.withLatLng(latitude: 51.4739, longitude: -0.0302);
+
+final truckProfile = TruckProfile(
+  height: 180, // cm
+  length: 500, // cm
+  width: 200, // cm
+  axleLoad: 1500, // kg
+);
+
+// Define the route preferences with current truck profile and car transport mode.
+final routePreferences = RoutePreferences(
+  truckProfile: truckProfile,
+  transportMode: RouteTransportMode.car, // &lt;- This field is crucial to distinguish caravan from truck
+);
+
+TaskHandler? taskHandler = RoutingService.calculateRoute(
+  [departureLandmark, destinationLandmark], routePreferences,
+    (err, routes) {
+      // handle results
+});</code></pre>
+Set at least one of <code>height</code>, <code>length</code>, <code>width</code>, or <code>axleLoad</code> to a non-zero value for the settings to take effect. If all fields are 0, a normal car route is calculated.</p>
+<h2 id="calculate-round-trips">Calculate Round Trips<a class="headerlink" href="#calculate-round-trips" title="Permanent link">&para;</a></h2>
+<p>Generate routes that start and end at the same location using roundtrip parameters.</p>
+<p><strong>Key differences from normal routing:</strong></p>
+<ul>
+<li><strong>Waypoint requirements</strong> - Normal routes require at least two waypoints. Roundtrips need only one departure point; additional waypoints are ignored. The algorithm generates multiple output waypoints automatically</li>
+<li><strong>Determinism</strong> - Normal routing produces the same route when inputs remain unchanged. Roundtrip generation is random by design, creating different routes each time. Use a seed value for deterministic results</li>
+<li><strong>Preferences</strong> - All normal routing preferences apply, including vehicle profiles and fitness factors</li>
+</ul>
+<h3 id="range-types">Range types<a class="headerlink" href="#range-types" title="Permanent link">&para;</a></h3>
+<p>The <code>RangeType</code> enumeration specifies units for the range parameter:</p>
+<table>
+<thead>
+<tr>
+<th>RangeType value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defaultType</code></td>
+<td>Uses distanceBased for shortest routes; timeBased for all other route types</td>
+</tr>
+<tr>
+<td><code>distanceBased</code></td>
+<td>Distance measured in meters</td>
+</tr>
+<tr>
+<td><code>timeBased</code></td>
+<td>Duration measured in seconds</td>
+</tr>
+<tr>
+<td><code>(energyBased)</code></td>
+<td>Not currently supported</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Specify <code>distanceBased</code> or <code>timeBased</code> explicitly to avoid confusion. A value of 10,000 means 10 km for distance-based requests but ~3 hours for time-based requests.</p>
+</blockquote>
+<h3 id="roundtrip-parameters">Roundtrip parameters<a class="headerlink" href="#roundtrip-parameters" title="Permanent link">&para;</a></h3>
+<p>Configure roundtrips using <strong>RoundTripParameters</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>range</code></td>
+<td><code>int</code></td>
+<td>Target length or duration. The algorithm approximates this value but does not guarantee exact matches</td>
+</tr>
+<tr>
+<td><code>rangeType</code></td>
+<td><code>RangeType</code></td>
+<td>Units for the range value (distance or time)</td>
+</tr>
+<tr>
+<td><code>randomSeed</code></td>
+<td><code>int</code></td>
+<td>Set to 0 for random generation each time. Any other value produces deterministic results when other parameters remain unchanged</td>
+</tr>
+</tbody>
+</table>
+<h3 id="create-a-round-trip-route">Create a round trip route<a class="headerlink" href="#create-a-round-trip-route" title="Permanent link">&para;</a></h3>
+<p>Set <code>roundTripParameters</code> in <strong>RoutePreferences</strong> with a non-zero range value:</p>
+<pre class="highlight"><code>// Define round trip preferences
+final tripPreferences = RoundTripParameters(range: 5000, rangeType: RangeType.distanceBased);
+// Define route preferences to include round trip parameters
+final routePreferences = RoutePreferences(
+  transportMode: RouteTransportMode.bicycle,
+  roundTripParameters: tripPreferences,
+);
+
+// Use only the departure landmark to calculate a round trip route
+final routingHandler = RoutingService.calculateRoute([departureLandmark], routePreferences,
+   (err, routes) {
+    // Handle routing results
+});</code></pre>
+<p><img alt="Round trip presented" src="../image-3.png" /></p>
+<p>Round trip presented</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: If more than one waypoint is provided in a round trip calculation, only the first is considered; others are ignored.</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

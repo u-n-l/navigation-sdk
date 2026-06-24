@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/05-Positioning%20%26%20Sensors/04-Show%20Location%20on%20Map/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Show Location on Map - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#show-location-on-map" class="nav-link">Show Location on Map</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#follow-position" class="nav-link">Follow Position</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#customize-follow-position-aettings" class="nav-link">Customize Follow Position Aettings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#customize-position-icon" class="nav-link">Customize Position Icon</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#other-position-tracker-settings" class="nav-link">Other Position Tracker Settings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="show-location-on-map">Show Location on Map<a class="headerlink" href="#show-location-on-map" title="Permanent link">&para;</a></h1>
+<p>The device location is shown by default using an arrow position tracker. When <code>setLiveDataSource</code> is successfully set and permissions are granted, the position tracker appears on the map as an arrow.</p>
+<p><img alt="Default position tracker showing current position
+" src="../image-2.png" />
+Default position tracker showing current position</p>
+<p>Multiple position trackers on the map are not currently supported.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> GPS accuracy may be limited in environments such as indoor spaces, areas with weak GPS signals, or locations with significant obstructions like narrow streets or tall buildings. In these situations, the tracker may exhibit erratic movement within a confined area. Device sensor performance, such as accelerometer and gyroscope, can further impact GPS positioning accuracy.</p>
+<p>This behavior is more pronounced when the device is stationary.</p>
+</blockquote>
+<h2 id="follow-position">Follow Position<a class="headerlink" href="#follow-position" title="Permanent link">&para;</a></h2>
+<p>Call the <code>startFollowingPosition</code> method on the <code>mapController</code> to follow the position tracker:
+<pre class="highlight"><code>mapController.startFollowingPosition();</code></pre>
+When called, the camera automatically follows the movement and rotation of the position tracker, keeping the user's current location and orientation centered on the map.</p>
+<p>The <code>startFollowingPosition</code> method accepts parameters such as <code>animation</code> (controls camera movement to the tracker position), <code>zoomLevel</code>, and <code>viewAngle</code>.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Setting <code>zoomLevel</code> and <code>viewAngle</code> via <code>startFollowingPosition</code> may behave differently than configuring them through <code>setZoomLevel</code> and <code>setViewAngle</code> on <code>FollowPositionPreferences</code>, especially in scenarios involving complex user interactions (for example, when user-modified values via touch need to be persisted). It is recommended to try both approaches and choose the one that best fits your specific use case.</p>
+</blockquote>
+<h3 id="set-map-rotation-mode">Set map rotation mode<a class="headerlink" href="#set-map-rotation-mode" title="Permanent link">&para;</a></h3>
+<p>Rotate the map with the user orientation when following position:</p>
+<p><pre class="highlight"><code>final prefs = mapController.preferences.followPositionPreferences;
+prefs.setMapRotationMode(FollowPositionMapRotationMode.positionHeading);</code></pre>
+Use the compass sensor for map rotation with <code>FollowPositionMapRotationMode.compass</code>:
+<pre class="highlight"><code>prefs.setMapRotationMode(FollowPositionMapRotationMode.compass);</code></pre>
+Fix the map rotation to a given angle using <code>FollowPositionMapRotationMode.fixed</code> and providing a <code>mapAngle</code> value:
+<pre class="highlight"><code>prefs.setMapRotationMode(FollowPositionMapRotationMode.fixed, mapAngle: 30);</code></pre></p>
+<p>A value of <code>0</code> for the <code>mapAngle</code> parameter represents north-up alignment.</p>
+<p>The <code>mapRotationMode</code> returns a record containing:</p>
+<ul>
+<li>The current <code>FollowPositionMapRotationMode</code> mode</li>
+<li>The map angle set in case of <code>FollowPositionMapRotationMode.fixed</code></li>
+</ul>
+<h3 id="exit-follow-position">Exit follow position<a class="headerlink" href="#exit-follow-position" title="Permanent link">&para;</a></h3>
+<p>Call the <code>stopFollowingPosition</code> method to programmatically stop following the position:
+<pre class="highlight"><code>mapController.stopFollowingPosition();</code></pre>
+Follow mode exits automatically when the user interacts with the map. Actions such as panning or tilting disable automatic tracking. Deactivate this by setting <code>touchHandlerExitAllow</code> to false (see the section below).</p>
+<h2 id="customize-follow-position-aettings">Customize Follow Position Aettings<a class="headerlink" href="#customize-follow-position-aettings" title="Permanent link">&para;</a></h2>
+<p>The <code>FollowPositionPreferences</code> class customizes the behavior of following the position. Access this from the <code>preferences</code> getter of the <code>mapController</code>.</p>
+<p>The fields defined in <code>FollowPositionPreferences</code> take effect only when the camera is in follow position mode. To customize camera behavior when not following the position, refer to the fields available in <code>MapViewPreferences</code> and <code>GemMapController</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cameraFocus</td>
+<td>Point</td>
+<td>The position on the viewport where the position tracker is located on the screen.</td>
+</tr>
+<tr>
+<td>timeBeforeTurnPresentation</td>
+<td>int</td>
+<td>The time interval before starting a turn presentation</td>
+</tr>
+<tr>
+<td>touchHandlerExitAllow</td>
+<td>bool</td>
+<td>If set to false then gestures made by the user will exit follow position mode</td>
+</tr>
+<tr>
+<td>touchHandlerModifyPersistent</td>
+<td>bool</td>
+<td>If set to true then changes made by the user using gestures are persistent</td>
+</tr>
+<tr>
+<td>viewAngle</td>
+<td>double</td>
+<td>The viewAngle used within follow position mode</td>
+</tr>
+<tr>
+<td>zoomLevel</td>
+<td>int</td>
+<td>The zoomLevel used within follow position mode</td>
+</tr>
+<tr>
+<td>accuracyCircleVisibility</td>
+<td>bool</td>
+<td>Specifies if the accuracy circle should be visible (regardless if is in follow position mode or not)</td>
+</tr>
+<tr>
+<td>isTrackObjectFollowingMapRotation</td>
+<td>bool</td>
+<td>Specifies if the track object should follow the map rotation</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the <a href="/04-Maps/03-Adjust%20Map%20View.md">adjust map guide</a> for more information about the <code>viewAngle</code>, <code>zoomLevel</code>, and <code>cameraFocus</code> fields.</p>
+<p>If no zoom level is set, a default value is used.</p>
+<h3 id="use-touchhandlermodifypersistent">Use touchHandlerModifyPersistent<a class="headerlink" href="#use-touchhandlermodifypersistent" title="Permanent link">&para;</a></h3>
+<p>When the camera enters follow position mode and manually adjusts the zoom level or view angle, these modifications are retained until the mode is exited.</p>
+<p>If <code>touchHandlerModifyPersistent</code> is set to <code>true</code>, invoking <code>startFollowingPosition</code> (with default parameters for zoom and angle) restores the zoom level and view angle from the previous follow position session.</p>
+<p>If <code>touchHandlerModifyPersistent</code> is set to <code>false</code>, calling <code>startFollowingPosition</code> (with default zoom and angle parameters) recalculates appropriate values for the zoom level and view angle.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Set the <code>touchHandlerModifyPersistent</code> property value right before calling the <code>startFollowingPosition</code> method.</p>
+</blockquote>
+<h3 id="use-touchhandlerexitallow">Use touchHandlerExitAllow<a class="headerlink" href="#use-touchhandlerexitallow" title="Permanent link">&para;</a></h3>
+<p>If the camera is in follow position mode and the <code>touchHandlerExitAllow</code> property is set to <code>true</code>, a two-finger pan gesture in a non-vertical direction exits follow position mode.</p>
+<p>If <code>touchHandlerExitAllow</code> is set to <code>false</code>, the user cannot manually exit follow position mode through touch gestures. The mode can only be exited programmatically by calling the <code>stopFollowingPosition</code> method.</p>
+<h3 id="set-circle-visibility">Set circle visibility<a class="headerlink" href="#set-circle-visibility" title="Permanent link">&para;</a></h3>
+<p>Show the accuracy circle on the map (hidden by default):</p>
+<p><pre class="highlight"><code>FollowPositionPreferences prefs = mapController.preferences.followPositionPreferences;
+GemError error = prefs.setAccuracyCircleVisibility(true);</code></pre>
+<img alt="Accuracy circle turned on
+" src="../image-3.png" />
+Accuracy circle turned on</p>
+<h3 id="customize-circle-color">Customize circle color<a class="headerlink" href="#customize-circle-color" title="Permanent link">&para;</a></h3>
+<p>Set the accuracy circle color using the <code>setDefPositionTrackerAccuracyCircleColor</code> static method from the <code>MapSceneObject</code> class:</p>
+<pre class="highlight"><code>final GemError setErrorCode = MapSceneObject.setDefPositionTrackerAccuracyCircleColor(Colors.red);
+print("Error code for setting the circle color: $setErrorCode");</code></pre>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Use colors with partial opacity instead of fully opaque colors for improved visibility and usability.</p>
+</blockquote>
+<p>Retrieve the current color using the <code>defPositionTrackerAccuracyCircleColor</code> static getter:
+<pre class="highlight"><code>final Color color = MapSceneObject.defPositionTrackerAccuracyCircleColor;</code></pre>
+Reset the color to the default value using the <code>resetDefPositionTrackerAccuracyCircleColor</code> static method:
+<pre class="highlight"><code>final GemError resetErrorCode = MapSceneObject.resetDefPositionTrackerAccuracyCircleColor();
+print("Error code for resetting the circle color: $resetErrorCode");</code></pre></p>
+<h3 id="set-position-of-the-position-tracker-on-the-viewport">Set position of the position tracker on the viewport<a class="headerlink" href="#set-position-of-the-position-tracker-on-the-viewport" title="Permanent link">&para;</a></h3>
+<p>Set the position tracker on a particular spot of the viewport while in follow position mode using the <code>cameraFocus</code> property:
+<pre class="highlight"><code>// Calculate the position relative to the viewport
+double twoThirdsX = 2 / 3;
+double threeFifthsY = 3 / 5;
+Point&lt;double&gt; position = Point(twoThirdsX, threeFifthsY);
+
+// Set the position of the position tracker in the viewport
+// while in follow position mode
+FollowPositionPreferences prefs =
+    mapController.preferences.followPositionPreferences;
+GemError error = prefs.setCameraFocus(position);
+
+mapController.startFollowingPosition();</code></pre>
+The <code>setCameraFocus</code> method uses a coordinate system relative to the viewport, not physical pixels. <code>Point(0.0, 0.0)</code> corresponds with the top-left corner and <code>Point(1.0, 1.0)</code> corresponds with the bottom-right corner.</p>
+<h2 id="customize-position-icon">Customize Position Icon<a class="headerlink" href="#customize-position-icon" title="Permanent link">&para;</a></h2>
+<p>Customize the position tracker to suit your application's requirements. Set a simple PNG as the position tracker:
+<pre class="highlight"><code>    // Read the file and load the image as a binary resource
+    final imageByteData = (await rootBundle.load('assets/navArrow.png'));
+
+    // Convert the binary data to Uint8List
+    final imageUint8List = imageByteData.buffer.asUint8List();
+
+    // Customize the position tracker
+    MapSceneObject.customizeDefPositionTracker(imageUint8List, SceneObjectFileFormat.tex);</code></pre>
+Besides simple 2D icons, 3D objects as <code>glb</code> files can be set. The format parameter of the <code>customizeDefPositionTracker</code> should be set to <code>SceneObjectFileFormat.tex</code> in this case.</p>
+<p>Setting different icons for different maps is not currently supported.</p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Ensure the resource (in this example <code>navArrow.png</code>) is correctly registered within the <code>pubspec.yaml</code> file. See the <a href="/link:https://docs.flutter.dev/ui/assets/assets-and-images">Flutter documentation</a> for more information.</p>
+</blockquote>
+<p><img alt="Custom position tracker
+" src="../image-4.png" />
+Custom position tracker</p>
+<h2 id="other-position-tracker-settings">Other Position Tracker Settings<a class="headerlink" href="#other-position-tracker-settings" title="Permanent link">&para;</a></h2>
+<p>Change settings such as scale and visibility of the position tracker using the methods available on the <code>MapSceneObject</code>, obtained using <code>MapSceneObject.getDefPositionTracker</code>.</p>
+<h3 id="change-the-position-tracker-scale">Change the position tracker scale<a class="headerlink" href="#change-the-position-tracker-scale" title="Permanent link">&para;</a></h3>
+<p>Use the <code>scale</code> setter to change the position tracker scale:
+<pre class="highlight"><code>// Get the position tracker
+MapSceneObject mapSceneObject = MapSceneObject.getDefPositionTracker();
+
+// Change the scale 
+mapSceneObject.scale = 0.5;</code></pre>
+A value of 1 corresponds with the default scale. The parameter passed to the setter should be in the range <code>(0, mapSceneObject.maxScale)</code>. The code snippet above sets half the scale.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> The scale of the position tracker stays constant on the viewport regardless of the map zoom level.</p>
+</blockquote>
+<h3 id="change-the-position-tracker-visibility">Change the position tracker visibility<a class="headerlink" href="#change-the-position-tracker-visibility" title="Permanent link">&para;</a></h3>
+<p>Use the <code>visibility</code> setter to change the position tracker visibility:
+<pre class="highlight"><code>// Get the position tracker
+MapSceneObject mapSceneObject = MapSceneObject.getDefPositionTracker();
+
+// Change the visibility
+mapSceneObject.visibility = false;</code></pre>
+The snippet above makes the position tracker invisible.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/07-Routing/02-Get%20Started%20wtih%20Routing/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Get Started with Routing - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#get-started-with-routing" class="nav-link">Get Started with Routing</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#calculate-routes" class="nav-link">Calculate Routes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#retrieve-time-and-distance-information" class="nav-link">Retrieve Time and Distance Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#display-routes-on-the-map" class="nav-link">Display Routes On The Map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-the-terrain-profile" class="nav-link">Get the Terrain Profile</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#retrieve-route-instructions" class="nav-link">Retrieve Route Instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="get-started-with-routing">Get Started with Routing<a class="headerlink" href="#get-started-with-routing" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to calculate routes, customize routing preferences, retrieve turn-by-turn instructions, and access detailed route information including terrain profiles and traffic events.</p>
+<p>Here’s a quick overview of what you can do with routing:</p>
+<ul>
+<li>Calculate routes from a start point to a destination.</li>
+<li>Include intermediary waypoints for multi-stop routes.</li>
+<li>Compute range routes to determine areas reachable within a specific range.</li>
+<li>Plan routes over predefined tracks.</li>
+<li>Customize routes with preferences like route types, restrictions, and more.</li>
+<li>Retrieve maneuvers and turn-by-turn instructions.</li>
+<li>Access detailed route profiles for further analysis.</li>
+</ul>
+<h2 id="calculate-routes">Calculate Routes<a class="headerlink" href="#calculate-routes" title="Permanent link">&para;</a></h2>
+<p>Calculate a navigable route between a start point and destination. The route can be used for navigation or simulation.</p>
+<pre class="highlight"><code>// Define the departure.
+final departureLandmark =
+    Landmark.withLatLng(latitude: 48.85682, longitude: 2.34375);
+
+// Define the destination.
+final destinationLandmark =
+    Landmark.withLatLng(latitude: 50.84644, longitude: 4.34587);
+
+// Define the route preferences (all default).
+final routePreferences = RoutePreferences();
+
+TaskHandler? taskHandler = RoutingService.calculateRoute(
+    [departureLandmark, destinationLandmark], routePreferences,
+    (err, routes) {
+        if (err == GemError.success) {
+            showSnackbar("Number of routes: ${routes.length}");
+        } else if (err == GemError.cancel) {
+            showSnackbar("Route computation canceled");
+        } else {
+            showSnackbar("Error: $err");
+        }
+    });</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> The <code>RoutingService.calculateRoute</code>method returns <code>null</code> only when the computation fails to initiate. In such cases, calling <code>RouteService.cancelRoute(taskHandler)</code> is not possible. Error details are delivered through the <code>onComplete</code> function.</p>
+</blockquote>
+<p>The callback function's <code>err</code> parameter can return these values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GemError.success</code></td>
+<td>Successfully completed</td>
+</tr>
+<tr>
+<td><code>GemError.cancel</code></td>
+<td>Cancelled by the user</td>
+</tr>
+<tr>
+<td><code>GemError.waypointAccess</code></td>
+<td>Couldn't be found with the current preferences</td>
+</tr>
+<tr>
+<td><code>GemError.connectionRequired</code></td>
+<td>If <code>allowOnlineCalculation</code> = false in the routing preferences and the calculation can't be done on the client side due to missing data</td>
+</tr>
+<tr>
+<td><code>GemError.expired</code></td>
+<td>Calculation can't be done on client side due to missing necessary data and the client world map data version is no longer supported by the online routing service</td>
+</tr>
+<tr>
+<td><code>GemError.routeTooLong</code></td>
+<td>Routing was executed on the online service and the operation took too much time to complete (usually more than 1 min, depending on the server overload state)</td>
+</tr>
+<tr>
+<td><code>GemError.invalidated</code></td>
+<td>The offline map data changed ( offline map downloaded, erased, updated ) during the calculation</td>
+</tr>
+<tr>
+<td><code>GemError.noMemory</code></td>
+<td>Routing engine couldn't allocate the necessary memory for the calculation</td>
+</tr>
+</tbody>
+</table>
+<p>Cancel an ongoing route computation if needed:</p>
+<p><pre class="highlight"><code>RoutingService.cancelRoute(taskHandler);</code></pre>
+When the route is canceled, the callback returns <code>err</code> = <code>GemError.cancel</code>.</p>
+<h2 id="retrieve-time-and-distance-information">Retrieve Time and Distance Information<a class="headerlink" href="#retrieve-time-and-distance-information" title="Permanent link">&para;</a></h2>
+<p>Access estimated time of arrival (ETA), distance, and traffic details for computed routes.</p>
+<p>Get time and distance information using the <code>Route.getTimeDistance</code> method:</p>
+<p><pre class="highlight"><code>TimeDistance td = route.getTimeDistance(activePart: false);
+
+final totalDistance = td.totalDistanceM;
+// same with:
+//final totalDistance = td.unrestrictedDistanceM + td.restrictedDistanceM;
+
+final totalDuration = td.totalTimeS;
+// same with:
+//final totalDuration = td.unrestrictedTimeS + td.restrictedTimeS;
+
+// by default activePart = true
+TimeDistance remainTd = route.getTimeDistance(activePart: true);
+
+final totalRemainDistance = remainTd.totalDistanceM;
+final totalRemainDuration = remainTd.totalTimeS;</code></pre>
+Set <code>activePart</code> to <code>false</code> to compute time and distance for the entire route, or <code>true</code> (default) for only the remaining portion.</p>
+<p><strong>Unrestricted</strong> refers to public property routes, while <strong>restricted</strong> refers to private property routes. Time is measured in seconds and distance in meters.</p>
+<h3 id="access-traffic-events">Access traffic events<a class="headerlink" href="#access-traffic-events" title="Permanent link">&para;</a></h3>
+<p>Retrieve traffic event details for the route:
+<pre class="highlight"><code>List&lt;RouteTrafficEvent&gt; trafficEvents = route.trafficEvents;
+
+for (final event in trafficEvents) {
+    RouteTransportMode transportMode = event.affectedTransportModes;
+    String description = event.description;
+    TrafficEventClass eventClass = event.eventClass;
+    TrafficEventSeverity eventSeverity = event.eventSeverity;
+    Coordinates from = event.from;
+    Coordinates to = event.to;
+    bool isRoadBlock = event.isRoadblock;
+}</code></pre>
+See the <a href="../../03-Core/10-Traffic%20Events/#traffic-events">Traffic Events guide</a> for detailed information.</p>
+<h2 id="display-routes-on-the-map">Display Routes On The Map<a class="headerlink" href="#display-routes-on-the-map" title="Permanent link">&para;</a></h2>
+<p>Routes are not automatically displayed after calculation. Visualize routes on the map using the display methods.</p>
+<p>Refer to the <a href="../../04-Maps/05-Display%20Map/04-Display%20Routes/#display-routes">display routes on maps guide</a> for visualization and customization options.</p>
+<h2 id="get-the-terrain-profile">Get the Terrain Profile<a class="headerlink" href="#get-the-terrain-profile" title="Permanent link">&para;</a></h2>
+<p>When computing the route we can choose to also build the <code>TerrainProfile</code> for the route.</p>
+<p>In order to do that <code>RoutePreferences</code> must specify we want to also generate the <code>BuildTerrainProfile</code>:</p>
+<pre class="highlight"><code>final routePreferences = RoutePreferences(
+  buildTerrainProfile: const BuildTerrainProfile(enable: true),
+);</code></pre>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Set <code>BuildTerrainProfile</code> with enable flag to true in the preferences for <code>calculateRoute</code> to retrieve terrain profile data.</p>
+</blockquote>
+<p>Access elevation and terrain data from the profile:</p>
+<pre class="highlight"><code>RouteTerrainProfile? terrainProfile = route.terrainProfile;
+
+if (terrainProfile != null) {
+  double minElevation = terrainProfile.minElevation;
+  double maxElevation = terrainProfile.maxElevation;
+  int minElevDist = terrainProfile.minElevationDistance;
+  int maxElevDist = terrainProfile.maxElevationDistance;
+  double totalUp = terrainProfile.totalUp;
+  double totalDown = terrainProfile.totalDown;
+
+  // elevation at 100m from the route start
+  double elevation = terrainProfile.getElevation(100);
+
+  for (final section in terrainProfile.roadTypeSections) {
+    RoadType roadType = section.type;
+    int startDistance = section.startDistanceM;
+  }
+
+  for (final section in terrainProfile.surfaceSections) {
+    SurfaceType surfaceType = section.type;
+    int startDistance = section.startDistanceM;
+  }
+
+  for (final section in terrainProfile.climbSections) {
+    Grade grade = section.grade;
+    double slope = section.slope;
+    int startDistanceM = section.startDistanceM;
+    int endDistanceM = section.endDistanceM;
+  }
+
+  List&lt;double&gt; categs = [-16, -10, -7, -4, -1, 1, 4, 7, 10, 16];
+
+  List&lt;SteepSection&gt; steepSections = terrainProfile.getSteepSections(categs);
+  for (final section in steepSections) {
+    int categ = section.categ;
+    int startDistanceM = section.startDistanceM;
+  }
+}</code></pre>
+<p><code>RoadType</code> values: <code>motorways</code>, <code>stateRoad</code>, <code>road</code>, <code>street</code>, <code>cycleway</code>, <code>path</code>, <code>singleTrack</code>.</p>
+<p><code>SurfaceType</code> values: <code>asphalt</code>, <code>paved</code>, <code>unpaved</code>, <code>unknown</code>.</p>
+<p><img alt="Route profile chart
+" src="../image.png" /></p>
+<p>Route profile chart</p>
+<p><img alt="Route profile sections
+" src="../image-1.png" /></p>
+<p>Route profile sections</p>
+<h2 id="retrieve-route-instructions">Retrieve Route Instructions<a class="headerlink" href="#retrieve-route-instructions" title="Permanent link">&para;</a></h2>
+<p>Access detailed turn-by-turn instructions and segment information for computed routes.</p>
+<p>Each <strong>segment</strong> represents the route portion between consecutive waypoints and includes its own set of instructions. A route with five waypoints contains four segments, each with distinct instructions.</p>
+<p>For public transit routes, segments represent either pedestrian paths or transit sections.</p>
+<p>Key <code>RouteInstruction</code> properties:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>traveledTimeDistance</td>
+<td>TimeDistance</td>
+<td>Time and distance from the beginning of the route.</td>
+</tr>
+<tr>
+<td>remainingTravelTimeDistance</td>
+<td>TimeDistance</td>
+<td>Time and distance to the end of the route.</td>
+</tr>
+<tr>
+<td>coordinates</td>
+<td>Coordinates</td>
+<td>The coordinates indicating the location of the instruction.</td>
+</tr>
+<tr>
+<td>remainTravelTimeDistToNextWaypoint</td>
+<td>TimeDistance</td>
+<td>Time and distance until the next waypoint.</td>
+</tr>
+<tr>
+<td>timeDistanceToNextTurn</td>
+<td>TimeDistance</td>
+<td>Time and distance until the next instruction.</td>
+</tr>
+<tr>
+<td>turnDetails</td>
+<td>TurnDetails</td>
+<td>Get full details for the turn.</td>
+</tr>
+<tr>
+<td>turnInstruction</td>
+<td>String</td>
+<td>Get textual description for the turn.</td>
+</tr>
+<tr>
+<td>roadInfo</td>
+<td>List<RoadInfo></td>
+<td>Get road information.</td>
+</tr>
+<tr>
+<td>hasFollowRoadInfo</td>
+<td>bool</td>
+<td>Check is the road has follow road information.</td>
+</tr>
+<tr>
+<td>followRoadInstruction</td>
+<td>String</td>
+<td>Get textual description for the follow road information.</td>
+</tr>
+<tr>
+<td>countryCodeISO</td>
+<td>String</td>
+<td>Get ISO 3166-1 alpha-3 country code for the navigation instruction.</td>
+</tr>
+<tr>
+<td>exitDetails</td>
+<td>String</td>
+<td>Get the exit route instruction text.</td>
+</tr>
+<tr>
+<td>signpostInstruction</td>
+<td>String</td>
+<td>Get textual description for the signpost information.</td>
+</tr>
+<tr>
+<td>signpostDetails</td>
+<td>SignpostDetails</td>
+<td>Get extended signpost details.</td>
+</tr>
+<tr>
+<td>roadInfoImg</td>
+<td>RoadInfoImg</td>
+<td>Get customizable road image. The user is responsible to check if the image is valid.</td>
+</tr>
+<tr>
+<td>turnImg</td>
+<td>Img</td>
+<td>Get turn image. The user is responsible to check if the image is valid.</td>
+</tr>
+<tr>
+<td>realisticNextTurnImg</td>
+<td>AbstractGeometryImg</td>
+<td>Get customizable image for the realistic turn information. The user is resposible to check if the image is valid.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Turn-by-turn route instructions
+" src="../image-2.png" /></p>
+<p>Turn-by-turn route instructions</p>
+<p>Access instruction data using these <code>RouteInstruction</code> methods:</p>
+<ul>
+<li><code>turnInstruction</code>: Bear left onto A 5</li>
+<li><code>followRoadInstruction</code>: Follow A 5 for 132m</li>
+<li><code>traveledTimeDistance.totalDistanceM</code>: 6.2km (after formatting)</li>
+<li><code>turnDetails.abstractGeometryImg.getRenderableImageBytes(renderSettings: AbstractGeometryImageRenderSettings(),size: Size(100, 100))</code>: Instruction image or null when invalid</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

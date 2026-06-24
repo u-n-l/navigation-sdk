@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/04-Maps/06-Styling/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Styling - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#styling" class="nav-link">Styling</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#apply-predefined-styles" class="nav-link">Apply Predefined Styles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#contentstoreitem-attributes" class="nav-link">ContentStoreItem Attributes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#apply-custom-styles" class="nav-link">Apply Custom Styles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-notified-about-style-changes" class="nav-link">Get Notified About Style Changes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="styling">Styling<a class="headerlink" href="#styling" title="Permanent link">&para;</a></h1>
+<p>Learn how to customize map appearance using predefined styles or custom styles.</p>
+<h2 id="apply-predefined-styles">Apply Predefined Styles<a class="headerlink" href="#apply-predefined-styles" title="Permanent link">&para;</a></h2>
+<p>Predefined map styles must be downloaded before use, as they are not loaded into memory by default. Use the <code>ContentStore</code> class to retrieve and download available styles.</p>
+<p>Retrieve a list of all available map styles as a <code>List&lt;ContentStoreItem&gt;</code>:
+<pre class="highlight"><code>void getStyles() {
+  ContentStore.asyncGetStoreContentList(ContentType.viewStyleLowRes,
+      (err, items, isCached) {
+    if (err == GemError.success &amp;&amp; items.isNotEmpty) {
+      for (final item in items) {
+        _stylesList.add(item);
+      }
+      ScaffoldMessenger.of(context).clearSnackBars();
+    }
+  });
+}</code></pre></p>
+<p>The <code>asyncGetStoreContentList</code> method can be used to obtain other content such as car models, road maps, TTS voices, and more.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> Two types of preview styles are available:</p>
+</blockquote>
+<ul>
+<li><code>ContentType.viewStyleHighRes</code> - optimized for high-resolution displays (mobile devices)</li>
+<li><code>ContentType.viewStyleLowRes</code> - optimized for low-resolution displays (desktop monitors)</li>
+</ul>
+<p>The <code>onComplete</code> parameter of the <code>asyncGetStoreContentList</code> method provides:</p>
+<ul>
+<li><code>GemError</code> - indicates whether any errors occurred during the operation</li>
+<li><code>List&lt;ContentStoreItem&gt;</code> - contains the retrieved items (empty if error is not <code>GemError.success</code>)</li>
+<li><code>boolean</code> - specifies whether the item is already cached or needs downloading</li>
+</ul>
+<h2 id="contentstoreitem-attributes">ContentStoreItem Attributes<a class="headerlink" href="#contentstoreitem-attributes" title="Permanent link">&para;</a></h2>
+<p>A <code>ContentStoreItem</code> has the following attributes and methods:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute / Methods</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Gets the name of the associated product.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Get the unique id of the item in the content store.</td>
+</tr>
+<tr>
+<td><code>chapterName</code></td>
+<td>Gets the product chapter name translated to interface language.</td>
+</tr>
+<tr>
+<td><code>countryCodes</code></td>
+<td>Gets the country code (ISO 3166-1 alpha-3) list of the product as text.</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>Gets the full language code for the product.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Gets the type of the product as a [ContentType] value.</td>
+</tr>
+<tr>
+<td><code>fileName</code></td>
+<td>Gets the full path to the content data file when available.</td>
+</tr>
+<tr>
+<td><code>clientVersion</code></td>
+<td>Gets the client version of the content.</td>
+</tr>
+<tr>
+<td><code>totalSize</code></td>
+<td>Get the size of the content in bytes.</td>
+</tr>
+<tr>
+<td><code>availableSize</code></td>
+<td>Gets the available size of the content in bytes.</td>
+</tr>
+<tr>
+<td><code>isCompleted</code></td>
+<td>Checks if the item is completed downloaded.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Gets current item status.</td>
+</tr>
+<tr>
+<td><code>pauseDownload</code></td>
+<td>Pause a previous download operation.</td>
+</tr>
+<tr>
+<td><code>cancelDownload</code></td>
+<td>Cancel a previous download operation.</td>
+</tr>
+<tr>
+<td><code>downloadProgress</code></td>
+<td>Get current download progress.</td>
+</tr>
+<tr>
+<td><code>canDeleteContent</code></td>
+<td>Check if associated content can be deleted.</td>
+</tr>
+<tr>
+<td><code>deleteContent</code></td>
+<td>Delete the associated content</td>
+</tr>
+<tr>
+<td><code>isImagePreviewAvailable</code></td>
+<td>Check if there is an image preview available on the client.</td>
+</tr>
+<tr>
+<td><code>imgPreview</code></td>
+<td>Get the preview. The user is responsible to check if the image is valid.</td>
+</tr>
+<tr>
+<td><code>contentParameters</code></td>
+<td>Get additional parameters for the content.</td>
+</tr>
+<tr>
+<td><code>updateItem</code></td>
+<td>Get corresponding update item.</td>
+</tr>
+<tr>
+<td><code>isUpdatable</code></td>
+<td>Check if item is updatable, i.e. it has a newer version available.</td>
+</tr>
+<tr>
+<td><code>updateSize</code></td>
+<td>Get update size (if an update is available for this item).</td>
+</tr>
+<tr>
+<td><code>updateVersion</code></td>
+<td>Get update version (if an update is available for this item).</td>
+</tr>
+<tr>
+<td><code>asyncDownload</code></td>
+<td>Asynchronous start/resume the download of the content store product content.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Certain attributes may not apply to specific types of <code>ContentStoreItem</code>. For example, <code>countryCodes</code> will not provide meaningful data for <code>ContentType.viewStyleLowRes</code>, as styles are not associated with any country.</p>
+</blockquote>
+<h3 id="download-a-style">Download a style<a class="headerlink" href="#download-a-style" title="Permanent link">&para;</a></h3>
+<p>Download a map style by calling <code>ContentStoreItem.asyncDownload()</code>:</p>
+<pre class="highlight"><code>Future&lt;bool&gt; _downloadStyle(ContentStoreItem style) async {
+  setState(() {
+    _isDownloadingStyle = true;
+  });
+  Completer&lt;bool&gt; completer = Completer&lt;bool&gt;();
+  style.asyncDownload((err) {
+    if (err != GemError.success) {
+      // An error was encountered during download
+      completer.complete(false);
+      setState(() {
+        _isDownloadingStyle = false;
+      });
+      return;
+    }
+    // Download was successful
+    completer.complete(true);
+    setState(() {
+      _isDownloadingStyle = false;
+    });
+  }, onProgress: (progress) {
+    // Gets called every time download progresses with a value between [0, 100]
+    print('progress: $progress');
+  }, allowChargedNetworks: true);
+  return await completer.future;
+}</code></pre>
+<h3 id="apply-the-downloaded-style">Apply the downloaded style<a class="headerlink" href="#apply-the-downloaded-style" title="Permanent link">&para;</a></h3>
+<p>Apply the downloaded style using <code>GemMapController.MapViewPreferences.setMapStyleByPath(path)</code> with the filename:
+<pre class="highlight"><code>final String filename = currentStyle.fileName;
+mapController.preferences.setMapStyleByPath(filename);</code></pre></p>
+<h3 id="complete-implementation">Complete implementation<a class="headerlink" href="#complete-implementation" title="Permanent link">&para;</a></h3>
+<p>The following code incorporates all steps:
+<pre class="highlight"><code>if (_stylesList.isEmpty) {
+    _showSnackBar(context, message: "The map styles are loading.");
+    getStyles();
+    return;
+}
+
+final indexOfNextStyle = (_indexOfCurrentStyle &gt;= _stylesList.length - 1)
+    ? 0
+    : _indexOfCurrentStyle + 1;
+ContentStoreItem currentStyle = _stylesList[indexOfNextStyle];
+
+if (currentStyle.isCompleted == false) {
+  final didDownloadSuccessfully = await _downloadStyle(currentStyle);
+  if (didDownloadSuccessfully == false) return;
+}
+
+_indexOfCurrentStyle = indexOfNextStyle;
+
+final String filename = currentStyle.fileName;
+mapController.preferences.setMapStyleByPath(filename);</code></pre></p>
+<h3 id="alternative-methods-to-set-styles">Alternative methods to set styles<a class="headerlink" href="#alternative-methods-to-set-styles" title="Permanent link">&para;</a></h3>
+<p>You can also set map styles using:</p>
+<ul>
+<li><code>MapViewPreferences.setMapStyle()</code> - takes a <code>ContentStoreItem</code> of type <code>ContentType.viewStyleHighRes</code> or <code>ContentType.viewStyleLowRes</code></li>
+<li><code>MapViewPreferences.setMapStyleById()</code> - takes the unique id obtained from <code>ContentStoreItem.id</code></li>
+</ul>
+<pre class="highlight"><code>mapController.preferences.setMapStyle(currentStyle);
+mapController.preferences.setMapStyleById(currentStyle.id);</code></pre>
+<h2 id="apply-custom-styles">Apply Custom Styles<a class="headerlink" href="#apply-custom-styles" title="Permanent link">&para;</a></h2>
+<p>As part of the SDK package, a ready-to-use and customizable UI is provided. You can create a custom map style in UNL Studio or use the predefined <code>.style</code> file included in the UI library.</p>
+<h3 id="add-style-file-to-assets">Add style file to assets<a class="headerlink" href="#add-style-file-to-assets" title="Permanent link">&para;</a></h3>
+<p>Create an <code>assets</code> directory in the root of your project and place the <code>.style</code> file there. Add the following lines to your <code>pubspec.yaml</code> file under the <code>flutter:</code> section:</p>
+<p><pre class="highlight"><code>flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/</code></pre>
+This allows the <code>flutter/services.dart</code> package to access the <code>assets</code> directory.</p>
+<h3 id="load-style-into-memory">Load style into memory<a class="headerlink" href="#load-style-into-memory" title="Permanent link">&para;</a></h3>
+<p>Load the style into memory with the following code:
+<pre class="highlight"><code>// Method to load style and return it as bytes
+Future&lt;Uint8List&gt; _loadStyle() async {
+  // Load style into memory
+  final data = await rootBundle.load('assets/Basic_1_Oldtime-1_21_656.style');
+
+  // Convert it to Uint8List
+  final bytes = data.buffer.asUint8List();
+
+  return bytes;
+}</code></pre></p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Import <code>'package:flutter/services.dart'</code> for <code>rootBundle.load()</code> to work.</p>
+</blockquote>
+<h3 id="apply-the-custom-style">Apply the custom style<a class="headerlink" href="#apply-the-custom-style" title="Permanent link">&para;</a></h3>
+<p>Once the map style bytes are obtained, set the style using <code>MapViewPreferences.setMapStyleByBuffer(styleData)</code>:</p>
+<p><pre class="highlight"><code>final styleData = await _loadStyle();
+
+mapController.preferences
+    .setMapStyleByBuffer(styleData, smoothTransition: true);</code></pre>
+Enable smooth transition by passing <code>true</code> to the <code>smoothTransition</code> parameter.</p>
+<p><img alt="Default map style
+" src="../image-11.png" /></p>
+<p>Default map style</p>
+<p><img alt="Custom added map style
+" src="../image-12.png" /></p>
+<p>Custom added map style</p>
+<h3 id="set-initial-map-style">Set initial map style<a class="headerlink" href="#set-initial-map-style" title="Permanent link">&para;</a></h3>
+<p>Apply a map style when creating a <code>GemMap</code> by providing a relative path to the <code>.style</code> file using the <code>initialMapStyleAsset</code> parameter:</p>
+<pre class="highlight"><code>GemMap(
+  appAuthorization: projectApiToken,
+  initialMapStyleAsset: "assets/map-styles/my_map_style.style",
+),</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> When using <code>initialMapStyleAsset</code>, the path is relative to the project root and only works on Android and iOS.</p>
+</blockquote>
+<h2 id="get-notified-about-style-changes">Get Notified About Style Changes<a class="headerlink" href="#get-notified-about-style-changes" title="Permanent link">&para;</a></h2>
+<p>The user can be notified when the style changes by providing a callback using the <code>registerOnSetMapStyle</code> method from the <code>GemMapController</code>:
+<pre class="highlight"><code>controller.registerOnSetMapStyle((id, stylepath, viaApi){
+  print('The style with id $id and path $stylepath has been set. viaApi: $viaApi');
+});</code></pre></p>
+<p>The callback provides:</p>
+<ul>
+<li><code>id</code> - the style id</li>
+<li><code>stylepath</code> - the path to the .style file</li>
+<li><code>viaApi</code> - indicates if the style was set via API</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

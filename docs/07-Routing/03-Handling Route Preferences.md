@@ -47,7 +47,7 @@ Set route options using `RoutePreferences` to customize route calculations.
 > );
 > ```
 >
-> See the [Timezone Service guide](../14-Timezone%20Service.md#timezone-service) for detailed information.
+> See the [Timezone Service guide](../14-Timezone Service.md#timezone-service) for detailed information.
 >
 
 ### Complex structure creation options:

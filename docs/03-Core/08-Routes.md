@@ -10,9 +10,9 @@ Compute routes in different ways:
 Navigable routes consist of segments. Each segment represents the portion between consecutive waypoints with its own route instructions.
 
 ## Create Routes
-Routes cannot be instantiated directly. Compute them based on a list of landmarks. See [Get started with Routing](../07-Routing/02-Get%20Started%20wtih%20Routing.md#get-started-with-routing) for details.
+Routes cannot be instantiated directly. Compute them based on a list of landmarks. See [Get started with Routing](../07-Routing/02-Get Started wtih Routing.md#get-started-with-routing) for details.
 
->  🚨 **Alert**: Calculating a route does not automatically display it on the map. See [Display routes](../04-Maps/05-Display%20Map/04-Display%20Routes.md#display-routes) for instructions.
+>  🚨 **Alert**: Calculating a route does not automatically display it on the map. See [Display routes](../04-Maps/05-Display Map/04-Display Routes.md#display-routes) for instructions.
 
 ## Route Types
 The SDK supports multiple route types, each tailored for specific use cases:
@@ -209,6 +209,6 @@ When cost data is unavailable, `cost` is 0 and `currency` is an empty string.
 > 💡 **Tip:** Get WGS coordinates of toll section start and end using `Route.getCoordinateOnRoute` with `startDistanceM` and `endDistanceM` values.
 
 ## Change Instruction Language
-Route instruction texts follow the SDK language settings. See [Internationalization](../02-Get%20Started/04-Internationalization.md) for details.
+Route instruction texts follow the SDK language settings. See [Internationalization](../02-Get Started/04-Internationalization.md) for details.
 
 

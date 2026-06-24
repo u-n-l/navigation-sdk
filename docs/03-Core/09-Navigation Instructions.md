@@ -6,7 +6,7 @@ The main class responsible for turn-by-turn navigation guidance is the `Navigati
 > 📝 **Note:** Distinguish between `NavigationInstruction` and `RouteInstruction`. `NavigationInstruction` offers real-time, turn-by-turn guidance based on your current position and is relevant only during active navigation or simulation. In contrast, `RouteInstruction` provides an overview of the entire route available immediately after calculation, with instructions that remain static throughout navigation.
 
 ## Get navigation instructions
-You cannot directly instantiate navigation instructions. The SDK provides them during active navigation. For detailed guidance, see the [Getting Started with Navigation Guide](../08-Navigation/02-Get%20Started%20with%20Navigation.md#get-started-with-navigation).
+You cannot directly instantiate navigation instructions. The SDK provides them during active navigation. For detailed guidance, see the [Getting Started with Navigation Guide](../08-Navigation/02-Get Started with Navigation.md#get-started-with-navigation).
 
 There are two ways to get navigation instructions:
 
@@ -184,5 +184,5 @@ final Uint8List? laneImageData = laneImage.getRenderableImageBytes(size: Size(50
 ](image-3.png)
 
 ## Change instruction language
-Navigation instruction texts follow the language set in the SDK. See the [Internationalization Guide](../02-Get%20Started/04-Internationalization.md) for more details.
+Navigation instruction texts follow the language set in the SDK. See the [Internationalization Guide](../02-Get Started/04-Internationalization.md) for more details.
 

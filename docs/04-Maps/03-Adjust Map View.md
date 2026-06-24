@@ -273,7 +273,7 @@ Access detailed download statistics using the `transferStatistics` getter.
 
 >  🚨 **Alert**: Downloaded map tiles via `MapDownloaderService` do not support free-text search, routing, or turn-by-turn navigation offline. They are intended for caching map data for visual display only.
 
-For full offline functionality, including search and navigation, see the Manage [Offline Content Guide](../09-Offline/03-Manage%20Content.md#manage-content) to download roadmap data for offline use.
+For full offline functionality, including search and navigation, see the Manage [Offline Content Guide](../09-Offline/03-Manage Content.md#manage-content) to download roadmap data for offline use.
 
 
 ## Change Settings While Following Position
@@ -281,7 +281,7 @@ The `FollowPositionPreferences` class provides customization while the camera is
 ```
 FollowPositionPreferences preferences = mapController.preferences.followPositionPreferences;
 ```
-See [customize follow position](/05-Positioning%20&%20Sensors/) settings for more details.
+See [customize follow position](/05-Positioning & Sensors/) settings for more details.
 
 >  🚨 **Alert**: Do not call methods on disposed `GemMapController` instances, as this may cause exceptions. If the `GemMap` widget is removed from the widget tree, avoid invoking methods on its associated `GemMapController` or related entities:
 > - `MapViewPreferences`

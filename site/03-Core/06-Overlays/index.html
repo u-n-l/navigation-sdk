@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/03-Core/06-Overlays/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Overlays - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#overlays" class="nav-link">Overlays</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#overlayinfo" class="nav-link">OverlayInfo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#overlaycategory" class="nav-link">OverlayCategory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#overlayitem" class="nav-link">OverlayItem</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#overlay-types" class="nav-link">Overlay Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#public-transport-overlay" class="nav-link">Public Transport Overlay</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#work-with-overlays" class="nav-link">Work with Overlays</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="overlays">Overlays<a class="headerlink" href="#overlays" title="Permanent link">&para;</a></h1>
+<p>An Overlay is an additional map layer in your Virtual Private Map (VPM) accessible in online and offline modes. Overlays can be default or user-defined.</p>
+<p>Overlay data can be POI data, categories, and binary information added via GeoJSON format, using the UNL Studio. Overlays can have multiple categories and subcategories. A single item from an overlay is an overlay item.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Overlays require downloading to work offline. See <a href="../../09-Offline/03-Manage%20Content/#download-overlays">Downloading overlays</a> for details. Most overlay features require a GemMap widget with a style containing the overlay.</p>
+</blockquote>
+<h2 id="overlayinfo">OverlayInfo<a class="headerlink" href="#overlayinfo" title="Permanent link">&para;</a></h2>
+<p>The <code>OverlayInfo</code> class contains information about an overlay.</p>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uid</code></td>
+<td>Gets the unique ID of the overlay.</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>Gets the categories of the overlay.</td>
+<td><code>List&lt;OverlayCategory&gt;</code></td>
+</tr>
+<tr>
+<td><code>getCategory</code></td>
+<td>Gets a category by its ID.</td>
+<td><code>OverlayCategory?</code></td>
+</tr>
+<tr>
+<td><code>img</code></td>
+<td>Gets the image of the overlay.</td>
+<td><code>Img</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Gets the name of the overlay.</td>
+<td><code>String</code></td>
+</tr>
+<tr>
+<td><code>hasCategories</code></td>
+<td>Checks if the category has subcategories.</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<p>Use <code>OverlayInfo</code> to:</p>
+<ul>
+<li>Access categories within an overlay</li>
+<li>Get the overlay <code>uid</code> for filtering search results</li>
+<li>Toggle overlay visibility on the map</li>
+<li>Display overlay information in the UI</li>
+</ul>
+<h2 id="overlaycategory">OverlayCategory<a class="headerlink" href="#overlaycategory" title="Permanent link">&para;</a></h2>
+<p>The <code>OverlayCategory</code> class represents hierarchical data for overlay categories.</p>
+<h3 id="structure_1">Structure<a class="headerlink" href="#structure_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property / Method</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uid</code></td>
+<td>The category ID.</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>overlayuid</code></td>
+<td>The parent overlay ID. Refers to the id of the OverlayInfo object</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>img</code></td>
+<td>The category icon.</td>
+<td><code>Img</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>The category name.</td>
+<td><code>String</code></td>
+</tr>
+<tr>
+<td><code>subcategories</code></td>
+<td>The subcategories of the category.</td>
+<td><code>List&lt;OverlayCategory&gt;</code></td>
+</tr>
+<tr>
+<td><code>hasSubcategories</code></td>
+<td>Checks if the category has subcategories.</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
+<p>Use the category <code>uid</code> to:</p>
+<ul>
+<li>Filter search results</li>
+<li>Filter and manage overlay items that trigger alerts in AlarmService</li>
+</ul>
+<h2 id="overlayitem">OverlayItem<a class="headerlink" href="#overlayitem" title="Permanent link">&para;</a></h2>
+<p>An <code>OverlayItem</code> represents a single item within an overlay, containing information about the item and its parent overlay.</p>
+<h3 id="structure_2">Structure<a class="headerlink" href="#structure_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property / Method</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>categoryId</code></td>
+<td>Gets the OverlayItem's category ID. May be 0 if the item does not belong to a specific category. Gives the id of the root category which may not be the direct parent category.</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>coordinates</code></td>
+<td>Gets the coordinates of the OverlayItem.</td>
+<td><code>Coordinates</code></td>
+</tr>
+<tr>
+<td><code>hasPreviewExtendedData</code></td>
+<td>Checks if the OverlayItem has preview extended data (dynamic data). Available only for overlays predefined.</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td><code>img</code></td>
+<td>Gets the image of the OverlayItem.</td>
+<td><code>Img</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Gets the name of the OverlayItem.</td>
+<td><code>String</code></td>
+</tr>
+<tr>
+<td><code>uid</code></td>
+<td>Gets the unique ID of the OverlayItem within the overlay.</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>overlayInfo</code></td>
+<td>Gets the parent OverlayInfo.</td>
+<td><code>OverlayInfo</code></td>
+</tr>
+<tr>
+<td><code>previewDataParameterList</code></td>
+<td>Gets the OverlayItem preview data as a parameters list. It</td>
+<td><code>SearchableParameterList</code></td>
+</tr>
+<tr>
+<td><code>previewData</code></td>
+<td>Gets the OverlayItem preview data as a OverlayItemParameters subclass. Contains the data provided by previewDataParameterList in a structured form. Returns null if no preview data is available or if the parent overlay is based on user-defined data</td>
+<td><code>OverlayItemParameters?</code></td>
+</tr>
+<tr>
+<td><code>previewUrl</code></td>
+<td>Gets the preview URL for the item (if any).</td>
+<td><code>String</code></td>
+</tr>
+<tr>
+<td><code>overlayUid</code></td>
+<td>Gets the parent overlay UID.</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>getPreviewExtendedData</code></td>
+<td>Asynchronously gets the OverlayItem preview extended data.</td>
+<td><code>ProgressListener</code></td>
+</tr>
+<tr>
+<td><code>cancelGetPreviewExtendedData</code></td>
+<td>Cancels the asynchronous getPreviewExtendedData operation.</td>
+<td><code>void</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Don't confuse the <code>uid</code> of <code>OverlayInfo</code>, <code>OverlayCategory</code>, and <code>OverlayItem</code>—each serves a distinct purpose.</p>
+<p>💡 <strong>Tip:</strong> Check if an <code>OverlayItem</code> belongs to an <code>OverlayInfo</code> using the overlayUid property, or retrieve the full <code>OverlayInfo</code> object via the <code>overlayInfo</code> property.</p>
+<p>💡 <strong>Tip:</strong> The <code>categoryId</code> getter returns the root category ID, not necessarily the direct parent category.</p>
+<p>Get the direct parent category:
+<pre class="highlight"><code>final int parentCategoryId = overlayItem.previewDataParameterList.findParameter('icon').value as int;</code></pre>
+Use the <code>getCategory</code> method from the parent <code>OverlayInfo</code> class to retrieve the corresponding <code>OverlayCategory</code> object.</p>
+</blockquote>
+<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h3>
+<p>Select <code>OverlayItems</code> from the map or receive them from <code>AlarmService</code> on approach. Display overlay item fields and information in the UI.</p>
+<h2 id="overlay-types">Overlay Types<a class="headerlink" href="#overlay-types" title="Permanent link">&para;</a></h2>
+<p>Predefined overlay types:</p>
+<ul>
+<li>Safety overlay</li>
+<li>Public transport overlay</li>
+<li>Social reports overlay</li>
+</ul>
+<p>The <code>CommonOverlayId</code> enum contains IDs for predefined overlay categories. Each overlay type has a specific <code>OverlayItemParameters</code> subclass for structured preview data available on the <code>previewData</code> property of <code>OverlayItem</code>:</p>
+<ul>
+<li><code>OverlayItemParameters</code> is the base class for all preview data types.</li>
+<li><code>SocialReportParameters</code> for social reports overlay items.</li>
+<li><code>PublicTransportParameters</code> for public transport overlay items.</li>
+<li><code>SafetyParameters</code> for safety overlay items.
+The <code>previewDataParameterList</code> contains all the fields in a generic list format, including support for user-defined overlays.</li>
+</ul>
+<h3 id="safety-overlay">Safety Overlay<a class="headerlink" href="#safety-overlay" title="Permanent link">&para;</a></h3>
+<p>Safety overlays represent speed limit cameras, red light controls, and similar items.</p>
+<p><img alt="Speed limit overlay item
+" src="../image-4.png" /></p>
+<p>Speed limit overlay item</p>
+<p><img alt="Red light control overlay item
+" src="../image-5.png" /></p>
+<p>Red light control overlay item</p>
+<p>Speed limit <code>previewData</code> includes:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int?</code></td>
+<td>The unique identifier of the overlay item.</td>
+</tr>
+<tr>
+<td><code>createStampUtc</code></td>
+<td><code>DateTime?</code></td>
+<td>Creation timestamp in UTC.</td>
+</tr>
+<tr>
+<td><code>iconId</code></td>
+<td><code>int?</code></td>
+<td>Overlay item category id.</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>String?</code></td>
+<td>Country ISO3 code.</td>
+</tr>
+<tr>
+<td><code>angleIcon</code></td>
+<td><code>int?</code></td>
+<td>Angle used to calculate icon rotation.</td>
+</tr>
+<tr>
+<td><code>cameraTypeId</code></td>
+<td><code>int?</code></td>
+<td>Icon camera type identifier.</td>
+</tr>
+<tr>
+<td><code>strCameraStatus</code></td>
+<td><code>String?</code></td>
+<td>Camera status (e.g., Active, Inactive).</td>
+</tr>
+<tr>
+<td><code>strDrivingDirection</code></td>
+<td><code>String?</code></td>
+<td>Driving direction text (e.g., Both Ways).</td>
+</tr>
+<tr>
+<td><code>strLocation</code></td>
+<td><code>String?</code></td>
+<td>Street address or location text.</td>
+</tr>
+<tr>
+<td><code>strTowards</code></td>
+<td><code>int?</code></td>
+<td>Angle used to calculate icon rotation (directional).</td>
+</tr>
+<tr>
+<td><code>provider</code></td>
+<td><code>String?</code></td>
+<td>Data provider name.</td>
+</tr>
+<tr>
+<td><code>providerId</code></td>
+<td><code>int?</code></td>
+<td>Data provider identifier.</td>
+</tr>
+<tr>
+<td><code>speedUnit</code></td>
+<td><code>String?</code></td>
+<td>Speed unit (e.g., km/h, mph).</td>
+</tr>
+<tr>
+<td><code>speedValue</code></td>
+<td><code>int?</code></td>
+<td>Measured speed value.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>String?</code></td>
+<td>Safety overlay type (e.g., Speed Limit).</td>
+</tr>
+<tr>
+<td><code>strDrivingDirectionFlag</code></td>
+<td><code>bool?</code></td>
+<td>True if located on a two-way street; false for a one-way street.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-transport-overlay">Public Transport Overlay<a class="headerlink" href="#public-transport-overlay" title="Permanent link">&para;</a></h2>
+<p>This overlay displays public transport stations.</p>
+<p><img alt="Map displaying three bus stations
+" src="../image-6.png" /></p>
+<p>Map displaying three bus stations</p>
+<p>Bus station <code>previewData</code> includes:
+| Field | Type | Description |
+|-------|------|-------------|
+| <code>id</code> | <code>int?</code> | The unique identifier of the overlay item. |
+| <code>createStampUtc</code> | <code>DateTime?</code> | Creation timestamp in UTC. |
+| <code>iconId</code> | <code>int?</code> | Overlay item category id. |
+| <code>name</code> | <code>String?</code> | Public transport stop name. |
+| <code>strDrivingDirectionFlag</code> | <code>bool?</code> | True if the stop is on a two-way street; false for a one-way street. |</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Two types of public transport stops exist:
+- Bus stations with schedule information (overlay items)
+- Bus stations without schedule information (landmarks)</p>
+</blockquote>
+<h3 id="social-reports-overlay">Social Reports Overlay<a class="headerlink" href="#social-reports-overlay" title="Permanent link">&para;</a></h3>
+<p>This overlay displays fixed cameras, construction sites, and user-reported events.</p>
+<p><img alt="Construction overlay item
+" src="../image-7.png" /></p>
+<p>Construction overlay item</p>
+<p><img alt="Fixed camera overlay item
+" src="../image-8.png" /></p>
+<p>Fixed camera overlay item</p>
+<p>Construction report <code>previewData</code> includes:
+| Field | Type | Description |
+|-------|------|-------------|
+| <code>id</code> | <code>int?</code> | The unique identifier of the overlay item. |
+| <code>createStampUtc</code> | <code>int?</code> | Creation timestamp in seconds since Unix epoch (UTC). |
+| <code>icon</code> | <code>int?</code> | Overlay item category id. Mapped to iconId. |
+| <code>type</code> | <code>String?</code> | Reported subject type (e.g., "Police", "Fixed Camera", "Road Hazard"). |
+| <code>tts</code> | <code>String?</code> | Text-to-speech string for the report (language dependent). |
+| <code>coordinates</code> | <code>Coordinates?</code> | Reported coordinates.. |
+| <code>description</code> | <code>String?</code> | Report description text. |
+| <code>ownerId</code> | <code>int?</code> | Identifier of the user who reported the event. |
+| <code>ownerName</code> | <code>String?</code> | Name of the report owner. |
+| <code>score</code> | <code>int?</code> | Numeric confirmations or score from other users. |
+| <code>updateStampUtc</code> | <code>int?</code> | Last update timestamp in seconds since Unix epoch (UTC). |
+| <code>expireStampUtc</code> | <code>int?</code> | Expiration timestamp in seconds since Unix epoch (UTC). |
+| <code>validityMins</code> | <code>int?</code> | Remaining validity time in minutes. |
+| <code>hasSnapshot</code> | <code>bool?</code> | Whether the report has an associated snapshot image. |
+| <code>direction</code> | <code>double?</code> | Azimuth direction relative to north. |
+| <code>allowThumb</code> | <code>bool?</code> | Whether the report can be thumbed up/down. |
+| <code>allowUpdate</code> | <code>bool?</code> | Whether the report can be updated. |
+| <code>allowDelete</code> | <code>bool?</code> | Whether the report can be deleted. |
+| <code>ownReport</code> | <code>bool?</code> | True if the report belongs to the current user. |
+| <code>country</code> | <code>String?</code> | Country ISO3 code. |</p>
+<p>The <code>SocialOverlay</code> static class generates, updates, and deletes social reports through static methods.</p>
+<h2 id="work-with-overlays">Work with Overlays<a class="headerlink" href="#work-with-overlays" title="Permanent link">&para;</a></h2>
+<h3 id="overlayservice">OverlayService<a class="headerlink" href="#overlayservice" title="Permanent link">&para;</a></h3>
+<p>The <code>OverlayService</code> manages overlays in the Navigation SDK, providing methods to retrieve, enable, disable, and manage overlay data online and offline.</p>
+<p><strong>Retrieve Overlay Information</strong>
+Retrieve all available overlays for the current map style using <code>getAvailableOverlays</code>.</p>
+<p>This method returns an (<code>OverlayCollection, bool</code>) tuple:</p>
+<ul>
+<li><code>OverlayCollection</code> - Contains available overlays</li>
+<li><code>bool</code> - Indicates if some information is unavailable and will download when network is available</li>
+</ul>
+<p>Receive a notification when missing information downloads via the <code>onCompleteDownload</code> callback.</p>
+<p><pre class="highlight"><code>final Completer&lt;GemError&gt; completer = Completer&lt;GemError&gt;();
+final (OverlayCollection, bool) availableOverlays = 
+  OverlayService.getAvailableOverlays(onCompleteDownload: (error) {
+    completer.complete(error);
+});
+
+await completer.future;
+OverlayCollection collection = availableOverlays.$1;</code></pre>
+The <code>OverlayCollection</code> class provides:</p>
+<ul>
+<li><code>size</code> - Returns collection size</li>
+<li><code>getOverlayAt</code> - Returns <code>OverlayInfo</code> at specified index (null if it doesn't exist)</li>
+<li><code>getOverlayById</code> - Returns <code>OverlayInfo</code> by ID</li>
+</ul>
+<p><strong>Enable and Disable Overlays</strong>
+Enable or disable overlays using <code>enableOverlay</code> and <code>disableOverlay</code> methods. Check overlay status with <code>isOverlayEnabled</code>.
+<pre class="highlight"><code>final int overlayUid = CommonOverlayId.safety.id;
+
+// Enable overlay
+final GemError errorCodeWhileEnabling = OverlayService.enableOverlay(overlayUid);
+
+// Disable overlay
+final GemError errorCodeWhileDisabling = OverlayService.disableOverlay(overlayUid);
+
+// Check if overlay is enabled
+final bool isEnabled = OverlayService.isOverlayEnabled(overlayUid);</code></pre>
+The <code>enableOverlay</code>, <code>disableOverlay</code>, and <code>isOverlayEnabled</code> methods can also take an optional <code>categUid</code> parameter to enable, disable, or check the status of a specific category within an overlay. By default, if no category ID is provided, the entire overlay is affected.</p>
+<h3 id="select-overlay-items">Select overlay items<a class="headerlink" href="#select-overlay-items" title="Permanent link">&para;</a></h3>
+<p>Overlay items are selectable. Identify specific items programmatically when users tap or click using <code>cursorSelectionOverlayItems()</code>. See <a href="../../04-Maps/04-Interact%20with%20the%20Map/#select-map-elements">Map Selection Functionality</a> for details.</p>
+<h3 id="search-overlay-items">Search Overlay Items<a class="headerlink" href="#search-overlay-items" title="Permanent link">&para;</a></h3>
+<p>Overlays are searchable. Set the right properties in search preferences when performing a search. See <a href="../../06-Search/02-Get%20Started%20with%20Search/#getting-started-with-search">Get started with Search</a> for details.</p>
+<p>Calculate Routes
+Overlay items are not designed for <strong>route calculation</strong>.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> For routing, create a landmark using the overlay item's coordinates and a representative name.</p>
+</blockquote>
+<h3 id="display-overlay-item-information">Display Overlay Item Information<a class="headerlink" href="#display-overlay-item-information" title="Permanent link">&para;</a></h3>
+<p>Overlay items contain additional information for display. Access this information using:</p>
+<ul>
+<li><code>previewDataParameterList</code> getter</li>
+<li><code>getPreviewParametersAs</code> method</li>
+<li><code>previewUrl</code> getter (returns a URL for more details in a web browser)</li>
+</ul>
+<p>The <code>previewData</code> getter provides information structured in a <code>SearchableParametersList</code>, varying by overlay type. Iterate through parameters (type <code>GemParameter</code>):
+<pre class="highlight"><code>SearchableParameterList parameters = overlayItem.previewDataParameterList;
+for (GemParameter param in parameters){
+  // Unique for every parameter
+  String? key = param.key;
+
+  // Used for display on UI - might change depending on language
+  String? name = param.name;
+
+  // The type of param.value
+  ValueType valueType = param.type;
+
+  // The parameter value
+  dynamic value = param.value;
+}</code></pre></p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The <code>previewData</code> is unavailable if the parent map tile is disposed. Get preview data before further map interactions.</p>
+</blockquote>
+<p>Obtain structured preview data using the <code>getPreviewParametersAs</code> getter, which retrieves data as a specific class based on overlay type:</p>
+<p><pre class="highlight"><code>if (overlayItem.overlayUid == CommonOverlayId.publicTransport.id) {
+  PublicTransportParameters? parameters =
+      overlays.first.getPreviewParametersAs&lt;PublicTransportParameters&gt;();
+  if (parameters == null) {
+    print("Parameters are null");
+    return;
+  }
+  String? name = parameters.name;
+  DateTime? createStamp = parameters.createStampUtc;
+  int? iconId = parameters.iconId;
+  bool? streetDirectionFlag = parameters.strDrivingDirectionFlag;
+}
+if (overlayItem.overlayUid == CommonOverlayId.safety.id) {
+  SafetyParameters? parameters =
+      overlays.first.getPreviewParametersAs&lt;SafetyParameters&gt;();
+  if (parameters == null) {
+    print("Parameters are null");
+    return;
+  }
+  String? countryName = parameters.country;
+  int? speedValue = parameters.speedValue;
+  // other fields...
+}
+if (overlayItem.overlayUid == CommonOverlayId.socialReports.id) {
+  SocialReportParameters? parameters =
+      overlays.first.getPreviewParametersAs&lt;SocialReportParameters&gt;();
+  if (parameters == null) {
+    print("Parameters are null");
+    return;
+  }
+  int? title = parameters.score;
+  String? description = parameters.description;
+  DateTime? createStamp = parameters.createStampUtc;
+  // other fields...
+}</code></pre>
+Retrieve the image associated with an overlay item using the <code>img</code> property.</p>
+<h3 id="proximity-alarms">Proximity Alarms<a class="headerlink" href="#proximity-alarms" title="Permanent link">&para;</a></h3>
+<p>Configure alarms to notify users when approaching specific overlay items. See <a href="../../10-Alarms/04-Landmark%20and%20Overlay%20Alarms/#landmark-and-overlay-alarms">Landmarks and overlay alarms</a> for implementation details.</p>
+<h3 id="highlight-overlay-items">Highlight Overlay Items<a class="headerlink" href="#highlight-overlay-items" title="Permanent link">&para;</a></h3>
+<p>Highlight overlay items using the <code>activateHighlightOverlayItems</code> method from the <code>GemMapController</code> class.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

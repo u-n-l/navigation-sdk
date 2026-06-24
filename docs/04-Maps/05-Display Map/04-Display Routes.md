@@ -11,7 +11,7 @@ mapController.centerOnRoute(route);
 ![Route displayed](image-11.png)
 Route displayed
 
-> 💡 **Tip:** To center on a route with padding, refer to the [Adjust Map View](../03-Adjust%20Map%20View.md#center-on-an-area-with-padding) guide. Utilize the screenRect parameter in the centerOnRoute method to define the specific region of the viewport that should be centered.
+> 💡 **Tip:** To center on a route with padding, refer to the [Adjust Map View](../03-Adjust Map View.md#center-on-an-area-with-padding) guide. Utilize the screenRect parameter in the centerOnRoute method to define the specific region of the viewport that should be centered.
 
 ```
 mapController.preferences.routes.add(route1, true);

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/06-Search/03-%20Search%20and%20Geocoding%20Features/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Search &amp; Geocoding Features - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#search-geocoding-features" class="nav-link">Search &amp; Geocoding Features</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#convert-coordinates-to-addresses" class="nav-link">Convert Coordinates to Addresses</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#convert-addresses-to-coordinates" class="nav-link">Convert Addresses to Coordinates</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#access-wikipedia-information" class="nav-link">Access Wikipedia Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#implement-auto-suggestions" class="nav-link">Implement Auto-Suggestions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#search-along-routes" class="nav-link">Search Along Routes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="search-geocoding-features">Search &amp; Geocoding Features<a class="headerlink" href="#search-geocoding-features" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to use geocoding and reverse geocoding features to convert coordinates to addresses and vice versa, search along routes, and implement auto-suggestions.</p>
+<h2 id="convert-coordinates-to-addresses">Convert Coordinates to Addresses<a class="headerlink" href="#convert-coordinates-to-addresses" title="Permanent link">&para;</a></h2>
+<p>Transform geographic coordinates into detailed address information including country, city, street name, and postal code.</p>
+<p>Search around a coordinate to get the corresponding address. The <code>AddressInfo</code> object contains information about the country, city, street name, street number, postal code, state, district, and country code.</p>
+<p>Access individual fields using the <code>getField</code> method, or convert the entire address to a formatted string using the format method.</p>
+<pre class="highlight"><code>final SearchPreferences prefs = SearchPreferences(thresholdDistance: 50);
+Coordinates coordinates = Coordinates(
+    latitude: 51.519305,
+    longitude: -0.128022,
+);
+
+SearchService.searchAroundPosition(
+    coordinates,
+    preferences: prefs,
+    (err, results) {
+    if (err != GemError.success || results.isEmpty) {
+        showSnackbar("No results found");
+    }
+    else {
+        Landmark landmark = results.first;
+        AddressInfo addressInfo = landmark.address;
+
+        String? country = addressInfo.getField(AddressField.country);
+        String? city = addressInfo.getField(AddressField.city);
+        String? street = addressInfo.getField(AddressField.streetName);
+        String? streetNumber = addressInfo.getField(AddressField.streetNumber);
+
+        String fullAddress = addressInfo.format(includeFields: AddressField.values);
+        showSnackbar("Address: $fullAddress");
+    }
+    },
+);</code></pre>
+<h2 id="convert-addresses-to-coordinates">Convert Addresses to Coordinates<a class="headerlink" href="#convert-addresses-to-coordinates" title="Permanent link">&para;</a></h2>
+<p>Convert address components into geographic coordinates using a hierarchical structure.</p>
+<p>Addresses follow a tree-like structure where each node is a <code>Landmark</code> with a specific <code>AddressDetailLevel</code>. The hierarchy starts with country-level landmarks, followed by cities, streets, and house numbers.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The address structure varies by country. Some countries do not have states or provinces. Use the <code>getNextAddressDetailLevel</code> method from the <code>GuidedAddressSearchService</code> class to get the next available levels in the address hierarchy.</p>
+</blockquote>
+<h3 id="search-for-countries">Search for Countries<a class="headerlink" href="#search-for-countries" title="Permanent link">&para;</a></h3>
+<p>Search at the country level to find the parent landmark for hierarchical address searches.</p>
+<p><pre class="highlight"><code>  GuidedAddressSearchService.searchCountries("Germany", (err, result) {
+    if (err != GemError.success &amp;&amp; err != GemError.reducedResult) {
+      showSnackbar("Error $err");    
+    }
+
+    if (result.isEmpty) {
+      showSnackbar("No results");
+    }
+
+    // do something with "result"
+  });</code></pre>
+This method restricts results to country-level landmarks and works with flexible search terms regardless of language.</p>
+<h3 id="navigate-the-address-hierarchy">Navigate the Address Hierarchy<a class="headerlink" href="#navigate-the-address-hierarchy" title="Permanent link">&para;</a></h3>
+<p>Search through the address structure from country to house number using parent landmarks and detail levels.</p>
+<p>Create a function that accepts a parent landmark, an <code>AddressDetailLevel</code>, and a text string to return matching child landmarks.</p>
+<p><code>AddressDetailLevel</code> values: <code>noDetail</code>, <code>country</code>, <code>state</code>, <code>county</code>, <code>district</code>, <code>city</code>, <code>settlement</code>, <code>postalCode</code>, <code>street</code>, <code>streetSection</code>, <code>streetLane</code>, <code>streetAlley</code>, <code>houseNumber</code>, <code>crossing</code>.</p>
+<p><pre class="highlight"><code>// Address search method.
+Future&lt;Landmark?&gt; searchAddress({
+  required Landmark landmark,
+  required AddressDetailLevel detailLevel,
+  required String text,
+}) async {
+  final completer = Completer&lt;Landmark?&gt;();
+
+  GuidedAddressSearchService.search(
+    text,
+    landmark,
+    detailLevel,
+    (err, results) {
+      // If there is an error, the method will return an empty list.
+      if (err != GemError.success &amp;&amp; err != GemError.reducedResult ||
+          results.isEmpty) {
+        completer.complete(null);
+        return;
+      }
+
+      completer.complete(results.first);
+    },
+  );
+
+  return completer.future;
+}</code></pre>
+Use this function to search for child landmarks step by step:</p>
+<p><pre class="highlight"><code>final countryLandmark =
+        GuidedAddressSearchService.getCountryLevelItem('ESP');
+showSnackbar('Country: ${countryLandmark!.name}');
+
+// Use the address search to get a landmark for a city in Spain (e.g., Barcelona).
+final cityLandmark = await searchAddress(
+    landmark: countryLandmark,
+    detailLevel: AddressDetailLevel.city,
+    text: 'Barcelona',
+);
+if (cityLandmark == null) return;
+showSnackbar('City: ${cityLandmark.name}');
+
+// Use the address search to get a predefined street's landmark in the city (e.g., Carrer de Mallorca).
+final streetLandmark = await searchAddress(
+    landmark: cityLandmark,
+    detailLevel: AddressDetailLevel.street,
+    text: 'Carrer de Mallorca',
+);
+if (streetLandmark == null) return;
+showSnackbar('Street: ${streetLandmark.name}');
+
+// Use the address search to get a predefined house number's landmark on the street (e.g., House Number 401).
+final houseNumberLandmark = await searchAddress(
+    landmark: streetLandmark,
+    detailLevel: AddressDetailLevel.houseNumber,
+    text: '401',
+);
+if (houseNumberLandmark == null) return;
+showSnackbar('House number: ${houseNumberLandmark.name}');</code></pre>
+The <code>getCountryLevelItem</code> method returns the root node for the specified country code. If the country code is invalid, it returns null. Alternatively, use the <code>searchCountries</code> method.</p>
+<h2 id="access-wikipedia-information">Access Wikipedia Information<a class="headerlink" href="#access-wikipedia-information" title="Permanent link">&para;</a></h2>
+<p>Retrieve Wikipedia content for search results to provide additional context about landmarks.</p>
+<p>Perform a standard search, then call ExternalInfoService.requestWikiInfo to get Wikipedia descriptions for identified landmarks.</p>
+<p>See the <a href="../../12-Location%20Wikipedia/#location-wikipedia.md">Location Wikipedia</a> guide for detailed information.</p>
+<h2 id="implement-auto-suggestions">Implement Auto-Suggestions<a class="headerlink" href="#implement-auto-suggestions" title="Permanent link">&para;</a></h2>
+<p>Provide real-time search suggestions using Flutter's SearchBar widget.</p>
+<p>Call <code>SearchService.search</code> with the current text when the search field value changes. This example shows a basic implementation:</p>
+<p><strong>AutoSuggestionSearchWidget</strong> contains the search bar:</p>
+<p><pre class="highlight"><code>class AutoSuggestionSearchWidget extends StatefulWidget {
+  const AutoSuggestionSearchWidget({super.key});
+
+  @override
+  State&lt;AutoSuggestionSearchWidget&gt; createState() =&gt;
+      _AutoSuggestionSearchWidgetState();
+}
+
+class _AutoSuggestionSearchWidgetState
+    extends State&lt;AutoSuggestionSearchWidget&gt; {
+
+  TaskHandler? taskHandler;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SearchAnchor(
+        builder: (BuildContext context, SearchController controller) {
+          return SearchBar(
+            controller: controller,
+            onTap: controller.openView,
+            onChanged: (_) =&gt; controller.openView(),
+          );
+        },
+        suggestionsBuilder:
+            (BuildContext context, SearchController controller) async {
+          List&lt;Landmark&gt; suggestions = await getAutoSuggestion(controller.text);
+          return suggestions.map(
+            (lmk) =&gt; SearchSuggestion(
+              landmark: lmk,
+              controller: controller,
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Future&lt;List&lt;Landmark&gt;&gt; getAutoSuggestion(String value) async {
+    print('New auto suggestion search for $value');
+
+    final Completer&lt;List&lt;Landmark&gt;&gt; completer = Completer();
+    final Coordinates refCoordinates = Coordinates(latitude: 48, longitude: 2);
+    final SearchPreferences searchPreferences = SearchPreferences(allowFuzzyResults: true);
+
+    // Cancel previous task.
+    if (taskHandler != null) {
+      SearchService.cancelSearch(taskHandler!);
+    }
+
+    // Launch search for new value.
+    taskHandler = SearchService.search(
+      value,
+      refCoordinates,
+      preferences: searchPreferences,
+      (error, result) {
+        completer.complete(result);
+
+        print('Got result for search $value : error - $error, result size - ${result.length}');
+      },
+    );
+
+    return completer.future;
+  }
+}</code></pre>
+Set <code>allowFuzzyResults</code> to true for partial match support. Replace <code>refCoordinates</code> with the user's current position or map viewport center for better results. Learn more about the SearchBar widget in the <a href="/link:https://api.flutter.dev/flutter/material/SearchBar-class.html">Flutter documentation</a>.</p>
+<p><strong>SearchSuggestion</strong> displays the landmark name and updates the SearchBar text when selected:</p>
+<p><pre class="highlight"><code>class SearchSuggestion extends StatelessWidget {
+  final Landmark landmark;
+  final SearchmapController mapController;
+
+  const SearchSuggestion(
+      {super.key, required this.landmark, required this.mapController});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(landmark.name),
+      // Also treat the landmark selection
+      onTap: () =&gt; mapController.closeView(landmark.name),
+    );
+  }
+}</code></pre>
+Customize the <code>SearchSuggestion</code> widget to display landmark icons, addresses, or other relevant details based on your use case.</p>
+<h2 id="search-along-routes">Search Along Routes<a class="headerlink" href="#search-along-routes" title="Permanent link">&para;</a></h2>
+<p>Find landmarks and points of interest along a predefined route.</p>
+<p>Use <code>SearchService.searchAlongRoute</code> to search for landmarks within a specified distance from the route:
+<pre class="highlight"><code>TaskHandler? taskHandler = SearchService.searchAlongRoute(
+    route,
+    (err, results) {
+        if (err == GemError.success) {
+          if (results.isEmpty) {
+            showSnackbar("No results");
+          } else {
+            showSnackbar("Results size: ${results.length}");
+            for (final Landmark landmark in results) {
+                // do something with landmarks
+            }
+        }
+        } else {
+            showSnackbar("No results found");
+        }
+    },
+);</code></pre></p>
+<p>Set <code>SearchPreferences.thresholdDistance</code> to specify the maximum distance from the route for landmarks to be included. Configure other <code>SearchPreferences</code> fields based on your use case.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

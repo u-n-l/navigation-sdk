@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/02-Get%20Started/02-Create%20Your%20Firsts%20Application/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Created Your First Application - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#created-your-first-application" class="nav-link">Created Your First Application</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#step-1-create-a-new-project" class="nav-link">Step 1: Create a New Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-2-install-the-sdk" class="nav-link">Step 2: Install the SDK</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-4-run-your-app" class="nav-link">Step 4: Run Your App</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="created-your-first-application">Created Your First Application<a class="headerlink" href="#created-your-first-application" title="Permanent link">&para;</a></h1>
+<p>Follow this tutorial to build a Flutter app with an interactive map.</p>
+<h2 id="step-1-create-a-new-project">Step 1: Create a New Project<a class="headerlink" href="#step-1-create-a-new-project" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code>flutter create my_first_map_app
+cd my_first_map_app</code></pre>
+<blockquote>
+<p>📝 <strong>Note:</strong> If you are using an existing project, skip to step 2 and add the Navigation SDK to your existing app.</p>
+</blockquote>
+<h2 id="step-2-install-the-sdk">Step 2: Install the SDK<a class="headerlink" href="#step-2-install-the-sdk" title="Permanent link">&para;</a></h2>
+<p>Add the package to <code>pubspec.yaml</code>:
+<pre class="highlight"><code>dependencies:
+  flutter:
+    sdk: flutter
+  unl_navigation_flutter:  # Add this line</code></pre></p>
+<p>Install the SDK:
+<pre class="highlight"><code>flutter pub get</code></pre></p>
+<blockquote>
+<p>📝 <strong>Note:</strong> Platform configuration is required. Complete the Android/iOS setup before continuing (adds Maven repository, sets iOS version).</p>
+</blockquote>
+<p>## Step 3: Write the Code
+  Open <code>lib/main.dart</code> and replace everything with:</p>
+<pre class="highlight"><code>import 'package:flutter/material.dart' hide Route;
+import 'package:unl_navigation_flutter/unl_navigation_flutter.dart';
+
+const projectApiToken = String.fromEnvironment('GEM_TOKEN');
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Hello Map',
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State&lt;MyHomePage&gt; createState() =&gt; _MyHomePageState();
+}
+
+class _MyHomePageState extends State&lt;MyHomePage&gt; {
+  @override
+  void dispose() {
+    GemKit.release(); // Clean up SDK resources
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple[900],
+        title: const Text('Hello Map', style: TextStyle(color: Colors.white)),
+      ),
+      body: GemMap(
+        appAuthorization: projectApiToken,
+        onMapCreated: _onMapCreated,
+      ),
+    );
+  }
+
+  void _onMapCreated(GemMapController mapController) {
+    // Map is initialized and ready to use
+  }
+}</code></pre>
+<h3 id="understanding-the-code">Understanding the Code<a class="headerlink" href="#understanding-the-code" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>GemMap</code> - Widget that displays the interactive map</li>
+<li><code>appAuthorization</code> - Your API key for SDK authentication</li>
+<li><code>onMapCreated</code> - Called when the map finishes loading</li>
+<li><code>GemKit.release()</code> - Frees memory when the app closes</li>
+</ul>
+<h2 id="step-4-run-your-app">Step 4: Run Your App<a class="headerlink" href="#step-4-run-your-app" title="Permanent link">&para;</a></h2>
+<p>Start the app with your API key:
+<pre class="highlight"><code>flutter run --dart-define=GEM_TOKEN="your_actual_token_here"</code></pre></p>
+<blockquote>
+<p>💡 <strong>Quick test:</strong>  Hardcode the token by changing line 4 to: 
+<pre class="highlight"><code>const projectApiToken = "your_actual_token_here";</code></pre>
+⚠️ <strong>Attention:</strong> Never commit hardcoded tokens to version control!</p>
+<p>📝 <strong>Note:</strong> When you initialize the SDK with a valid API key, it also performs an automatic activation. This allows better flexibility for licensing.</p>
+<p>✅ Success! Your map app is running.</p>
+</blockquote>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="app-crashes-immediately">App Crashes Immediately<a class="headerlink" href="#app-crashes-immediately" title="Permanent link">&para;</a></h3>
+<p><strong>Most common causes:</strong></p>
+<ul>
+<li><strong>Missing platform setup</strong> - Did you complete the Android/iOS configuration?</li>
+<li><strong>Invalid API key</strong> - Check your token is correct and active</li>
+<li><strong>Flutter environment issues</strong> - Run flutter doctor and fix any issues</li>
+</ul>
+<h3 id="gemkituninitializedexception-error">GemKitUninitializedException error<a class="headerlink" href="#gemkituninitializedexception-error" title="Permanent link">&para;</a></h3>
+<p>You are calling SDK methods before the map initializes.</p>
+<p><strong>Solution:</strong> Only call SDK methods inside onMapCreated or after the map loads.</p>
+<pre class="highlight"><code>void _onMapCreated(GemMapController mapController) {
+  // ✓ Safe to call SDK methods here
+}</code></pre>
+<h3 id="how-to-check-if-my-api-key-is-valid">How To Check If My API Key Is Valid<a class="headerlink" href="#how-to-check-if-my-api-key-is-valid" title="Permanent link">&para;</a></h3>
+<p>Add this code to verify your token:
+<pre class="highlight"><code>SdkSettings.verifyAppAuthorization(projectApiToken, (status) {
+  if (status == GemError.success) {
+    print('✓ API key is valid');
+  } else {
+    print('✗ API key error: $status');
+  }
+});</code></pre></p>
+<p>Possible status codes:</p>
+<ul>
+<li><code>success</code> - Token is valid ✓</li>
+<li><code>invalidInput</code> - Wrong format ✗</li>
+<li><code>expired</code> - Token expired ✗</li>
+<li><code>accessDenied</code> - Token blocked ✗</li>
+</ul>
+<h3 id="map-shows-a-watermark">Map Shows a Watermark<a class="headerlink" href="#map-shows-a-watermark" title="Permanent link">&para;</a></h3>
+<p>This means your API key is missing or invalid.</p>
+<p>Without a valid API key:</p>
+<ul>
+<li>❌ Map downloads won't work</li>
+<li>❌ Map updates disabled</li>
+<li>⚠️ Watermark appears</li>
+<li>⚠️ Limited features</li>
+</ul>
+<p>Fix: Ensure you're passing a valid API key via <code>--dart-define=GEM_TOKEN="your_token"</code></p>
+<h3 id="advanced-manual-sdk-initialization">Advanced: Manual SDK Initialization<a class="headerlink" href="#advanced-manual-sdk-initialization" title="Permanent link">&para;</a></h3>
+<p>The SDK auto-initializes when you create a <code>GemMap</code> widget.</p>
+<p>If you need to use SDK features before showing a map:</p>
+<pre class="highlight"><code>void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GemKit.initialize(appAuthorization: projectApiToken);
+
+  runApp(const MyApp());
+}
+
+// Don't forget to clean up!
+@override
+void dispose() {
+  GemKit.release();
+  super.dispose();
+}</code></pre>
+<p>When to use this:</p>
+<ul>
+<li>Background location tracking before map display</li>
+<li>Preloading map data</li>
+<li>SDK services without showing a map</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

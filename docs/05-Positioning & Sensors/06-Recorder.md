@@ -51,13 +51,13 @@ Recorder recorder = Recorder.create(recorderConfiguration);
 
 > ⚠️ **Attention:** If the log duration is shorter than `minDurationSeconds`, the `stopRecording` method does not save the recording and returns `GemError.recordedLogTooShort`.
 >
-> The `GemError.recordedLogTooShort` error may also occur if an insufficient number of positions were emitted, even when the duration between `startRecording` and `stopRecording` exceeds `minDurationSeconds`. To test recording functionality, create a custom external `DataSource` and push custom positions. Refer to the [custom positioning guide](05-Custom%20Positioning.md) for details. The external `DataSource` must be provided to the `RecorderConfiguration` object.
+> The `GemError.recordedLogTooShort` error may also occur if an insufficient number of positions were emitted, even when the duration between `startRecording` and `stopRecording` exceeds `minDurationSeconds`. To test recording functionality, create a custom external `DataSource` and push custom positions. Refer to the [custom positioning guide](05-Custom Positioning.md) for details. The external `DataSource` must be provided to the `RecorderConfiguration` object.
 >
 > The `GemError.general` result might be returned if the application has been sent to background without the required configuration. See the [record while app is in background](#record-while-app-is-in-background) section below.
 > 
 > If `minChunkDuration` is set too high, it may cause G`emError.noDiskSpace` since the SDK determines how much space is required for the entire chunk.
 >
->Ensure that the `DataType` values passed to the `recordedTypes` parameter are supported by the target platform. For example, specifying `DataType.nmeaChunk` on iOS causes the startRecording method to return `GemError.invalidInput`. See more details about sensor types [here](02-Sensors%20and%20Data%20Sources.md).
+>Ensure that the `DataType` values passed to the `recordedTypes` parameter are supported by the target platform. For example, specifying `DataType.nmeaChunk` on iOS causes the startRecording method to return `GemError.invalidInput`. See more details about sensor types [here](02-Sensors and Data Sources.md).
 
 > 💡 **Tip:** Use the [path_provider](/link:https://pub.dev/packages/path_provider) package to obtain a valid path to save recordings. The following snippet shows how to obtain a valid folder path in a platform-independent way:
 > ```
@@ -493,7 +493,7 @@ The metadata within a `LogMetadata` object contains:
 - **activityRecord** - Recorded activity details
 - **logMetrics** - Basic metrics about the recorded log
 
-To visualize the recorded route, construct a `Path` object using the route coordinates from the `LogMetadata`. Display this path on a map. For more details, refer to the documentation on the [path entity](../03-Core/02-Base%20Entities.md#path) and [display paths](../04-Maps/05-Display%20Map/06-Display%20Paths.md#display-paths).
+To visualize the recorded route, construct a `Path` object using the route coordinates from the `LogMetadata`. Display this path on a map. For more details, refer to the documentation on the [path entity](../03-Core/02-Base Entities.md#path) and [display paths](../04-Maps/05-Display Map/06-Display Paths.md#display-paths).
 
 ### Custom user metadata
 Add custom metadata to a log during recording or after completion using the `addUserMetadata` method, available in both the `Recorder` and `LogMetadata` classes. The method requires a `String` key and the associated data as a `Uint8List`.

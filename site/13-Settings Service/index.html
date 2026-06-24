@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/13-Settings%20Service/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Settings Service - Navigation SDK Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../12-Location%20Wikipedia/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../14-Timezone%20Service/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#settings-service" class="nav-link">Settings Service</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#step-1-create-a-settings-service" class="nav-link">Step 1: Create a Settings Service</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-2-add-and-get-values" class="nav-link">Step 2: Add and Get Values</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-3-organize-with-groups" class="nav-link">Step 3: Organize with Groups</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-4-remove-values" class="nav-link">Step 4: Remove values</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="settings-service">Settings Service<a class="headerlink" href="#settings-service" title="Permanent link">&para;</a></h1>
+<p>The Settings Service stores key-value pairs in permanent storage using the SettingsService class. Settings are saved in a <code>.ini</code> file format.</p>
+<h2 id="step-1-create-a-settings-service">Step 1: Create a Settings Service<a class="headerlink" href="#step-1-create-a-settings-service" title="Permanent link">&para;</a></h2>
+<p>Create or open a settings storage using the factory constructor of <code>SettingsService</code>. If no path is provided, a default one is used:</p>
+<p><pre class="highlight"><code>final settings = SettingsService();</code></pre>
+You can provide a custom path:</p>
+<p><pre class="highlight"><code>final settings = SettingsService(path: "/custom/settings/path");</code></pre>
+Access the current file path where settings are stored:</p>
+<pre class="highlight"><code>final String currentPath = settings.path;</code></pre>
+<h2 id="step-2-add-and-get-values">Step 2: Add and Get Values<a class="headerlink" href="#step-2-add-and-get-values" title="Permanent link">&para;</a></h2>
+<p>Store various types of data using set methods:
+<pre class="highlight"><code>settings.setString("username", "john_doe");
+settings.setBool("isLoggedIn", true);
+settings.setInt("launchCount", 5);
+settings.setLargeInt("highScore", 1234567890123);
+settings.setDouble("volume", 0.75);</code></pre></p>
+<p>Retrieve values using get methods. These methods accept an optional <code>defaultValue</code> parameter returned when the key is not found in the selected group. The <code>defaultValue</code> does not set the value.</p>
+<p><pre class="highlight"><code>final String username = settings.getString("username", defaultValue: "guest");
+final bool isLoggedIn = settings.getBool("isLoggedIn", defaultValue: false);
+final int launchCount = settings.getInt("launchCount", defaultValue: 0);
+final int highScore = settings.getLargeInt("highScore", defaultValue: 0);
+final double volume = settings.getDouble("volume", defaultValue: 1.0);</code></pre>
+When you set a value on one type and get it on another type, a conversion occurs:</p>
+<pre class="highlight"><code>settings.setInt("count", 1234);
+
+String value = settings.getString("count"); // Returns '1234'</code></pre>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Each change may take up to one second to be written to storage. Use the <code>flush</code> method to ensure changes are written to permanent storage immediately.</p>
+</blockquote>
+<h2 id="step-3-organize-with-groups">Step 3: Organize with Groups<a class="headerlink" href="#step-3-organize-with-groups" title="Permanent link">&para;</a></h2>
+<p>Groups organize settings into logical units. The default group is <code>DEFAULT</code>. Only one group can be active at a time, and nested groups are not allowed.</p>
+<p><pre class="highlight"><code>// All operations above this are made inside DEFAULT
+settings.beginGroup("USER_PREFERENCES");
+
+// All operations here are made inside USER_PREFERENCES
+
+settings.beginGroup("OTHER_SETTINGS");
+
+// All operations here are made inside OTHER_SETTINGS
+
+settings.endGroup();
+// All operations above this are made inside DEFAULT</code></pre>
+Get the current <code>group</code> using the group getter.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The values passed to <code>beginGroup</code> are converted to upper-case.</p>
+<p>💡 <strong>Tip:</strong> A <code>flush</code> is automatically done after the group is changed.</p>
+</blockquote>
+<h2 id="step-4-remove-values">Step 4: Remove values<a class="headerlink" href="#step-4-remove-values" title="Permanent link">&para;</a></h2>
+<h3 id="remove-value-by-key">Remove value by key<a class="headerlink" href="#remove-value-by-key" title="Permanent link">&para;</a></h3>
+<p>The <code>remove</code> method accepts a key (or pattern) and returns the number of deleted entries from the current group:
+<pre class="highlight"><code>final int removedCount = settings.remove("username");</code></pre></p>
+<h3 id="clear-all-values">Clear all values<a class="headerlink" href="#clear-all-values" title="Permanent link">&para;</a></h3>
+<p>Use the clear method to remove all settings from all groups:
+<pre class="highlight"><code>settings.clear();</code></pre></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

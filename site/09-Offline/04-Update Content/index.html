@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/09-Offline/04-Update%20Content/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Update Content - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#update-content" class="nav-link">Update Content</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#content-store-status" class="nav-link">Content Store Status</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#update-process-overview" class="nav-link">Update Process Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#listen-for-auto-update-completion" class="nav-link">Listen for Auto-Update Completion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configure-automatic-updates" class="nav-link">Configure Automatic Updates</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#listen-for-map-updates" class="nav-link">Listen For Map Updates</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#create-a-content-updater" class="nav-link">Create a Content Updater</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#start-the-update" class="nav-link">Start the Update</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#content-updater-status" class="nav-link">Content Updater Status</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-contentupdater-details" class="nav-link">Get ContentUpdater Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#apply-the-update" class="nav-link">Apply the Update</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#update-resources" class="nav-link">Update Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="update-content">Update Content<a class="headerlink" href="#update-content" title="Permanent link">&para;</a></h1>
+<p>The SDK allows updating downloaded content to stay synchronized with the latest map data.</p>
+<p>The update operation supports the <code>roadMap</code>, <code>viewStyleLowRes</code>, and <code>viewStyleHighRes</code> content types. This guide focuses on the roadMap type, as it is the most common use case.</p>
+<p>The SDK requires all road map content store items to have the same version. Partial updates of individual items are not supported.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: The update process invalidates all routes currently in use. Make sure there are no active navigation sessions, route calculations, or similar operations running when applying the update. If a navigation session, route calculation, or any other related operation is in progress at the time of the update, it will fail with a <code>GemError.invalidated</code> error code.</p>
+<p>Additionally, interacting with objects created before the update — such as Route, <code>RouteInstruction</code>, <code>NavigationInstruction</code>, <code>RouteTerrainProfile</code>, or similar types — may lead to undefined behavior, including application crashes. To avoid these issues, it is strongly recommended to cancel all ongoing operations and discard any related objects before applying the update.</p>
+</blockquote>
+<h2 id="content-store-status">Content Store Status<a class="headerlink" href="#content-store-status" title="Permanent link">&para;</a></h2>
+<p>Based on the client's content version relative to the newest available release, it can be in one of three states, as defined by the <code>ContentStoreStatus</code> enum:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>expiredData</code></td>
+<td>The client version is significantly outdated and no longer supports online operations.<br><br>All features—such as search, route calculation, and navigation—will function exclusively on the device using downloaded regions, even if an internet connection is available. If an operation like route calculation is attempted in non-downloaded regions, it will fail with a <code>GemError.expired</code> error code.<br><br>An update is mandatory to restore online functionality. Only relevant for <code>ContentType.roadMap</code> elements.</td>
+</tr>
+<tr>
+<td><code>oldData</code></td>
+<td>The client version is outdated but still supports online operations.<br><br>Features will work online when a connection is available and offline when not. While offline, only downloaded regions are accessible, but online access allows operations across the entire map.<br><br>An update is recommended as soon as possible. Relevant for all types of content store elements.</td>
+</tr>
+<tr>
+<td><code>upToDate</code></td>
+<td>The client version has the latest map data. Features function online when connected and offline using downloaded regions.<br><br>No updates are available. Relevant for all types of content store elements.</td>
+</tr>
+</tbody>
+</table>
+<p>Our servers support online operations for the most up-to-date version (<code>ContentStoreStatus.upToDate</code>) and the previous version (<code>ContentStoreStatus.oldData</code>) of road map data.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong>  The SDK is designed for seamless automatic updates by default, ensuring compatibility with the latest map data with minimal effort from the API user. If manual map update management is not required for your use case, no additional configuration is needed.</p>
+<p>📝 <strong>Note:</strong> After installation, the app includes a default map version of type <code>expiredData</code>, which contains no available content. An update — either manually triggered or performed automatically — is required before the app can be used. Internet access is required for the initial use of the app.</p>
+</blockquote>
+<h2 id="update-process-overview">Update Process Overview<a class="headerlink" href="#update-process-overview" title="Permanent link">&para;</a></h2>
+<p>The update process follows these steps:</p>
+<ol>
+<li>The map update process is initiated by the API user or the SDK automatically starts the download process</li>
+<li>The process downloads the newer data in background ensuring the full usability of the current (old) map dataset for browsing, search and navigation. The content is downloaded in a close-to-current user position order—nearby maps are downloaded first</li>
+<li>Once all new version data is downloaded:</li>
+<li>If the auto-update feature is enabled, the update is automatically applied</li>
+<li>If the user initiated the update manually, the API user is notified and the update is applied by replacing the files in an atomic operation</li>
+</ol>
+<p>If the storage size does not allow the existence of both the old and new dataset at the same time, an additional step is required:</p>
+<ol>
+<li>The remaining offline maps that did not download because of the out-of-space exception should be downloaded by calling <code>ContentStoreItem.asyncDownload</code></li>
+</ol>
+<h2 id="listen-for-auto-update-completion">Listen for Auto-Update Completion<a class="headerlink" href="#listen-for-auto-update-completion" title="Permanent link">&para;</a></h2>
+<p>Use the <code>registerOnAutoUpdateComplete</code> method from the <code>OffBoardListener</code> class to listen for auto-update completion events.</p>
+<p><pre class="highlight"><code>SdkSettings.offBoardListener.registerOnAutoUpdateComplete((ContentType type, GemError error) {
+    if (error == GemError.success) {
+        print("The update process finished successfully for $type");
+    } else {
+        print("The update process failed for $type! The error code is $error");
+    }
+});</code></pre>
+The callback is triggered for each content type when the auto-update process finishes (only for types configured to auto-update).</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: If the auto-update fails, you are responsible for handling this case and triggering an update manually if needed.</p>
+</blockquote>
+<h2 id="configure-automatic-updates">Configure Automatic Updates<a class="headerlink" href="#configure-automatic-updates" title="Permanent link">&para;</a></h2>
+<p>By default, automatic updates are enabled for road maps and styles. Configure this behavior using the <code>AutoUpdateSettings</code> class, which can be passed to the <code>GemKit.initialize</code> method at the start of the application.</p>
+<p>Automatic updates can be customized individually for each content type:</p>
+<p><pre class="highlight"><code>AutoUpdateSettings settings = AutoUpdateSettings(
+    isAutoUpdateForRoadMapEnabled: false,
+    isAutoUpdateForViewStyleHighResEnabled: true,
+    isAutoUpdateForViewStyleLowResEnabled: false,
+);
+
+await GemKit.initialize(
+    appAuthorization: "YOUR_API_TOKEN",
+    autoUpdateSettings: settings);</code></pre>
+You can also configure auto-update settings later in the application using the <code>OffBoardListener</code> class:</p>
+<p><pre class="highlight"><code>// Via the AutoUpdateSettings object
+SdkSettings.offBoardListener.autoUpdateSettings = AutoUpdateSettings(
+    isAutoUpdateForRoadMapEnabled: true,
+    isAutoUpdateForViewStyleHighResEnabled: false,
+    isAutoUpdateForViewStyleLowResEnabled: false,
+);
+
+// Via the setters
+SdkSettings.offBoardListener.isAutoUpdateForRoadMapEnabled = true;</code></pre>
+If you change auto-update settings via the <code>SdkSettings.offBoardListener</code> object, call <code>SdkSettings.autoUpdate()</code> to check for new updates and automatically download and apply them.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> If the update has already been completed for a specific type, the auto-update configuration for that type is no longer taken into account. You cannot return to an older version once an update has been applied.</p>
+</blockquote>
+<p>The <code>AutoUpdateSettings</code> class also includes the <code>AutoUpdateSettings.allDisabled()</code> and <code>AutoUpdateSettings.allEnabled()</code> constructors for quickly disabling or enabling all updates.</p>
+<h2 id="listen-for-map-updates">Listen For Map Updates<a class="headerlink" href="#listen-for-map-updates" title="Permanent link">&para;</a></h2>
+<p>Listen for map updates by calling the <code>registerOnWorldwideRoadMapSupportStatus</code> method and providing a callback.</p>
+<p><pre class="highlight"><code>SdkSettings.offBoardListener.registerOnWorldwideRoadMapSupportStatus((status){
+        switch (status) {
+          case ContentStoreStatus.upToDate:
+            showSnackbar("The map version is up-to-date.");
+            break;
+          case ContentStoreStatus.oldData:
+            showSnackbar(
+                "A new map version is available. Online operation on the current map version are still supported.");
+            break;
+          case ContentStoreStatus.expiredData:
+            showSnackbar(
+                "The map version has expired. All operations will be executed offline.");
+            break;
+        }
+      },
+    );</code></pre>
+The SDK may automatically trigger the map version check at an appropriate moment. To manually force the check, call the <code>checkForUpdate</code> method from the <code>ContentStore</code>:</p>
+<pre class="highlight"><code>final GemError checkUpdateCode = ContentStore.checkForUpdate(ContentType.roadMap);
+print('Check for update result code $checkUpdateCode');</code></pre>
+<p>The <code>checkForUpdate</code> method returns <code>GemError.success</code> if the check has been initiated and <code>GemError.connectionRequired</code> if no internet connection is available.</p>
+<blockquote>
+<p>📝 <strong>Note:</strong> If the <code>checkForUpdate</code> method is provided with the <code>ContentType.roadMap</code> argument, the <code>onWorldwideRoadMapSupportStatusCallback</code> will be called. If other values are supplied (such as map styles), the response will be returned via the <code>onAvailableContentUpdateCallback</code> callback.</p>
+</blockquote>
+<h2 id="create-a-content-updater">Create a Content Updater<a class="headerlink" href="#create-a-content-updater" title="Permanent link">&para;</a></h2>
+<p>Instantiate a <code>ContentUpdater</code> object to update road maps. This object manages all operations related to the update process:</p>
+<p><pre class="highlight"><code>final (contentUpdater, contentUpdaterCreationError) = ContentStore.createContentUpdater(ContentType.roadMap);
+
+if (contentUpdaterCreationError != GemError.success &amp;&amp; contentUpdaterCreationError != GemError.exist){
+    print("Error regarding the content updater creation : $contentUpdaterCreationError");
+    return;
+}</code></pre>
+The <code>createContentUpdater</code> method returns a <code>ContentUpdater</code> instance along with an error code indicating the status of the updater creation for the specified <code>ContentType</code>:</p>
+<ul>
+<li>If the error code is <code>GemError.success</code>, the <code>ContentUpdater</code> was successfully created and is ready for use</li>
+<li>If the error code is <code>GemError.exist</code>, a <code>ContentUpdater</code> for the specified <code>ContentType</code> already exists, and the existing instance is returned. This instance remains valid and can be used</li>
+<li>If the error code corresponds to any other <code>GemError</code> value, the <code>ContentUpdater</code> instantiation has failed, and the returned object is not usable</li>
+</ul>
+<h2 id="start-the-update">Start the Update<a class="headerlink" href="#start-the-update" title="Permanent link">&para;</a></h2>
+<p>Call the <code>update</code> method from the <code>ContentUpdater</code> object to start the update process.</p>
+<p>The <code>update</code> method accepts the following parameters:</p>
+<ul>
+<li>A boolean indicating whether the update can proceed on networks that may incur additional charges. If <code>false</code>, the update will only run on free networks, such as Wi-Fi</li>
+<li>A callback named <code>onStatusUpdated</code> that is triggered when the update status changes, providing information through the <code>ContentUpdaterStatus</code> parameter</li>
+<li>A callback named <code>onProgressUpdated</code> that is triggered when the update progresses, supplying an integer value between 0 and 100 to indicate completion percentage</li>
+<li>A callback named <code>onComplete</code> that is triggered with the update result at the end of the update process (after calling apply or if the update fails earlier). The most common error codes are:<ul>
+<li><code>GemError.success</code> if the update was successful</li>
+<li><code>GemError.inUse</code> if the update is already running and could not be started</li>
+<li><code>GemError.notSupported</code> if the update operation is not supported for the given content type</li>
+<li><code>GemError.noDiskSpace</code> if there is not enough space on the device for the update</li>
+<li><code>GemError.io</code> if an error regarding file operations occurred</li>
+</ul>
+</li>
+</ul>
+<p>The method returns a non-null <code>ProgressListener</code> if the update process has been successfully started or <code>null</code> if the update couldn't be started (in which case the <code>onComplete</code> will be called with the error code).</p>
+<pre class="highlight"><code>final ProgressListener? listener = contentUpdater.update(
+    true, // &lt;-  Allow update on charge network
+    onStatusUpdated: (ContentUpdaterStatus status) {
+        print("OnStatusUpdated with code $status");
+    },
+    onProgressUpdated: (progress) {
+        print("Update progress $progress/100");
+    },
+    onComplete: (error) {
+        if (error == GemError.success) {
+            print("The update process finished successfully");
+        } else {
+            print("The update process failed! The error code is $error");
+        }
+    },
+);
+</code></pre>
+<h2 id="content-updater-status">Content Updater Status<a class="headerlink" href="#content-updater-status" title="Permanent link">&para;</a></h2>
+<p>The <code>ContentUpdaterStatus</code> enum provided by the <code>onStatusUpdated</code> method has the following values:
+| Enum Value | Description |
+|------------|-------------|
+| <code>idle</code> | The update process has not started. It's the default state of the ContentUpdater |
+| <code>waitConnection</code> | Waiting for an internet connection to proceed (Wi-Fi or mobile). |
+| <code>waitWIFIConnection</code> | Waiting for a Wi-Fi connection before continuing. Available if the update method has been called with false value for the allowChargeNetwork parameter. |
+| <code>checkForUpdate</code> | Checking for available updates. |
+| <code>download</code> | Downloading the updated content. The overall progress and the per-item progress is available. |
+| <code>fullyReady</code> | The update is fully downloaded and ready to be applied. The ContentUpdater.items list will contain the target items for the update. An apply call is required for the update to be applied |
+| <code>partiallyReady</code> | The update is partially downloaded but can still be applied. The content available offline that wasn't yet updated will be deleted if the update is applied and the remaining items will be updated. |
+| <code>downloadRemainingContent</code> | Downloading any remaining content after applying the update. If the apply method is called while the partiallyReady status is set, then this will be the new status. The user must get the list of remaining content items from the updater and start normal download operation. |
+| <code>downloadPendingContent</code> | Downloads any pending content that has not yet been retrieved. If a new item starts downloading during an update, it will complete after the update finishes (at the latest version). This value is provided while these downloads are in progress. |
+| <code>complete</code> | The update process has finished successfully. The onComplete callback is also triggered with <code>GemError.success</code> |
+| <code>error</code> | The update process encountered an error. The onComplete callback is also triggered with the appropriate error code |</p>
+<h2 id="get-contentupdater-details">Get ContentUpdater Details<a class="headerlink" href="#get-contentupdater-details" title="Permanent link">&para;</a></h2>
+<p>Get details about the <code>ContentUpdater</code> object using the provided getters:
+<pre class="highlight"><code>final ContentUpdaterStatus status = contentUpdater.status;
+final int progress = contentUpdater.progress;
+final bool isStarted = contentUpdater.isStarted;
+final bool canApplyUpdate =  contentUpdater.canApply;
+final bool isUpdateStarted = contentUpdater.isStarted;</code></pre></p>
+<h2 id="apply-the-update">Apply the Update<a class="headerlink" href="#apply-the-update" title="Permanent link">&para;</a></h2>
+<p>Once <code>onStatusUpdated</code> is called with a <code>ContentUpdaterStatus</code> value of <code>fullyReady</code> or <code>partiallyReady</code>, apply the update using the apply method of the <code>ContentUpdater</code> class.</p>
+<ul>
+<li>If the status is <code>fullyReady</code>, all items have been downloaded</li>
+<li>If the status is <code>partiallyReady</code>, only a subset of the items has been downloaded. Applying the update will remove outdated items that were not fully downloaded, restricting offline functionality to the updated content only. The remaining items will continue downloading</li>
+</ul>
+<p><pre class="highlight"><code>onStatusUpdated: (ContentUpdaterStatus status) {
+    print("OnStatusUpdated with code $status");
+    if (status == ContentUpdaterStatus.fullyReady ||
+        status == ContentUpdaterStatus.partiallyReady) {
+
+        if (!contentUpdater.canApply){
+            print("Cannot apply content update");
+            return;
+        }
+        final applyError = contentUpdater.apply();
+        print("Apply resolved with code ${applyError.code}");
+    }
+}</code></pre>
+The <code>apply</code> method returns:</p>
+<ul>
+<li><code>GemError.success</code> if the update was applied successfully</li>
+<li><code>GemError.upToDate</code> if the update is already up to date and no changes were made</li>
+<li><code>GemError.invalidated</code> if the update operation has not been started successfully via the update method</li>
+<li><code>GemError.io</code> if an error regarding the file system occurred while updating the content</li>
+</ul>
+<p>The <code>onComplete</code> callback is also triggered with the appropriate error code.</p>
+<h2 id="update-resources">Update Resources<a class="headerlink" href="#update-resources" title="Permanent link">&para;</a></h2>
+<p>The SDK includes built-in resources such as icons and translations. Enable or disable automatic updates for these resources by setting the <code>isAutoUpdateForResourcesEnabled</code> field within the <code>AutoUpdateSettings</code> object passed to <code>GemKit.initialize</code>.</p>
+<p>If you configure callbacks manually using the <code>setAllowConnection</code> method, resource updates can still be enabled by setting the optional <code>canDoAutoUpdateResources</code> parameter.</p>
+<p>Unlike other content types, updating these resources does not require a <code>ContentUpdater</code>. By default, resource updates are enabled (<code>isAutoUpdateForResourcesEnabled</code> is true, and <code>canDoAutoUpdateResources</code> is true).</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

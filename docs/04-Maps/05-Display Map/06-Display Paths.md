@@ -2,7 +2,7 @@
 Learn how to display paths on the map, customize their appearance, and manage the path collection.
 
 ## Add Paths To The Map
-Display [Paths](../../03-Core/02-Base%20Entities.md#path) by adding them to the `MapViewPathCollection`. The `MapViewPathCollection` is an iterable collection with methods like `size`, `add`, `remove`, `removeAt`, `getPathAt`, and `getPathByName`.
+Display [Paths](../../03-Core/02-Base Entities.md#path) by adding them to the `MapViewPathCollection`. The `MapViewPathCollection` is an iterable collection with methods like `size`, `add`, `remove`, `removeAt`, `getPathAt`, and `getPathByName`.
 
 ```
 mapController.preferences.paths.add(path);

@@ -103,12 +103,12 @@ for (final event in trafficEvents) {
     bool isRoadBlock = event.isRoadblock;
 }
 ```
-See the [Traffic Events guide](../03-Core/10-Traffic%20Events.md#traffic-events) for detailed information.
+See the [Traffic Events guide](../03-Core/10-Traffic Events.md#traffic-events) for detailed information.
 
 ## Display Routes On The Map
 Routes are not automatically displayed after calculation. Visualize routes on the map using the display methods.
 
-Refer to the [display routes on maps guide](../04-Maps/05-Display%20Map/04-Display%20Routes.md#display-routes) for visualization and customization options.
+Refer to the [display routes on maps guide](../04-Maps/05-Display Map/04-Display Routes.md#display-routes) for visualization and customization options.
 
 ## Get the Terrain Profile
 When computing the route we can choose to also build the `TerrainProfile` for the route.

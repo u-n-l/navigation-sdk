@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/03-Core/03-Positions/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Positions - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#positions" class="nav-link">Positions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#raw-position-data" class="nav-link">Raw position data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#map-matched-position-data" class="nav-link">Map matched position data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#compare-position-types" class="nav-link">Compare position types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="positions">Positions<a class="headerlink" href="#positions" title="Permanent link">&para;</a></h1>
+<p>This page covers position data representation using <code>GemPosition</code> and <code>GemImprovedPosition</code> classes for GPS-based systems.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong>  Don't confuse <code>Coordinates</code> with <code>Position</code> classes. The <code>Coordinates</code> class represents geographic locations (latitude, longitude, altitude) and is widely used throughout the SDK. In contrast, <code>GemPosition</code> and <code>GemImprovedPosition</code> classes contain additional sensor data and primarily represent the user's location and movement details.</p>
+</blockquote>
+<h2 id="raw-position-data">Raw position data<a class="headerlink" href="#raw-position-data" title="Permanent link">&para;</a></h2>
+<p>Raw position data represents unprocessed GPS sensor data from devices. It corresponds to the <code>GemPosition</code> interface.</p>
+<h2 id="map-matched-position-data">Map matched position data<a class="headerlink" href="#map-matched-position-data" title="Permanent link">&para;</a></h2>
+<p>Map matching aligns raw GPS data with a digital map, correcting inaccuracies by snapping the position to the nearest logical location (such as roads). It corresponds to the <code>GemImprovedPosition</code> interface.</p>
+<h2 id="compare-position-types">Compare position types<a class="headerlink" href="#compare-position-types" title="Permanent link">&para;</a></h2>
+<p>Map matched positions provide more information than raw positions:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Raw</th>
+<th>Map Matched</th>
+<th>When Available</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>acquisitionTime</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>always</td>
+<td>System time when the data was collected from sensors.</td>
+</tr>
+<tr>
+<td><code>satelliteTime</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>always</td>
+<td>Satellite timestamp when the position was collected by sensors.</td>
+</tr>
+<tr>
+<td><code>provider</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>always</td>
+<td>Provider type (GPS, network, unknown).</td>
+</tr>
+<tr>
+<td><code>latitude &amp; longitude</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasCoordinates</td>
+<td>Latitude and longitude of the position in degrees.</td>
+</tr>
+<tr>
+<td><code>altitude</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasAltitude</td>
+<td>Altitude at the given position. May be negative.</td>
+</tr>
+<tr>
+<td><code>speed</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasSpeed</td>
+<td>Current speed (always non-negative).</td>
+</tr>
+<tr>
+<td><code>speedAccuracy</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasSpeedAccuracy</td>
+<td>Speed accuracy (always non-negative). Typical accuracy is ~2 m/s in good conditions.</td>
+</tr>
+<tr>
+<td><code>course</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasCourse</td>
+<td>Direction of movement in degrees (0° north, 90° east, 180° south, 270° west).</td>
+</tr>
+<tr>
+<td><code>courseAccuracy</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasCourseAccuracy</td>
+<td>Heading accuracy in degrees (typical accuracy ~25°).</td>
+</tr>
+<tr>
+<td><code>accuracyH</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasHorizontalAccuracy</td>
+<td>Horizontal accuracy in meters (always positive). Typical range is 5–20 meters.</td>
+</tr>
+<tr>
+<td><code>accuracyV</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasVerticalAccuracy</td>
+<td>Vertical accuracy in meters (always positive).</td>
+</tr>
+<tr>
+<td><code>fixQuality</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>always</td>
+<td>Accuracy quality: <code>inertial</code>, <code>low</code>, <code>high</code>, or <code>invalid</code>.</td>
+</tr>
+<tr>
+<td><code>coordinates</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>hasCoordinates</td>
+<td>Coordinates of the position.</td>
+</tr>
+<tr>
+<td><code>roadModifiers</code></td>
+<td>❌</td>
+<td>✅</td>
+<td>hasRoadLocalization</td>
+<td>Road modifiers such as tunnel, bridge, ramp, etc.</td>
+</tr>
+<tr>
+<td><code>speedLimit</code></td>
+<td>❌</td>
+<td>✅</td>
+<td>always</td>
+<td>Speed limit of the current road in m/s. Returns <code>0</code> if unavailable.</td>
+</tr>
+<tr>
+<td><code>terrainAltitude</code></td>
+<td>❌</td>
+<td>✅</td>
+<td>hasTerrainData</td>
+<td>Terrain altitude in meters. May be negative and differ from <code>altitude</code>.</td>
+</tr>
+<tr>
+<td><code>terrainSlope</code></td>
+<td>❌</td>
+<td>✅</td>
+<td>hasTerrainData</td>
+<td>Terrain slope in degrees (positive for ascent, negative for descent).</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>❌</td>
+<td>✅</td>
+<td>always</td>
+<td>Current address information.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📝 <strong>Note:</strong> The <code>speedLimit</code> field may not always have a value, even if the position is map matched. This can happen if data is unavailable for the current road segment or if the position is not on a road. In such cases, the <code>speedLimit</code> field will be set to 0.</p>
+<p>💡 <strong>Tip:</strong> To check if a user is exceeding the legal speed limit, use the <code>AlarmService</code> class. Refer to the speed warnings guide for more details.</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

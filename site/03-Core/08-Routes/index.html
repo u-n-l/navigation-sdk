@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/03-Core/08-Routes/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Routes - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#routes" class="nav-link">Routes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#create-routes" class="nav-link">Create Routes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#route-types" class="nav-link">Route Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#route-structure" class="nav-link">Route Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#routesegment-structure" class="nav-link">RouteSegment Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#routeinstruction-structure" class="nav-link">RouteInstruction Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#related-classes" class="nav-link">Related Classes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#signpost-details" class="nav-link">Signpost Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#toll-sections" class="nav-link">Toll Sections</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#change-instruction-language" class="nav-link">Change Instruction Language</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="routes">Routes<a class="headerlink" href="#routes" title="Permanent link">&para;</a></h1>
+<p>A route represents a navigable path between two or more landmarks (waypoints), including distance, estimated time, and navigation instructions.</p>
+<p>Compute routes in different ways:</p>
+<ul>
+<li><strong>Waypoint-based</strong> - Based on 2 or more landmarks (navigable)</li>
+<li><strong>Over-track</strong> - Based on a predefined path from GPX files or other sources (navigable)</li>
+<li><strong>Route ranges</strong> - Not navigable, without segments or instructions</li>
+</ul>
+<p>Navigable routes consist of segments. Each segment represents the portion between consecutive waypoints with its own route instructions.</p>
+<h2 id="create-routes">Create Routes<a class="headerlink" href="#create-routes" title="Permanent link">&para;</a></h2>
+<p>Routes cannot be instantiated directly. Compute them based on a list of landmarks. See <a href="../../07-Routing/02-Get%20Started%20wtih%20Routing/#get-started-with-routing">Get started with Routing</a> for details.</p>
+<blockquote>
+<p>🚨 <strong>Alert</strong>: Calculating a route does not automatically display it on the map. See <a href="../../04-Maps/05-Display%20Map/04-Display%20Routes/#display-routes">Display routes</a> for instructions.</p>
+</blockquote>
+<h2 id="route-types">Route Types<a class="headerlink" href="#route-types" title="Permanent link">&para;</a></h2>
+<p>The SDK supports multiple route types, each tailored for specific use cases:</p>
+<ul>
+<li><strong>Normal routes</strong> - Standard routes for typical navigation</li>
+<li>P<strong>ublic transport (PT) routes</strong> - Routes using public transport with frequency, ticket info, and transit-specific data</li>
+<li><strong>Over-track (OT) routes</strong> - Routes based on predefined paths from GPX files or drawn routes</li>
+<li><strong>Electric vehicle (EV) routes</strong> - Routes for EVs with charging station information (not fully implemented)</li>
+</ul>
+<h3 id="route-classes">Route Classes<a class="headerlink" href="#route-classes" title="Permanent link">&para;</a></h3>
+<p>Each route type has specific classes:</p>
+<table>
+<thead>
+<tr>
+<th>Route Type</th>
+<th>Route Class</th>
+<th>Segment Class</th>
+<th>Instruction Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal Route</td>
+<td><code>Route</code></td>
+<td><code>RouteSegment</code></td>
+<td><code>RouteInstruction</code></td>
+</tr>
+<tr>
+<td>Public Transport Route</td>
+<td><code>PTRoute</code></td>
+<td><code>PTRouteSegment</code></td>
+<td><code>PTRouteInstruction</code></td>
+</tr>
+<tr>
+<td>Over-Track Route</td>
+<td><code>OTRoute</code></td>
+<td>Not Available</td>
+<td>Not Available</td>
+</tr>
+<tr>
+<td>Electric Vehicle Route</td>
+<td><code>EVRoute</code></td>
+<td><code>EVRouteSegment</code></td>
+<td><code>EVRouteInstruction</code></td>
+</tr>
+</tbody>
+</table>
+<p>These classes extend base classes (<code>RouteBase</code>, <code>RouteSegmentBase</code>, <code>RouteInstructionBase</code>) that provide common features.</p>
+<h2 id="route-structure">Route Structure<a class="headerlink" href="#route-structure" title="Permanent link">&para;</a></h2>
+<p>Key route characteristics:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geographicArea</code></td>
+<td><code>GeographicArea</code></td>
+<td>Geographic boundary or region covered by the route.</td>
+</tr>
+<tr>
+<td><code>polygonGeographicArea</code></td>
+<td><code>PolygonGeographicArea</code></td>
+<td>Polygon representing the geographic area as a series of connected points.</td>
+</tr>
+<tr>
+<td><code>tilesGeographicArea</code></td>
+<td><code>TilesCollectionGeographicArea</code></td>
+<td>Collection of map tiles representing the geographic area.</td>
+</tr>
+<tr>
+<td><code>dominantRoads</code></td>
+<td><code>List&lt;String&gt;</code></td>
+<td>List of road names or identifiers that dominate the route.</td>
+</tr>
+<tr>
+<td><code>hasFerryConnections</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the route includes ferry connections.</td>
+</tr>
+<tr>
+<td><code>hasTollRoads</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the route includes toll roads.</td>
+</tr>
+<tr>
+<td><code>tollSections</code></td>
+<td><code>List&lt;TollSection&gt;</code></td>
+<td>List of toll sections along the route.</td>
+</tr>
+<tr>
+<td><code>incursCosts</code></td>
+<td><code>bool</code></td>
+<td>Specifies whether the route incurs monetary costs such as tolls or fees (<strong>deprecated</strong>; same as <code>hasTollRoads</code>).</td>
+</tr>
+<tr>
+<td><code>routeStatus</code></td>
+<td><code>RouteStatus</code></td>
+<td>Indicates the current route state. When navigating, deviations may trigger route recalculation; the status can reflect successful computation, lack of internet connection, or recomputation errors.</td>
+</tr>
+<tr>
+<td><code>terrainProfile</code></td>
+<td><code>List&lt;double&gt;</code></td>
+<td>Terrain elevation profile along the route, represented as a list of elevation values.</td>
+</tr>
+<tr>
+<td><code>segments</code></td>
+<td><code>List&lt;RouteSegment&gt;</code></td>
+<td>Collection of route segments representing portions of the route. Segments are split based on the initial waypoints used to compute the route. For public transport routes, a segment represents either a pedestrian or a transit portion.</td>
+</tr>
+<tr>
+<td><code>trafficEvents</code></td>
+<td><code>List&lt;RouteTrafficEvent&gt;</code></td>
+<td>List of traffic events affecting the route, such as delays or road closures.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="routesegment-structure">RouteSegment Structure<a class="headerlink" href="#routesegment-structure" title="Permanent link">&para;</a></h2>
+<p>A route segment represents the portion between two consecutive waypoints. For public transport routes, segments are categorized as pedestrian or public transit sections.</p>
+<table>
+<thead>
+<tr>
+<th>Field / Method</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>waypoints</code></td>
+<td><code>List&lt;Landmark&gt;</code></td>
+<td>Returns the list of landmarks representing the start and end waypoints of the route segment.</td>
+</tr>
+<tr>
+<td><code>timeDistance</code></td>
+<td><code>TimeDistance</code></td>
+<td>Provides the segment length in meters and the estimated travel time in seconds.</td>
+</tr>
+<tr>
+<td><code>geographicArea</code></td>
+<td><code>RectangleGeographicArea</code></td>
+<td>Returns the smallest rectangle enclosing the geographic area of the route segment.</td>
+</tr>
+<tr>
+<td><code>incursCosts</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether traveling this route segment incurs a cost to the user.</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>String</code></td>
+<td>Provides a summary of the route segment.</td>
+</tr>
+<tr>
+<td><code>instructions</code></td>
+<td><code>List&lt;RouteInstruction&gt;</code></td>
+<td>Returns the list of route instructions for the segment.</td>
+</tr>
+<tr>
+<td><code>isCommon</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the segment shares the same travel mode as the parent route. Mainly used for public transport routes.</td>
+</tr>
+<tr>
+<td><code>tollSections</code></td>
+<td><code>List&lt;TollSection&gt;</code></td>
+<td>List of toll sections along the route segment.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="routeinstruction-structure">RouteInstruction Structure<a class="headerlink" href="#routeinstruction-structure" title="Permanent link">&para;</a></h2>
+<p>Route instructions provide detailed navigation guidance, including coordinates, turn directions, distances, and time to waypoints.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>coordinates</code></td>
+<td><code>Coordinates</code></td>
+<td>Gets the coordinates for this route instruction.</td>
+</tr>
+<tr>
+<td><code>countryCodeISO</code></td>
+<td><code>String</code></td>
+<td>Gets the ISO 3166-1 alpha-3 country code for the navigation instruction.</td>
+</tr>
+<tr>
+<td><code>exitDetails</code></td>
+<td><code>String</code></td>
+<td>Gets the exit route instruction text.</td>
+</tr>
+<tr>
+<td><code>followRoadInstruction</code></td>
+<td><code>String</code></td>
+<td>Gets the textual description for follow-road information.</td>
+</tr>
+<tr>
+<td><code>realisticNextTurnImg</code></td>
+<td><code>AbstractGeometryImg</code></td>
+<td>Gets the image for realistic turn information.</td>
+</tr>
+<tr>
+<td><code>remainingTravelTimeDistance</code></td>
+<td><code>TimeDistance</code></td>
+<td>Gets the remaining travel time and distance until the destination.</td>
+</tr>
+<tr>
+<td><code>remainingTravelTimeDistanceToNextWaypoint</code></td>
+<td><code>TimeDistance</code></td>
+<td>Gets the remaining travel time and distance to the next waypoint.</td>
+</tr>
+<tr>
+<td><code>roadInfo</code></td>
+<td><code>List&lt;RoadInfo&gt;</code></td>
+<td>Gets road information.</td>
+</tr>
+<tr>
+<td><code>roadInfoImg</code></td>
+<td><code>RoadInfoImg</code></td>
+<td>Gets the road information image.</td>
+</tr>
+<tr>
+<td><code>signpostDetails</code></td>
+<td><code>SignpostDetails</code></td>
+<td>Gets extended signpost details.</td>
+</tr>
+<tr>
+<td><code>signpostInstruction</code></td>
+<td><code>String</code></td>
+<td>Gets the textual description for signpost information.</td>
+</tr>
+<tr>
+<td><code>timeDistanceToNextTurn</code></td>
+<td><code>TimeDistance</code></td>
+<td>Gets the distance and time to the next turn.</td>
+</tr>
+<tr>
+<td><code>traveledTimeDistance</code></td>
+<td><code>TimeDistance</code></td>
+<td>Gets the traveled time and distance.</td>
+</tr>
+<tr>
+<td><code>turnDetails</code></td>
+<td><code>TurnDetails</code></td>
+<td>Gets full details for the turn.</td>
+</tr>
+<tr>
+<td><code>turnImg</code></td>
+<td><code>Img</code></td>
+<td>Gets the image for the turn.</td>
+</tr>
+<tr>
+<td><code>turnInstruction</code></td>
+<td><code>String</code></td>
+<td>Gets the textual description for the turn.</td>
+</tr>
+<tr>
+<td><code>hasFollowRoadInfo</code></td>
+<td><code>bool</code></td>
+<td>Checks whether follow-road information is available.</td>
+</tr>
+<tr>
+<td><code>hasSignpostInfo</code></td>
+<td><code>bool</code></td>
+<td>Checks whether signpost information is available.</td>
+</tr>
+<tr>
+<td><code>hasTurnInfo</code></td>
+<td><code>bool</code></td>
+<td>Checks whether turn information is available.</td>
+</tr>
+<tr>
+<td><code>hasRoadInfo</code></td>
+<td><code>bool</code></td>
+<td>Checks whether road information is available.</td>
+</tr>
+<tr>
+<td><code>isCommon</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether this instruction shares the same transport mode as the parent route.</td>
+</tr>
+<tr>
+<td><code>isExit</code></td>
+<td><code>bool</code></td>
+<td>Checks whether this instruction represents a main road exit.</td>
+</tr>
+<tr>
+<td><code>isFerry</code></td>
+<td><code>bool</code></td>
+<td>Checks whether this instruction is on a ferry segment.</td>
+</tr>
+<tr>
+<td><code>isTollRoad</code></td>
+<td><code>bool</code></td>
+<td>Checks whether this instruction is on a toll road.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📝 <strong>Note:</strong> Distinguish between <code>NavigationInstruction</code> and <code>RouteInstruction</code>:</p>
+</blockquote>
+<ul>
+<li><code>NavigationInstruction</code> - Real-time, turn-by-turn navigation based on current position (only during navigation or simulation)</li>
+<li><code>RouteInstruction</code> - Route overview available immediately after calculation (instructions don't change during navigation)</li>
+</ul>
+<h2 id="related-classes">Related Classes<a class="headerlink" href="#related-classes" title="Permanent link">&para;</a></h2>
+<h3 id="timedistance">TimeDistance<a class="headerlink" href="#timedistance" title="Permanent link">&para;</a></h3>
+<p>The <code>TimeDistance</code> class provides time and distance details to important points of interest.</p>
+<p>It differentiates between road types:</p>
+<ul>
+<li><strong>Restricted</strong> - Non-public roads</li>
+<li><strong>Unrestricted</strong> - Publicly accessible roads</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unrestrictedTimeS</code></td>
+<td><code>int</code></td>
+<td>Unrestricted time in seconds.</td>
+</tr>
+<tr>
+<td><code>restrictedTimeS</code></td>
+<td><code>int</code></td>
+<td>Restricted time in seconds.</td>
+</tr>
+<tr>
+<td><code>unrestrictedDistanceM</code></td>
+<td><code>int</code></td>
+<td>Unrestricted distance in meters.</td>
+</tr>
+<tr>
+<td><code>restrictedDistanceM</code></td>
+<td><code>int</code></td>
+<td>Restricted distance in meters.</td>
+</tr>
+<tr>
+<td><code>ndBeginEndRatio</code></td>
+<td><code>double</code></td>
+<td>Ratio representing how restricted time and distance are divided between the beginning and the end.</td>
+</tr>
+<tr>
+<td><code>totalTimeS</code></td>
+<td><code>int</code></td>
+<td>Total time in seconds (sum of unrestricted and restricted times).</td>
+</tr>
+<tr>
+<td><code>totalDistanceM</code></td>
+<td><code>int</code></td>
+<td>Total distance in meters (sum of unrestricted and restricted distances).</td>
+</tr>
+<tr>
+<td><code>isEmpty</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the total time is zero.</td>
+</tr>
+<tr>
+<td><code>isNotEmpty</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the total time is non-zero.</td>
+</tr>
+<tr>
+<td><code>hasRestrictedBeginEndDifferentiation</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether restricted values are differentiated between the beginning and the end based on the ratio.</td>
+</tr>
+<tr>
+<td><code>restrictedTimeAtBegin</code></td>
+<td><code>int</code></td>
+<td>Restricted time allocated to the beginning, based on the ratio.</td>
+</tr>
+<tr>
+<td><code>restrictedTimeAtEnd</code></td>
+<td><code>int</code></td>
+<td>Restricted time allocated to the end, based on the ratio.</td>
+</tr>
+<tr>
+<td><code>restrictedDistanceAtBegin</code></td>
+<td><code>int</code></td>
+<td>Restricted distance allocated to the beginning, based on the ratio.</td>
+</tr>
+<tr>
+<td><code>restrictedDistanceAtEnd</code></td>
+<td><code>int</code></td>
+<td>Restricted distance allocated to the end, based on the ratio.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="signpost-details">Signpost Details<a class="headerlink" href="#signpost-details" title="Permanent link">&para;</a></h2>
+<p>Signposts near roadways indicate intersections and directions. The SDK provides realistic image renderings with additional information.</p>
+<p>The <code>SignpostDetails</code> class provides:
+| Member | Type | Description |
+|--------|------|-------------|
+| <code>backgroundColor</code> | <code>Color</code> | Returns the background color of the signpost. |
+| <code>borderColor</code> | <code>Color</code> | Returns the border color of the signpost. |
+| <code>textColor</code> | <code>Color</code> | Returns the text color of the signpost. |
+| <code>hasBackgroundColor</code> | <code>bool</code> | Indicates whether the signpost has a background color. |
+| <code>hasBorderColor</code> | <code>bool</code> | Indicates whether the signpost has a border color. |
+| <code>hasTextColor</code> | <code>bool</code> | Indicates whether the signpost has a text color. |
+| <code>items</code> | <code>List&lt;SignpostItem&gt;</code> | Returns the list of <code>SignpostItem</code> elements associated with the signpost. |</p>
+<p>Each <code>SignpostItem</code> provides:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>row</code></td>
+<td><code>int</code></td>
+<td>Returns the one-based row of the item. A value of <code>0</code> indicates not applicable.</td>
+</tr>
+<tr>
+<td><code>column</code></td>
+<td><code>int</code></td>
+<td>Returns the one-based column of the item. A value of <code>0</code> indicates not applicable.</td>
+</tr>
+<tr>
+<td><code>connectionInfo</code></td>
+<td><code>SignpostConnectionInfo</code></td>
+<td>Returns the connection type of the item (<code>branch</code>, <code>towards</code>, <code>exit</code>, <code>invalid</code>).</td>
+</tr>
+<tr>
+<td><code>phoneme</code></td>
+<td><code>String</code></td>
+<td>Returns the phoneme assigned to the item, if available; otherwise an empty string.</td>
+</tr>
+<tr>
+<td><code>pictogramType</code></td>
+<td><code>SignpostPictogramType</code></td>
+<td>Returns the pictogram type for the item (e.g. <code>airport</code>, <code>busStation</code>, <code>parkingFacility</code>).</td>
+</tr>
+<tr>
+<td><code>shieldType</code></td>
+<td><code>RoadShieldType</code></td>
+<td>Returns the shield type for the item (e.g. <code>county</code>, <code>state</code>, <code>federal</code>, <code>interstate</code>).</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td><code>String</code></td>
+<td>Returns the text assigned to the item, if available.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>SignpostItemType</code></td>
+<td>Returns the type of the item (e.g. <code>placeName</code>, <code>routeNumber</code>, <code>routeName</code>).</td>
+</tr>
+<tr>
+<td><code>hasAmbiguity</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the item has ambiguity. Avoid using such items for TTS.</td>
+</tr>
+<tr>
+<td><code>hasSameShieldLevel</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether the road code item has the same shield level as its associated road.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="turn-details">Turn Details<a class="headerlink" href="#turn-details" title="Permanent link">&para;</a></h3>
+<p>The <code>TurnDetails</code> class provides:</p>
+<ul>
+<li><strong>event</strong> - Turn type enum (straight, right, left, lightLeft, lightRight, sharpRight, sharpLeft, roundaboutExitRight, and more)</li>
+<li><strong>abstractGeometryImg</strong> - Abstract turn image (verify validity). Customize colors with <code>AbstractGeometryImageRenderSettings</code></li>
+<li><strong>roundaboutExitNumber</strong> - Roundabout exit number (if available)</li>
+</ul>
+<p><strong>Abstract Image vs. Turn Image</strong>
+Compare images from <code>abstractGeometryImg</code> (left) and <code>turnImg</code> (right):</p>
+<p><img alt="Turn details abstract image" src="../image.png" />
+<img alt="Turn image" src="../image-1.png" /></p>
+<ul>
+<li><strong>abstractGeometryImg</strong> - Detailed intersection representation with customizable colors for theme alignment</li>
+<li><strong>turnImg</strong> - Simplified turn schematic focusing on essential direction (no customization</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Tip:</strong> 
+Use the <code>uid</code> getter to retrieve each image's unique identifier. Update the UI only when the ID changes to enhance navigation performance.</p>
+</blockquote>
+<p><strong>Customize Abstract Geometry Images</strong>
+Use <code>AbstractGeometryImageRenderSettings</code> to customize render settings and colors:
+<pre class="highlight"><code> AbstractGeometryImageRenderSettings customizedRenderSettings = const AbstractGeometryImageRenderSettings(
+    activeInnerColor: Colors.red,
+    activeOuterColor: Colors.green,
+    inactiveInnerColor: Colors.blue,
+    inactiveOuterColor: Colors.yellow,
+);</code></pre>
+These settings produce:</p>
+<p><img alt="Customized next turn details abstract image" src="../image-2.png" /></p>
+<h2 id="toll-sections">Toll Sections<a class="headerlink" href="#toll-sections" title="Permanent link">&para;</a></h2>
+<p>The <code>TollSection</code> class represents a tolled route portion, defining start and end points (in meters from route start), cost, and currency.
+| Member | Type | Description |
+|--------|------|-------------|
+| <code>startDistanceM</code> | <code>int</code> | Distance in meters where the section starts, measured from the route starting point. |
+| <code>endDistanceM</code> | <code>int</code> | Distance in meters where the section ends, measured from the route starting point. |
+| <code>cost</code> | <code>double</code> | Cost associated with the section in the specified currency. |
+| <code>currency</code> | <code>String</code> | Currency code (e.g. <code>EUR</code>, <code>USD</code>). |</p>
+<p>When cost data is unavailable, <code>cost</code> is 0 and <code>currency</code> is an empty string.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Get WGS coordinates of toll section start and end using <code>Route.getCoordinateOnRoute</code> with <code>startDistanceM</code> and <code>endDistanceM</code> values.</p>
+</blockquote>
+<h2 id="change-instruction-language">Change Instruction Language<a class="headerlink" href="#change-instruction-language" title="Permanent link">&para;</a></h2>
+<p>Route instruction texts follow the SDK language settings. See <a href="../../02-Get%20Started/04-Internationalization/">Internationalization</a> for details.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

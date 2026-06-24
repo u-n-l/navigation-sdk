@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/08-Navigation/05-Roadblocks/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Roadblocks - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../05-Positioning%20%26%20Sensors/" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#roadblocks" class="nav-link">Roadblocks</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#configure-traffic-service" class="nav-link">Configure Traffic Service</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#add-temporary-roadblock-during-navigation" class="nav-link">Add Temporary Roadblock During Navigation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#check-traffic-information-availability" class="nav-link">Check Traffic Information Availability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-trafficonlinerestrictions-enum-provides-the-following-values" class="nav-link">The TrafficOnlineRestrictions enum provides the following values:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#add-persistent-roadblock" class="nav-link">Add Persistent Roadblock</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-all-persistent-roadblocks" class="nav-link">Get All Persistent Roadblocks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-persistent-roadblock-by-id" class="nav-link">Get Persistent Roadblock by ID</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#remove-roadblocks" class="nav-link">Remove Roadblocks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-path-preview-for-roadblock" class="nav-link">Get Path Preview For Roadblock</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#listen-for-roadblock-events" class="nav-link">Listen For Roadblock Events</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="roadblocks">Roadblocks<a class="headerlink" href="#roadblocks" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to add, manage, and remove roadblocks to customize route planning and navigation.</p>
+<p>A roadblock is a user-defined restriction applied to a specific road segment or geographic area. It reflects traffic disruptions such as construction, closures, or areas to avoid, and influences route planning by marking certain paths or zones as unavailable for navigation.</p>
+<p>Roadblocks can be: 
+- path-based (defined by a sequence of coordinates) or
+- area-based (covering a geographic region);
+- temporary (short-lived) or 
+- persistent (remain after SDK uninitialization), depending on their intended duration.</p>
+<p>The <code>TrafficEvent</code> class represents roadblocks. Check the <a href="../../03-Core/10-Traffic%20Events/">Traffic Events guide</a> for more details. Roadblocks are managed through the <code>TrafficService</code> class.</p>
+<p>While some roadblocks are provided in real time by available online data sources, you can also define your own user roadblocks to customize routing behavior.</p>
+<p>If the applied style includes traffic data and traffic display is enabled (<code>MapViewPreferences.setTrafficVisibility</code> is set to true), a visual indication of the blocked portion will appear on the map, highlighted in red.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Adding or removing user roadblocks affects only the current user and does not impact other users' routes. To create reports that are visible to all users, refer to the <a href="/015-Social%20Reports.md">Social Reports guide</a>.</p>
+</blockquote>
+<h2 id="configure-traffic-service">Configure Traffic Service<a class="headerlink" href="#configure-traffic-service" title="Permanent link">&para;</a></h2>
+<p>Traffic behavior can be customized through the <code>TrafficPreferences</code> instance, accessible via the <code>TrafficService</code> class. The <code>useTraffic</code> property defines how traffic data should be applied during routing and navigation.</p>
+<p>The <code>TrafficUsage</code> enum offers the following options:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>none</code></td>
+<td>Disables all traffic data usage</td>
+</tr>
+<tr>
+<td><code>online</code></td>
+<td>Uses both online and offline traffic data (default)</td>
+</tr>
+<tr>
+<td><code>offline</code></td>
+<td>Uses only offline traffic data, including user-defined roadblocks</td>
+</tr>
+</tbody>
+</table>
+<p>To allow only offline usage:</p>
+<pre class="highlight"><code>TrafficService.preferences.useTraffic = TrafficUsage.offline;</code></pre>
+<h2 id="add-temporary-roadblock-during-navigation">Add Temporary Roadblock During Navigation<a class="headerlink" href="#add-temporary-roadblock-during-navigation" title="Permanent link">&para;</a></h2>
+<p>You can add a roadblock to bypass a portion of the route for a specified distance. Once applied, the route will be recalculated, and the updated route will be returned via the <code>onRouteUpdated</code> callback provided to either the <code>startNavigation</code> or <code>startSimulation</code> method.</p>
+<p>To add a 100-meter roadblock starting in 10 meters:
+<pre class="highlight"><code>NavigationService.setNavigationRoadBlock(100, startDistance: 10);</code></pre>
+Roadblocks added through <code>setNavigationRoadBlock</code> only affect the ongoing navigation.</p>
+<h2 id="check-traffic-information-availability">Check Traffic Information Availability<a class="headerlink" href="#check-traffic-information-availability" title="Permanent link">&para;</a></h2>
+<p>Use the <code>getOnlineServiceRestrictions</code> method to check if traffic events are available for a geographic position. It takes a <code>Coordinates</code> object as argument and returns a <code>TrafficOnlineRestrictions</code> enum.</p>
+<pre class="highlight"><code>Coordinates coords = Coordinates.fromLatLong(50.108, 8.783);
+TrafficOnlineRestrictions restriction = TrafficService.getOnlineServiceRestrictions(coords);</code></pre>
+<h2 id="the-trafficonlinerestrictions-enum-provides-the-following-values">The TrafficOnlineRestrictions enum provides the following values:<a class="headerlink" href="#the-trafficonlinerestrictions-enum-provides-the-following-values" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>none</code> - No restrictions are in place; online traffic is available</li>
+<li><code>settings</code> - Online traffic is disabled in the <code>TrafficPreferences</code> object</li>
+<li><code>connection</code> - No internet connection is available</li>
+<li><code>networkType</code> - Not allowed on extra charged networks (e.g., roaming)</li>
+<li><code>providerData</code> - Required provider data is missing</li>
+<li><code>worldMapVersion</code> - The world map version is outdated and incompatible. Please update the road map</li>
+<li><code>diskSpace</code> - Insufficient disk space to download or store traffic data</li>
+<li><code>initFail</code> - Failed to initialize the traffic service</li>
+</ul>
+<h2 id="add-persistent-roadblock">Add Persistent Roadblock<a class="headerlink" href="#add-persistent-roadblock" title="Permanent link">&para;</a></h2>
+<p>To add a persistent roadblock, provide the following:</p>
+<ul>
+<li><strong>startTime</strong> - Timestamp when the roadblock becomes active</li>
+<li><strong>expireTime</strong> - Timestamp when the roadblock is no longer in effect</li>
+<li><strong>transportMode</strong> - The specific mode of transport affected by the roadblock</li>
+<li><strong>id</strong> - A unique string ID for the roadblock</li>
+<li><strong>coords/area</strong> - Either:</li>
+<li>A list of coordinates (for path-based roadblocks), or</li>
+<li>A geographic area (for area-based roadblocks)</li>
+</ul>
+<p>The roadblock will affect routing and navigation between the specified startTime and expireTime. Once the expireTime is reached, the roadblock is automatically removed.</p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> The following conditions apply when adding a roadblock:</p>
+<ul>
+<li>If roadblocks are disabled in the <code>TrafficPreferences</code> object, the addition will fail with the <code>GemError.activation</code> code</li>
+<li>If a roadblock already exists at the same location, the operation will fail with the <code>GemError.exist</code> code</li>
+<li>If the input parameters are invalid (e.g., <strong>expireTime</strong> is earlier than <strong>startTime</strong>, missing id, or invalid coordinates/area object), the addition will fail with the <code>GemError.invalidInput</code> code</li>
+<li>If a roadblock with the same id already exists, the addition will fail with the <code>GemError.inUse</code> code</li>
+</ul>
+</blockquote>
+<h3 id="add-area-based-persistent-roadblock">Add area-based persistent roadblock<a class="headerlink" href="#add-area-based-persistent-roadblock" title="Permanent link">&para;</a></h3>
+<p>Use the <code>addPersistentRoadblockByArea</code> method to add area-based user roadblocks. It accepts a <code>GeographicArea</code> object representing the area to be avoided.</p>
+<p><strong>The method returns:</strong></p>
+<ul>
+<li>If successful, the newly created <code>TrafficEvent</code> instance along with the <code>GemError.success</code> code</li>
+<li>If failed, null and an appropriate <code>GemError</code> code indicating the reason for failure</li>
+</ul>
+<p>To add an area-based roadblock starting now and available for 1 hour that affects cars:</p>
+<pre class="highlight"><code>final area = RectangleGeographicArea(
+    topLeft: Coordinates.fromLatLong(46.764942, 7.122563),
+    bottomRight: Coordinates.fromLatLong(46.762031, 7.127992),
+);
+
+final (TrafficEvent?, GemError) result = TrafficService.addPersistentRoadblockByArea(
+    area: area,
+    startTime: DateTime.now(),
+    expireTime: DateTime.now().add(Duration(hours: 1)),
+    transportMode: RouteTransportMode.car,
+    id: 'test_id',
+);
+
+if (result.$2 == GemError.success) {
+    print("The addition was successful");
+    TrafficEvent event = result.$1!;
+} else {
+    print("The addition failed with error code ${result.$2}");
+}</code></pre>
+<h3 id="add-path-based-persistent-roadblock">Add path-based persistent roadblock<a class="headerlink" href="#add-path-based-persistent-roadblock" title="Permanent link">&para;</a></h3>
+<p>Use the <code>addPersistentRoadblockByCoordinates</code> method to add path-based user roadblocks. It accepts a list of Coordinate objects and supports two modes:</p>
+<ul>
+<li><strong>Single Coordinate</strong> - Defines a <strong>point-based </strong>roadblock. This may result in two roadblocks being created—one for each travel direction</li>
+<li><strong>Multiple Coordinates</strong> - Defines a <strong>path-based</strong> roadblock, starting at the first coordinate and ending at the last. This restricts access along a specific road segment</li>
+</ul>
+<p>To add a path-based roadblock on both sides of the matching road, starting now and available for 1 hour that affects cars:
+<pre class="highlight"><code>final coords = [Coordinates.fromLatLong(45.64695, 25.62070)];
+
+(TrafficEvent?, GemError) result = TrafficService.addPersistentRoadblockByCoordinates(
+    coords: coords,
+    startTime: DateTime.now(),
+    expireTime: DateTime.now().add(Duration(hours: 1)),
+    transportMode: RouteTransportMode.car,
+    id: 'test_id',
+);
+
+if (result.$2 == GemError.success) {
+    print("The addition was successful");
+    TrafficEvent event = result.$1!;
+} else {
+    print("The addition failed with error code ${result.$2}");
+}</code></pre>
+The method returns the result in a similar way to the <code>addPersistentRoadblockByArea</code> method.</p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> The <code>addPersistentRoadblockByCoordinates</code> method may also fail in the following cases:</p>
+<ul>
+<li><strong>No Suitable Road Found</strong> - If a valid road cannot be identified at the specified coordinates, or if no road data (online or offline) is available for the given location, the method will return <code>null</code> along with the <code>GemError.notFound</code> error code</li>
+<li><strong>Route Computation Failed</strong> - If multiple coordinates are provided but a valid route cannot be computed between them, the method will return <code>null</code> and the <code>GemError.noRoute</code> error code</li>
+</ul>
+</blockquote>
+<h3 id="add-anti-area-persistent-roadblock">Add anti-area persistent roadblock<a class="headerlink" href="#add-anti-area-persistent-roadblock" title="Permanent link">&para;</a></h3>
+<p>If a region contains a persistent roadblock, you can whitelist a specific sub-area within the larger restricted zone to allow routing and navigation through that portion. Use the <code>addAntiPersistentRoadblockByArea</code> method, which accepts the same arguments as the <code>addPersistentRoadblockByArea</code> method.</p>
+<p>This enables fine-grained control over blocked regions by allowing exceptions within otherwise restricted areas.</p>
+<h2 id="get-all-persistent-roadblocks">Get All Persistent Roadblocks<a class="headerlink" href="#get-all-persistent-roadblocks" title="Permanent link">&para;</a></h2>
+<p>Use the <code>persistentRoadblocks</code> getter to retrieve the list of persistent roadblocks. All user-defined roadblocks that are currently active or scheduled to become active are returned. Expired roadblocks are automatically removed.</p>
+<p>To iterate through all persistent roadblocks and print their unique identifiers:
+<pre class="highlight"><code>List&lt;TrafficEvent&gt; roadblocks = TrafficService.persistentRoadblocks;
+
+for (final roadblock in roadblocks){
+    print(roadblock.description);
+}</code></pre></p>
+<h2 id="get-persistent-roadblock-by-id">Get Persistent Roadblock by ID<a class="headerlink" href="#get-persistent-roadblock-by-id" title="Permanent link">&para;</a></h2>
+<p>Use the <code>getPersistentRoadblock</code> method to retrieve both path-based and area-based roadblocks by identifier. This method takes the identifier string as argument and returns null if the event could not be found or the event if it exists.</p>
+<pre class="highlight"><code>TrafficEvent? event = TrafficService.getPersistentRoadblock("unique_id");
+
+if (event != null){
+    print("Event was found");
+} else {
+    print("Event does not exist");
+}</code></pre>
+<h2 id="remove-roadblocks">Remove Roadblocks<a class="headerlink" href="#remove-roadblocks" title="Permanent link">&para;</a></h2>
+<h3 id="remove-persistent-roadblock-by-id">Remove persistent roadblock by ID<a class="headerlink" href="#remove-persistent-roadblock-by-id" title="Permanent link">&para;</a></h3>
+<p>Use the <code>removePersistentRoadblockById</code> method to remove a roadblock by identifier. This method works for both path-based and area-based roadblocks.</p>
+<p><pre class="highlight"><code>GemError error = TrafficService.removePersistentRoadblockById("identifier");
+if (error == GemError.success){
+    print("Removal succeeded");
+} else {
+    print("Removal failed with error code $error");
+}</code></pre>
+The method returns <code>GemError.success</code> if the roadblock was removed and <code>GemError.notFound</code> if no roadblock was found with the given ID.</p>
+<h3 id="remove-persistent-roadblock-by-coordinates">Remove persistent roadblock by coordinates<a class="headerlink" href="#remove-persistent-roadblock-by-coordinates" title="Permanent link">&para;</a></h3>
+<p>Use the <code>removePersistentRoadblockByCoordinates</code> method to remove path-based roadblocks by providing the first coordinate of the roadblock to be removed.</p>
+<p><pre class="highlight"><code>GemError error = TrafficService.removePersistentRoadblockByCoordinates(coords);
+if (error == GemError.success){
+    print("Removal succeeded");
+} else {
+    print("Removal failed with error code $error");
+}</code></pre>
+The method returns <code>GemError.success</code> if the roadblock was removed and <code>GemError.notFound</code> if no roadblock was found starting with the given coordinate.</p>
+<h3 id="remove-roadblock-using-trafficevent">Remove roadblock using TrafficEvent<a class="headerlink" href="#remove-roadblock-using-trafficevent" title="Permanent link">&para;</a></h3>
+<p>If the <code>TrafficEvent</code> instance is available, remove it using the <code>removeUserRoadblock</code> method:
+<pre class="highlight"><code>TrafficEvent event = ...
+TrafficService.removeUserRoadblock(event);</code></pre></p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> This method can be used for both persistent and non-persistent roadblocks.</p>
+</blockquote>
+<h3 id="remove-all-persistent-roadblocks">Remove all persistent roadblocks<a class="headerlink" href="#remove-all-persistent-roadblocks" title="Permanent link">&para;</a></h3>
+<p>Use the <code>removeAllPersistentRoadblocks</code> method to delete all existing user-defined roadblocks.</p>
+<h2 id="get-path-preview-for-roadblock">Get Path Preview For Roadblock<a class="headerlink" href="#get-path-preview-for-roadblock" title="Permanent link">&para;</a></h2>
+<p>Before adding a persistent roadblock, you can preview the path using an intermediary list of coordinates generated between two positions. The <code>getPersistentRoadblockPathPreview</code> method helps visualize the intended roadblock on the map.</p>
+<p>This method takes the following arguments:
+- <code>UserRoadblockPathPreviewCoordinate</code> from - The starting point of the roadblock. Can be constructed from a Coordinates object using the <code>.fromCoordinates()</code> factory constructor, or returned by the <code>getPersistentRoadblockPathPreview</code> method to allow daisy-chaining multiple segments
+- <code>Coordinates to</code> - The ending point of the roadblock
+- <code>RouteTransportMode transportMode</code> - The transport mode (e.g., car, bicycle, pedestrian) to be used for the roadblock preview and calculation</p>
+<p>The method returns a tuple containing:</p>
+<ul>
+<li><code>List&lt;Coordinates&gt;</code> - A list of intermediate coordinates forming the preview path. This list can be used to render a polyline or marker path on the map</li>
+<li><code>UserRoadblockPathPreviewCoordinate</code> - The updated "end" coordinate, which can be reused as the <code>from</code> argument to preview or chain additional segments</li>
+<li><code>GemError</code> - Error code of the operation. This may include the same error codes returned by <code>addPersistentRoadblockByCoordinates</code>. The rest of the return values are not valid if the error is not success</li>
+</ul>
+<p>To get the preview of a path-based roadblock between two <code>Coordinate</code> objects:
+<pre class="highlight"><code>Coordinates startCoordinates = ...
+Coordinates endCoordinates = ...
+
+UserRoadblockPathPreviewCoordinate previewStart = UserRoadblockPathPreviewCoordinate.fromCoordinates(startCoordinates);
+
+final (coordinates, newPreviewStart, previewError) =
+    TrafficService.getPersistentRoadblockPathPreview(
+    from: previewStart,
+    to: endCoordinates,
+    transportMode: RouteTransportMode.car,
+);
+previewStart = newPreviewStart;
+
+if (previewError != GemError.success) {
+    print("Error $previewError during preview calculation");
+} else {
+    // Draw the path on the UI
+    Path previewPath = Path.fromCoordinates(coordinates);
+    controller.preferences.paths.add(previewPath);
+
+    // If the user is happy with the roadblock preview,
+    // the roadblock can be added using addPersistentRoadblockByCoordinates
+}</code></pre></p>
+<h2 id="listen-for-roadblock-events">Listen For Roadblock Events<a class="headerlink" href="#listen-for-roadblock-events" title="Permanent link">&para;</a></h2>
+<p>You can register for notifications related to persistent roadblocks. These notifications are triggered when:</p>
+<ul>
+<li>A roadblock's <code>startTime</code> becomes greater than the current time - via the <code>onRoadblocksActivated</code> callback</li>
+<li>A roadblock's <code>endTime</code> becomes less than the current time - via the <code>onRoadblocksExpired</code> callback</li>
+</ul>
+<p>These callbacks provide the activated/expired <code>List&lt;TrafficEvent&gt;</code>.</p>
+<p>To instantiate a <code>PersistentRoadblockListener</code>:
+<pre class="highlight"><code>final PersistentRoadblockListener listener = PersistentRoadblockListener(
+    onRoadblocksActivated: (List&lt;TrafficEvent&gt; events) {
+        // Do something with the events
+    },
+    onRoadblocksExpired: (List&lt;TrafficEvent&gt; events) {
+        // Do something with the events
+    },
+);</code></pre></p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> The <code>onRoadblocksActivated</code> and <code>onRoadblocksExpired</code> callbacks can also be registered or changed via the <code>registerOnRoadblocksExpired</code> and <code>registerOnRoadblocksActivated</code> methods.</p>
+</blockquote>
+<p>Register the listener using the <code>persistentRoadblockListener</code> setter:
+<pre class="highlight"><code>TrafficService.persistentRoadblockListener = listener;</code></pre></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

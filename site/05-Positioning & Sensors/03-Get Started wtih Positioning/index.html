@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://u-n-l.github.io/navigation-sdk/05-Positioning%20%26%20Sensors/03-Get%20Started%20wtih%20Positioning/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Get Started With Positioning - Navigation SDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../styles/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Navigation SDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../01-Overview/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../02-Get%20Started/" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../03-Core/" class="nav-link">Core</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../04-Maps/" class="nav-link">Maps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../" class="nav-link">Positioning & Sensors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../06-Search/" class="nav-link">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../07-Routing/" class="nav-link">Routing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../08-Navigation/" class="nav-link">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../09-Offline/" class="nav-link">Offline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../10-Alarms/" class="nav-link">Alarms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../11-Driver%20Behaviour/" class="nav-link">Driver Behaviour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../12-Location%20Wikipedia/" class="nav-link">Location Wikipedia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../13-Settings%20Service/" class="nav-link">Settings Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../14-Timezone%20Service/" class="nav-link">Timezone Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../15-Social%20Reports/" class="nav-link">Social Reports</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#get-started-with-positioning" class="nav-link">Get Started With Positioning</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#grant-permissions" class="nav-link">Grant Permissions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#receive-location-updates" class="nav-link">Receive Location Updates</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#get-current-location" class="nav-link">Get Current Location</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="get-started-with-positioning">Get Started With Positioning<a class="headerlink" href="#get-started-with-positioning" title="Permanent link">&para;</a></h1>
+<p>The Positioning module provides location data for navigation, tracking, and location-based services. Use GPS data from the device or integrate custom location data from external sources.</p>
+<h2 id="grant-permissions">Grant Permissions<a class="headerlink" href="#grant-permissions" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-add-application-location-permissions">Step 1: Add application location permissions<a class="headerlink" href="#step-1-add-application-location-permissions" title="Permanent link">&para;</a></h3>
+<p>Configure location permissions based on the platform:</p>
+<p><strong>Android</strong></p>
+<p>Add the following permissions to <code>android/app/main/AndroidManifest.xml</code> within the <code>&lt;manifest&gt;</code> block:
+<pre class="highlight"><code>&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /&gt;</code></pre>
+More information about permissions can be found in the <a href="/link:https://developer.android.com/reference/android/Manifest.permission">Android Manifest documentation</a>.</p>
+<p><strong>iOS</strong></p>
+<p>Add the following lines to <code>ios/Runner/Info</code>.plist within the <code>&lt;dict&gt;</code> block:
+<pre class="highlight"><code>&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt;
+&lt;string&gt;Location is needed for map localization and navigation&lt;/string&gt;</code></pre>
+Add the following to the <code>ios/Podfile</code>:
+<pre class="highlight"><code>post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        flutter_additional_ios_build_settings(target)
+
+        target.build_configurations.each do |config|
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+            '$(inherited)',
+            ## dart: [PermissionGroup.location, PermissionGroup.locationAlways, PermissionGroup.locationWhenInUse]
+            'PERMISSION_LOCATION=1',
+        ]
+        end 
+    end
+end</code></pre></p>
+<h3 id="step-2-get-user-consent">Step 2: Get user consent<a class="headerlink" href="#step-2-get-user-consent" title="Permanent link">&para;</a></h3>
+<p>Use the <a href="/link:https://pub.dev/packages/permission_handler">permission_handler</a> plugin to request and manage location permissions:</p>
+<blockquote>
+<p>⚠️ <strong>Attention:</strong> Follow the <a href="/link:https://pub.dev/packages/permission_handler#setup">platform specific setup</a> for the permission_handler package to correctly configure permissions for your application.</p>
+</blockquote>
+<p><pre class="highlight"><code>// For Android &amp; iOS platforms, permission_handler package is used to ask for permissions.
+final locationPermissionStatus = await Permission.locationWhenInUse.request();
+
+if (locationPermissionStatus == PermissionStatus.granted) {
+    // After the permission was granted, we can set the live data source (in most cases the GPS).
+    // The data source should be set only once, otherwise we'll get GemError.exist error.
+    GemError setLiveDataSourceError = PositionService.setLiveDataSource();
+    showSnackbar("Set live datasource with result: $setLiveDataSourceError");
+}
+
+if (locationPermissionStatus == PermissionStatus.denied) {
+    // The user denied the permission
+    showSnackbar("Location permission denied");
+}
+
+if (locationPermissionStatus == PermissionStatus.permanentlyDenied) {
+    // The user permanently denied the permission
+    // The user should go to the app settings to enable the permission
+    showSnackbar("Location permission permanently denied");
+}</code></pre>
+The code requests the <code>locationWhenInUse</code> permission. If granted, call <code>setLiveDataSource</code> on the <code>PositionService</code> instance to use real GPS positions for navigation.</p>
+<p>When the live data source is set and permissions are granted, the position cursor appears on the map as an arrow.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> For debugging, use the <a href="/link:https://developer.android.com/studio/run/emulator-extended-controls">Android Emulator</a>'s extended controls to mock the current position. On real devices, use apps like <a href="/link:https://play.google.com/store/apps/details?id=ru.gavrikov.mocklocations&amp;pli=1">Mock Locations</a> to simulate location data.</p>
+<p>On iOS (simulators and devices), mock the location from Xcode for GPX replay. See more <a href="/link:https://developer.apple.com/documentation/xcode/simulating-location-in-tests">here</a>.</p>
+</blockquote>
+<h2 id="receive-location-updates">Receive Location Updates<a class="headerlink" href="#receive-location-updates" title="Permanent link">&para;</a></h2>
+<p>Register a callback function using the <code>addImprovedPositionListener</code> and <code>addPositionListener</code> methods to receive position updates. The listener is called continuously as new position data becomes available.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Consult the <a href="../../03-Core/03-Positions/">Positions guide</a> for more information about the <code>GemPosition</code> class and the differences between raw positions and map-matched positions.</p>
+</blockquote>
+<h3 id="raw-positions">Raw positions<a class="headerlink" href="#raw-positions" title="Permanent link">&para;</a></h3>
+<p>Use the <code>addPositionListener</code> method to listen for raw position updates as they're pushed to the data source or received via sensors:
+<pre class="highlight"><code>PositionService.addPositionListener((GemPosition position) {
+    // Process the position
+});</code></pre></p>
+<h3 id="map-matched-positions">Map-matched positions<a class="headerlink" href="#map-matched-positions" title="Permanent link">&para;</a></h3>
+<p>Use the <code>addImprovedPositionListener</code> method to register a callback for map-matched positions:
+<pre class="highlight"><code>PositionService.addImprovedPositionListener((GemImprovedPosition position) {
+    // Current coordinates
+    Coordinates coordinates = position.coordinates;
+    print("New position: ${coordinates}");
+
+    // Speed in m/s (-1 if not available)
+    double speed = position.speed;
+
+    // Speed limit in m/s on the current road (0 if not available)
+    double speedLimit = position.speedLimit;
+
+    // Heading angle in degrees (N=0, E=90, S=180, W=270, -1 if not available)
+    double course = position.course;
+
+    // Information about current road (if it is in a tunnel, bridge, ramp, one way, etc.)
+    Set&lt;RoadModifier&gt; roadModifiers = position.roadModifiers;
+
+    // Quality of the current position
+    PositionQuality fixQuality = position.fixQuality;
+
+    // Horizontal and vertical accuracy in meters
+    double accuracyHorizontal = position.accuracyH;
+    double accuracyVertical = position.accuracyV;
+});</code></pre></p>
+<blockquote>
+<p>📝 <strong>Note:</strong> During simulation, the positions provided through the <code>addImprovedPositionListener</code> and <code>addPositionListener</code> methods correspond to the simulated locations generated as part of the navigation simulation process.</p>
+</blockquote>
+<h2 id="get-current-location">Get Current Location<a class="headerlink" href="#get-current-location" title="Permanent link">&para;</a></h2>
+<p>Use the <code>position</code> getter from the <code>PositionService</code> class to retrieve the current location. This returns a <code>GemPosition</code> object with the latest location information or <code>null</code> if no position data is available. Use this to access the most recent position without registering for continuous updates:
+<pre class="highlight"><code>GemPosition? position = PositionService.position;
+
+if (position == null) {
+    showSnackbar("No position");
+} else {
+    showSnackbar("Position: ${position.coordinates}");
+}</code></pre>
+A similar getter is provided for map-matched positions: <code>improvedPosition</code> returns <code>GemImprovedPosition?</code> instead of <code>GemPosition?</code>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
